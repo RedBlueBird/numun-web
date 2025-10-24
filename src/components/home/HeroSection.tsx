@@ -1,6 +1,7 @@
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 import { sections, spacing, layout, typography, gradients, utils, components } from "@/config/styles";
+import { fonts } from "@/config/fonts";
 import { FaSearch } from "react-icons/fa";
 import { FaPen } from "react-icons/fa";
 
@@ -38,8 +39,8 @@ export default function HeroSection() {
         </div>
 
         {/* Coming Soon text */}
-        <div className="mb-4 -mt-20">
-          <p className={`text-white text-3xl sm:text-4xl ${typography.italic} font-light mb-2`}>Coming Soon</p>
+        <div className="mb-8 -mt-20">
+          <p className={`text-white text-5xl sm:text-6xl font-light mb-2 ${fonts.script}`}>Coming Soon</p>
           <h1 className={`${typography.heroTitle} text-numun-gold -mb-8`}>
             NUMUN
           </h1>
@@ -48,13 +49,8 @@ export default function HeroSection() {
           </h1>
         </div>
 
-        {/* Tagline */}
-        <p className={`text-white text-xl sm:text-2xl md:text-3xl ${typography.italic} font-light mb-8 ${layout.maxWidth.sm}`}>
-          "Driving growth, elevating impact"
-        </p>
-
         {/* CTA Message */}
-        <p className={`text-white text-2xl sm:text-3xl md:text-4xl font-bold ${typography.italic} mb-12`}>
+        <p className={`text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold ${typography.italic} mb-12 ${layout.maxWidth.lg}`}>
           Now recruiting sponsors & partners!
         </p>
 

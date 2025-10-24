@@ -17,14 +17,13 @@ export default function AboutPage() {
           <div className={`${layout.grid.twoColumn} ${spacing.gap.xxl} items-center ${layout.maxWidth.xl}`}>
             {/* Text Content */}
             <div className={spacing.gap.lg}>
-              <p className={`${typography.bodyLarge} ${typography.textJustify}`}>
+              <p className={`${typography.bodyLarge} ${typography.textJustify} mb-4`}>
                 The Nagoya University Model United Nations is a landmark affair
                 stimulating academic discussion among students. Held annually at
                 Nagoya University, the event hosts delegates from high schools and
                 universities all over
                 Japan and abroad.
               </p>
-
               <p className={`${typography.bodyLarge} ${typography.textJustify}`}>
                 The purpose of
                 NUMUN is to provide
@@ -43,10 +42,15 @@ export default function AboutPage() {
             </div>
 
             {/* Image */}
-            <div className={`${layout.aspect.video} ${gradients.greenGradient} ${layout.flex.centerBoth} text-white ${tokens.borderRadius.lg} ${utils.overflow.hidden} ${tokens.shadow.lg}`}>
-              <div className="text-center p-8">
-                <p className="text-sm mb-2">📍</p>
-                <p className="font-semibold italic text-lg">Nagoya University, Toyoda Auditorium</p>
+            <div className={`${layout.aspect.video} relative ${tokens.borderRadius.lg} ${utils.overflow.hidden} ${tokens.shadow.lg}`}>
+              <Image
+                src="/images/media/about_nagoya_auditorium.png"
+                alt="Nagoya University, Toyoda Auditorium"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-center p-3">
+                <p className="font-semibold italic text-sm">Nagoya University, Toyoda Auditorium</p>
               </div>
             </div>
           </div>
@@ -54,30 +58,50 @@ export default function AboutPage() {
       </section>
 
       {/* Photo Grid */}
-      <section className={sections.standardSectionBeige}>
+      <section className={sections.standardSection}>
         <div className={spacing.container}>
           <div className={`${layout.grid.twoColumn} ${spacing.gap.lg} ${layout.maxWidth.lg}`}>
             {/* Photo 1 */}
-            <div className="rounded-lg overflow-hidden shadow-lg aspect-video bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-              <span className="text-6xl">👥</span>
+            <div className="rounded-lg overflow-hidden shadow-lg aspect-video relative">
+              <Image
+                src="/images/media/about_committee_session_1.jpg"
+                alt="NUMUN Committee Session"
+                fill
+                className="object-cover"
+              />
             </div>
 
             {/* Photo 2 */}
-            <div className="rounded-lg overflow-hidden shadow-lg aspect-video bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center">
-              <span className="text-6xl">💼</span>
+            <div className="rounded-lg overflow-hidden shadow-lg aspect-video relative">
+              <Image
+                src="/images/media/about_committee_session_2.jpg"
+                alt="NUMUN Committee Session"
+                fill
+                className="object-cover"
+              />
             </div>
 
             {/* Photo 3 */}
-            <div className="rounded-lg overflow-hidden shadow-lg aspect-video bg-gradient-to-br from-gray-500 to-gray-600 flex items-center justify-center">
-              <span className="text-6xl">🎓</span>
+            <div className="rounded-lg overflow-hidden shadow-lg aspect-video relative">
+              <Image
+                src="/images/media/about_committee_session_3.jpg"
+                alt="NUMUN Committee Session"
+                fill
+                className="object-cover"
+              />
             </div>
 
             {/* Photo 4 with caption */}
             <div className="space-y-2">
-              <div className="rounded-lg overflow-hidden shadow-lg aspect-video bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center">
-                <span className="text-6xl">📝</span>
+              <div className="rounded-lg overflow-hidden shadow-lg aspect-video relative">
+                <Image
+                  src="/images/media/about_committee_session_4.jpg"
+                  alt="NUMUN 2024, Committee Sessions"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <p className="text-right italic text-sm text-gray-600">NUMUN 2024, Committee Sessions</p>
+              <p className="text-right italic text-sm text-numun-green font-semibold">NUMUN 2024, Committee Sessions</p>
             </div>
           </div>
         </div>

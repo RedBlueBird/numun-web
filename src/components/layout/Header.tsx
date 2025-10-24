@@ -3,14 +3,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { navigationItems } from "@/data/navigation";
 import SocialLinks from "@/components/ui/SocialLinks";
 import Button from "@/components/ui/Button";
 import { sections, spacing, layout, components, tokens, utils } from "@/config/styles";
 import { FaPen } from "react-icons/fa";
+import { fonts } from "@/config/fonts";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className={`sticky top-0 ${utils.zIndex.header} ${tokens.shadow.lg}`}>
@@ -63,15 +66,20 @@ export default function Header() {
       <div className={`${sections.hero} hidden lg:block`}>
         <div className={spacing.container}>
           <nav className={`${layout.flex.spaceBetween} py-5 px-25`}>
-            {navigationItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-sm font-medium hover:text-numun-gold ${tokens.transition.colors} uppercase`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navigationItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`text-sm font-medium hover:text-numun-gold ${tokens.transition.colors} ${fonts.cerebri} uppercase ${
+                    isActive ? "text-numun-gold-light" : "text-white"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
         </div>
       </div>
@@ -81,16 +89,21 @@ export default function Header() {
         <div className={`lg:hidden ${sections.heroDark} py-4 border-t border-numun-green`}>
           <div className={spacing.container}>
             <nav className={`${layout.flex.column} ${spacing.gap.md}`}>
-              {navigationItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`text-sm font-medium hover:text-numun-gold ${tokens.transition.colors} py-2`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navigationItems.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`text-sm font-medium hover:text-numun-gold ${tokens.transition.colors} ${fonts.cerebri} py-2 ${
+                      isActive ? "text-numun-gold" : "text-white"
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
             </nav>
             <div className={`mt-6 ${layout.flex.column} ${spacing.gap.md}`}>
               <Button href="/contact" variant="primary" icon={<FaPen />}>

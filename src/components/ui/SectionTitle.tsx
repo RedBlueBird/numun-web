@@ -1,14 +1,14 @@
 import Image from "next/image";
 import { sections, spacing, typography, gradients, utils } from "@/config/styles";
 
-interface PageTitleProps {
+interface SectionTitleProps {
   children: React.ReactNode;
   className?: string;
 }
 
-export default function PageTitle({ children, className = "" }: PageTitleProps) {
+export default function SectionTitle({ children, className = "" }: SectionTitleProps) {
   return (
-    <div className={`${utils.relative} ${sections.heroDark} ${spacing.section.medium} sm:py-20 ${utils.overflow.hidden}`}>
+    <div className={`${utils.relative} ${sections.heroDark} py-8 sm:py-12 ${utils.overflow.hidden}`}>
       {/* Background image */}
       <div className={`${utils.absoluteFill} ${utils.zIndex.base}`}>
         <Image
@@ -23,9 +23,9 @@ export default function PageTitle({ children, className = "" }: PageTitleProps) 
       <div className={`${utils.absoluteFill} ${gradients.heroOverlay}`}></div>
 
       <div className={`${utils.relative} ${utils.zIndex.content} ${spacing.container}`}>
-        <h1 className={`${typography.pageTitle} ${className} ml-20`}>
+        <h2 className={`text-3xl font-bold text-center text-numun-gold-light ${className}`}>
           {children}
-        </h1>
+        </h2>
       </div>
     </div>
   );

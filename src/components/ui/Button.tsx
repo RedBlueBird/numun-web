@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import { components, gradients } from "@/config/styles";
+import { fonts } from "@/config/fonts";
 
 interface ButtonProps {
   children: ReactNode;

@@ -1,4 +1,5 @@
 import PageTitle from "@/components/ui/PageTitle";
+import ContactMethodCard from "@/components/contact/ContactMethodCard";
 import { socialLinks, contactEmail } from "@/data/socialLinks";
 
 export const metadata = {
@@ -20,78 +21,19 @@ export default function ContactPage() {
 
           {/* Contact Methods */}
           <div className="space-y-6 mb-16">
-            {/* Instagram */}
-            <div className="flex items-center gap-6 p-6 bg-numun-beige rounded-lg hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
-                <span className="text-3xl">📷</span>
-              </div>
-              <a
-                href={socialLinks[0].url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-numun-green hover:text-numun-gold transition-colors flex-1"
-              >
-                https://www.instagram.com/mun.nagoyauniversity
-              </a>
-            </div>
-
-            {/* LINE */}
-            <div className="flex items-center gap-6 p-6 bg-numun-beige rounded-lg hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
-                <span className="text-3xl">💬</span>
-              </div>
-              <a
-                href={socialLinks[1].url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-numun-green hover:text-numun-gold transition-colors flex-1"
-              >
-                https://www.instagram.com/mun.nagoyauniversity
-              </a>
-            </div>
-
-            {/* LinkedIn */}
-            <div className="flex items-center gap-6 p-6 bg-numun-beige rounded-lg hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
-                <span className="text-3xl">💼</span>
-              </div>
-              <a
-                href={socialLinks[2].url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-numun-green hover:text-numun-gold transition-colors flex-1"
-              >
-                https://www.instagram.com/mun.nagoyauniversity
-              </a>
-            </div>
-
-            {/* YouTube */}
-            <div className="flex items-center gap-6 p-6 bg-numun-beige rounded-lg hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
-                <span className="text-3xl">▶️</span>
-              </div>
-              <a
-                href={socialLinks[3].url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-numun-green hover:text-numun-gold transition-colors flex-1"
-              >
-                https://www.instagram.com/mun.nagoyauniversity
-              </a>
-            </div>
-
-            {/* Email */}
-            <div className="flex items-center gap-6 p-6 bg-numun-beige rounded-lg hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
-                <span className="text-3xl">✉️</span>
-              </div>
-              <a
-                href={`mailto:${contactEmail}`}
-                className="text-numun-green hover:text-numun-gold transition-colors flex-1"
-              >
-                {contactEmail}
-              </a>
-            </div>
+            {socialLinks.map((social) => (
+              <ContactMethodCard
+                key={social.platform}
+                platform={social.platform}
+                url={social.url}
+                displayText={social.url}
+              />
+            ))}
+            <ContactMethodCard
+              url={`mailto:${contactEmail}`}
+              displayText={contactEmail}
+              isEmail
+            />
           </div>
 
           {/* Inquiry Box */}

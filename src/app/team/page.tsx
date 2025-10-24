@@ -12,21 +12,21 @@ export default function TeamPage() {
   const deputySecretaries = teamMembers.filter((m) => m.role === "deputy-secretary-general");
 
   return (
-    <div>
-      <section className="bg-numun-green-dark py-16 text-center">
-        <div className="container mx-auto px-4">
-          <h1 className="text-numun-gold text-4xl sm:text-5xl md:text-6xl font-bold italic mb-4">
-            OUR TEAM
-          </h1>
-          <p className="text-white text-lg italic">
-            Meet our beloved team members which has made NUMUN 2026 happen!
-          </p>
-        </div>
-      </section>
+    <div
+      className="bg-white"
+      style={{
+        // backgroundImage: 'url(/images/topography_tile_background.svg)',
+        // backgroundRepeat: 'repeat',
+        // backgroundSize: '150.6px 140.4px',
+        // backgroundPosition: '0 0',
+        // imageRendering: 'crisp-edges',
+      }}
+    >
+      <PageTitle>OUR TEAM</PageTitle>
 
       {/* Secretary General */}
       {secretaryGeneral && (
-        <section className="py-16 bg-white">
+        <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               {/* Profile Card */}
@@ -59,7 +59,7 @@ export default function TeamPage() {
       )}
 
       {/* Deputy Secretary Generals */}
-      <section className="py-16 bg-numun-beige">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-numun-green mb-12">
             DEPUTY SECRETARY GENERAL
@@ -93,7 +93,7 @@ export default function TeamPage() {
       </section>
 
       {/* Organizing Committees */}
-      <section className="py-16 bg-numun-green-dark">
+      <section className="py-16 bg-numun-green">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-numun-gold mb-8">
             ORGANIZING COMITEES
