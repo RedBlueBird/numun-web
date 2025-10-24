@@ -1,3 +1,5 @@
+import { sections, spacing, typography } from "@/config/styles";
+
 interface PageTitleProps {
   children: React.ReactNode;
   className?: string;
@@ -5,9 +7,9 @@ interface PageTitleProps {
 
 export default function PageTitle({ children, className = "" }: PageTitleProps) {
   return (
-    <div className="bg-numun-green-dark py-16 sm:py-20">
-      <div className="container mx-auto px-4">
-        <h1 className={`text-4xl sm:text-5xl md:text-6xl font-bold text-numun-gold italic ${className}`}>
+    <div className={`${sections.heroDark} ${spacing.section.medium} sm:py-20`}>
+      <div className={spacing.container}>
+        <h1 className={`${typography.pageTitle} ${className}`}>
           {children}
         </h1>
       </div>

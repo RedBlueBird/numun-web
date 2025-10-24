@@ -1,5 +1,6 @@
 import PageTitle from "@/components/ui/PageTitle";
 import Image from "next/image";
+import { sections, spacing, layout, typography, gradients, tokens, utils } from "@/config/styles";
 
 export const metadata = {
   title: "About Us - NUMUN 2026",
@@ -11,12 +12,12 @@ export default function AboutPage() {
     <div>
       <PageTitle>ABOUT US</PageTitle>
 
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+      <section className={sections.standardSection}>
+        <div className={spacing.container}>
+          <div className={`${layout.grid.twoColumn} ${spacing.gap.xxl} items-center ${layout.maxWidth.xl}`}>
             {/* Text Content */}
-            <div className="space-y-6">
-              <p className="text-lg text-gray-700 leading-relaxed text-justify">
+            <div className={spacing.gap.lg}>
+              <p className={`${typography.bodyLarge} ${typography.textJustify}`}>
                 The Nagoya University Model United Nations is a landmark affair
                 stimulating academic discussion among students. Held annually at
                 Nagoya University, the event hosts delegates from high schools and
@@ -24,7 +25,7 @@ export default function AboutPage() {
                 Japan and abroad.
               </p>
 
-              <p className="text-lg text-gray-700 leading-relaxed text-justify">
+              <p className={`${typography.bodyLarge} ${typography.textJustify}`}>
                 The purpose of
                 NUMUN is to provide
                 a platform for youth
@@ -42,12 +43,10 @@ export default function AboutPage() {
             </div>
 
             {/* Image */}
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <div className="aspect-video bg-gradient-to-br from-numun-green to-numun-green-dark flex items-center justify-center text-white">
-                <div className="text-center p-8">
-                  <p className="text-sm mb-2">📍</p>
-                  <p className="font-semibold italic text-lg">Nagoya University, Toyoda Auditorium</p>
-                </div>
+            <div className={`${layout.aspect.video} ${gradients.greenGradient} ${layout.flex.centerBoth} text-white ${tokens.borderRadius.lg} ${utils.overflow.hidden} ${tokens.shadow.lg}`}>
+              <div className="text-center p-8">
+                <p className="text-sm mb-2">📍</p>
+                <p className="font-semibold italic text-lg">Nagoya University, Toyoda Auditorium</p>
               </div>
             </div>
           </div>
@@ -55,9 +54,9 @@ export default function AboutPage() {
       </section>
 
       {/* Photo Grid */}
-      <section className="py-16 bg-numun-beige">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <section className={sections.standardSectionBeige}>
+        <div className={spacing.container}>
+          <div className={`${layout.grid.twoColumn} ${spacing.gap.lg} ${layout.maxWidth.lg}`}>
             {/* Photo 1 */}
             <div className="rounded-lg overflow-hidden shadow-lg aspect-video bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
               <span className="text-6xl">👥</span>

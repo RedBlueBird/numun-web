@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ReactNode } from "react";
+import { components, gradients } from "@/config/styles";
 
 interface ButtonProps {
   children: ReactNode;
@@ -18,15 +19,13 @@ export default function Button({
   className = "",
   onClick,
 }: ButtonProps) {
-  const baseStyles = "inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium text-sm sm:text-base transition-colors duration-200";
-
   const variantStyles = {
-    primary: "bg-numun-gold hover:bg-numun-gold-light text-numun-green-dark",
+    primary: `${gradients.goldGradientDark} text-white`,
     secondary: "bg-numun-green hover:bg-numun-green-dark text-white",
     outline: "border-2 border-numun-gold text-numun-gold hover:bg-numun-gold hover:text-numun-green-dark",
   };
 
-  const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`;
+  const combinedClassName = `${components.button.base} ${variantStyles[variant]} ${className}`;
 
   if (href) {
     return (

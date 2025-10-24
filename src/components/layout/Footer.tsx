@@ -1,20 +1,28 @@
 import Link from "next/link";
+import Image from "next/image";
 import { navigationItems } from "@/data/navigation";
 import SocialLinks from "@/components/ui/SocialLinks";
 import { contactEmail } from "@/data/socialLinks";
+import { sections, spacing, layout, components, tokens } from "@/config/styles";
 
 export default function Footer() {
   return (
-    <footer className="bg-numun-green-dark text-white pt-12 pb-6">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <footer className={`${sections.heroDark} pt-12 pb-6`}>
+      <div className={spacing.container}>
+        <div className={`${layout.grid.threeColumn} ${spacing.gap.xl} mb-8`}>
           {/* Logo and Description */}
           <div>
-            <Link href="/" className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-numun-gold rounded-full flex items-center justify-center">
-                <span className="text-2xl">🌐</span>
+            <Link href="/" className={`${layout.flex.row} items-center ${spacing.gap.sm} mb-4`}>
+              <div className="relative w-16 h-16 flex items-center">
+                <Image
+                  src="/images/logos/numun_logo.png"
+                  alt="NUMUN Logo"
+                  width={64}
+                  height={64}
+                  className="object-contain"
+                />
               </div>
-              <div className="flex flex-col">
+              <div className={layout.flex.column}>
                 <span className="text-xl font-bold tracking-wider">NUMUN</span>
                 <span className="text-xs text-numun-gold uppercase">Nagoya University Model United Nations</span>
               </div>
@@ -27,12 +35,12 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="text-numun-gold font-bold mb-4">Quick Links</h3>
-            <nav className="flex flex-col gap-2">
+            <nav className={`${layout.flex.column} ${spacing.gap.xs}`}>
               {navigationItems.slice(0, 4).map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm hover:text-numun-gold transition-colors"
+                  className={`text-sm hover:text-numun-gold ${tokens.transition.colors}`}
                 >
                   {item.label}
                 </Link>
@@ -43,10 +51,10 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-numun-gold font-bold mb-4">Contact Us</h3>
-            <div className="flex flex-col gap-3">
+            <div className={`${layout.flex.column} ${spacing.gap.sm}`}>
               <a
                 href={`mailto:${contactEmail}`}
-                className="text-sm hover:text-numun-gold transition-colors"
+                className={`text-sm hover:text-numun-gold ${tokens.transition.colors}`}
               >
                 {contactEmail}
               </a>

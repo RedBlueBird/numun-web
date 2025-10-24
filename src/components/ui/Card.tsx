@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { components } from "@/config/styles";
 
 interface CardProps {
   children: ReactNode;
@@ -7,22 +8,20 @@ interface CardProps {
 }
 
 export default function Card({ children, className = "", variant = "default" }: CardProps) {
-  const baseStyles = "bg-white rounded-lg overflow-hidden";
-
   const variantStyles = {
-    default: "shadow-md hover:shadow-lg transition-shadow",
-    decorative: "border-4 border-numun-gold relative",
+    default: components.card.withShadow,
+    decorative: components.card.decorative,
   };
 
   return (
-    <div className={`${baseStyles} ${variantStyles[variant]} ${className}`}>
+    <div className={`${variantStyles[variant]} ${className}`}>
       {variant === "decorative" && (
         <>
           {/* Decorative corner accents */}
-          <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-numun-gold"></div>
-          <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-numun-gold"></div>
-          <div className="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-numun-gold"></div>
-          <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-numun-gold"></div>
+          <div className={`${components.decorativeCorner} top-0 left-0 border-t-4 border-l-4`}></div>
+          <div className={`${components.decorativeCorner} top-0 right-0 border-t-4 border-r-4`}></div>
+          <div className={`${components.decorativeCorner} bottom-0 left-0 border-b-4 border-l-4`}></div>
+          <div className={`${components.decorativeCorner} bottom-0 right-0 border-b-4 border-r-4`}></div>
         </>
       )}
       {children}

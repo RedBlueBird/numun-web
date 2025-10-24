@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "NUMUN 2026 - Nagoya University Model United Nations",
   description: "Nagoya University Model United Nations 2026 - Driving growth, elevating impact. Join us for an inspiring conference fostering global dialogue and youth leadership.",
+  icons: {
+    icon: "/numun_logo.ico",
+  },
 };
 
 export default function RootLayout({

@@ -1,12 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  /* NUMUN Brand Colors */
-  --numun-green-dark: #1a3a2f;
-  --numun-green: #2a4a3f;
-  --numun-gold: #c9a961;
-  --numun-gold-light: #d4b876;
-  --numun-beige: #f5f1e8;
+  /* NUMUN Brand Colors - Primary Greens (Backgrounds + Brand Identity) */
+  --numun-green-darkest: #0e291b;
+  --numun-green-dark: #143424;
+  --numun-green: #385644;
+
+  /* NUMUN Brand Colors - Accent Golds (Icons + Graphics) */
+  --numun-gold-light: #fff1ca;
+  --numun-gold: #ecc469;
+  --numun-gold-dark: #efb35d;
+  --numun-gold-darkest: #bb824d;
+
+  /* Additional Brand Colors */
+  --numun-beige: #fff1ca;
   --numun-white: #ffffff;
 
   /* Default theme */
@@ -15,11 +22,18 @@
 }
 
 @theme inline {
-  /* Custom colors */
+  /* Primary Green Colors */
+  --color-numun-green-darkest: var(--numun-green-darkest);
   --color-numun-green-dark: var(--numun-green-dark);
   --color-numun-green: var(--numun-green);
-  --color-numun-gold: var(--numun-gold);
+
+  /* Accent Gold Colors */
   --color-numun-gold-light: var(--numun-gold-light);
+  --color-numun-gold: var(--numun-gold);
+  --color-numun-gold-dark: var(--numun-gold-dark);
+  --color-numun-gold-darkest: var(--numun-gold-darkest);
+
+  /* Additional Brand Colors */
   --color-numun-beige: var(--numun-beige);
   --color-numun-white: var(--numun-white);
 
