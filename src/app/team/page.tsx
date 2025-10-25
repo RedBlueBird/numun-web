@@ -3,7 +3,10 @@
 import PageTitle from "@/components/ui/PageTitle";
 import TeamProfileCard from "@/components/team/TeamProfileCard";
 import TeamGreetingQuote from "@/components/team/TeamGreetingQuote";
+import ScrollReveal from "@/components/animation/ScrollReveal";
+import { motion } from "framer-motion";
 import { teamMembers } from "@/data/team";
+import { scrollAnimations } from "@/config/animations";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function TeamPage() {
@@ -30,23 +33,27 @@ export default function TeamPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               {/* Profile Card */}
-              <TeamProfileCard
-                name={secretaryGeneral.name}
-                affiliation={secretaryGeneral.affiliation}
-                photo={secretaryGeneral.photo}
-                size="large"
-              />
+              <ScrollReveal variant="slideRight">
+                <TeamProfileCard
+                  name={secretaryGeneral.name}
+                  affiliation={secretaryGeneral.affiliation}
+                  photo={secretaryGeneral.photo}
+                  size="large"
+                />
+              </ScrollReveal>
 
               {/* Title and Quote */}
-              <div>
-                <h2 className="text-4xl font-bold text-numun-green mb-6">
-                  {t.team.roles.secretaryGeneral}
-                </h2>
-                <TeamGreetingQuote
-                  greeting={secretaryGeneral.greeting}
-                  size="small"
-                />
-              </div>
+              <ScrollReveal variant="slideLeft" delay={0.2}>
+                <div>
+                  <h2 className="text-4xl font-bold text-numun-green mb-6">
+                    {t.team.roles.secretaryGeneral}
+                  </h2>
+                  <TeamGreetingQuote
+                    greeting={secretaryGeneral.greeting}
+                    size="small"
+                  />
+                </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -55,29 +62,37 @@ export default function TeamPage() {
       {/* Deputy Secretary Generals */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-numun-green mb-12">
-            {t.team.roles.deputySecretaryGeneral}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-[auto_1fr] gap-x-12 gap-y-6 max-w-5xl mx-auto">
+          <ScrollReveal variant="slideUp">
+            <h2 className="text-4xl font-bold text-center text-numun-green mb-12">
+              {t.team.roles.deputySecretaryGeneral}
+            </h2>
+          </ScrollReveal>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-[auto_1fr] gap-x-12 gap-y-6 max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={scrollAnimations.staggerContainer}
+          >
             {/* Profile Cards Row */}
             {deputySecretaries.map((member) => (
-              <div key={`${member.id}-profile`}>
+              <motion.div key={`${member.id}-profile`} variants={scrollAnimations.staggerItem}>
                 <TeamProfileCard
                   name={member.name}
                   affiliation={member.affiliation}
                   photo={member.photo}
                   size="small"
                 />
-              </div>
+              </motion.div>
             ))}
 
             {/* Greeting Quotes Row */}
             {deputySecretaries.map((member) => (
-              <div key={`${member.id}-quote`}>
+              <motion.div key={`${member.id}-quote`} variants={scrollAnimations.staggerItem}>
                 <TeamGreetingQuote greeting={member.greeting} size="small" />
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 

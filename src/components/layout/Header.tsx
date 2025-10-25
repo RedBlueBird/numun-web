@@ -2,21 +2,58 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 import { navigationItems } from "@/data/navigation";
 import SocialLinks from "@/components/ui/SocialLinks";
 import LanguageToggle from "@/components/ui/LanguageToggle";
 import Button from "@/components/ui/Button";
 import { sections, spacing, layout, components, tokens, utils } from "@/config/styles";
+import { headerAnimations, transitions } from "@/config/animations";
 import { FaPen } from "react-icons/fa";
 import { fonts } from "@/config/fonts";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showTopRow, setShowTopRow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [row1Height, setRow1Height] = useState(0);
+  const row1Ref = React.useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const { t } = useLanguage();
+
+  useEffect(() => {
+    // Measure Row 1 height
+    if (row1Ref.current) {
+      setRow1Height(row1Ref.current.offsetHeight);
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Show top row when at the very top of the page
+      if (currentScrollY < 10) {
+        setShowTopRow(true);
+      }
+      // If scrolling down, hide top row
+      else if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setShowTopRow(false);
+      }
+      // If scrolling up, show top row
+      else if (currentScrollY < lastScrollY) {
+        setShowTopRow(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const navLabels = [
     t.navigation.home,
@@ -29,9 +66,14 @@ export default function Header() {
   ];
 
   return (
-    <header className={`sticky top-0 ${utils.zIndex.header} ${tokens.shadow.lg}`}>
+    <header className={`sticky top-0 ${utils.zIndex.header} ${tokens.shadow.lg} overflow-hidden`}>
       {/* Row 1: Logo + INQUIRE HERE + Social Icons */}
-      <div className={sections.heroDark}>
+      <motion.div
+        ref={row1Ref}
+        animate={headerAnimations.row1(showTopRow)}
+        transition={transitions.smooth}
+        className={sections.heroDark}
+      >
         <div className={spacing.container}>
           <div className={`${layout.flex.spaceBetween} py-4 px-20`}>
             {/* Logo */}
@@ -74,10 +116,14 @@ export default function Header() {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Row 2: Navigation Links (Desktop only) */}
-      <div className={`${sections.hero} hidden lg:block`}>
+      <motion.div
+        animate={headerAnimations.row2(showTopRow, row1Height)}
+        transition={transitions.smooth}
+        className={`${sections.hero} hidden lg:block`}
+      >
         <div className={spacing.container}>
           <nav className={`${layout.flex.spaceBetween} py-5 px-25`}>
             {navigationItems.map((item, index) => {
@@ -96,7 +142,7 @@ export default function Header() {
             })}
           </nav>
         </div>
-      </div>
+      </motion.div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (

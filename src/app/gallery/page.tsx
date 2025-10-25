@@ -2,7 +2,10 @@
 
 import PageTitle from "@/components/ui/PageTitle";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { scrollAnimations, hoverAnimations } from "@/config/animations";
 import { useLanguage } from "@/context/LanguageContext";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const galleryImages = [
   "/images/gallery/L1008928.jpg",
@@ -38,6 +41,7 @@ const galleryImages = [
 
 export default function GalleryPage() {
   const { t } = useLanguage();
+  const prefersReducedMotion = useReducedMotion();
 
   return (
     <div>
@@ -49,11 +53,19 @@ export default function GalleryPage() {
             {t.gallery.description}
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={scrollAnimations.staggerContainer}
+          >
             {galleryImages.map((image, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="relative aspect-video bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="relative aspect-video bg-gray-100 rounded-lg overflow-hidden shadow-lg"
+                variants={scrollAnimations.staggerItem}
+                whileHover={prefersReducedMotion ? {} : hoverAnimations.imageZoom}
               >
                 <Image
                   src={image}
@@ -62,9 +74,9 @@ export default function GalleryPage() {
                   className="object-cover"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

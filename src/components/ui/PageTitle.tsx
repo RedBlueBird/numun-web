@@ -1,5 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { sections, spacing, typography, gradients, utils, components, layout } from "@/config/styles";
+import { scrollAnimations } from "@/config/animations";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 interface PageTitleProps {
   children: React.ReactNode;
@@ -40,6 +45,8 @@ interface LogoProps {
 
 // Main PageTitle component (simple usage)
 function PageTitle({ children, className = "" }: PageTitleProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <div className={`${utils.relative} ${sections.heroDark} ${spacing.section.medium} sm:py-20 ${utils.overflow.hidden}`}>
       {/* Background image */}
@@ -56,9 +63,14 @@ function PageTitle({ children, className = "" }: PageTitleProps) {
       <div className={`${utils.absoluteFill} ${gradients.heroOverlay}`}></div>
 
       <div className={`${utils.relative} ${utils.zIndex.content} ${spacing.container}`}>
-        <h1 className={`${typography.pageTitle} ${className} ml-20`}>
+        <motion.h1
+          className={`${typography.pageTitle} ${className} ml-20`}
+          initial={prefersReducedMotion ? false : "hidden"}
+          animate="visible"
+          variants={scrollAnimations.slideUp}
+        >
           {children}
-        </h1>
+        </motion.h1>
       </div>
     </div>
   );

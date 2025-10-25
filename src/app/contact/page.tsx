@@ -3,7 +3,9 @@
 import PageTitle from "@/components/ui/PageTitle";
 import ContactMethodCard from "@/components/contact/ContactMethodCard";
 import ContactForm from "@/components/contact/ContactForm";
+import { motion } from "framer-motion";
 import { socialLinks, contactEmail } from "@/data/socialLinks";
+import { scrollAnimations } from "@/config/animations";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function ContactPage() {
@@ -23,21 +25,30 @@ export default function ContactPage() {
           </p>
 
           {/* Contact Methods */}
-          <div className="space-y-6 mb-16">
+          <motion.div
+            className="space-y-6 mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={scrollAnimations.staggerContainer}
+          >
             {socialLinks.map((social) => (
-              <ContactMethodCard
-                key={social.platform}
-                platform={social.platform}
-                url={social.url}
-                displayText={social.url}
-              />
+              <motion.div key={social.platform} variants={scrollAnimations.staggerItem}>
+                <ContactMethodCard
+                  platform={social.platform}
+                  url={social.url}
+                  displayText={social.url}
+                />
+              </motion.div>
             ))}
-            <ContactMethodCard
-              url={`mailto:${contactEmail}`}
-              displayText={contactEmail}
-              isEmail
-            />
-          </div>
+            <motion.div variants={scrollAnimations.staggerItem}>
+              <ContactMethodCard
+                url={`mailto:${contactEmail}`}
+                displayText={contactEmail}
+                isEmail
+              />
+            </motion.div>
+          </motion.div>
 
           {/* TODO: Contact form to be implemented - Don't delete this code */}
           {/* Inquiry Box */}

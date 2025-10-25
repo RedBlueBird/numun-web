@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import { Sponsor } from "@/types";
 import { FaSearch } from "react-icons/fa";
+import { hoverAnimations } from "@/config/animations";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 interface SponsorCardProps {
   sponsor: Sponsor;
@@ -9,6 +14,8 @@ interface SponsorCardProps {
 }
 
 export default function SponsorCard({ sponsor, tier }: SponsorCardProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   // Different styling based on tier
   const cardStyles = {
     diamond: {
@@ -37,8 +44,14 @@ export default function SponsorCard({ sponsor, tier }: SponsorCardProps) {
   const styles = cardStyles[tier];
 
   return (
-    <div className={`${styles.card} flex flex-col`}>
-      <div className={styles.logoContainer}>
+    <motion.div
+      className={`${styles.card} flex flex-col`}
+      whileHover={prefersReducedMotion ? {} : hoverAnimations.cardLiftStrong}
+    >
+      <motion.div
+        className={styles.logoContainer}
+        whileHover={prefersReducedMotion ? {} : hoverAnimations.imageZoomSubtle}
+      >
         {sponsor.logo ? (
           <Image
             src={sponsor.logo}
@@ -49,7 +62,7 @@ export default function SponsorCard({ sponsor, tier }: SponsorCardProps) {
         ) : (
           <span className="text-3xl">🏢</span>
         )}
-      </div>
+      </motion.div>
       <h3 className={styles.title}>{sponsor.name}</h3>
       <p className={styles.description}>{sponsor.description}</p>
       <div className="mt-auto">
@@ -57,6 +70,6 @@ export default function SponsorCard({ sponsor, tier }: SponsorCardProps) {
           LEARN MORE
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 }

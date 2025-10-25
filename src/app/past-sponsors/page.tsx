@@ -3,7 +3,9 @@
 import PageTitle from "@/components/ui/PageTitle";
 import SectionTitle from "@/components/ui/SectionTitle";
 import SponsorCard from "@/components/sponsors/SponsorCard";
+import { motion } from "framer-motion";
 import { sponsors } from "@/data/sponsors";
+import { scrollAnimations } from "@/config/animations";
 import { useLanguage } from "@/context/LanguageContext";
 import { sections } from "@/config/styles";
 
@@ -29,11 +31,19 @@ export default function PastSponsorsPage() {
       <SectionTitle>{t.pastSponsors.tiers.diamond}</SectionTitle>
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={scrollAnimations.staggerContainer}
+          >
             {diamondSponsors.map((sponsor) => (
-              <SponsorCard key={sponsor.id} sponsor={sponsor} tier="diamond" />
+              <motion.div key={sponsor.id} variants={scrollAnimations.staggerItem}>
+                <SponsorCard sponsor={sponsor} tier="diamond" />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -41,11 +51,19 @@ export default function PastSponsorsPage() {
       <SectionTitle>{t.pastSponsors.tiers.gold}</SectionTitle>
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={scrollAnimations.staggerContainer}
+          >
             {goldSponsors.map((sponsor) => (
-              <SponsorCard key={sponsor.id} sponsor={sponsor} tier="gold" />
+              <motion.div key={sponsor.id} variants={scrollAnimations.staggerItem}>
+                <SponsorCard sponsor={sponsor} tier="gold" />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -53,11 +71,19 @@ export default function PastSponsorsPage() {
       <SectionTitle>{t.pastSponsors.tiers.silver}</SectionTitle>
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={scrollAnimations.staggerContainer}
+          >
             {silverSponsors.map((sponsor) => (
-              <SponsorCard key={sponsor.id} sponsor={sponsor} tier="silver" />
+              <motion.div key={sponsor.id} variants={scrollAnimations.staggerItem}>
+                <SponsorCard sponsor={sponsor} tier="silver" />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -48,7 +48,6 @@ All UI patterns are now centralized in `src/config/styles.ts` for maintainabilit
 - Scroll animations using Framer Motion or similar
 - Smooth page transitions
 - Hover effects on cards and buttons
-- Parallax effects on hero sections
 
 ### 5. **SEO & Performance**
 - Add Open Graph meta tags for social sharing
