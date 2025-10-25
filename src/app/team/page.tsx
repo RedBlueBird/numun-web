@@ -1,13 +1,12 @@
+"use client";
+
 import PageTitle from "@/components/ui/PageTitle";
 import Card from "@/components/ui/Card";
 import { teamMembers } from "@/data/team";
-
-export const metadata = {
-  title: "Our Team - NUMUN 2026",
-  description: "Meet the team behind NUMUN 2026.",
-};
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function TeamPage() {
+  const { t } = useLanguage();
   const secretaryGeneral = teamMembers.find((m) => m.role === "secretary-general");
   const deputySecretaries = teamMembers.filter((m) => m.role === "deputy-secretary-general");
 
@@ -22,7 +21,7 @@ export default function TeamPage() {
         // imageRendering: 'crisp-edges',
       }}
     >
-      <PageTitle>OUR TEAM</PageTitle>
+      <PageTitle>{t.team.title}</PageTitle>
 
       {/* Secretary General */}
       {secretaryGeneral && (
@@ -45,7 +44,7 @@ export default function TeamPage() {
               {/* Title and Quote */}
               <div>
                 <h2 className="text-4xl font-bold text-numun-green mb-6">
-                  SECRETARY<br />GENERAL
+                  {t.team.roles.secretaryGeneral}
                 </h2>
                 <div className="bg-numun-beige border-l-4 border-t-4 border-numun-gold rounded-lg p-6 relative">
                   <div className="absolute -top-4 left-6 text-4xl text-numun-gold">"</div>
@@ -62,7 +61,7 @@ export default function TeamPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-numun-green mb-12">
-            DEPUTY SECRETARY GENERAL
+            {t.team.roles.deputySecretaryGeneral}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {deputySecretaries.map((member) => (
@@ -96,7 +95,7 @@ export default function TeamPage() {
       <section className="py-16 bg-numun-green">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-numun-gold mb-8">
-            ORGANIZING COMITEES
+            {t.team.roles.organizingCommittees}
           </h2>
           <p className="text-center text-white text-lg">
             More information coming soon...

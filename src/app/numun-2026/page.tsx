@@ -1,39 +1,35 @@
+"use client";
+
 import PageTitle from "@/components/ui/PageTitle";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 import { sponsorshipTiers } from "@/data/sponsors";
 import { sections, spacing, layout, typography, utils, components } from "@/config/styles";
-
-export const metadata = {
-  title: "NUMUN 2026 - Partner with Us",
-  description: "Support youth leadership and global dialogue by partnering with NUMUN 2026.",
-};
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Numun2026Page() {
+  const { t } = useLanguage();
   return (
     <div>
       {/* Hero Section */}
       <PageTitle.Hero>
         <PageTitle.HeroContent>
-          <PageTitle.Heading>PARTNER WITH NUMUN</PageTitle.Heading>
-          <PageTitle.Subtitle>Support youth leadership and global dialogue</PageTitle.Subtitle>
+          <PageTitle.Heading>{t.numun2026.title}</PageTitle.Heading>
+          <PageTitle.Subtitle>{t.numun2026.subtitle}</PageTitle.Subtitle>
 
           <PageTitle.Quote>
-            Driving growth, elevating impact
+            {t.numun2026.quote}
           </PageTitle.Quote>
 
           <PageTitle.Description>
-            In achieving a greater impact, NUMUN 2026 aims to recruit more
-            participants than ever before by committing to deliver a high quality
-            conference experience that inspires meaningful debate and lasting
-            connections.
+            {t.numun2026.description}
           </PageTitle.Description>
         </PageTitle.HeroContent>
 
         <PageTitle.HeroLogoWrapper>
           <PageTitle.Logo
             src="/images/logos/numun_logo.png"
-            alt="NUMUN Logo"
+            alt={t.header.logoAlt}
           />
         </PageTitle.HeroLogoWrapper>
       </PageTitle.Hero>
@@ -43,14 +39,14 @@ export default function Numun2026Page() {
         <div className={spacing.container}>
           <div className={`${layout.grid.twoColumn} ${spacing.gap.xl} ${layout.maxWidth.md} ${utils.textCenter}`}>
             <div className={components.stat.container}>
-              <p className={components.stat.sublabel}>MEET OUR</p>
+              <p className={components.stat.sublabel}>{t.numun2026.stats.meetOur}</p>
               <p className={components.stat.number}>400+</p>
-              <p className={components.stat.label}>DELEGATES</p>
+              <p className={components.stat.label}>{t.numun2026.stats.delegates}</p>
             </div>
             <div className={components.stat.container}>
-              <p className={components.stat.sublabel}>FROM</p>
+              <p className={components.stat.sublabel}>{t.numun2026.stats.from}</p>
               <p className={components.stat.number}>20+</p>
-              <p className={components.stat.label}>COUNTRIES</p>
+              <p className={components.stat.label}>{t.numun2026.stats.countries}</p>
             </div>
           </div>
         </div>
@@ -59,9 +55,9 @@ export default function Numun2026Page() {
       {/* Social Media Exposure */}
       <section className={sections.standardSection}>
         <div className={`${spacing.container} ${utils.textCenter}`}>
-          <h2 className={`${typography.sectionTitle} mb-4`}>SOCIAL MEDIA EXPOSURE</h2>
+          <h2 className={`${typography.sectionTitle} mb-4`}>{t.numun2026.socialMedia.title}</h2>
           <p className={`${typography.bodyLarge} mb-12 ${layout.maxWidth.sm}`}>
-            Over the past few years, NUMUN have been featured in various social media platforms, including:
+            {t.numun2026.socialMedia.description}
           </p>
 
           <div className={`${layout.grid.fourColumn} ${spacing.gap.xl} ${layout.maxWidth.md}`}>
@@ -120,17 +116,16 @@ export default function Numun2026Page() {
       {/* Sponsorship Tiers */}
       <section className={sections.standardSectionDark}>
         <div className={spacing.container}>
-          <h2 className={`${typography.sectionTitleLight} ${utils.textCenter} mb-4`}>SPONSORSHIP LEVELS</h2>
+          <h2 className={`${typography.sectionTitleLight} ${utils.textCenter} mb-4`}>{t.numun2026.sponsorship.title}</h2>
           <p className={`${utils.textCenter} text-white mb-12 ${layout.maxWidth.sm}`}>
-            NUMUN offers 3 different levels of sponsorship with the higher levels of sponsorship having the merits of the lower levels
-            as well as additional ones as explained briefly below:
+            {t.numun2026.sponsorship.description}
           </p>
 
           <div className="max-w-5xl mx-auto bg-gradient-to-br from-numun-beige to-white rounded-3xl p-8 md:p-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Silver Tier */}
               <div className="bg-gray-200 rounded-2xl p-6 shadow-lg">
-                <h3 className="text-2xl font-bold text-center mb-4 text-numun-green">SILVER - 30,000円</h3>
+                <h3 className="text-2xl font-bold text-center mb-4 text-numun-green">{t.numun2026.sponsorship.tiers.silver}</h3>
                 <ul className="space-y-3 text-sm">
                   {sponsorshipTiers[0].benefits.map((benefit, index) => (
                     <li key={index} className="flex items-start gap-2">
@@ -143,7 +138,7 @@ export default function Numun2026Page() {
 
               {/* Gold Tier */}
               <div className="bg-gradient-to-br from-numun-gold-light to-numun-gold rounded-2xl p-6 shadow-xl transform md:scale-105">
-                <h3 className="text-2xl font-bold text-center mb-4 text-numun-green-dark">GOLD - 50,000円</h3>
+                <h3 className="text-2xl font-bold text-center mb-4 text-numun-green-dark">{t.numun2026.sponsorship.tiers.gold}</h3>
                 <ul className="space-y-3 text-sm text-numun-green-dark">
                   {sponsorshipTiers[1].benefits.map((benefit, index) => (
                     <li key={index} className="flex items-start gap-2">
@@ -156,7 +151,7 @@ export default function Numun2026Page() {
 
               {/* Diamond Tier */}
               <div className="bg-gradient-to-br from-blue-200 to-blue-300 rounded-2xl p-6 shadow-lg">
-                <h3 className="text-2xl font-bold text-center mb-4 text-numun-green-dark">DIAMOND - 70,000円</h3>
+                <h3 className="text-2xl font-bold text-center mb-4 text-numun-green-dark">{t.numun2026.sponsorship.tiers.diamond}</h3>
                 <ul className="space-y-3 text-sm text-numun-green-dark">
                   {sponsorshipTiers[2].benefits.map((benefit, index) => (
                     <li key={index} className="flex items-start gap-2">
@@ -174,14 +169,14 @@ export default function Numun2026Page() {
       {/* CTA Section */}
       <section className={`${spacing.section.medium} ${sections.contentGreen} ${utils.textCenter}`}>
         <h2 className={`${typography.sectionTitleGold} text-4xl sm:text-5xl ${typography.italic} mb-8`}>
-          INTERESTED IN LEARNING MORE?
+          {t.numun2026.cta.title}
         </h2>
         <div className={`${layout.flex.column} sm:flex-row ${spacing.gap.lg} ${layout.flex.centerBoth}`}>
           <Button href="/contact" variant="primary" className={components.button.large}>
-            🔍 INQUIRE HERE
+            🔍 {t.numun2026.cta.inquire}
           </Button>
           <Button href="/past-sponsors" variant="primary" className={components.button.large}>
-            📊 PAST SPONSORS
+            📊 {t.numun2026.cta.pastSponsors}
           </Button>
         </div>
       </section>

@@ -1,11 +1,15 @@
+"use client";
+
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 import { sections, spacing, layout, typography, gradients, utils, components } from "@/config/styles";
 import { fonts } from "@/config/fonts";
 import { FaSearch } from "react-icons/fa";
 import { FaPen } from "react-icons/fa";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function HeroSection() {
+  const { t } = useLanguage();
   return (
     <section className={`${utils.relative} ${sections.fullHeight} ${layout.flex.centerBoth} ${sections.heroDark} ${utils.overflow.hidden}`}>
       {/* Background image */}
@@ -40,27 +44,27 @@ export default function HeroSection() {
 
         {/* Coming Soon text */}
         <div className="mb-8 -mt-20">
-          <p className={`text-white text-5xl sm:text-6xl font-light mb-2 ${fonts.script}`}>Coming Soon</p>
+          <p className={`text-white text-5xl sm:text-6xl font-light mb-2 ${fonts.script}`}>{t.home.comingSoon}</p>
           <h1 className={`${typography.heroTitle} text-numun-gold -mb-8`}>
-            NUMUN
+            {t.common.numun}
           </h1>
           <h1 className={`${typography.heroTitle} text-numun-gold-darkest font-bold`}>
-            2026
+            {t.home.numun2026}
           </h1>
         </div>
 
         {/* CTA Message */}
         <p className={`text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold ${typography.italic} mb-12 ${layout.maxWidth.lg}`}>
-          Now recruiting sponsors & partners!
+          {t.home.recruitingMessage}
         </p>
 
         {/* Buttons */}
         <div className={`${layout.flex.column} sm:flex-row ${spacing.gap.lg} ${layout.flex.centerBoth} pb-16`}>
           <Button href="/about" variant="primary" icon={<FaSearch />} className={`w-full sm:w-auto ${components.button.large}`}>
-            LEARN ABOUT NUMUN
+            {t.home.learnAboutButton}
           </Button>
           <Button href="/contact" variant="primary" icon={<FaPen />} className={`w-full sm:w-auto ${components.button.large}`}>
-            CONTACT US
+            {t.home.contactButton}
           </Button>
         </div>
       </div>

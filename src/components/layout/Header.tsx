@@ -6,14 +6,27 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { navigationItems } from "@/data/navigation";
 import SocialLinks from "@/components/ui/SocialLinks";
+import LanguageToggle from "@/components/ui/LanguageToggle";
 import Button from "@/components/ui/Button";
 import { sections, spacing, layout, components, tokens, utils } from "@/config/styles";
 import { FaPen } from "react-icons/fa";
 import { fonts } from "@/config/fonts";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { t } = useLanguage();
+
+  const navLabels = [
+    t.navigation.home,
+    t.navigation.about,
+    t.navigation.numun2026,
+    t.navigation.team,
+    t.navigation.sponsors,
+    t.navigation.gallery,
+    t.navigation.contact,
+  ];
 
   return (
     <header className={`sticky top-0 ${utils.zIndex.header} ${tokens.shadow.lg}`}>
@@ -33,17 +46,18 @@ export default function Header() {
                 />
               </div>
               <div className={layout.flex.column}>
-                <span className="text-2xl font-bold tracking-wider">NUMUN</span>
-                <span className="text-xs text-numun-gold uppercase">Nagoya University Model United Nations</span>
+                <span className="text-2xl font-bold tracking-wider">{t.common.numun}</span>
+                <span className="text-xs text-numun-gold uppercase">{t.common.nagoyaUniversity}</span>
               </div>
             </Link>
 
             {/* Desktop Actions */}
             <div className={`hidden lg:flex ${layout.flex.centerVertical} ${spacing.gap.md}`}>
               <Button href="/contact" variant="primary" icon={<FaPen />} className="text-sm">
-                INQUIRE HERE
+                {t.common.inquireHere}
               </Button>
               <SocialLinks />
+              <LanguageToggle />
             </div>
 
             {/* Mobile Menu Button */}
@@ -66,7 +80,7 @@ export default function Header() {
       <div className={`${sections.hero} hidden lg:block`}>
         <div className={spacing.container}>
           <nav className={`${layout.flex.spaceBetween} py-5 px-25`}>
-            {navigationItems.map((item) => {
+            {navigationItems.map((item, index) => {
               const isActive = pathname === item.href;
               return (
                 <Link
@@ -76,7 +90,7 @@ export default function Header() {
                     isActive ? "text-numun-gold-light" : "text-white"
                   }`}
                 >
-                  {item.label}
+                  {navLabels[index]}
                 </Link>
               );
             })}
@@ -89,7 +103,7 @@ export default function Header() {
         <div className={`lg:hidden ${sections.heroDark} py-4 border-t border-numun-green`}>
           <div className={spacing.container}>
             <nav className={`${layout.flex.column} ${spacing.gap.md}`}>
-              {navigationItems.map((item) => {
+              {navigationItems.map((item, index) => {
                 const isActive = pathname === item.href;
                 return (
                   <Link
@@ -100,14 +114,15 @@ export default function Header() {
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {item.label}
+                    {navLabels[index]}
                   </Link>
                 );
               })}
             </nav>
             <div className={`mt-6 ${layout.flex.column} ${spacing.gap.md}`}>
+              <LanguageToggle />
               <Button href="/contact" variant="primary" icon={<FaPen />}>
-                INQUIRE HERE
+                {t.common.inquireHere}
               </Button>
               <SocialLinks />
             </div>

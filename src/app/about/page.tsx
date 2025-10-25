@@ -1,16 +1,15 @@
+"use client";
+
 import PageTitle from "@/components/ui/PageTitle";
 import Image from "next/image";
 import { sections, spacing, layout, typography, gradients, tokens, utils } from "@/config/styles";
-
-export const metadata = {
-  title: "About Us - NUMUN 2026",
-  description: "Learn about Nagoya University Model United Nations and our mission to foster global dialogue.",
-};
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function AboutPage() {
+  const { t } = useLanguage();
   return (
     <div>
-      <PageTitle>ABOUT US</PageTitle>
+      <PageTitle>{t.about.title}</PageTitle>
 
       <section className={sections.standardSection}>
         <div className={spacing.container}>
@@ -19,38 +18,22 @@ export default function AboutPage() {
             <div className={`${layout.aspect.video} relative ${tokens.borderRadius.lg} ${utils.overflow.hidden} ${tokens.shadow.lg} lg:order-2`}>
               <Image
                 src="/images/media/about_nagoya_auditorium.png"
-                alt="Nagoya University, Toyoda Auditorium"
+                alt={t.about.imageAlt}
                 fill
                 className="object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-center p-3">
-                <p className="font-semibold italic text-sm">Nagoya University, Toyoda Auditorium</p>
+                <p className="font-semibold italic text-sm">{t.about.imageAlt}</p>
               </div>
             </div>
 
             {/* Text Content */}
             <div className={`${spacing.gap.lg} lg:order-1`}>
               <p className={`${typography.bodyLarge} ${typography.textJustify} mb-4`}>
-                The Nagoya University Model United Nations is a landmark affair
-                stimulating academic discussion among students. Held annually at
-                Nagoya University, the event hosts delegates from high schools and
-                universities all over
-                Japan and abroad.
+                {t.about.paragraph1}
               </p>
               <p className={`${typography.bodyLarge} ${typography.textJustify}`}>
-                The purpose of
-                NUMUN is to provide
-                a platform for youth
-                to engage with
-                contemporary
-                affairs. By stepping
-                into the role of a UN
-                delegate, students
-                represent their respective nations, research global issues and
-                articulate their positions in committees. In the process, they hone
-                their critical thinking, communication and negotiation skills, build
-                international networks and develop as future leaders prepared to
-                engage with the world's most pressing challenges.
+                {t.about.paragraph2}
               </p>
             </div>
           </div>
@@ -65,7 +48,7 @@ export default function AboutPage() {
             <div className="rounded-lg overflow-hidden shadow-lg aspect-video relative">
               <Image
                 src="/images/media/about_committee_session_1.jpg"
-                alt="NUMUN Committee Session"
+                alt={t.about.quote.description}
                 fill
                 className="object-cover"
               />
@@ -75,7 +58,7 @@ export default function AboutPage() {
             <div className="rounded-lg overflow-hidden shadow-lg aspect-video relative">
               <Image
                 src="/images/media/about_committee_session_2.jpg"
-                alt="NUMUN Committee Session"
+                alt={t.about.quote.description}
                 fill
                 className="object-cover"
               />
@@ -85,7 +68,7 @@ export default function AboutPage() {
             <div className="rounded-lg overflow-hidden shadow-lg aspect-video relative">
               <Image
                 src="/images/media/about_committee_session_3.jpg"
-                alt="NUMUN Committee Session"
+                alt={t.about.quote.description}
                 fill
                 className="object-cover"
               />
@@ -96,12 +79,12 @@ export default function AboutPage() {
               <div className="rounded-lg overflow-hidden shadow-lg aspect-video relative">
                 <Image
                   src="/images/media/about_committee_session_4.jpg"
-                  alt="NUMUN 2024, Committee Sessions"
+                  alt={t.about.quote.title}
                   fill
                   className="object-cover"
                 />
               </div>
-              <p className="text-right italic text-sm text-numun-green font-semibold">NUMUN 2024, Committee Sessions</p>
+              <p className="text-right italic text-sm text-numun-green font-semibold">{t.about.quote.title}</p>
             </div>
           </div>
         </div>

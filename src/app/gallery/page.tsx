@@ -1,10 +1,8 @@
+"use client";
+
 import PageTitle from "@/components/ui/PageTitle";
 import Image from "next/image";
-
-export const metadata = {
-  title: "Gallery - NUMUN",
-  description: "View photos from past NUMUN conferences.",
-};
+import { useLanguage } from "@/context/LanguageContext";
 
 const galleryImages = [
   "/images/gallery/L1008928.jpg",
@@ -39,14 +37,16 @@ const galleryImages = [
 ];
 
 export default function GalleryPage() {
+  const { t } = useLanguage();
+
   return (
     <div>
-      <PageTitle>GALLERY</PageTitle>
+      <PageTitle>{t.gallery.title}</PageTitle>
 
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <p className="text-center text-xl text-gray-600 mb-12">
-            Explore moments from past NUMUN conferences
+            {t.gallery.description}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -57,7 +57,7 @@ export default function GalleryPage() {
               >
                 <Image
                   src={image}
-                  alt={`NUMUN Conference Photo ${index + 1}`}
+                  alt={`${t.gallery.photoAlt} ${index + 1}`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

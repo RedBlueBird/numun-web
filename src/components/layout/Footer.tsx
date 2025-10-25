@@ -1,11 +1,23 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { navigationItems } from "@/data/navigation";
 import SocialLinks from "@/components/ui/SocialLinks";
+import LanguageToggle from "@/components/ui/LanguageToggle";
 import { contactEmail } from "@/data/socialLinks";
 import { sections, spacing, layout, components, tokens } from "@/config/styles";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
+  const navLabels = [
+    t.navigation.home,
+    t.navigation.about,
+    t.navigation.numun2026,
+    t.navigation.team,
+  ];
   return (
     <footer className={`${sections.heroDark} pt-12 pb-6`}>
       <div className={spacing.container}>
@@ -23,26 +35,26 @@ export default function Footer() {
                 />
               </div>
               <div className={layout.flex.column}>
-                <span className="text-xl font-bold tracking-wider">NUMUN</span>
-                <span className="text-xs text-numun-gold uppercase">Nagoya University Model United Nations</span>
+                <span className="text-xl font-bold tracking-wider">{t.common.numun}</span>
+                <span className="text-xs text-numun-gold uppercase">{t.common.nagoyaUniversity}</span>
               </div>
             </Link>
             <p className="text-sm text-gray-300">
-              Fostering global awareness, promoting diplomacy, and empowering students through meaningful debate and cultural exchange.
+              {t.footer.description}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-numun-gold font-bold mb-4">Quick Links</h3>
+            <h3 className="text-numun-gold font-bold mb-4">{t.footer.quickLinks}</h3>
             <nav className={`${layout.flex.column} ${spacing.gap.xs}`}>
-              {navigationItems.slice(0, 4).map((item) => (
+              {navigationItems.slice(0, 4).map((item, index) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   className={`text-sm hover:text-numun-gold ${tokens.transition.colors}`}
                 >
-                  {item.label}
+                  {navLabels[index]}
                 </Link>
               ))}
             </nav>
@@ -50,7 +62,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-numun-gold font-bold mb-4">Contact Us</h3>
+            <h3 className="text-numun-gold font-bold mb-4">{t.footer.contactUs}</h3>
             <div className={`${layout.flex.column} ${spacing.gap.sm}`}>
               <a
                 href={`mailto:${contactEmail}`}
@@ -59,13 +71,16 @@ export default function Footer() {
                 {contactEmail}
               </a>
               <SocialLinks />
+              <div className="mt-4">
+                <LanguageToggle />
+              </div>
             </div>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="border-t border-numun-green pt-6 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Nagoya University Model United Nations. All rights reserved.</p>
+          <p>{t.footer.copyright.replace('{year}', new Date().getFullYear().toString())}</p>
         </div>
       </div>
     </footer>
