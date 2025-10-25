@@ -66,7 +66,7 @@ export default function Header() {
   ];
 
   return (
-    <header className={`sticky top-0 ${utils.zIndex.header} ${tokens.shadow.lg} overflow-hidden`}>
+    <header className={`sticky top-0 ${utils.zIndex.header} overflow-hidden`}>
       {/* Row 1: Logo + INQUIRE HERE + Social Icons */}
       <motion.div
         ref={row1Ref}
@@ -122,7 +122,7 @@ export default function Header() {
       <motion.div
         animate={headerAnimations.row2(showTopRow, row1Height)}
         transition={transitions.smooth}
-        className={`${sections.hero} hidden lg:block`}
+        className={`${sections.hero} ${tokens.shadow.lg} hidden lg:block`}
       >
         <div className={spacing.container}>
           <nav className={`${layout.flex.spaceBetween} py-5 px-25`}>
