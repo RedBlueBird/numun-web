@@ -146,7 +146,13 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className={`lg:hidden ${sections.heroDark} py-4 border-t border-numun-green`}>
+        <motion.div
+          className={`lg:hidden ${sections.heroDark} ${tokens.shadow.lg} py-4 border-t border-numun-green`}
+          animate={{
+            y: showTopRow ? 0 : -row1Height
+          }}
+          transition={transitions.smooth}
+        >
           <div className={spacing.container}>
             <nav className={`${layout.flex.column} ${spacing.gap.md}`}>
               {navigationItems.map((item, index) => {
@@ -173,7 +179,7 @@ export default function Header() {
               <SocialLinks />
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
     </header>
   );
