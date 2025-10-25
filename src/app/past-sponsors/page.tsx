@@ -39,7 +39,7 @@ export default function PastSponsorsPage() {
             variants={scrollAnimations.staggerContainer}
           >
             {diamondSponsors.map((sponsor) => (
-              <motion.div key={sponsor.id} variants={scrollAnimations.staggerItem}>
+              <motion.div key={sponsor.id} variants={scrollAnimations.staggerItem} className="h-full">
                 <SponsorCard sponsor={sponsor} tier="diamond" />
               </motion.div>
             ))}
@@ -59,7 +59,7 @@ export default function PastSponsorsPage() {
             variants={scrollAnimations.staggerContainer}
           >
             {goldSponsors.map((sponsor) => (
-              <motion.div key={sponsor.id} variants={scrollAnimations.staggerItem}>
+              <motion.div key={sponsor.id} variants={scrollAnimations.staggerItem} className="h-full">
                 <SponsorCard sponsor={sponsor} tier="gold" />
               </motion.div>
             ))}
@@ -79,7 +79,7 @@ export default function PastSponsorsPage() {
             variants={scrollAnimations.staggerContainer}
           >
             {silverSponsors.map((sponsor) => (
-              <motion.div key={sponsor.id} variants={scrollAnimations.staggerItem}>
+              <motion.div key={sponsor.id} variants={scrollAnimations.staggerItem} className="h-full">
                 <SponsorCard sponsor={sponsor} tier="silver" />
               </motion.div>
             ))}

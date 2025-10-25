@@ -45,7 +45,7 @@ export default function SponsorCard({ sponsor, tier }: SponsorCardProps) {
 
   return (
     <motion.div
-      className={`${styles.card} flex flex-col`}
+      className={`${styles.card} flex flex-col h-full`}
       whileHover={prefersReducedMotion ? {} : hoverAnimations.cardLiftStrong}
     >
       <motion.div
