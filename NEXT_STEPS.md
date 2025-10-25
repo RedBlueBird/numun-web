@@ -44,24 +44,6 @@ All UI patterns are now centralized in `src/config/styles.ts` for maintainabilit
 
 ## 🎨 Recommended Improvements
 
-### 1. **Add Real Images**
-Currently using emoji placeholders. You should:
-\- Add sponsor logos to `/public/images/sponsors/`
-- Add team member photos to `/public/images/team/`
-- Add conference photos to `/public/images/gallery/`
-- Update components to use `next/image` with actual image paths
-
-### 2. **Enhance Visual Elements**
-- Create SVG for the torn paper edge effect (currently using CSS clip-path)
-- Implement decorative corner accents on cards (golden brackets from the design)
-- Add background images for hero sections
-
-### 3. **Implement Contact Form**
-The Contact page has a placeholder for an inquiry form. Consider:
-- Using a form library like React Hook Form
-- Integrating with an email service (Formspree, EmailJS, or custom API)
-- Adding form validation and submission handling
-
 ### 4. **Add Animations & Transitions**
 - Scroll animations using Framer Motion or similar
 - Smooth page transitions
@@ -101,36 +83,12 @@ The Gallery page is currently a placeholder. Implement:
 - Image lazy loading
 - Pagination or infinite scroll
 
-### 10. **Additional Features to Consider**
-- Blog/News section for updates
-- Event registration/application form
-- Countdown timer to NUMUN 2026
-- Testimonials from past delegates
-- FAQ section
-- Search functionality
-- Multi-language support (English/Japanese)
-
 ## 🐛 Known Issues to Address
-
-1. **TypeScript Import**: The `utils.ts` file imports `ClassValue` from "clsx" but clsx is not installed. Either:
-   - Install clsx: `npm install clsx`
-   - Or simplify the function to not use it
 
 2. **Social Media Icons**: Currently using emoji, should use actual SVG icons or icon library
 
 3. **Responsive Design**: Test and adjust breakpoints for tablets and small laptops
 
-## 🚀 Quick Fixes to Apply Now
-
-```bash
-# Install missing dependencies if needed
-npm install clsx
-
-# Or install an icon library
-npm install lucide-react
-# or
-npm install @heroicons/react
-```
 
 ## 📱 Testing Checklist
 

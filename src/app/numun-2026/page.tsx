@@ -6,6 +6,7 @@ import Image from "next/image";
 import { sponsorshipTiers } from "@/data/sponsors";
 import { sections, spacing, layout, typography, utils, components } from "@/config/styles";
 import { useLanguage } from "@/context/LanguageContext";
+import { FaPen, FaHistory } from "react-icons/fa";
 
 export default function Numun2026Page() {
   const { t } = useLanguage();
@@ -172,11 +173,11 @@ export default function Numun2026Page() {
           {t.numun2026.cta.title}
         </h2>
         <div className={`${layout.flex.column} sm:flex-row ${spacing.gap.lg} ${layout.flex.centerBoth}`}>
-          <Button href="/contact" variant="primary" className={components.button.large}>
-            🔍 {t.numun2026.cta.inquire}
+          <Button href="/contact" variant="primary" icon={<FaPen />} className={components.button.large}>
+            {t.numun2026.cta.inquire}
           </Button>
-          <Button href="/past-sponsors" variant="primary" className={components.button.large}>
-            📊 {t.numun2026.cta.pastSponsors}
+          <Button href="/past-sponsors" variant="primary" icon={<FaHistory />} className={components.button.large}>
+            {t.numun2026.cta.pastSponsors}
           </Button>
         </div>
       </section>

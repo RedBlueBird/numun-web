@@ -5,6 +5,7 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import SponsorCard from "@/components/sponsors/SponsorCard";
 import { sponsors } from "@/data/sponsors";
 import { useLanguage } from "@/context/LanguageContext";
+import { sections } from "@/config/styles";
 
 export default function PastSponsorsPage() {
   const { t } = useLanguage();
@@ -16,8 +17,8 @@ export default function PastSponsorsPage() {
     <div>
       <PageTitle>{t.pastSponsors.title}</PageTitle>
 
-      <section className="py-12 bg-numun-white">
-        <div className="container mx-auto px-4 max-w-6xl">
+      <section className={`py-12 ${sections.contentBeige}`}>
+        <div className={`container mx-auto px-4 max-w-6xl`}>
           <p className="text-center text-numun-green font-semibold leading-relaxed">
             {t.pastSponsors.description}
           </p>

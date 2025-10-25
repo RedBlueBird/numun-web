@@ -14,8 +14,12 @@ export default function ContactPage() {
 
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
-          <p className="text-xl text-center text-gray-700 mb-12 italic">
+          {/* TODO: Contact form to be implemented - Original intro message */}
+          {/* <p className="text-xl text-center text-gray-700 mb-12 italic">
             {t.contact.intro}
+          </p> */}
+          <p className="text-xl text-center text-gray-700 mb-12 italic">
+            Got any questions? Feel free to contact us through any of the following!
           </p>
 
           {/* Contact Methods */}
@@ -35,13 +39,14 @@ export default function ContactPage() {
             />
           </div>
 
+          {/* TODO: Contact form to be implemented - Don't delete this code */}
           {/* Inquiry Box */}
-          <div className="text-center">
+          {/* <div className="text-center">
             <h2 className="text-3xl font-bold text-numun-green mb-8">{t.contact.inquiryBox}</h2>
             <div className="bg-numun-beige border-4 border-numun-gold rounded-lg p-8 md:p-12">
               <ContactForm />
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

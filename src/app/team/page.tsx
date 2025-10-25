@@ -1,7 +1,8 @@
 "use client";
 
 import PageTitle from "@/components/ui/PageTitle";
-import Card from "@/components/ui/Card";
+import TeamProfileCard from "@/components/team/TeamProfileCard";
+import TeamGreetingQuote from "@/components/team/TeamGreetingQuote";
 import { teamMembers } from "@/data/team";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -27,30 +28,24 @@ export default function TeamPage() {
       {secretaryGeneral && (
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               {/* Profile Card */}
-              <div className="flex justify-center">
-                <Card variant="decorative" className="w-full max-w-sm">
-                  <div className="aspect-[3/4] bg-gradient-to-br from-blue-200 to-green-200 flex items-center justify-center">
-                    <span className="text-8xl">☁️</span>
-                  </div>
-                  <div className="p-6 text-center">
-                    <h3 className="text-xl font-bold text-numun-green">{secretaryGeneral.name}</h3>
-                    <p className="text-sm text-gray-600">{secretaryGeneral.affiliation}</p>
-                  </div>
-                </Card>
-              </div>
+              <TeamProfileCard
+                name={secretaryGeneral.name}
+                affiliation={secretaryGeneral.affiliation}
+                photo={secretaryGeneral.photo}
+                size="large"
+              />
 
               {/* Title and Quote */}
               <div>
                 <h2 className="text-4xl font-bold text-numun-green mb-6">
                   {t.team.roles.secretaryGeneral}
                 </h2>
-                <div className="bg-numun-beige border-l-4 border-t-4 border-numun-gold rounded-lg p-6 relative">
-                  <div className="absolute -top-4 left-6 text-4xl text-numun-gold">"</div>
-                  <p className="text-center text-lg mb-4 mt-4">{secretaryGeneral.greeting}</p>
-                  <div className="absolute -bottom-4 right-6 text-4xl text-numun-gold">"</div>
-                </div>
+                <TeamGreetingQuote
+                  greeting={secretaryGeneral.greeting}
+                  size="small"
+                />
               </div>
             </div>
           </div>
@@ -63,28 +58,23 @@ export default function TeamPage() {
           <h2 className="text-4xl font-bold text-center text-numun-green mb-12">
             {t.team.roles.deputySecretaryGeneral}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-[auto_1fr] gap-x-12 gap-y-6 max-w-5xl mx-auto">
+            {/* Profile Cards Row */}
             {deputySecretaries.map((member) => (
-              <div key={member.id} className="space-y-6">
-                {/* Profile Card */}
-                <div className="flex justify-center">
-                  <Card variant="decorative" className="w-full max-w-xs">
-                    <div className="aspect-[3/4] bg-gradient-to-br from-blue-200 to-green-200 flex items-center justify-center">
-                      <span className="text-6xl">☁️</span>
-                    </div>
-                    <div className="p-4 text-center">
-                      <h3 className="text-lg font-bold text-numun-green">{member.name}</h3>
-                      <p className="text-xs text-gray-600">{member.affiliation}</p>
-                    </div>
-                  </Card>
-                </div>
+              <div key={`${member.id}-profile`}>
+                <TeamProfileCard
+                  name={member.name}
+                  affiliation={member.affiliation}
+                  photo={member.photo}
+                  size="small"
+                />
+              </div>
+            ))}
 
-                {/* Quote Box */}
-                <div className="bg-white border-l-4 border-t-4 border-numun-gold rounded-lg p-6 relative">
-                  <div className="absolute -top-3 left-4 text-3xl text-numun-gold">"</div>
-                  <p className="text-center mb-2 mt-2">{member.greeting}</p>
-                  <div className="absolute -bottom-3 right-4 text-3xl text-numun-gold">"</div>
-                </div>
+            {/* Greeting Quotes Row */}
+            {deputySecretaries.map((member) => (
+              <div key={`${member.id}-quote`}>
+                <TeamGreetingQuote greeting={member.greeting} size="small" />
               </div>
             ))}
           </div>

@@ -73,7 +73,7 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-numun-gold focus:outline-none transition-colors"
+            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-numun-gold focus:outline-none transition-colors bg-white"
             placeholder={t.contact.form.name.placeholder}
           />
         </div>
@@ -90,7 +90,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-numun-gold focus:outline-none transition-colors"
+            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-numun-gold focus:outline-none transition-colors bg-white"
             placeholder={t.contact.form.email.placeholder}
           />
         </div>
@@ -130,7 +130,7 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             rows={6}
-            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-numun-gold focus:outline-none transition-colors resize-none"
+            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-numun-gold focus:outline-none transition-colors resize-none bg-white"
             placeholder={t.contact.form.message.placeholder}
           />
         </div>

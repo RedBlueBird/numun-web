@@ -8,7 +8,7 @@ export const sponsors: Sponsor[] = [
     tier: "diamond",
     logo: "/images/sponsors/iafor.png",
     description: "Organizing global conferences since 2009, fostering knowledge exchange in inclusive settings.",
-    website: "#",
+    website: "https://iafor.org/",
   },
   {
     id: "nual",
@@ -16,7 +16,7 @@ export const sponsors: Sponsor[] = [
     tier: "diamond",
     logo: "/images/sponsors/nual.png",
     description: "Strengthening ties between alumni, students, and society through collaboration and knowledge sharing.",
-    website: "#",
+    website: "https://www.nual.nagoya-u.ac.jp/english/index.html",
   },
   // Gold Sponsors
   {
@@ -25,15 +25,15 @@ export const sponsors: Sponsor[] = [
     tier: "gold",
     logo: "/images/sponsors/asean.png",
     description: "Supporting ASEAN talent development and fostering Japan-ASEAN collaboration.",
-    website: "#",
+    website: "https://asean-nagoya-club.com/",
   },
   {
     id: "nufsa",
-    name: "Nagoya University International Students Association (NUFSA)",
+    name: "Nagoya University Foreign Students Association (NUFSA)",
     tier: "gold",
     logo: "/images/sponsors/nufsa.png",
     description: "An international organization established since 1985, promoting cultural exchange and community building.",
-    website: "#",
+    website: "https://www.instagram.com/nufsa.nagoya_university",
   },
   {
     id: "cofsa",
@@ -41,7 +41,7 @@ export const sponsors: Sponsor[] = [
     tier: "gold",
     logo: "/images/sponsors/cofsa.png",
     description: "An international student organization founded in 2015, dedicated to bridging connections between international and Japanese students.",
-    website: "#",
+    website: "https://www.instagram.com/cofsa.nu",
   },
   // Silver Sponsors
   {
@@ -50,7 +50,7 @@ export const sponsors: Sponsor[] = [
     tier: "silver",
     logo: "/images/sponsors/red_bull.png",
     description: "Globally recognized energy drink brand known for fueling innovation, endurance, and high-performance lifestyles",
-    website: "#",
+    website: "https://www.redbull.com/",
   },
   {
     id: "suntory",
@@ -58,7 +58,7 @@ export const sponsors: Sponsor[] = [
     tier: "silver",
     logo: "/images/sponsors/suntory.png",
     description: "A global leader in the beverage industry, established in 1899.",
-    website: "#",
+    website: "https://www.suntory.com/",
   },
 ];
 
