@@ -124,51 +124,86 @@ function HeroLogoWrapper({ children, className = "" }: { children: React.ReactNo
 
 // Heading subcomponent
 function Heading({ children, className = "" }: HeadingProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <h1 className={`${typography.pageTitle} mb-4 sm:mb-6 ${className}`}>
+    <motion.h1
+      className={`${typography.pageTitle} mb-4 sm:mb-6 ${className}`}
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+    >
       {children}
-    </h1>
+    </motion.h1>
   );
 }
 
 // Subtitle subcomponent
 function Subtitle({ children, className = "" }: SubtitleProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <p className={`${typography.heroSubtitle} mb-6 sm:mb-8 ${className}`}>
+    <motion.p
+      className={`${typography.heroSubtitle} mb-6 sm:mb-8 ${className}`}
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+    >
       {children}
-    </p>
+    </motion.p>
   );
 }
 
 // Quote subcomponent
 function Quote({ children, className = "" }: QuoteProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <div className={`${components.hero.quoteBox} mb-6 sm:mb-8 ${className}`}>
+    <motion.div
+      className={`${components.hero.quoteBox} mb-6 sm:mb-8 ${className}`}
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+    >
       <p className={`${typography.heroQuote} mb-2`}>{children}</p>
-    </div>
+    </motion.div>
   );
 }
 
 // Description subcomponent
 function Description({ children, className = "" }: DescriptionProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <p className={`${typography.heroDescription} ${className}`}>
+    <motion.p
+      className={`${typography.heroDescription} ${className}`}
+      initial={prefersReducedMotion ? false : { opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+    >
       {children}
-    </p>
+    </motion.p>
   );
 }
 
 // Logo subcomponent
 function Logo({ src, alt = "Logo", className = "" }: LogoProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <div className={`${utils.relative} w-full h-full ${className}`}>
+    <motion.div
+      className={`${utils.relative} w-full h-full ${className}`}
+      initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+    >
       <Image
         src={src}
         alt={alt}
         fill
         className="object-contain"
       />
-    </div>
+    </motion.div>
   );
 }
 
