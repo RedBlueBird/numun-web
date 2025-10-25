@@ -1,7 +1,8 @@
 import PageTitle from "@/components/ui/PageTitle";
 import Button from "@/components/ui/Button";
+import Image from "next/image";
 import { sponsorshipTiers } from "@/data/sponsors";
-import { sections, spacing, layout, typography, gradients, utils, components, tokens } from "@/config/styles";
+import { sections, spacing, layout, typography, utils, components } from "@/config/styles";
 
 export const metadata = {
   title: "NUMUN 2026 - Partner with Us",
@@ -12,36 +13,30 @@ export default function Numun2026Page() {
   return (
     <div>
       {/* Hero Section */}
-      <section className={`${utils.relative} ${sections.partialHeight} ${layout.flex.centerBoth} ${sections.heroDark} ${utils.overflow.hidden}`}>
-        <div className={`${utils.absoluteFill} ${gradients.heroOverlay}`}></div>
+      <PageTitle.Hero>
+        <PageTitle.HeroContent>
+          <PageTitle.Heading>PARTNER WITH NUMUN</PageTitle.Heading>
+          <PageTitle.Subtitle>Support youth leadership and global dialogue</PageTitle.Subtitle>
 
-        <div className={`${utils.relative} ${utils.zIndex.content} ${spacing.container} ${utils.textCenter}`}>
-          <h1 className={`${typography.pageTitle} mb-6`}>
-            PARTNER WITH NUMUN
-          </h1>
-          <p className={`text-white text-xl sm:text-2xl ${typography.italic} mb-8`}>Support youth leadership and global dialogue</p>
+          <PageTitle.Quote>
+            Driving growth, elevating impact
+          </PageTitle.Quote>
 
-          <div className="mb-12">
-            {/* Logo */}
-            <div className="flex justify-center mb-8">
-              <div className="w-32 h-32 rounded-full border-8 border-numun-gold flex items-center justify-center bg-numun-green">
-                <span className="text-4xl">🌐</span>
-              </div>
-            </div>
+          <PageTitle.Description>
+            In achieving a greater impact, NUMUN 2026 aims to recruit more
+            participants than ever before by committing to deliver a high quality
+            conference experience that inspires meaningful debate and lasting
+            connections.
+          </PageTitle.Description>
+        </PageTitle.HeroContent>
 
-            {/* Quote */}
-            <div className="max-w-2xl mx-auto mb-8 border-l-4 border-numun-gold pl-6">
-              <p className="text-white text-2xl sm:text-3xl font-bold mb-2">Driving growth, elevating impact</p>
-              <p className="text-white text-lg">
-                In achieving a greater impact, NUMUN 2026 aims to recruit more
-                participants than ever before by committing to deliver a high quality
-                conference experience that inspires meaningful debate and lasting
-                connections.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+        <PageTitle.HeroLogoWrapper>
+          <PageTitle.Logo
+            src="/images/logos/numun_logo.png"
+            alt="NUMUN Logo"
+          />
+        </PageTitle.HeroLogoWrapper>
+      </PageTitle.Hero>
 
       {/* Stats Section */}
       <section className={`${spacing.section.small} ${sections.contentBeige}`}>
@@ -71,22 +66,50 @@ export default function Numun2026Page() {
 
           <div className={`${layout.grid.fourColumn} ${spacing.gap.xl} ${layout.maxWidth.md}`}>
             <div className="flex flex-col items-center">
-              <div className="text-6xl mb-2">📺</div>
+              <div className="relative w-32 h-32 sm:w-40 sm:h-40 mb-4">
+                <Image
+                  src="/images/sponsors/nhk.png"
+                  alt="NHK"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               <p className="font-semibold text-numun-green">2023</p>
               <p className="text-sm text-gray-600">NHK</p>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-6xl mb-2">📰</div>
+              <div className="relative w-32 h-32 sm:w-40 sm:h-40 mb-4">
+                <Image
+                  src="/images/sponsors/cn_jp_news.jpg"
+                  alt="中日新聞"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               <p className="font-semibold text-numun-green">2024</p>
               <p className="text-sm text-gray-600">中日新聞</p>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-6xl mb-2">📻</div>
+              <div className="relative w-32 h-32 sm:w-40 sm:h-40 mb-4">
+                <Image
+                  src="/images/sponsors/aichi_news.png"
+                  alt="Aichi News"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               <p className="font-semibold text-numun-green">2025</p>
               <p className="text-sm text-gray-600">Aichi News</p>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-6xl mb-2">🎓</div>
+              <div className="relative w-32 h-32 sm:w-40 sm:h-40 mb-4">
+                <Image
+                  src="/images/sponsors/pbl.png"
+                  alt="PBL"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               <p className="font-semibold text-numun-green">2025</p>
               <p className="text-sm text-gray-600">PBL</p>
             </div>

@@ -56,6 +56,11 @@ export const typography = {
   // Large hero titles
   heroTitle: "text-6xl sm:text-7xl md:text-8xl font-bold italic",
 
+  // Hero-specific text styles
+  heroSubtitle: "text-white text-xl sm:text-2xl italic",
+  heroQuote: "text-white text-2xl sm:text-3xl font-bold",
+  heroDescription: "text-white text-base sm:text-lg leading-relaxed",
+
   // Section headings
   sectionTitle: "text-4xl font-bold text-numun-green",
   sectionTitleLight: "text-4xl font-bold text-white",
@@ -231,6 +236,12 @@ export const components = {
 
   // Decorative corners (for cards)
   decorativeCorner: "absolute w-8 h-8 border-numun-gold",
+
+  // Hero section variants
+  hero: {
+    quoteBox: "border-l-4 border-numun-gold pl-6",
+    logoContainer: "w-full h-full",
+  },
 } as const;
 
 // ============================================================================

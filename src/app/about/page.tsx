@@ -14,9 +14,22 @@ export default function AboutPage() {
 
       <section className={sections.standardSection}>
         <div className={spacing.container}>
-          <div className={`${layout.grid.twoColumn} ${spacing.gap.xxl} items-center ${layout.maxWidth.xl}`}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            {/* Image */}
+            <div className={`${layout.aspect.video} relative ${tokens.borderRadius.lg} ${utils.overflow.hidden} ${tokens.shadow.lg} lg:order-2`}>
+              <Image
+                src="/images/media/about_nagoya_auditorium.png"
+                alt="Nagoya University, Toyoda Auditorium"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-center p-3">
+                <p className="font-semibold italic text-sm">Nagoya University, Toyoda Auditorium</p>
+              </div>
+            </div>
+
             {/* Text Content */}
-            <div className={spacing.gap.lg}>
+            <div className={`${spacing.gap.lg} lg:order-1`}>
               <p className={`${typography.bodyLarge} ${typography.textJustify} mb-4`}>
                 The Nagoya University Model United Nations is a landmark affair
                 stimulating academic discussion among students. Held annually at
@@ -39,19 +52,6 @@ export default function AboutPage() {
                 international networks and develop as future leaders prepared to
                 engage with the world's most pressing challenges.
               </p>
-            </div>
-
-            {/* Image */}
-            <div className={`${layout.aspect.video} relative ${tokens.borderRadius.lg} ${utils.overflow.hidden} ${tokens.shadow.lg}`}>
-              <Image
-                src="/images/media/about_nagoya_auditorium.png"
-                alt="Nagoya University, Toyoda Auditorium"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-center p-3">
-                <p className="font-semibold italic text-sm">Nagoya University, Toyoda Auditorium</p>
-              </div>
             </div>
           </div>
         </div>
