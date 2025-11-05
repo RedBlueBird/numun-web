@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { teamMembers } from "@/data/team";
 import { scrollAnimations } from "@/config/animations";
 import { useLanguage } from "@/context/LanguageContext";
+import { sections } from "@/config/styles";
 
 export default function TeamPage() {
   const { t } = useLanguage();
@@ -16,15 +17,11 @@ export default function TeamPage() {
 
   return (
     <div
-      className="bg-white"
-      style={{
-        // backgroundImage: 'url(/images/topography_tile_background.svg)',
-        // backgroundRepeat: 'repeat',
-        // backgroundSize: '150.6px 140.4px',
-        // backgroundPosition: '0 0',
-        // imageRendering: 'crisp-edges',
-      }}
+      className="bg-white relative"
     >
+      {/* Fake header background - absolute at top of page, provides dark green backdrop behind transparent header */}
+      <div className={`absolute top-[-100px] left-0 right-0 h-[100px] ${sections.heroDark} z-40`} />
+
       <PageTitle>{t.team.title}</PageTitle>
 
       {/* Secretary General */}

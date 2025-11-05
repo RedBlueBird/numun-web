@@ -16,7 +16,10 @@ export default function PastSponsorsPage() {
   const silverSponsors = sponsors.filter((s) => s.tier === "silver");
 
   return (
-    <div>
+    <div className="relative">
+      {/* Fake header background - absolute at top of page, provides dark green backdrop behind transparent header */}
+      <div className={`absolute top-[-100px] left-0 right-0 h-[100px] ${sections.heroDark} z-40`} />
+
       <PageTitle>{t.pastSponsors.title}</PageTitle>
 
       <section className={`py-12 ${sections.contentBeige}`}>

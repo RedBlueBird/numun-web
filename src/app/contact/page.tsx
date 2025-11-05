@@ -7,11 +7,14 @@ import { motion } from "framer-motion";
 import { socialLinks, contactEmail } from "@/data/socialLinks";
 import { scrollAnimations } from "@/config/animations";
 import { useLanguage } from "@/context/LanguageContext";
+import { sections } from "@/config/styles";
 
 export default function ContactPage() {
   const { t } = useLanguage();
   return (
-    <div>
+    <div className="relative">
+      {/* Fake header background - absolute at top of page, provides dark green backdrop behind transparent header */}
+      <div className={`absolute top-[-100px] left-0 right-0 h-[100px] ${sections.heroDark} z-40`} />
       <PageTitle>{t.contact.title}</PageTitle>
 
       <section className="py-16 bg-white">

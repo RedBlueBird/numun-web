@@ -14,7 +14,10 @@ export default function AboutPage() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <div>
+    <div className="relative">
+      {/* Fake header background - absolute at top of page, provides dark green backdrop behind transparent header */}
+      <div className={`absolute top-[-100px] left-0 right-0 h-[100px] ${sections.heroDark} z-40`} />
+      
       <PageTitle>{t.about.title}</PageTitle>
 
       <section className={sections.standardSection}>

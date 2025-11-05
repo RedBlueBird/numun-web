@@ -15,7 +15,10 @@ import { FaPen, FaHistory } from "react-icons/fa";
 export default function Numun2026Page() {
   const { t } = useLanguage();
   return (
-    <div>
+    <div className="relative">
+      {/* Fake header background - absolute at top of page, provides dark green backdrop behind transparent header */}
+      <div className={`absolute top-[-100px] left-0 right-0 h-[100px] ${sections.heroDark} z-40`} />
+
       {/* Hero Section */}
       <PageTitle.Hero>
         <PageTitle.HeroContent>

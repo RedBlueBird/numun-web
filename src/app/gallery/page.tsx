@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { scrollAnimations, hoverAnimations } from "@/config/animations";
 import { useLanguage } from "@/context/LanguageContext";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { sections } from "@/config/styles";
 
 const galleryImages = [
   "/images/gallery/L1008928.jpg",
@@ -44,7 +45,9 @@ export default function GalleryPage() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <div>
+    <div className="relative">
+      {/* Fake header background - absolute at top of page, provides dark green backdrop behind transparent header */}
+      <div className={`absolute top-[-100px] left-0 right-0 h-[100px] ${sections.heroDark} z-40`} />
       <PageTitle>{t.gallery.title}</PageTitle>
 
       <section className="py-16 bg-white">
