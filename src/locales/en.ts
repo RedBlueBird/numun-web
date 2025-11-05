@@ -14,9 +14,10 @@ export const en: Translations = {
   navigation: {
     home: 'HOME',
     about: 'ABOUT US',
-    numun2026: 'NUMUN 2026',
     team: 'TEAM',
     sponsors: 'SPONSOR & PARTNERS',
+    partnerWithUs: 'PARTNER WITH US',
+    pastSponsors: 'PAST SPONSORS',
     gallery: 'GALLERY',
     contact: 'CONTACT US',
   },

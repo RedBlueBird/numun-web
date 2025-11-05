@@ -11,7 +11,7 @@ import LanguageToggle from "@/components/ui/LanguageToggle";
 import Button from "@/components/ui/Button";
 import { sections, spacing, layout, components, tokens, utils } from "@/config/styles";
 import { headerAnimations, transitions } from "@/config/animations";
-import { FaPen } from "react-icons/fa";
+import { FaPen, FaChevronDown } from "react-icons/fa";
 import { fonts } from "@/config/fonts";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -20,9 +20,11 @@ export default function Header() {
   const [showTopRow, setShowTopRow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [row1Height, setRow1Height] = useState(0);
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+  const [mobileOpenDropdown, setMobileOpenDropdown] = useState<number | null>(null);
   const row1Ref = React.useRef<HTMLDivElement>(null);
   const pathname = usePathname();
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   useEffect(() => {
     // Measure Row 1 height
@@ -55,24 +57,30 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  const navLabels = [
-    t.navigation.home,
-    t.navigation.about,
-    t.navigation.numun2026,
-    t.navigation.team,
-    t.navigation.sponsors,
-    t.navigation.gallery,
-    t.navigation.contact,
-  ];
+  const getNavLabel = (item: typeof navigationItems[0]) => {
+    if (item.label === "HOME") return t.navigation.home;
+    if (item.label === "ABOUT US") return t.navigation.about;
+    if (item.label === "TEAM") return t.navigation.team;
+    if (item.label === "SPONSOR & PARTNERS") return t.navigation.sponsors;
+    if (item.label === "GALLERY") return t.navigation.gallery;
+    if (item.label === "CONTACT US") return t.navigation.contact;
+    return item.label;
+  };
+
+  const getDropdownLabel = (label: string) => {
+    if (label === "PARTNER WITH US") return t.navigation.partnerWithUs;
+    if (label === "PAST SPONSORS") return t.navigation.pastSponsors;
+    return label;
+  };
 
   return (
-    <header className={`sticky top-0 ${utils.zIndex.header} overflow-hidden`}>
+    <header className={`sticky top-0 ${utils.zIndex.header}`}>
       {/* Row 1: Logo + INQUIRE HERE + Social Icons */}
       <motion.div
         ref={row1Ref}
         animate={headerAnimations.row1(showTopRow)}
         transition={transitions.smooth}
-        className={sections.heroDark}
+        className={`${sections.heroDark} overflow-hidden`}
       >
         <div className={spacing.container}>
           <div className={`${layout.flex.spaceBetween} py-4 px-20`}>
@@ -88,8 +96,16 @@ export default function Header() {
                 />
               </div>
               <div className={layout.flex.column}>
-                <span className="text-2xl font-bold tracking-wider">{t.common.numun}</span>
-                <span className="text-xs text-numun-gold uppercase">{t.common.nagoyaUniversity}</span>
+                <span className={`text-2xl font-bold whitespace-nowrap ${locale === 'en' ? 'tracking-[0.8em]' : 'tracking-[0.15em]'}`}>
+                  {t.common.numun}
+                </span>
+                <span className={`text-numun-gold uppercase whitespace-nowrap leading-none ${
+                  locale === 'en'
+                    ? 'text-[0.5rem] tracking-[0em]'
+                    : 'text-xs tracking-normal'
+                }`}>
+                  {t.common.nagoyaUniversity}
+                </span>
               </div>
             </Link>
 
@@ -127,16 +143,61 @@ export default function Header() {
         <div className={spacing.container}>
           <nav className={`${layout.flex.spaceBetween} py-5 px-25`}>
             {navigationItems.map((item, index) => {
-              const isActive = pathname === item.href;
+              const isActive = item.href ? pathname === item.href : false;
+              const isDropdownActive = item.dropdown?.some(d => pathname === d.href);
+
+              if (item.dropdown) {
+                return (
+                  <div
+                    key={index}
+                    className="relative"
+                    onMouseEnter={() => setOpenDropdown(index)}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                  >
+                    <button
+                      className={`text-sm font-medium hover:text-numun-gold ${tokens.transition.colors} ${fonts.cerebri} uppercase flex items-center gap-1 ${
+                        isDropdownActive ? "text-numun-gold-light" : "text-white"
+                      }`}
+                    >
+                      {getNavLabel(item)}
+                      <FaChevronDown className="text-xs" />
+                    </button>
+                    <AnimatePresence>
+                      {openDropdown === index && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={transitions.fast}
+                          className={`absolute top-full left-0 mt-2 ${sections.heroDark} ${tokens.shadow.lg} rounded-md overflow-hidden min-w-[200px]`}
+                        >
+                          {item.dropdown.map((dropdownItem) => (
+                            <Link
+                              key={dropdownItem.href}
+                              href={dropdownItem.href}
+                              className={`block px-4 py-3 text-sm font-medium hover:bg-numun-green hover:text-numun-gold ${tokens.transition.colors} ${fonts.cerebri} uppercase ${
+                                pathname === dropdownItem.href ? "text-numun-gold-light" : "text-white"
+                              }`}
+                            >
+                              {getDropdownLabel(dropdownItem.label)}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
               return (
                 <Link
                   key={item.href}
-                  href={item.href}
+                  href={item.href!}
                   className={`text-sm font-medium hover:text-numun-gold ${tokens.transition.colors} ${fonts.cerebri} uppercase ${
                     isActive ? "text-numun-gold-light" : "text-white"
                   }`}
                 >
-                  {navLabels[index]}
+                  {getNavLabel(item)}
                 </Link>
               );
             })}
@@ -156,17 +217,59 @@ export default function Header() {
           <div className={spacing.container}>
             <nav className={`${layout.flex.column} ${spacing.gap.md}`}>
               {navigationItems.map((item, index) => {
-                const isActive = pathname === item.href;
+                const isActive = item.href ? pathname === item.href : false;
+                const isDropdownActive = item.dropdown?.some(d => pathname === d.href);
+
+                if (item.dropdown) {
+                  return (
+                    <div key={index}>
+                      <button
+                        onClick={() => setMobileOpenDropdown(mobileOpenDropdown === index ? null : index)}
+                        className={`text-sm font-medium hover:text-numun-gold ${tokens.transition.colors} ${fonts.cerebri} py-2 flex items-center justify-between w-full ${
+                          isDropdownActive ? "text-numun-gold" : "text-white"
+                        }`}
+                      >
+                        {getNavLabel(item)}
+                        <FaChevronDown className={`text-xs ${tokens.transition.all} ${mobileOpenDropdown === index ? 'rotate-180' : ''}`} />
+                      </button>
+                      <AnimatePresence>
+                        {mobileOpenDropdown === index && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={transitions.fast}
+                            className="pl-4 mt-2 space-y-2"
+                          >
+                            {item.dropdown.map((dropdownItem) => (
+                              <Link
+                                key={dropdownItem.href}
+                                href={dropdownItem.href}
+                                className={`block text-sm font-medium hover:text-numun-gold ${tokens.transition.colors} ${fonts.cerebri} py-2 ${
+                                  pathname === dropdownItem.href ? "text-numun-gold" : "text-white"
+                                }`}
+                                onClick={() => setMobileMenuOpen(false)}
+                              >
+                                {getDropdownLabel(dropdownItem.label)}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
+
                 return (
                   <Link
                     key={item.href}
-                    href={item.href}
+                    href={item.href!}
                     className={`text-sm font-medium hover:text-numun-gold ${tokens.transition.colors} ${fonts.cerebri} py-2 ${
                       isActive ? "text-numun-gold" : "text-white"
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {navLabels[index]}
+                    {getNavLabel(item)}
                   </Link>
                 );
               })}

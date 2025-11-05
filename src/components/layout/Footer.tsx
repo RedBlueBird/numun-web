@@ -12,12 +12,16 @@ import { useLanguage } from "@/context/LanguageContext";
 export default function Footer() {
   const { t } = useLanguage();
 
-  const navLabels = [
-    t.navigation.home,
-    t.navigation.about,
-    t.navigation.numun2026,
-    t.navigation.team,
-  ];
+  const getNavLabel = (item: typeof navigationItems[0]) => {
+    if (item.label === "HOME") return t.navigation.home;
+    if (item.label === "ABOUT US") return t.navigation.about;
+    if (item.label === "TEAM") return t.navigation.team;
+    if (item.label === "SPONSOR & PARTNERS") return t.navigation.sponsors;
+    if (item.label === "GALLERY") return t.navigation.gallery;
+    if (item.label === "CONTACT US") return t.navigation.contact;
+    return item.label;
+  };
+
   return (
     <footer className={`${sections.heroDark} pt-12 pb-6`}>
       <div className={spacing.container}>
@@ -48,13 +52,13 @@ export default function Footer() {
           <div>
             <h3 className="text-numun-gold font-bold mb-4">{t.footer.quickLinks}</h3>
             <nav className={`${layout.flex.column} ${spacing.gap.xs}`}>
-              {navigationItems.slice(0, 4).map((item, index) => (
+              {navigationItems.filter(item => item.href).slice(0, 4).map((item) => (
                 <Link
                   key={item.href}
-                  href={item.href}
+                  href={item.href!}
                   className={`text-sm hover:text-numun-gold ${tokens.transition.colors}`}
                 >
-                  {navLabels[index]}
+                  {getNavLabel(item)}
                 </Link>
               ))}
             </nav>

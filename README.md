@@ -60,7 +60,7 @@ numun-web/
 │   │   ├── about/
 │   │   ├── contact/
 │   │   ├── gallery/
-│   │   ├── numun-2026/
+│   │   ├── partnership/
 │   │   ├── past-sponsors/
 │   │   ├── team/
 │   │   ├── layout.tsx      # Root layout with fonts & metadata
@@ -91,8 +91,8 @@ numun-web/
 - **Team** (`/team`): Team member profiles and greetings
 - **Gallery** (`/gallery`): Photo gallery from events
 - **Contact** (`/contact`): Contact form and contact methods
+- **Partnership** (`/partnership`): Information about partnering with NUMUN
 - **Past Sponsors** (`/past-sponsors`): Showcase of previous sponsors
-- **NUMUN 2026** (`/numun-2026`): Information about the 2026 conference
 
 ## Getting Started
 

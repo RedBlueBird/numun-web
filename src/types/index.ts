@@ -3,7 +3,11 @@ export * from "./team";
 
 export interface NavItem {
   label: string;
-  href: string;
+  href?: string;
+  dropdown?: {
+    label: string;
+    href: string;
+  }[];
 }
 
 export interface SocialLink {

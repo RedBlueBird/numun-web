@@ -14,9 +14,10 @@ export const jp: Translations = {
   navigation: {
     home: 'ホーム',
     about: '私たちについて',
-    numun2026: 'NUMUN 2026',
     team: 'チーム',
     sponsors: 'スポンサー・パートナー',
+    partnerWithUs: 'パートナーシップ',
+    pastSponsors: '過去のスポンサー',
     gallery: 'ギャラリー',
     contact: 'お問い合わせ',
   },
