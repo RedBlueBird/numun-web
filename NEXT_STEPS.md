@@ -41,7 +41,6 @@ All core pages and functionality have been implemented:
 Update placeholder content in:
 - `/src/data/team.ts` - Add actual team member names and greetings
 - `/src/data/socialLinks.ts` - Update with correct social media URLs
-- `/src/data/sponsors.ts` - Verify sponsor information and websites
 
 ### 8. **Mobile Optimization**
 - Test all pages on various mobile devices
@@ -51,8 +50,7 @@ Update placeholder content in:
 
 ### 9. **Add Gallery Functionality**
 The Gallery page is currently a placeholder. Implement:
-- Image grid with lightbox functionality
-- Filter by year/event
+- Filter by event
 - Image lazy loading
 - Pagination or infinite scroll
 

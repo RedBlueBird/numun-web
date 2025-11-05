@@ -96,8 +96,8 @@ export default function Header() {
                 />
               </div>
               <div className={layout.flex.column}>
-                <span className={`text-2xl font-bold whitespace-nowrap ${locale === 'en' ? 'tracking-[0.8em]' : 'tracking-[0.15em]'}`}>
-                  {t.common.numun}
+                <span className={`text-2xl font-bold whitespace-nowrap ${locale === 'en' ? 'tracking-[0.05em]' : 'tracking-[0.15em]'}`}>
+                  {t.common.numun} {locale === 'en' ? '2026' : ''}
                 </span>
                 <span className={`text-numun-gold uppercase whitespace-nowrap leading-none ${
                   locale === 'en'

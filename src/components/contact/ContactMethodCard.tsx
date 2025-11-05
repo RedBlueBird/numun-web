@@ -51,7 +51,7 @@ export default function ContactMethodCard({ platform, url, displayText, isEmail 
           getPlatformIcon(platform || "")
         )}
       </motion.div>
-      <span className="text-numun-green group-hover:text-numun-gold transition-colors flex-1 text-lg font-bold">
+      <span className="text-numun-green group-hover:text-numun-gold transition-colors flex-1 text-lg font-bold break-all">
         {displayText}
       </span>
     </motion.a>
