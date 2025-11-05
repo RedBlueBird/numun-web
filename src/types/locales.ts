@@ -14,9 +14,10 @@ export interface Translations {
   navigation: {
     home: string;
     about: string;
-    numun2026: string;
     team: string;
     sponsors: string;
+    partnerWithUs: string;
+    pastSponsors: string;
     gallery: string;
     contact: string;
   };

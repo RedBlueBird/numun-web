@@ -168,7 +168,7 @@ export default function Header() {
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
-                          transition={transitions.fast}
+                          transition={transitions.quick}
                           className={`absolute top-full left-0 mt-2 ${sections.heroDark} ${tokens.shadow.lg} rounded-md overflow-hidden min-w-[200px]`}
                         >
                           {item.dropdown.map((dropdownItem) => (
@@ -238,7 +238,7 @@ export default function Header() {
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
-                            transition={transitions.fast}
+                            transition={transitions.quick}
                             className="pl-4 mt-2 space-y-2"
                           >
                             {item.dropdown.map((dropdownItem) => (
