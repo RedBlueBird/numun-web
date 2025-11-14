@@ -126,32 +126,32 @@ const symphonyPro = localFont({
 const itcBenguiat = localFont({
   src: [
     {
-      path: "./../../public/fonts/itc-benguiat-std/ITCBenguiatStdBookCn.otf",
+      path: "../../public/fonts/ITC-Benguiat-Std/ITCBenguiatStdBookCn.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./../../public/fonts/itc-benguiat-std/ITCBenguiatStdBookCnIt.otf",
+      path: "../../public/fonts/ITC-Benguiat-Std/ITCBenguiatStdBookCnIt.otf",
       weight: "400",
       style: "italic",
     },
     {
-      path: "./../../public/fonts/itc-benguiat-std/ITCBenguiatStdMediumCn.otf",
+      path: "../../public/fonts/ITC-Benguiat-Std/ITCBenguiatStdMediumCn.otf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "./../../public/fonts/itc-benguiat-std/ITCBenguiatStdMediumCnIt.otf",
+      path: "../../public/fonts/ITC-Benguiat-Std/ITCBenguiatStdMediumCnIt.otf",
       weight: "500",
       style: "italic",
     },
     {
-      path: "./../../public/fonts/itc-benguiat-std/ITCBenguiatStdBoldCn.otf",
+      path: "../../public/fonts/ITC-Benguiat-Std/ITCBenguiatStdBoldCn.otf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "./../../public/fonts/itc-benguiat-std/ITCBenguiatStdBoldCnIt.otf",
+      path: "../../public/fonts/ITC-Benguiat-Std/ITCBenguiatStdBoldCnIt.otf",
       weight: "700",
       style: "italic",
     },
