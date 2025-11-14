@@ -20,10 +20,7 @@ export const timelineEvents: TimelineEvent[] = [
     date: '2025-03-15',
     titleKey: 'timeline.events.event1.title',
     descriptionKey: 'timeline.events.event1.description',
-    photos: [
-      'https://via.placeholder.com/800x600/2C5530/FFFFFF?text=Event+1+Photo+1',
-      'https://via.placeholder.com/800x600/2C5530/FFFFFF?text=Event+1+Photo+2',
-    ],
+    photos: [],
     status: 'upcoming',
   },
   {
@@ -31,9 +28,7 @@ export const timelineEvents: TimelineEvent[] = [
     date: '2025-02-20',
     titleKey: 'timeline.events.event2.title',
     descriptionKey: 'timeline.events.event2.description',
-    photos: [
-      'https://via.placeholder.com/800x600/2C5530/FFFFFF?text=Event+2+Photo+1',
-    ],
+    photos: [],
     status: 'current',
   },
   {
@@ -41,11 +36,7 @@ export const timelineEvents: TimelineEvent[] = [
     date: '2025-01-10',
     titleKey: 'timeline.events.event3.title',
     descriptionKey: 'timeline.events.event3.description',
-    photos: [
-      'https://via.placeholder.com/800x600/2C5530/FFFFFF?text=Event+3+Photo+1',
-      'https://via.placeholder.com/800x600/2C5530/FFFFFF?text=Event+3+Photo+2',
-      'https://via.placeholder.com/800x600/2C5530/FFFFFF?text=Event+3+Photo+3',
-    ],
+    photos: [],
     status: 'past',
   },
 ];

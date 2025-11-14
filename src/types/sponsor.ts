@@ -11,6 +11,5 @@ export interface Sponsor {
 
 export interface SponsorshipTierBenefit {
   tier: SponsorTier;
-  price: string;
   benefits: string[];
 }
