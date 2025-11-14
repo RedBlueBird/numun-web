@@ -7,10 +7,11 @@ import ScrollReveal from "@/components/animation/ScrollReveal";
 import StatsCounter from "@/components/animation/StatsCounter";
 import { motion } from "framer-motion";
 import { sponsorshipTiers } from "@/data/sponsors";
-import { sections, spacing, layout, typography, utils, components } from "@/config/styles";
+import { sections, spacing, layout, typography, utils, components, gradients } from "@/config/styles";
 import { scrollAnimations } from "@/config/animations";
 import { useLanguage } from "@/context/LanguageContext";
 import { FaPen, FaHistory } from "react-icons/fa";
+import { fonts } from "@/config/fonts";
 
 export default function Numun2026Page() {
   const { t } = useLanguage();
@@ -172,14 +173,14 @@ export default function Numun2026Page() {
                   </ul>
                 </motion.div>
 
-                {/* Gold Tier */}
+                {/* Diamond Tier */}
                 <motion.div
-                  className="bg-gradient-to-br from-numun-gold-light to-numun-gold rounded-2xl p-6 shadow-xl transform md:scale-105"
+                  className="bg-gradient-to-br from-blue-200 to-blue-300 rounded-2xl p-6 shadow-xl transform md:scale-105"
                   variants={scrollAnimations.staggerItem}
                 >
-                  <h3 className="text-2xl font-bold text-center mb-4 text-numun-green-dark">{t.numun2026.sponsorship.tiers.gold}</h3>
+                  <h3 className="text-2xl font-bold text-center mb-4 text-numun-green-dark">{t.numun2026.sponsorship.tiers.diamond}</h3>
                   <ul className="space-y-3 text-sm text-numun-green-dark">
-                    {sponsorshipTiers[1].benefits.map((benefit, index) => (
+                    {sponsorshipTiers[2].benefits.map((benefit, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <span>•</span>
                         <span>{benefit}</span>
@@ -188,14 +189,14 @@ export default function Numun2026Page() {
                   </ul>
                 </motion.div>
 
-                {/* Diamond Tier */}
+                {/* Gold Tier */}
                 <motion.div
-                  className="bg-gradient-to-br from-blue-200 to-blue-300 rounded-2xl p-6 shadow-lg"
+                  className="bg-gradient-to-br from-numun-gold-light to-numun-gold rounded-2xl p-6 shadow-lg"
                   variants={scrollAnimations.staggerItem}
                 >
-                  <h3 className="text-2xl font-bold text-center mb-4 text-numun-green-dark">{t.numun2026.sponsorship.tiers.diamond}</h3>
+                  <h3 className="text-2xl font-bold text-center mb-4 text-numun-green-dark">{t.numun2026.sponsorship.tiers.gold}</h3>
                   <ul className="space-y-3 text-sm text-numun-green-dark">
-                    {sponsorshipTiers[2].benefits.map((benefit, index) => (
+                    {sponsorshipTiers[1].benefits.map((benefit, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <span>•</span>
                         <span>{benefit}</span>
@@ -210,17 +211,33 @@ export default function Numun2026Page() {
       </section>
 
       {/* CTA Section */}
-      <section className={`${spacing.section.medium} ${sections.contentGreen} ${utils.textCenter}`}>
-        <h2 className={`${typography.sectionTitleGold} text-4xl sm:text-5xl ${typography.italic} mb-8`}>
-          {t.numun2026.cta.title}
-        </h2>
-        <div className={`${layout.flex.column} sm:flex-row ${spacing.gap.lg} ${layout.flex.centerBoth}`}>
-          <Button href="/contact" variant="primary" icon={<FaPen />} className={components.button.large}>
-            {t.numun2026.cta.inquire}
-          </Button>
-          <Button href="/past-sponsors" variant="primary" icon={<FaHistory />} className={components.button.large}>
-            {t.numun2026.cta.pastSponsors}
-          </Button>
+      <section className={`${spacing.section.medium} ${sections.heroDark} ${utils.relative} ${utils.overflow.hidden} ${utils.textCenter}`}>
+        {/* Background image */}
+        <div className={`${utils.absoluteFill} ${utils.zIndex.base}`}>
+          <Image
+            src="/images/home_background.png"
+            alt="Background"
+            fill
+            priority
+            className="object-cover"
+          />
+        </div>
+        {/* Green overlay */}
+        <div className={`${utils.absoluteFill} ${gradients.heroOverlay}`}></div>
+        
+        {/* Content */}
+        <div className={`${utils.relative} ${utils.zIndex.content}`}>
+          <h2 className={`${typography.sectionTitleGold} text-4xl sm:text-5xl ${typography.italic} ${fonts.itcBenguiat} mb-8`}>
+            {t.numun2026.cta.title}
+          </h2>
+          <div className={`${layout.flex.column} sm:flex-row ${spacing.gap.lg} ${layout.flex.centerBoth}`}>
+            <Button href="/contact" variant="primary" icon={<FaPen />} className={components.button.large}>
+              {t.numun2026.cta.inquire}
+            </Button>
+            <Button href="/past-sponsors" variant="primary" icon={<FaHistory />} className={components.button.large}>
+              {t.numun2026.cta.pastSponsors}
+            </Button>
+          </div>
         </div>
       </section>
     </div>

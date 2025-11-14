@@ -123,11 +123,47 @@ const symphonyPro = localFont({
   style: "normal",
 });
 
+const itcBenguiat = localFont({
+  src: [
+    {
+      path: "../../public/fonts/itc-benguiat-std/ITCBenguiatStdBookCn.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/itc-benguiat-std/ITCBenguiatStdBookCnIt.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/itc-benguiat-std/ITCBenguiatStdMediumCn.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/itc-benguiat-std/ITCBenguiatStdMediumCnIt.otf",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/itc-benguiat-std/ITCBenguiatStdBoldCn.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/itc-benguiat-std/ITCBenguiatStdBoldCnIt.otf",
+      weight: "700",
+      style: "italic",
+    },
+  ],
+  variable: "--font-itc-benguiat",
+});
+
 export const metadata: Metadata = {
   title: "NUMUN 2026 - Nagoya University Model United Nations",
   description: "Nagoya University Model United Nations 2026 - Driving growth, elevating impact. Join us for an inspiring conference fostering global dialogue and youth leadership.",
   icons: {
-    icon: "/numun_logo.ico",
+    icon: "/logo.ico",
   },
 };
 
@@ -139,7 +175,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${greatVibes.variable} ${cerebriSans.variable} ${symphonyPro.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${greatVibes.variable} ${cerebriSans.variable} ${symphonyPro.variable} ${itcBenguiat.variable} antialiased`}
       >
         <ClientLayout>
           {children}

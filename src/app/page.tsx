@@ -1,4 +1,5 @@
 import HeroSection from "@/components/home/HeroSection";
+import TimelineSection from "@/components/home/TimelineSection";
 import { sections } from "@/config/styles";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <div className={`absolute top-[-100px] left-0 right-0 h-[100px] ${sections.heroDark} z-40`} />
 
       <HeroSection />
+      <TimelineSection />
     </div>
   );
 }

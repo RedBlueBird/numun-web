@@ -33,6 +33,7 @@ export const jp: Translations = {
     quote: '「成長を促進し、影響を高める」',
     recruitingMessage: 'スポンサー・パートナー募集中！',
     learnAboutButton: 'NUMUNについて',
+    viewGalleryButton: 'ギャラリーを見る',
     contactButton: 'お問い合わせ',
   },
   about: {
@@ -64,9 +65,9 @@ export const jp: Translations = {
       title: 'スポンサーシップレベル',
       description: 'NUMUNは3つの異なるレベルのスポンサーシップを提供しており、上位レベルのスポンサーシップには下位レベルのメリットに加えて、以下に簡単に説明する追加のメリットがあります：',
       tiers: {
-        silver: 'シルバー - 30,000円',
-        gold: 'ゴールド - 50,000円',
-        diamond: 'ダイヤモンド - 70,000円',
+        silver: 'シルバー',
+        gold: 'ゴールド',
+        diamond: 'ダイヤモンド',
       },
     },
     cta: {
@@ -133,6 +134,24 @@ export const jp: Translations = {
       diamond: 'ダイヤモンドスポンサー',
       gold: 'ゴールドスポンサー',
       silver: 'シルバースポンサー',
+    },
+  },
+  timeline: {
+    title: '進行中：現在のイベント',
+    description: 'NUMUNの最新情報とマイルストーンをご確認ください',
+    events: {
+      event1: {
+        title: '会議登録開始',
+        description: 'NUMUN 2026の登録が開始されました！代表者としてご参加いただき、日本国内外の学生と共にこのエキサイティングな会議に参加しましょう。',
+      },
+      event2: {
+        title: '委員会トピック発表',
+        description: 'NUMUN 2026の委員会トピックを発表します。代表者は調査を開始し、ポジションペーパーの準備ができるようになりました。',
+      },
+      event3: {
+        title: 'スポンサーパートナーシッププログラム開始',
+        description: 'NUMUN 2026はスポンサーパートナーシッププログラムを開始し、意義のある協力を通じて若者のリーダーシップとグローバルな対話を支援する組織を募集しています。',
+      },
     },
   },
 };

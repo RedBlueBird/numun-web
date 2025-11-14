@@ -19,6 +19,9 @@ export const fonts = {
   cerebri: "font-[family-name:var(--font-cerebri-sans)]",
   cerebriSans: "font-[family-name:var(--font-cerebri-sans)]",
 
+  // ITC Benguiat - Decorative serif font
+  itcBenguiat: "font-[family-name:var(--font-itc-benguiat)]",
+
   // Default system fonts
   sans: "font-[family-name:var(--font-geist-sans)]",
   mono: "font-[family-name:var(--font-geist-mono)]",

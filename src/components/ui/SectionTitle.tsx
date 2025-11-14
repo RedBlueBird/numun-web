@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { sections, spacing, typography, gradients, utils } from "@/config/styles";
+import { fonts } from "@/config/fonts";
 
 interface SectionTitleProps {
   children: React.ReactNode;
@@ -23,7 +24,7 @@ export default function SectionTitle({ children, className = "" }: SectionTitleP
       <div className={`${utils.absoluteFill} ${gradients.heroOverlay}`}></div>
 
       <div className={`${utils.relative} ${utils.zIndex.content} ${spacing.container}`}>
-        <h2 className={`text-3xl font-bold text-center text-numun-gold-light ${className}`}>
+        <h2 className={`text-4xl font-bold text-center text-numun-gold-light ${className} ${fonts.itcBenguiat}`}>
           {children}
         </h2>
       </div>

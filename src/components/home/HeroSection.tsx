@@ -7,8 +7,7 @@ import { sections, spacing, layout, typography, gradients, utils, components } f
 import { fonts } from "@/config/fonts";
 import { heroAnimations } from "@/config/animations";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { FaSearch } from "react-icons/fa";
-import { FaPen } from "react-icons/fa";
+import { FaSearch, FaPen, FaImages } from "react-icons/fa";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function HeroSection() {
@@ -56,21 +55,21 @@ export default function HeroSection() {
         </div>
 
         {/* Coming Soon text */}
-        <div className="mb-8 -mt-20">
+        <div className="mb-8 -mt-25 relative">
           <motion.p
-            className={`text-white text-6xl sm:text-7xl font-light -mb-3 ${fonts.symphonyPro}`}
+            className={`text-white text-7xl sm:text-8xl font-light -mb-3 relative z-10 ${fonts.symphonyPro}`}
             {...getAnimationProps("comingSoon")}
           >
             {t.home.comingSoon}
           </motion.p>
           <motion.h1
-            className={`${typography.heroTitle} text-numun-gold -mb-8`}
+            className={`${typography.heroTitle} text-numun-gold -mb-12 relative z-0 ${fonts.itcBenguiat}`}
             {...getAnimationProps("title1")}
           >
             {t.common.numun}
           </motion.h1>
           <motion.h1
-            className={`${typography.heroTitle} text-numun-gold-darkest font-bold`}
+            className={`${typography.heroTitle} text-numun-gold-darkest font-bold relative z-0 ${fonts.itcBenguiat}`}
             {...getAnimationProps("title2")}
           >
             {t.home.numun2026}
@@ -79,7 +78,7 @@ export default function HeroSection() {
 
         {/* CTA Message */}
         <motion.p
-          className={`text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold ${typography.italic} mb-12 ${layout.maxWidth.lg}`}
+          className={`text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold ${typography.italic} mb-12 ${layout.maxWidth.lg} ${fonts.itcBenguiat}`}
           {...getAnimationProps("message")}
         >
           {t.home.recruitingMessage}
@@ -92,6 +91,9 @@ export default function HeroSection() {
         >
           <Button href="/about" variant="primary" icon={<FaSearch />} className={`w-full sm:w-auto ${components.button.large}`}>
             {t.home.learnAboutButton}
+          </Button>
+          <Button href="/gallery" variant="primary" icon={<FaImages />} className={`w-full sm:w-auto ${components.button.large}`}>
+            {t.home.viewGalleryButton}
           </Button>
           <Button href="/contact" variant="primary" icon={<FaPen />} className={`w-full sm:w-auto ${components.button.large}`}>
             {t.home.contactButton}

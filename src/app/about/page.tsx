@@ -1,13 +1,15 @@
 "use client";
 
 import PageTitle from "@/components/ui/PageTitle";
+import Button from "@/components/ui/Button";
 import Image from "next/image";
 import ScrollReveal from "@/components/animation/ScrollReveal";
 import { motion } from "framer-motion";
-import { sections, spacing, layout, typography, gradients, tokens, utils } from "@/config/styles";
+import { sections, spacing, layout, typography, gradients, tokens, utils, components } from "@/config/styles";
 import { scrollAnimations, hoverAnimations } from "@/config/animations";
 import { useLanguage } from "@/context/LanguageContext";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { FaImages } from "react-icons/fa";
 
 export default function AboutPage() {
   const { t } = useLanguage();
@@ -124,6 +126,15 @@ export default function AboutPage() {
               <p className="text-right italic text-sm text-numun-green font-semibold">{t.about.quote.title}</p>
             </motion.div>
           </motion.div>
+
+          {/* View Gallery Button */}
+          <ScrollReveal variant="fadeIn" delay={0.4}>
+            <div className={`${layout.flex.centerBoth} mt-12`}>
+              <Button href="/gallery" variant="primary" icon={<FaImages />} className={components.button.large}>
+                {t.home.viewGalleryButton}
+              </Button>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>

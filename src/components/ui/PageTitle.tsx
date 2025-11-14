@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { sections, spacing, typography, gradients, utils, components, layout } from "@/config/styles";
 import { scrollAnimations } from "@/config/animations";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { fonts } from "@/config/fonts";
 
 interface PageTitleProps {
   children: React.ReactNode;
@@ -62,7 +63,7 @@ function PageTitle({ children, className = "" }: PageTitleProps) {
       {/* Green overlay */}
       <div className={`${utils.absoluteFill} ${gradients.heroOverlay}`}></div>
 
-      <div className={`${utils.relative} ${utils.zIndex.content} ${spacing.container}`}>
+      <div className={`${utils.relative} ${utils.zIndex.content} ${spacing.container} ${fonts.itcBenguiat}`}>
         <motion.h1
           className={`${typography.pageTitle} ${className} ml-20`}
           initial={prefersReducedMotion ? false : "hidden"}
@@ -93,7 +94,7 @@ function Hero({ children, className = "" }: HeroProps) {
       {/* Green overlay */}
       <div className={`${utils.absoluteFill} ${gradients.heroOverlay}`}></div>
 
-      <div className={`${utils.relative} ${utils.zIndex.content} w-full px-12 sm:px-16 md:px-24 lg:px-32 ${className}`}>
+      <div className={`${utils.relative} ${utils.zIndex.content} w-full px-12 sm:px-16 md:px-24 lg:px-32 ${className} `}>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 items-center max-w-7xl mx-auto">
           {children}
         </div>
@@ -128,7 +129,7 @@ function Heading({ children, className = "" }: HeadingProps) {
 
   return (
     <motion.h1
-      className={`${typography.pageTitle} mb-4 sm:mb-6 ${className}`}
+      className={`${typography.pageTitle} mb-4 sm:mb-6 ${className}  ${fonts.itcBenguiat}`}
       initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}

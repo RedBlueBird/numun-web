@@ -54,7 +54,7 @@ export const typography = {
   pageTitle: "text-4xl sm:text-5xl md:text-6xl font-bold text-numun-gold italic",
 
   // Large hero titles
-  heroTitle: "text-6xl sm:text-7xl md:text-8xl font-bold italic",
+  heroTitle: "text-7xl sm:text-8xl md:text-9xl font-bold italic",
 
   // Hero-specific text styles
   heroSubtitle: "text-white text-xl sm:text-2xl italic",

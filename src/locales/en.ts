@@ -33,6 +33,7 @@ export const en: Translations = {
     quote: '"Driving growth, elevating impact"',
     recruitingMessage: 'Now recruiting sponsors & partners!',
     learnAboutButton: 'LEARN ABOUT NUMUN',
+    viewGalleryButton: 'VIEW GALLERY',
     contactButton: 'CONTACT US',
   },
   about: {
@@ -64,9 +65,9 @@ export const en: Translations = {
       title: 'SPONSORSHIP LEVELS',
       description: 'NUMUN offers 3 different levels of sponsorship with the higher levels of sponsorship having the merits of the lower levels as well as additional ones as explained briefly below:',
       tiers: {
-        silver: 'SILVER - 30,000円',
-        gold: 'GOLD - 50,000円',
-        diamond: 'DIAMOND - 70,000円',
+        silver: 'SILVER',
+        gold: 'GOLD',
+        diamond: 'DIAMOND',
       },
     },
     cta: {
@@ -133,6 +134,24 @@ export const en: Translations = {
       diamond: 'OUR DIAMOND SPONSORS',
       gold: 'OUR GOLD SPONSORS',
       silver: 'OUR SILVER SPONSORS',
+    },
+  },
+  timeline: {
+    title: 'IN MOTION: OUR CURRENT EVENTS',
+    description: 'Stay updated with the latest happenings and milestones at NUMUN',
+    events: {
+      event1: {
+        title: 'Conference Registration Opens',
+        description: 'Registration for NUMUN 2026 is now open! Secure your spot as a delegate and join students from across Japan and abroad in this exciting conference.',
+      },
+      event2: {
+        title: 'Committee Topics Announced',
+        description: 'We are excited to announce the committee topics for NUMUN 2026. Delegates can now begin their research and prepare their position papers.',
+      },
+      event3: {
+        title: 'Sponsor Partnership Program Launch',
+        description: 'NUMUN 2026 launches its sponsor partnership program, inviting organizations to support youth leadership and global dialogue through meaningful collaboration.',
+      },
     },
   },
 };

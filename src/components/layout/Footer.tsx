@@ -1,16 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { navigationItems } from "@/data/navigation";
 import SocialLinks from "@/components/ui/SocialLinks";
 import LanguageToggle from "@/components/ui/LanguageToggle";
+import Logo from "@/components/layout/Logo";
 import { contactEmail } from "@/data/socialLinks";
 import { sections, spacing, layout, components, tokens } from "@/config/styles";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   const getNavLabel = (item: typeof navigationItems[0]) => {
     if (item.label === "HOME") return t.navigation.home;
@@ -28,21 +28,7 @@ export default function Footer() {
         <div className={`${layout.grid.threeColumn} ${spacing.gap.xl} mb-8`}>
           {/* Logo and Description */}
           <div>
-            <Link href="/" className={`${layout.flex.row} items-center ${spacing.gap.sm} mb-4`}>
-              <div className="relative w-16 h-16 flex items-center">
-                <Image
-                  src="/images/logos/numun_logo.png"
-                  alt="NUMUN Logo"
-                  width={64}
-                  height={64}
-                  className="object-contain"
-                />
-              </div>
-              <div className={layout.flex.column}>
-                <span className="text-xl font-bold tracking-wider">{t.common.numun}</span>
-                <span className="text-xs text-numun-gold uppercase">{t.common.nagoyaUniversity}</span>
-              </div>
-            </Link>
+            <Logo className="mb-4" />
             <p className="text-sm text-gray-300">
               {t.footer.description}
             </p>

@@ -65,7 +65,6 @@ export const sponsors: Sponsor[] = [
 export const sponsorshipTiers: SponsorshipTierBenefit[] = [
   {
     tier: "silver",
-    price: "30,000円",
     benefits: [
       "Booth and workshop opportunities",
       "Logo display on merch, venue, SNS posts, and website",
@@ -75,7 +74,6 @@ export const sponsorshipTiers: SponsorshipTierBenefit[] = [
   },
   {
     tier: "gold",
-    price: "50,000円",
     benefits: [
       "Booth and workshop opportunities",
       "Logo display on merch, venue, SNS posts, and website",
@@ -87,7 +85,6 @@ export const sponsorshipTiers: SponsorshipTierBenefit[] = [
   },
   {
     tier: "diamond",
-    price: "70,000円",
     benefits: [
       "Booth and workshop opportunities",
       "Logo display on merch, venue, SNS posts, and website",

@@ -3,11 +3,13 @@
 import PageTitle from "@/components/ui/PageTitle";
 import SectionTitle from "@/components/ui/SectionTitle";
 import SponsorCard from "@/components/sponsors/SponsorCard";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { sponsors } from "@/data/sponsors";
 import { scrollAnimations } from "@/config/animations";
 import { useLanguage } from "@/context/LanguageContext";
-import { sections } from "@/config/styles";
+import { sections, spacing, typography, gradients, utils } from "@/config/styles";
+import { fonts } from "@/config/fonts";
 
 export default function PastSponsorsPage() {
   const { t } = useLanguage();
@@ -20,18 +22,51 @@ export default function PastSponsorsPage() {
       {/* Fake header background - absolute at top of page, provides dark green backdrop behind transparent header */}
       <div className={`absolute top-[-100px] left-0 right-0 h-[100px] ${sections.heroDark} z-40`} />
 
-      <PageTitle>{t.pastSponsors.title}</PageTitle>
-
-      <section className={`py-12 ${sections.contentBeige}`}>
-        <div className={`container mx-auto px-4 max-w-6xl`}>
-          <p className="text-center text-numun-green font-semibold leading-relaxed">
-            {t.pastSponsors.description}
-          </p>
+      {/* Unified Hero Section with Title and Diamond Section Title */}
+      <div className={`${utils.relative} ${sections.heroDark} ${utils.overflow.hidden}`}>
+        {/* Background image */}
+        <div className={`${utils.absoluteFill} ${utils.zIndex.base}`}>
+          <Image
+            src="/images/home_background.png"
+            alt="Background"
+            fill
+            priority
+            className="object-cover"
+          />
         </div>
-      </section>
+        {/* Green overlay */}
+        <div className={`${utils.absoluteFill} ${gradients.heroOverlay}`}></div>
+
+        {/* Content */}
+        <div className={`${utils.relative} ${utils.zIndex.content}`}>
+          {/* Page Title Section */}
+          <div className="py-16 sm:py-20">
+            <div className="w-full px-12 sm:px-16 md:px-24 lg:px-32">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 items-center max-w-7xl mx-auto">
+                <div className="lg:col-span-8 text-left">
+                  <PageTitle.Heading>{t.pastSponsors.title}</PageTitle.Heading>
+                  <div className="mb-0">
+                    <PageTitle.Description>
+                      {t.pastSponsors.description}
+                    </PageTitle.Description>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Diamond Section Title */}
+          <div className="pb-8 sm:pb-12">
+            <div className={spacing.container}>
+              <h2 className={`text-4xl font-bold text-center text-numun-gold-light ${fonts.itcBenguiat}`}>
+                {t.pastSponsors.tiers.diamond}
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Diamond Sponsors */}
-      <SectionTitle>{t.pastSponsors.tiers.diamond}</SectionTitle>
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <motion.div

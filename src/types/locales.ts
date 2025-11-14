@@ -33,6 +33,7 @@ export interface Translations {
     quote: string;
     recruitingMessage: string;
     learnAboutButton: string;
+    viewGalleryButton: string;
     contactButton: string;
   };
   about: {
@@ -133,6 +134,24 @@ export interface Translations {
       diamond: string;
       gold: string;
       silver: string;
+    };
+  };
+  timeline: {
+    title: string;
+    description: string;
+    events: {
+      event1: {
+        title: string;
+        description: string;
+      };
+      event2: {
+        title: string;
+        description: string;
+      };
+      event3: {
+        title: string;
+        description: string;
+      };
     };
   };
 }

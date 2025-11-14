@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,6 +8,7 @@ import { navigationItems } from "@/data/navigation";
 import SocialLinks from "@/components/ui/SocialLinks";
 import LanguageToggle from "@/components/ui/LanguageToggle";
 import Button from "@/components/ui/Button";
+import Logo from "@/components/layout/Logo";
 import { sections, spacing, layout, components, tokens, utils } from "@/config/styles";
 import { headerAnimations, transitions } from "@/config/animations";
 import { FaPen, FaChevronDown } from "react-icons/fa";
@@ -85,29 +85,7 @@ export default function Header() {
         <div className={spacing.container}>
           <div className={`${layout.flex.spaceBetween} py-4 px-20`}>
             {/* Logo */}
-            <Link href="/" className={`${layout.flex.row} items-center ${spacing.gap.sm}`}>
-              <div className="relative w-16 h-16 flex items-center">
-                <Image
-                  src="/images/logos/numun_logo.png"
-                  alt="NUMUN Logo"
-                  width={64}
-                  height={64}
-                  className="object-contain"
-                />
-              </div>
-              <div className={layout.flex.column}>
-                <span className={`text-2xl font-bold whitespace-nowrap ${locale === 'en' ? 'tracking-[0.05em]' : 'tracking-[0.15em]'}`}>
-                  {t.common.numun} {locale === 'en' ? '2026' : ''}
-                </span>
-                <span className={`text-numun-gold uppercase whitespace-nowrap leading-none ${
-                  locale === 'en'
-                    ? 'text-[0.5rem] tracking-[0em]'
-                    : 'text-xs tracking-normal'
-                }`}>
-                  {t.common.nagoyaUniversity}
-                </span>
-              </div>
-            </Link>
+            <Logo />
 
             {/* Desktop Actions */}
             <div className={`hidden lg:flex ${layout.flex.centerVertical} ${spacing.gap.md}`}>
