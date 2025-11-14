@@ -23,92 +23,92 @@ const greatVibes = Great_Vibes({
 const cerebriSans = localFont({
   src: [
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-Thin.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-Thin.otf",
       weight: "100",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-ThinItalic.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-ThinItalic.otf",
       weight: "100",
       style: "italic",
     },
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-ExtraLight.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-ExtraLight.otf",
       weight: "200",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-ExtraLightItalic.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-ExtraLightItalic.otf",
       weight: "200",
       style: "italic",
     },
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-Light.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-Light.otf",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-LightItalic.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-LightItalic.otf",
       weight: "300",
       style: "italic",
     },
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-Regular.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-Italic.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-Italic.otf",
       weight: "400",
       style: "italic",
     },
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-Medium.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-Medium.otf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-MediumItalic.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-MediumItalic.otf",
       weight: "500",
       style: "italic",
     },
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-SemiBold.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-SemiBold.otf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-SemiBoldItalic.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-SemiBoldItalic.otf",
       weight: "600",
       style: "italic",
     },
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-Bold.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-Bold.otf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-BoldItalic.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-BoldItalic.otf",
       weight: "700",
       style: "italic",
     },
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-ExtraBold.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-ExtraBold.otf",
       weight: "800",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-ExtraBoldItalic.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-ExtraBoldItalic.otf",
       weight: "800",
       style: "italic",
     },
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-Heavy.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-Heavy.otf",
       weight: "900",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Cerebri-Sans-Pro/CerebriSansPro-HeavyItalic.otf",
+      path: "../fonts/Cerebri-Sans-Pro/CerebriSansPro-HeavyItalic.otf",
       weight: "900",
       style: "italic",
     },
@@ -117,7 +117,7 @@ const cerebriSans = localFont({
 });
 
 const symphonyPro = localFont({
-  src: "../../public/fonts/symphony-pro/symphony-pro-regular.otf",
+  src: "../fonts/symphony-pro/symphony-pro-regular.otf",
   variable: "--font-symphony-pro",
   weight: "400",
   style: "normal",
