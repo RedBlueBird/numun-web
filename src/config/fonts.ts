@@ -13,6 +13,7 @@ export const fonts = {
   // Script/Cursive fonts
   script: "font-[family-name:var(--font-great-vibes)]",
   greatVibes: "font-[family-name:var(--font-great-vibes)]",
+  symphonyPro: "font-[family-name:var(--font-symphony-pro)]",
 
   // Cerebri Sans - Primary brand font
   cerebri: "font-[family-name:var(--font-cerebri-sans)]",

@@ -58,7 +58,7 @@ export default function HeroSection() {
         {/* Coming Soon text */}
         <div className="mb-8 -mt-20">
           <motion.p
-            className={`text-white text-5xl sm:text-6xl font-light mb-2 ${fonts.script}`}
+            className={`text-white text-6xl sm:text-7xl font-light -mb-3 ${fonts.symphonyPro}`}
             {...getAnimationProps("comingSoon")}
           >
             {t.home.comingSoon}

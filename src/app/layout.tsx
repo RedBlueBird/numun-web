@@ -116,6 +116,13 @@ const cerebriSans = localFont({
   variable: "--font-cerebri-sans",
 });
 
+const symphonyPro = localFont({
+  src: "../../public/fonts/symphony-pro/symphony-pro-regular.otf",
+  variable: "--font-symphony-pro",
+  weight: "400",
+  style: "normal",
+});
+
 export const metadata: Metadata = {
   title: "NUMUN 2026 - Nagoya University Model United Nations",
   description: "Nagoya University Model United Nations 2026 - Driving growth, elevating impact. Join us for an inspiring conference fostering global dialogue and youth leadership.",
@@ -132,7 +139,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${greatVibes.variable} ${cerebriSans.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${greatVibes.variable} ${cerebriSans.variable} ${symphonyPro.variable} antialiased`}
       >
         <ClientLayout>
           {children}
