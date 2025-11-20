@@ -126,6 +126,12 @@ export const jp: Translations = {
     title: 'ギャラリー',
     description: '過去のNUMUN会議の瞬間をご覧ください',
     photoAlt: 'NUMUN会議の写真',
+    goBack: '戻る',
+    events: {
+      OpeningCeremony: '開会式',
+      FAO: 'FAO',
+      NetworkingEvent: 'ネットワーキングイベント',
+    },
   },
   pastSponsors: {
     title: '大切な過去のスポンサー',

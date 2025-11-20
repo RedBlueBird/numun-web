@@ -126,6 +126,12 @@ export const en: Translations = {
     title: 'GALLERY',
     description: 'Explore moments from past NUMUN conferences',
     photoAlt: 'NUMUN Conference Photo',
+    goBack: 'Go Back',
+    events: {
+      OpeningCeremony: 'Opening Ceremony',
+      FAO: 'FAO',
+      NetworkingEvent: 'Networking Event',
+    },
   },
   pastSponsors: {
     title: 'OUR VALUED PAST SPONSORS',

@@ -126,6 +126,12 @@ export interface Translations {
     title: string;
     description: string;
     photoAlt: string;
+    goBack: string;
+    events: {
+      OpeningCeremony: string;
+      FAO: string;
+      NetworkingEvent: string;
+    };
   };
   pastSponsors: {
     title: string;
