@@ -7,4 +7,5 @@ export interface TeamMember {
   affiliation: string;
   photo: string;
   greeting?: string;
+  description?: string;
 }

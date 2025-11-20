@@ -54,4 +54,20 @@ See you soon in NUMUN 2025!!!
 Best regards,
 Emily`,
   },
+  {
+    id: "oc-1",
+    name: "IT & Design Team",
+    role: "organizing-committee",
+    affiliation: "Technology & Visual Communications",
+    photo: "/images/team/itdesign_team.jpg",
+    description: "The IT & Design Team brings NUMUN to life through technology and creativity. They develop and maintain our digital infrastructure, design visual materials, manage our online presence, and ensure seamless technical operations throughout the conference. From this website to event graphics, they craft the visual identity that represents NUMUN's mission and values to the world.",
+  },
+  {
+    id: "oc-2",
+    name: "Documentation Team",
+    role: "organizing-committee",
+    affiliation: "Conference Documentation & Records",
+    photo: "/images/team/documentation_team.jpg",
+    description: "Our Documentation Team ensures every moment of NUMUN is carefully recorded and preserved. They manage official conference records, compile resolutions, maintain digital archives, and create comprehensive reports that capture the essence of delegate discussions and outcomes. Their meticulous work provides valuable resources for future conferences and showcases the impact of our delegates' efforts.",
+  },
 ];

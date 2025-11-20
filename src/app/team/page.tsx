@@ -3,17 +3,19 @@
 import PageTitle from "@/components/ui/PageTitle";
 import TeamProfileCard from "@/components/team/TeamProfileCard";
 import TeamGreetingQuote from "@/components/team/TeamGreetingQuote";
+import TeamCarousel from "@/components/team/TeamCarousel";
 import ScrollReveal from "@/components/animation/ScrollReveal";
 import { motion } from "framer-motion";
 import { teamMembers } from "@/data/team";
 import { scrollAnimations } from "@/config/animations";
 import { useLanguage } from "@/context/LanguageContext";
-import { sections } from "@/config/styles";
+import { sections, spacing } from "@/config/styles";
 
 export default function TeamPage() {
   const { t } = useLanguage();
   const secretaryGeneral = teamMembers.find((m) => m.role === "secretary-general");
   const deputySecretaries = teamMembers.filter((m) => m.role === "deputy-secretary-general");
+  const organizingCommittees = teamMembers.filter((m) => m.role === "organizing-committee");
 
   return (
     <div
@@ -95,14 +97,16 @@ export default function TeamPage() {
       </section>
 
       {/* Organizing Committees */}
-      <section className="py-16 bg-numun-green">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-numun-gold mb-8">
-            {t.team.roles.organizingCommittees}
-          </h2>
-          <p className="text-center text-white text-lg">
-            More information coming soon...
-          </p>
+      <section className={`${spacing.section.medium} ${sections.contentGreen}`}>
+        <div className={spacing.container}>
+          <ScrollReveal variant="slideUp">
+            <h2 className="text-4xl font-bold text-center text-numun-gold mb-12">
+              {t.team.roles.organizingCommittees}
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal variant="slideUp" delay={0.2}>
+            <TeamCarousel teams={organizingCommittees} />
+          </ScrollReveal>
         </div>
       </section>
     </div>
