@@ -74,7 +74,7 @@ export default function InstagramFeed() {
             {featuredInstagramPosts.map((post, index) => (
               <motion.div
                 key={post.url}
-                className="p-0 m-0"
+                className="w-full md:w-[380px] p-0 m-0"
                 variants={scrollAnimations.staggerItem}
               >
                 <blockquote
