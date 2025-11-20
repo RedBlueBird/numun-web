@@ -160,4 +160,9 @@ export const en: Translations = {
       },
     },
   },
+  social: {
+    instagramTitle: 'FOLLOW OUR JOURNEY',
+    instagramDescription: 'Stay connected with NUMUN through our latest updates and highlights',
+    followUs: 'Follow us @mun.nagoyauniversity',
+  },
 };

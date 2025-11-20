@@ -160,4 +160,9 @@ export interface Translations {
       };
     };
   };
+  social: {
+    instagramTitle: string;
+    instagramDescription: string;
+    followUs: string;
+  };
 }

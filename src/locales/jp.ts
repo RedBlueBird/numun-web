@@ -160,4 +160,9 @@ export const jp: Translations = {
       },
     },
   },
+  social: {
+    instagramTitle: '私たちの旅をフォロー',
+    instagramDescription: 'NUMUNの最新情報とハイライトをご覧ください',
+    followUs: '@mun.nagoyauniversityをフォロー',
+  },
 };

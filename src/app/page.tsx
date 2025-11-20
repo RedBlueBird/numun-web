@@ -1,5 +1,6 @@
 import HeroSection from "@/components/home/HeroSection";
 import TimelineSection from "@/components/home/TimelineSection";
+import InstagramFeed from "@/components/social/InstagramFeed";
 import { sections } from "@/config/styles";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
 
       <HeroSection />
       <TimelineSection />
+      <InstagramFeed />
     </div>
   );
 }
