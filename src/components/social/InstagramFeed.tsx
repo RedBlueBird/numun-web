@@ -65,7 +65,7 @@ export default function InstagramFeed() {
 
           {/* Instagram Posts Grid */}
           <motion.div
-            className="flex flex-wrap justify-start"
+            className="flex flex-wrap justify-center gap-0"
             initial="hidden"
             whileInView="visible"
             viewport={viewportOptions}
@@ -74,7 +74,7 @@ export default function InstagramFeed() {
             {featuredInstagramPosts.map((post, index) => (
               <motion.div
                 key={post.url}
-                className="w-full md:w-1/3"
+                className="w-full md:w-1/3 p-0 m-0"
                 variants={scrollAnimations.staggerItem}
               >
                 <blockquote
