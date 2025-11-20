@@ -203,6 +203,8 @@ function Logo({ src, alt = "Logo", className = "" }: LogoProps) {
         alt={alt}
         fill
         className="object-contain"
+        loading="lazy"
+        quality={80}
       />
     </motion.div>
   );

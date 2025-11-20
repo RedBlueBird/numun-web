@@ -46,16 +46,17 @@ export default function HeroSection() {
             <Image
               src="/images/logos/numun_logo.png"
               alt="NUMUN Logo with Laurel Wreath"
-              width={256}
-              height={256}
+              fill
               priority
               className="object-contain"
+              quality={80}
+              sizes="256px"
             />
           </motion.div>
         </div>
 
         {/* Coming Soon text */}
-        <div className="mb-8 -mt-25 relative">
+        <div className="mb-8 -mt-16 relative">
           <motion.p
             className={`text-white text-7xl sm:text-8xl font-light -mb-3 relative z-10 ${fonts.symphonyPro}`}
             {...getAnimationProps("comingSoon")}

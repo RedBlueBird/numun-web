@@ -13,5 +13,5 @@ export interface NavItem {
 export interface SocialLink {
   platform: string;
   url: string;
-  icon: string;
+  icon?: string; // Optional - not used by SocialLinks component (uses react-icons instead)
 }

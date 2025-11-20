@@ -36,6 +36,7 @@ export default function TeamPage() {
                   affiliation={secretaryGeneral.affiliation}
                   photo={secretaryGeneral.photo}
                   size="large"
+                  priority={true}
                 />
               </ScrollReveal>
 

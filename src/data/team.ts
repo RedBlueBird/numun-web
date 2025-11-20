@@ -42,7 +42,7 @@ Haru`,
     name: "Emily Okada",
     role: "deputy-secretary-general",
     affiliation: "B4 Agricultural Sciences 農学部",
-    photo: "/images/team/emily_okada.png",
+    photo: "/images/team/emily_okada.jpg",
     greeting: `Warmest greetings to everyone!!
 
 Thank you so much for your interest in the Nagoya Model United Nations 2025. My name is Emily Okada, and I am honored to serve as one of the Deputy Secretary Generals this year, alongside Haru, and in support of Edeline.

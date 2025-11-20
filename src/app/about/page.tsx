@@ -32,10 +32,13 @@ export default function AboutPage() {
                 whileHover={prefersReducedMotion ? {} : hoverAnimations.imageZoomSubtle}
               >
                 <Image
-                  src="/images/media/about_nagoya_auditorium.png"
+                  src="/images/media/about_nagoya_auditorium.jpg"
                   alt={t.about.imageAlt}
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
+                  quality={80}
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-center p-3">
                   <p className="font-semibold italic text-sm">{t.about.imageAlt}</p>
@@ -79,6 +82,9 @@ export default function AboutPage() {
                 alt={t.about.quote.description}
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                loading="lazy"
+                quality={80}
               />
             </motion.div>
 
@@ -93,6 +99,9 @@ export default function AboutPage() {
                 alt={t.about.quote.description}
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                loading="lazy"
+                quality={80}
               />
             </motion.div>
 
@@ -107,6 +116,9 @@ export default function AboutPage() {
                 alt={t.about.quote.description}
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                loading="lazy"
+                quality={80}
               />
             </motion.div>
 
@@ -121,6 +133,9 @@ export default function AboutPage() {
                   alt={t.about.quote.title}
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
+                  quality={80}
                 />
               </motion.div>
               <p className="text-right italic text-sm text-numun-green font-semibold">{t.about.quote.title}</p>

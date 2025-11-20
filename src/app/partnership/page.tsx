@@ -93,6 +93,9 @@ export default function Numun2026Page() {
                   alt="NHK"
                   fill
                   className="object-contain"
+                  sizes="(max-width: 640px) 128px, 160px"
+                  loading="lazy"
+                  quality={85}
                 />
               </div>
               <p className="font-semibold text-numun-green">2023</p>
@@ -105,6 +108,9 @@ export default function Numun2026Page() {
                   alt="中日新聞"
                   fill
                   className="object-contain"
+                  sizes="(max-width: 640px) 128px, 160px"
+                  loading="lazy"
+                  quality={85}
                 />
               </div>
               <p className="font-semibold text-numun-green">2024</p>
@@ -117,6 +123,9 @@ export default function Numun2026Page() {
                   alt="Aichi News"
                   fill
                   className="object-contain"
+                  sizes="(max-width: 640px) 128px, 160px"
+                  loading="lazy"
+                  quality={85}
                 />
               </div>
               <p className="font-semibold text-numun-green">2025</p>
@@ -129,6 +138,9 @@ export default function Numun2026Page() {
                   alt="PBL"
                   fill
                   className="object-contain"
+                  sizes="(max-width: 640px) 128px, 160px"
+                  loading="lazy"
+                  quality={85}
                 />
               </div>
               <p className="font-semibold text-numun-green">2025</p>

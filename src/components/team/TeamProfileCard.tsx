@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Card from "@/components/ui/Card";
 import { hoverAnimations } from "@/config/animations";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -10,6 +11,7 @@ interface TeamProfileCardProps {
   affiliation: string;
   photo: string;
   size?: "small" | "large";
+  priority?: boolean;
 }
 
 export default function TeamProfileCard({
@@ -17,6 +19,7 @@ export default function TeamProfileCard({
   affiliation,
   photo,
   size = "large",
+  priority = false,
 }: TeamProfileCardProps) {
   const isLarge = size === "large";
   const prefersReducedMotion = useReducedMotion();
@@ -28,10 +31,18 @@ export default function TeamProfileCard({
         className={`w-full ${isLarge ? "max-w-sm" : "max-w-xs"} overflow-hidden`}
       >
         <motion.div
-          className="aspect-[3/4] bg-gradient-to-br from-blue-200 to-green-200 flex items-center justify-center overflow-hidden"
+          className="aspect-[3/4] bg-gradient-to-br from-blue-200 to-green-200 flex items-center justify-center overflow-hidden relative"
           whileHover={prefersReducedMotion ? {} : hoverAnimations.imageZoomSubtle}
         >
-          <img src={photo} alt={name} className="w-full h-full object-cover" />
+          <Image
+            src={photo}
+            alt={name}
+            fill
+            sizes={isLarge ? "(max-width: 768px) 100vw, 384px" : "(max-width: 768px) 100vw, 320px"}
+            className="object-cover"
+            priority={priority}
+            quality={85}
+          />
         </motion.div>
         <div className={`${isLarge ? "p-6" : "p-4"} text-center`}>
           <h3

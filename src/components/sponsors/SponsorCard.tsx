@@ -58,6 +58,9 @@ export default function SponsorCard({ sponsor, tier }: SponsorCardProps) {
             alt={`${sponsor.name} logo`}
             fill
             className="object-contain"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            loading="lazy"
+            quality={85}
           />
         ) : (
           <span className="text-3xl">🏢</span>
