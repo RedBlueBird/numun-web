@@ -32,7 +32,7 @@ export const en: Translations = {
     numun2026: '2026',
     quote: '"Driving growth, elevating impact"',
     recruitingMessage: 'Now recruiting sponsors & partners!',
-    learnAboutButton: 'LEARN ABOUT NUMUN',
+    learnAboutButton: 'LEARN MORE',
     viewGalleryButton: 'VIEW GALLERY',
     contactButton: 'CONTACT US',
   },
@@ -146,17 +146,13 @@ export const en: Translations = {
     title: 'IN MOTION: OUR CURRENT EVENTS',
     description: 'Stay updated with the latest happenings and milestones at NUMUN',
     events: {
-      event1: {
-        title: 'Conference Registration Opens',
-        description: 'Registration for NUMUN 2026 is now open! Secure your spot as a delegate and join students from across Japan and abroad in this exciting conference.',
+      staffRecruitment: {
+        title: 'NUMUN Staff Recruitment',
+        description: 'Join the NUMUN 2026 organizing team! We are seeking passionate students to help make NUMUN 2026 a success. Open positions available across IT & Design, Logistics, Marketing, Academics, and Finance teams. Be part of shaping the future of Model United Nations at Nagoya University.',
       },
-      event2: {
-        title: 'Committee Topics Announced',
-        description: 'We are excited to announce the committee topics for NUMUN 2026. Delegates can now begin their research and prepare their position papers.',
-      },
-      event3: {
-        title: 'Sponsor Partnership Program Launch',
-        description: 'NUMUN 2026 launches its sponsor partnership program, inviting organizations to support youth leadership and global dialogue through meaningful collaboration.',
+      numunCafe: {
+        title: 'NUMUN Cafe',
+        description: 'A beginner-friendly United Nations simulation open to all students! NUMUN Cafe provides a welcoming environment for newcomers to experience Model UN discussions, debate global issues, and develop essential skills in diplomacy and negotiation. No prior MUN experience required.',
       },
     },
   },

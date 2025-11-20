@@ -16,28 +16,20 @@ export interface TimelineEvent {
 
 export const timelineEvents: TimelineEvent[] = [
   {
-    id: 'event-1',
-    date: '2025-03-15',
-    titleKey: 'timeline.events.event1.title',
-    descriptionKey: 'timeline.events.event1.description',
+    id: 'numun-cafe-2024',
+    date: '2024-12-06',
+    titleKey: 'timeline.events.numunCafe.title',
+    descriptionKey: 'timeline.events.numunCafe.description',
     photos: [],
     status: 'upcoming',
   },
   {
-    id: 'event-2',
-    date: '2025-02-20',
-    titleKey: 'timeline.events.event2.title',
-    descriptionKey: 'timeline.events.event2.description',
+    id: 'staff-recruitment-2024',
+    date: '2024-10-08',
+    titleKey: 'timeline.events.staffRecruitment.title',
+    descriptionKey: 'timeline.events.staffRecruitment.description',
     photos: [],
     status: 'current',
-  },
-  {
-    id: 'event-3',
-    date: '2025-01-10',
-    titleKey: 'timeline.events.event3.title',
-    descriptionKey: 'timeline.events.event3.description',
-    photos: [],
-    status: 'past',
   },
 ];
 

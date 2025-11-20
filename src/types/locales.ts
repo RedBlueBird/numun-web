@@ -146,15 +146,11 @@ export interface Translations {
     title: string;
     description: string;
     events: {
-      event1: {
+      staffRecruitment: {
         title: string;
         description: string;
       };
-      event2: {
-        title: string;
-        description: string;
-      };
-      event3: {
+      numunCafe: {
         title: string;
         description: string;
       };
