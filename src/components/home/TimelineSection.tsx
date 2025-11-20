@@ -38,8 +38,8 @@ export default function TimelineSection() {
 
   // Get event title and description from translations
   const getEventText = (titleKey: string, descriptionKey: string) => {
-    // Extract the event key (e.g., 'event1' from 'timeline.events.event1.title')
-    const eventKey = titleKey.split('.')[2] as 'event1' | 'event2' | 'event3';
+    // Extract the event key (e.g., 'staffRecruitment' from 'timeline.events.staffRecruitment.title')
+    const eventKey = titleKey.split('.')[2] as keyof typeof t.timeline.events;
     return {
       title: t.timeline.events[eventKey].title,
       description: t.timeline.events[eventKey].description,
