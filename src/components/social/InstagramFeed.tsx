@@ -87,7 +87,7 @@ export default function InstagramFeed() {
                     borderRadius: '3px',
                     boxShadow: '0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15)',
                     margin: '0',
-                    maxWidth: '380px',
+                    maxWidth: '100%',
                     minWidth: '280px',
                     padding: '0',
                     width: '100%',
