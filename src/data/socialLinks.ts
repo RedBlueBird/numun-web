@@ -7,15 +7,15 @@ export const socialLinks: SocialLink[] = [
   },
   {
     platform: "LINE",
-    url: "https://www.instagram.com/mun.nagoyauniversity",
+    url: "https://lin.ee/TeTSlcE",
   },
   {
     platform: "LinkedIn",
-    url: "https://www.instagram.com/mun.nagoyauniversity",
+    url: "https://www.linkedin.com/company/nagoyauniversitymun/",
   },
   {
     platform: "YouTube",
-    url: "https://www.instagram.com/mun.nagoyauniversity",
+    url: "https://www.youtube.com/@nagoyauniversitymun",
   },
 ];
 
