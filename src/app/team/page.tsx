@@ -99,14 +99,10 @@ export default function TeamPage() {
       {/* Organizing Committees */}
       <section className={`${spacing.section.medium} ${sections.contentGreen}`}>
         <div className={spacing.container}>
-          <ScrollReveal variant="slideUp">
-            <h2 className="text-4xl font-bold text-center text-numun-gold mb-12">
-              {t.team.roles.organizingCommittees}
-            </h2>
-          </ScrollReveal>
-          <ScrollReveal variant="slideUp" delay={0.2}>
-            <TeamCarousel teams={organizingCommittees} />
-          </ScrollReveal>
+          <h2 className="text-4xl font-bold text-center text-numun-gold mb-12">
+            {t.team.roles.organizingCommittees}
+          </h2>
+          <TeamCarousel teams={organizingCommittees} />
         </div>
       </section>
     </div>

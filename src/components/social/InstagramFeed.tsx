@@ -2,11 +2,9 @@
 
 import { useEffect } from 'react';
 import Script from 'next/script';
-import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import { featuredInstagramPosts } from '@/data/instagramPosts';
 import { sections, spacing, typography, layout } from '@/config/styles';
-import { scrollAnimations, viewportOptions } from '@/config/animations';
 
 /**
  * InstagramFeed Component
@@ -40,13 +38,7 @@ export default function InstagramFeed() {
       <section className={`${sections.contentBeige} ${spacing.section.large}`}>
         <div className="container mx-auto px-8 sm:px-12 lg:px-16">
           {/* Section Header */}
-          <motion.div
-            className="text-center mb-12"
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOptions}
-            variants={scrollAnimations.fadeIn}
-          >
+          <div className="text-center mb-12">
             <h2 className={`${typography.sectionTitle} mb-4`}>
               {t.social.instagramTitle}
             </h2>
@@ -61,21 +53,14 @@ export default function InstagramFeed() {
             >
               {t.social.followUs} →
             </a>
-          </motion.div>
+          </div>
 
           {/* Instagram Posts Grid */}
-          <motion.div
-            className="flex flex-wrap justify-center gap-0"
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOptions}
-            variants={scrollAnimations.staggerContainer}
-          >
+          <div className="flex flex-wrap justify-center gap-0">
             {featuredInstagramPosts.map((post, index) => (
-              <motion.div
+              <div
                 key={post.url}
                 className="w-full md:w-[380px] p-0 m-0"
-                variants={scrollAnimations.staggerItem}
               >
                 <blockquote
                   className="instagram-media"
@@ -122,9 +107,9 @@ export default function InstagramFeed() {
                     </div>
                   </a>
                 </blockquote>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 

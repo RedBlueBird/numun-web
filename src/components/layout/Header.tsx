@@ -83,7 +83,7 @@ export default function Header() {
         className={`${sections.heroDark} overflow-hidden`}
       >
         <div className={spacing.container}>
-          <div className={`${layout.flex.spaceBetween} py-4 px-20`}>
+          <div className={`${layout.flex.spaceBetween} py-4 px-2 lg:px-20`}>
             {/* Logo */}
             <Logo />
 
