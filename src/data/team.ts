@@ -31,7 +31,7 @@ export const teamMembers: TeamMember[] = [
     role: "organizing-committee",
     affiliation: "Committee Leadership",
     photo: "/images/team/dais_team.webp",    
-    members: "Uyen (B3), Gabriel (B4), Reika (B4)",
+    members: "Gabriel (B4), Uyen (B3), Reika (B4)",
     description: "TBD",
   },
   {

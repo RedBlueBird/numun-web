@@ -46,7 +46,10 @@ export default function TeamCarousel({ teams }: TeamCarouselProps) {
         {/* Team Info */}
         <div className="text-center text-white">
           <h3 className="text-2xl sm:text-3xl font-bold mb-2">{team.name}</h3>
-          <p className="text-numun-gold text-sm sm:text-base font-semibold mb-4">{team.affiliation}</p>
+          <p className="text-numun-gold text-sm sm:text-base font-semibold mb-2">{team.affiliation}</p>
+          {team.members && (
+            <p className="text-white/90 text-sm sm:text-base mb-4">{team.members}</p>
+          )}
           {team.description && (
             <p className="text-base sm:text-lg leading-relaxed">{team.description}</p>
           )}
@@ -81,9 +84,12 @@ export default function TeamCarousel({ teams }: TeamCarouselProps) {
           {/* Team Info */}
           <div className="text-center text-white px-4">
             <h3 className="text-2xl sm:text-3xl font-bold mb-2">{teams[currentIndex].name}</h3>
-            <p className="text-numun-gold text-sm sm:text-base font-semibold mb-4">
+            <p className="text-numun-gold text-sm sm:text-base font-semibold mb-2">
               {teams[currentIndex].affiliation}
             </p>
+            {teams[currentIndex].members && (
+              <p className="text-white/90 text-sm sm:text-base mb-4">{teams[currentIndex].members}</p>
+            )}
             {teams[currentIndex].description && (
               <p className="text-base sm:text-lg leading-relaxed">
                 {teams[currentIndex].description}
