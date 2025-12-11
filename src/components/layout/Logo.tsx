@@ -17,7 +17,7 @@ export default function Logo({ className = "" }: LogoProps) {
     <Link href="/" className={`${layout.flex.row} items-center ${spacing.gap.sm} ${className}`}>
       <div className="relative w-16 h-16 flex items-center">
         <Image
-          src="/images/logos/numun_logo.png"
+          src="/images/logos/numun_logo.webp"
           alt="NUMUN Logo"
           width={64}
           height={64}

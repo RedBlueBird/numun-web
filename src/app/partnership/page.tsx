@@ -37,7 +37,7 @@ export default function Numun2026Page() {
 
         <PageTitle.HeroLogoWrapper>
           <PageTitle.Logo
-            src="/images/logos/numun_logo.png"
+            src="/images/logos/numun_logo.webp"
             alt={t.header.logoAlt}
           />
         </PageTitle.HeroLogoWrapper>
@@ -89,7 +89,7 @@ export default function Numun2026Page() {
             <motion.div className="flex flex-col items-center" variants={scrollAnimations.staggerItem}>
               <div className="relative w-32 h-32 sm:w-40 sm:h-40 mb-4">
                 <Image
-                  src="/images/sponsors/nhk.png"
+                  src="/images/sponsors/nhk.webp"
                   alt="NHK"
                   fill
                   className="object-contain"
@@ -104,7 +104,7 @@ export default function Numun2026Page() {
             <motion.div className="flex flex-col items-center" variants={scrollAnimations.staggerItem}>
               <div className="relative w-32 h-32 sm:w-40 sm:h-40 mb-4">
                 <Image
-                  src="/images/sponsors/cn_jp_news.jpg"
+                  src="/images/sponsors/cn_jp_news.webp"
                   alt="中日新聞"
                   fill
                   className="object-contain"
@@ -119,7 +119,7 @@ export default function Numun2026Page() {
             <motion.div className="flex flex-col items-center" variants={scrollAnimations.staggerItem}>
               <div className="relative w-32 h-32 sm:w-40 sm:h-40 mb-4">
                 <Image
-                  src="/images/sponsors/aichi_news.png"
+                  src="/images/sponsors/aichi_news.webp"
                   alt="Aichi News"
                   fill
                   className="object-contain"
@@ -134,7 +134,7 @@ export default function Numun2026Page() {
             <motion.div className="flex flex-col items-center" variants={scrollAnimations.staggerItem}>
               <div className="relative w-32 h-32 sm:w-40 sm:h-40 mb-4">
                 <Image
-                  src="/images/sponsors/pbl.png"
+                  src="/images/sponsors/pbl.webp"
                   alt="PBL"
                   fill
                   className="object-contain"
@@ -227,7 +227,7 @@ export default function Numun2026Page() {
         {/* Background image */}
         <div className={`${utils.absoluteFill} ${utils.zIndex.base}`}>
           <Image
-            src="/images/home_background.png"
+            src="/images/home_background.webp"
             alt="Background"
             fill
             priority

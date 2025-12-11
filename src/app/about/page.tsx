@@ -32,7 +32,7 @@ export default function AboutPage() {
                 whileHover={prefersReducedMotion ? {} : hoverAnimations.imageZoomSubtle}
               >
                 <Image
-                  src="/images/media/about_nagoya_auditorium.jpg"
+                  src="/images/media/about_nagoya_auditorium.webp"
                   alt={t.about.imageAlt}
                   fill
                   className="object-cover"
@@ -78,7 +78,7 @@ export default function AboutPage() {
               whileHover={prefersReducedMotion ? {} : hoverAnimations.imageZoom}
             >
               <Image
-                src="/images/media/about_committee_session_1.jpg"
+                src="/images/media/about_committee_session_1.webp"
                 alt={t.about.quote.description}
                 fill
                 className="object-cover"
@@ -95,7 +95,7 @@ export default function AboutPage() {
               whileHover={prefersReducedMotion ? {} : hoverAnimations.imageZoom}
             >
               <Image
-                src="/images/media/about_committee_session_2.jpg"
+                src="/images/media/about_committee_session_2.webp"
                 alt={t.about.quote.description}
                 fill
                 className="object-cover"
@@ -112,7 +112,7 @@ export default function AboutPage() {
               whileHover={prefersReducedMotion ? {} : hoverAnimations.imageZoom}
             >
               <Image
-                src="/images/media/about_committee_session_3.jpg"
+                src="/images/media/about_committee_session_3.webp"
                 alt={t.about.quote.description}
                 fill
                 className="object-cover"
@@ -129,7 +129,7 @@ export default function AboutPage() {
                 whileHover={prefersReducedMotion ? {} : hoverAnimations.imageZoom}
               >
                 <Image
-                  src="/images/media/about_committee_session_4.jpg"
+                  src="/images/media/about_committee_session_4.webp"
                   alt={t.about.quote.title}
                   fill
                   className="object-cover"

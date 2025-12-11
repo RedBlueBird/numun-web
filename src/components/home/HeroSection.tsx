@@ -27,7 +27,7 @@ export default function HeroSection() {
       {/* Background image */}
       <div className={`${utils.absoluteFill} ${utils.zIndex.base}`}>
         <Image
-          src="/images/home_background.png"
+          src="/images/home_background.webp"
           alt="NUMUN Conference Background"
           fill
           priority
@@ -44,7 +44,7 @@ export default function HeroSection() {
         <div className={`${layout.flex.centerHorizontal} pt-8`}>
           <motion.div className={`${utils.relative} w-64 h-64`} {...getAnimationProps("logo")}>
             <Image
-              src="/images/logos/numun_logo.png"
+              src="/images/logos/numun_logo.webp"
               alt="NUMUN Logo with Laurel Wreath"
               fill
               priority

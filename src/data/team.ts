@@ -3,71 +3,98 @@ import { TeamMember } from "@/types";
 export const teamMembers: TeamMember[] = [
   {
     id: "sg-1",
-    name: "Edeline Luisia",
+    name: "Pham Dao Phuong Uyen",
     role: "secretary-general",
     affiliation: "B4 Agricultural Sciences 農学部",
-    photo: "/images/team/edeline_luisia.jpg",
-    greeting: `Greetings to our delegates, supervisors, and guests!
-
-My name is Edeline, a fourth-year Agricultural Sciences student. This year, I have the honor of serving as NUMUN's Secretary General. Though I have only been part of the team for two years, I plan to do my best with all the organizing team members to make NUMUN another success. It is always inspiring to see all the planning and hard work come together into a meaningful and impactful event.
-
-I believe that NUMUN is a unique space where individuals passionate about their own interests can gather and inspire one another—watching the dedication of delegates, chairs, and staff members motivates me to work even harder. I look forward to seeing the conferences unfold in their own special ways and to connecting with everyone involved.
-
-See you next year in NUMUN 2025!
-
-Best,
-Edeline`,
+    photo: "/images/team/secretary_general.webp",
+    greeting: `TBD`,
   },
   {
     id: "dsg-1",
-    name: "Kayla Gusti Haruni",
+    name: "Gabriel Pascua Alteza",
     role: "deputy-secretary-general",
     affiliation: "B4 Biological Sciences 理学部",
-    photo: "/images/team/kayla_gusti_haruni.jpg",
-    greeting: `Dear esteemed delegates, chairs, and supervisors!
-
-Nice to meet you all! My name is Kayla Haruni, most people call me Haru! I am currently a 4th year Biological Science student. Although I still have much to learn, I am very honored to be trusted as one of the Deputy Secretary General for NUMUN 2025.
-
-With so many things happening in our world, it is important to cultivate awareness, open-mindedness, and empathy. Through MUN, delegates can exercise their problem-solving skills whilst being exposed to a spectrum of perspectives. For next year we hope to make NUMUN a meaningful and positive experience to those involved!
-
-I would also like to thank everyone— the participants, supervisors, sponsors, and most of all our dedicated and hardworking organizing team members as they are essential to making our event a success.
-
-Please look forward to NUMUN 2025!!
-
-Sincerely,
-Haru`,
+    photo: "/images/team/deputy_general.webp",
+    greeting: `TBD`,
   },
   {
     id: "dsg-2",
-    name: "Emily Okada",
+    name: "Reika Handoko",
     role: "deputy-secretary-general",
     affiliation: "B4 Agricultural Sciences 農学部",
-    photo: "/images/team/emily_okada.jpg",
-    greeting: `Warmest greetings to everyone!!
-
-Thank you so much for your interest in the Nagoya Model United Nations 2025. My name is Emily Okada, and I am honored to serve as one of the Deputy Secretary Generals this year, alongside Haru, and in support of Edeline.
-
-With the support of our dedicated staff, encouraging supervisors, and enthusiastic chairs, I am confident that this year's NUMUN will serve as a platform for meaningful debates, inspiring ideas, and impactful resolutions. I am thrilled to see what we can accomplish together, and I truly hope this event will leave a lasting impression on all delegates, fostering a spirit of collaboration and global understanding.
-
-See you soon in NUMUN 2025!!!
-
-Best regards,
-Emily`,
+    photo: "/images/team/deputy_general2.webp",  
+    greeting: `TBD`,
   },
   {
     id: "oc-1",
-    name: "IT & Design Team",
+    name: "Dais",
     role: "organizing-committee",
-    affiliation: "Technology & Visual Communications",
-    photo: "/images/team/itdesign_team.jpg",
-    description: "The IT & Design Team brings NUMUN to life through technology and creativity. They develop and maintain our digital infrastructure, design visual materials, manage our online presence, and ensure seamless technical operations throughout the conference. From this website to event graphics, they craft the visual identity that represents NUMUN's mission and values to the world.",
+    affiliation: "Committee Leadership",
+    photo: "/images/team/dais_team.webp",    
+    members: "Uyen (B3), Gabriel (B4), Reika (B4)",
+    description: "TBD",
   },
   {
     id: "oc-2",
+    name: "Academics",
+    role: "organizing-committee",
+    affiliation: "Substantive Content & Research",
+    photo: "/images/team/itdesign_team.webp",
+    members: "Dudin (M1), Rachel (B2), Manka (B2), Gab (B4), Clarissa (B4), Jeffrey (B3)",
+    description: "TBD",
+  },
+  {
+    id: "oc-3",
+    name: "External Affairs",
+    role: "organizing-committee",
+    affiliation: "Outreach & Delegation Relations",
+    photo: "/images/team/itdesign_team.webp",
+    members: "Dudin (M1), Rachel (B2), Manka (B2), Gab (B4), Clarissa (B4), Jeffrey (B3)",
+    description: "TBD",
+  },
+  {
+    id: "oc-4",
+    name: "Finance",
+    role: "organizing-committee",
+    affiliation: "Financial Oversight & Treasury",
+    photo: "/images/team/itdesign_team.webp",
+    members: "Dudin (M1), Rachel (B2), Manka (B2), Gab (B4), Clarissa (B4), Jeffrey (B3)",
+    description: "TBD",
+  },
+  {
+    id: "oc-5",
+    name: "IT & Design Team",
+    role: "organizing-committee",
+    affiliation: "Technology & Visual Communications",
+    photo: "/images/team/itdesign_team.webp",
+    members: "Dudin (M1), Rachel (B2), Manka (B2), Gab (B4), Clarissa (B4), Jeffrey (B3)",
+    description: "The IT & Design Team brings NUMUN to life through technology and creativity. They develop and maintain our digital infrastructure, design visual materials, manage our online presence, and ensure seamless technical operations throughout the conference. From this website to event graphics, they craft the visual identity that represents NUMUN's mission and values to the world.",
+  },
+  {
+    id: "oc-6",
+    name: "Marketing",
+    role: "organizing-committee",
+    affiliation: "Branding & Communications",
+    photo: "/images/team/marketing_team.webp",
+    members: "Minami (B2), Miol (HS), Jessica (B2), Nara (B1), Summer (B1)",
+    description: "The Marketing team helps spread the word about NUMUN by sharing our events across a variety of social media platforms. We create fun, engaging, and creative promotional content to showcase our mission and highlight what’s coming up. We also work closely with media partners and sponsors to run joint promotions and grow NUMUN's reach even further.",
+  },
+  {
+    id: "oc-7",
+    name: "Logistics",
+    role: "organizing-committee",
+    affiliation: "Conference Operations & Venue Management",
+    photo: "/images/team/logistics_team.webp",
+    members: "Mio (B1), Thania (B3), Minami (B2), Soyombo (B2)",
+    description: "We make sure everything runs smoothly, including the delegates’ blood sugar levels. From setting up the venue and prepping the materials to managing the schedule (break times, too!) and adding bits of fun to keep everyone energized.",
+  },
+  {
+    id: "oc-8",
     name: "Documentation Team",
     role: "organizing-committee",
     affiliation: "Conference Documentation & Records",
-    photo: "/images/team/documentation_team.jpg",
+    photo: "/images/team/documentation_team.webp",
+    members: "Minju (B3), Nanda (B3), Gab (B4), Doun (B2)",
     description: "Our Documentation Team ensures every moment of NUMUN is carefully recorded and preserved. They manage official conference records, compile resolutions, maintain digital archives, and create comprehensive reports that capture the essence of delegate discussions and outcomes. Their meticulous work provides valuable resources for future conferences and showcases the impact of our delegates' efforts.",
   },
 ];

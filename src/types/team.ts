@@ -6,6 +6,7 @@ export interface TeamMember {
   role: TeamRole;
   affiliation: string;
   photo: string;
+  members?: string;
   greeting?: string;
   description?: string;
 }

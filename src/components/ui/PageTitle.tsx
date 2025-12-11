@@ -53,7 +53,7 @@ function PageTitle({ children, className = "" }: PageTitleProps) {
       {/* Background image */}
       <div className={`${utils.absoluteFill} ${utils.zIndex.base}`}>
         <Image
-          src="/images/home_background.png"
+          src="/images/home_background.webp"
           alt="Background"
           fill
           priority
@@ -84,7 +84,7 @@ function Hero({ children, className = "" }: HeroProps) {
       {/* Background image */}
       <div className={`${utils.absoluteFill} ${utils.zIndex.base}`}>
         <Image
-          src="/images/home_background.png"
+          src="/images/home_background.webp"
           alt="Background"
           fill
           priority
