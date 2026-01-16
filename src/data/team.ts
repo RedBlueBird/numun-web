@@ -5,7 +5,7 @@ export const teamMembers: TeamMember[] = [
     id: "sg-1",
     name: "Pham Dao Phuong Uyen",
     role: "secretary-general",
-    affiliation: "B4 Agricultural Sciences 農学部",
+    affiliation: "B3 School of Economics",
     photo: "/images/team/secretary_general.webp",
     greeting: `Hello to all!\n
     I'm Uyen, and I'm incredibly honored to serve as the NUMUN 2026 Secretary-General this year! I'm excited for us to keep the momentum going and make next year's NUMUN another wonderful success!\n
@@ -18,7 +18,7 @@ export const teamMembers: TeamMember[] = [
     id: "dsg-1",
     name: "Gabriel Pascua Alteza",
     role: "deputy-secretary-general",
-    affiliation: "B4 Biological Sciences 理学部",
+    affiliation: "B4 Automotive-Mechanical Engineering",
     photo: "/images/team/deputy_general.webp",
     greeting: `Greetings, everyone!\n
     I am Gabriel, and it is with great honor that I serve as a Deputy Secretary-General and leader for NUMUN 2026, alongside Uyen and Reika.\n
@@ -31,7 +31,7 @@ export const teamMembers: TeamMember[] = [
     id: "dsg-2",
     name: "Reika Handoko",
     role: "deputy-secretary-general",
-    affiliation: "B4 Agricultural Sciences 農学部",
+    affiliation: "B4 Biological Sciences",
     photo: "/images/team/deputy_general2.webp",  
     greeting: `A warm welcome to everyone!\n
     My name is Reika, and it is truly an honor to be able to invite you to NUMUN 2026 as one of your DSGs.\n
@@ -91,7 +91,7 @@ export const teamMembers: TeamMember[] = [
     role: "organizing-committee",
     affiliation: "Branding & Communications",
     photo: "/images/team/marketing_team.webp",
-    members: "Minami (B2), Miol (HS), Jessica (B2), Nara (B1), Summer (B1)",
+    members: "Minami (B2), Mio (HS), Jessica (B2), Nara (B1), Summer (B1)",
     description: "The Marketing team helps spread the word about NUMUN by sharing our events across a variety of social media platforms. We create fun, engaging, and creative promotional content to showcase our mission and highlight what’s coming up. We also work closely with media partners and sponsors to run joint promotions and grow NUMUN's reach even further.",
   },
   {

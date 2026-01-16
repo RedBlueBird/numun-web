@@ -11,7 +11,7 @@ export interface TimelineEvent {
   titleKey: string; // Translation key for event title
   descriptionKey: string; // Translation key for event description
   photos: string[]; // Array of image URLs/paths
-  status?: 'upcoming' | 'current' | 'past';
+  status?: 'upcoming' | 'current' | 'finished';
 }
 
 export const timelineEvents: TimelineEvent[] = [
@@ -21,7 +21,7 @@ export const timelineEvents: TimelineEvent[] = [
     titleKey: 'timeline.events.numunCafe.title',
     descriptionKey: 'timeline.events.numunCafe.description',
     photos: [],
-    status: 'upcoming',
+    status: 'finished',
   },
   {
     id: 'staff-recruitment-2025',
@@ -29,7 +29,7 @@ export const timelineEvents: TimelineEvent[] = [
     titleKey: 'timeline.events.staffRecruitment.title',
     descriptionKey: 'timeline.events.staffRecruitment.description',
     photos: [],
-    status: 'current',
+    status: 'finished',
   },
 ];
 
