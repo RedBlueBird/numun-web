@@ -20,7 +20,12 @@ export const teamMembers: TeamMember[] = [
     role: "deputy-secretary-general",
     affiliation: "B4 Biological Sciences 理学部",
     photo: "/images/team/deputy_general.webp",
-    greeting: `TBD`,
+    greeting: `Greetings, everyone!\n
+    I am Gabriel, and it is with great honor that I serve as a Deputy Secretary-General and leader for NUMUN 2026, alongside Uyen and Reika.\n
+    Having been with NUMUN for the past three years, I have grown deeply passionate about building a conducive platform where student voices can discuss timely global issues and grow as citizens of our world. As I continue to learn about this world of Model UN, I take this leadership role to heart and am incredibly excited for our journey ahead as a conference dedicated to empowering conversation and creativity.\n
+    To our delegates, I am looking forward to being a witness to your stimulating debates and meeting both new and returning faces at our very next conference. And of course, to our hardworking NUMUN team members, I am immensely grateful for your steadfast efforts in driving this conference of ours toward success and fueling my excitement for what we will achieve together in the next year.\n
+    Welcome to NUMUN 2026, and see you at our next chapter!
+    `,
   },
   {
     id: "dsg-2",
@@ -50,7 +55,7 @@ export const teamMembers: TeamMember[] = [
     role: "organizing-committee",
     affiliation: "Substantive Content & Research",
     photo: "/images/team/academics_team.webp",
-    members: "Dudin (M1), Rachel (B2), Manka (B2), Gab (B4), Clarissa (B4), Jeffrey (B3)",
+    members: "Anya (B2), Dudin (M1), Alice (B2), Uyen (B3), Gab (B4)",
     description: "The academics team handles the procedures and participants of the event. From facilitating NUMUN via topic decision, Chair recruitment and screening, and delegate documents, to preparing workshops and events in preparation, our goal is to provide accurate and engaging debate for all participants each year.",
   },
   {
@@ -59,7 +64,7 @@ export const teamMembers: TeamMember[] = [
     role: "organizing-committee",
     affiliation: "Outreach & Delegation Relations",
     photo: "/images/team/externalaffairs_team.webp",
-    members: "Dudin (M1), Rachel (B2), Manka (B2), Gab (B4), Clarissa (B4), Jeffrey (B3)",
+    members: "Clarissa (B4), Summer (B1), Reika (B4), Tatsuya (B4), Soimbo (B2)",
     description: "The External Affairs Team coordinates information flow and forges partnerships that power NUMUN 2026. Serving as the primary point of contact, we help ensure smooth communication between conference participants and the internal team. We also conduct formal outreach with educational institutions and media outlets in support of the Marketing Team. From managing delegate inquiries to driving external outreach, we are always working behind the scenes to keep NUMUN connected and growing.",
   },
   {
