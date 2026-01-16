@@ -8,7 +8,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { sections, spacing } from "@/config/styles";
 import GalleryImageCard from "@/components/gallery/GalleryImageCard";
 import GalleryEventCard from "@/components/gallery/GalleryEventCard";
-import galleryData from "@/data/gallery copy.json";
+import galleryData from "@/data/gallery.json";
 
 interface GalleryImage {
   id: string;
