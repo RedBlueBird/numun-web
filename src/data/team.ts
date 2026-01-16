@@ -100,7 +100,7 @@ export const teamMembers: TeamMember[] = [
     role: "organizing-committee",
     affiliation: "Conference Operations & Venue Management",
     photo: "/images/team/logistics_team.webp",
-    members: "Mio (B1), Thania (B3), Minami (B2), Soyombo (B2)",
+    members: "Mio (HS), Thania (B3), Minami (B2), Soyombo (B2)",
     description: "We make sure everything runs smoothly, including the delegates’ blood sugar levels. From setting up the venue and prepping the materials to managing the schedule (break times, too!) and adding bits of fun to keep everyone energized.",
   },
   {
