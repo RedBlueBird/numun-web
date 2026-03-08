@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import { getTimelineEvents } from '@/data/timeline';
 import ImageCarousel from '@/components/ui/ImageCarousel';
@@ -14,9 +15,9 @@ import {
 } from '@/config/styles';
 import {
   scrollAnimations,
-  hoverAnimations,
   transitions,
   viewportOptions,
+  expandAnimations,
 } from '@/config/animations';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { fonts } from '@/config/fonts';
@@ -25,6 +26,7 @@ export default function TimelineSection() {
   const { t } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
   const timelineEvents = getTimelineEvents();
+  const [hoveredEventId, setHoveredEventId] = useState<string | null>(null);
 
   // Format date to readable format
   const formatDate = (dateString: string) => {
@@ -88,6 +90,8 @@ export default function TimelineSection() {
                   key={event.id}
                   variants={scrollAnimations.staggerItem}
                   className="relative"
+                  onHoverStart={() => setHoveredEventId(event.id)}
+                  onHoverEnd={() => setHoveredEventId(null)}
                 >
                   <div
                     className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${
@@ -114,9 +118,6 @@ export default function TimelineSection() {
                       } relative`}
                     >
                       <motion.div
-                        whileHover={
-                          shouldReduceMotion ? {} : hoverAnimations.cardLift
-                        }
                         transition={transitions.smooth}
                         className={`${components.card.base} bg-white/10 backdrop-blur-sm ${spacing.padding.lg} ${tokens.borderRadius.xl} border border-numun-gold/30`}
                       >
@@ -131,9 +132,31 @@ export default function TimelineSection() {
                         </h3>
 
                         {/* Event Description */}
-                        <p className="text-gray-300 leading-relaxed mb-6">
-                          {description}
-                        </p>
+                        {shouldReduceMotion ? (
+                          hoveredEventId === event.id && (
+                            <p className="text-gray-300 leading-relaxed mb-6">
+                              {description}
+                            </p>
+                          )
+                        ) : (
+                          <AnimatePresence>
+                            {hoveredEventId === event.id && (
+                              <motion.div
+                                key="description"
+                                variants={expandAnimations.descriptionReveal}
+                                initial="hidden"
+                                animate="visible"
+                                exit="hidden"
+                                style={{ overflow: 'hidden' }}
+                                className="mb-6"
+                              >
+                                <p className="text-gray-300 leading-relaxed">
+                                  {description}
+                                </p>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        )}
 
                         {/* Event Photos Carousel */}
                         {event.photos && event.photos.length > 0 && (

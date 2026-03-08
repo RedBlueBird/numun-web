@@ -11,7 +11,7 @@ import Button from "@/components/ui/Button";
 import Logo from "@/components/layout/Logo";
 import { sections, spacing, layout, components, tokens, utils } from "@/config/styles";
 import { headerAnimations, transitions } from "@/config/animations";
-import { FaPen, FaChevronDown } from "react-icons/fa";
+import { FaUserPlus, FaChevronDown } from "react-icons/fa";
 import { fonts } from "@/config/fonts";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -59,6 +59,7 @@ export default function Header() {
 
   const getNavLabel = (item: typeof navigationItems[0]) => {
     if (item.label === "HOME") return t.navigation.home;
+    if (item.label === "NUMUN 2026") return t.navigation.numun2026;
     if (item.label === "ABOUT US") return t.navigation.about;
     if (item.label === "TEAM") return t.navigation.team;
     if (item.label === "SPONSOR & PARTNERS") return t.navigation.sponsors;
@@ -89,8 +90,8 @@ export default function Header() {
 
             {/* Desktop Actions */}
             <div className={`hidden lg:flex ${layout.flex.centerVertical} ${spacing.gap.md}`}>
-              <Button href="/contact" variant="primary" icon={<FaPen />} className="text-sm">
-                {t.common.inquireHere}
+              <Button href="/register" variant="primary" icon={<FaUserPlus />} className="text-sm">
+                {t.register.individual.button}
               </Button>
               <SocialLinks />
               <LanguageToggle />
@@ -254,8 +255,8 @@ export default function Header() {
             </nav>
             <div className={`mt-6 ${layout.flex.column} ${spacing.gap.md}`}>
               <LanguageToggle />
-              <Button href="/contact" variant="primary" icon={<FaPen />}>
-                {t.common.inquireHere}
+              <Button href="/register" variant="primary" icon={<FaUserPlus />}>
+                {t.register.individual.button}
               </Button>
               <SocialLinks />
             </div>

@@ -257,7 +257,7 @@ export const heroAnimations = {
       y: 0,
       transition: {
         duration: 0.3,
-        delay: 0.4,
+        delay: 0.8,
         ease: "easeOut",
       },
     },
@@ -270,7 +270,7 @@ export const heroAnimations = {
       y: 0,
       transition: {
         duration: 0.3,
-        delay: 0.6,
+        delay: 0.4,
         ease: "easeOut",
       },
     },
@@ -283,7 +283,7 @@ export const heroAnimations = {
       y: 0,
       transition: {
         duration: 0.3,
-        delay: 0.8,
+        delay: 0.6,
         ease: "easeOut",
       },
     },
@@ -353,6 +353,21 @@ export const microAnimations = {
       ease: "easeInOut",
     },
   },
+};
+
+// ============================================================================
+// EXPAND ANIMATIONS
+// ============================================================================
+
+export const expandAnimations = {
+  descriptionReveal: {
+    hidden: { height: 0, opacity: 0 },
+    visible: {
+      height: "auto",
+      opacity: 1,
+      transition: { duration: 0.35, ease: "easeInOut" },
+    },
+  } as Variants,
 };
 
 // ============================================================================

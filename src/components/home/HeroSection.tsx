@@ -7,7 +7,7 @@ import { sections, spacing, layout, typography, gradients, utils, components } f
 import { fonts } from "@/config/fonts";
 import { heroAnimations } from "@/config/animations";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { FaSearch, FaPen, FaImages } from "react-icons/fa";
+import { FaSearch, FaPen, FaUserPlus } from "react-icons/fa";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function HeroSection() {
@@ -55,14 +55,8 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Coming Soon text */}
-        <div className="mb-8 -mt-16 relative">
-          <motion.p
-            className={`text-white text-7xl sm:text-8xl font-light -mb-3 relative z-10 ${fonts.symphonyPro}`}
-            {...getAnimationProps("comingSoon")}
-          >
-            {t.home.comingSoon}
-          </motion.p>
+        {/* Brand text */}
+        <div className="mb-8 -mt-10 relative">
           <motion.h1
             className={`${typography.heroTitle} text-numun-gold -mb-12 relative z-0 ${fonts.itcBenguiat}`}
             {...getAnimationProps("title1")}
@@ -70,11 +64,17 @@ export default function HeroSection() {
             {t.common.numun}
           </motion.h1>
           <motion.h1
-            className={`${typography.heroTitle} text-numun-gold-darkest font-bold relative z-0 ${fonts.itcBenguiat}`}
+            className={`${typography.heroTitle} text-numun-gold-darkest font-bold -mb-6 relative z-0 ${fonts.itcBenguiat}`}
             {...getAnimationProps("title2")}
           >
             {t.home.numun2026}
           </motion.h1>
+          <motion.p
+            className={`text-white text-7xl sm:text-4xl font-light relative z-10 ${typography.italic} ${fonts.itcBenguiat}`}
+            {...getAnimationProps("comingSoon")}
+          >
+            {t.home.comingSoon}
+          </motion.p>
         </div>
 
         {/* CTA Message */}
@@ -93,8 +93,8 @@ export default function HeroSection() {
           <Button href="/about" variant="primary" icon={<FaSearch />} className={`w-full sm:w-auto ${components.button.large}`}>
             {t.home.learnAboutButton}
           </Button>
-          <Button href="/gallery" variant="primary" icon={<FaImages />} className={`w-full sm:w-auto ${components.button.large}`}>
-            {t.home.viewGalleryButton}
+          <Button href="/register" variant="primary" icon={<FaUserPlus />} className={`w-full sm:w-auto ${components.button.large}`}>
+            {t.register.individual.button}
           </Button>
           <Button href="/contact" variant="primary" icon={<FaPen />} className={`w-full sm:w-auto ${components.button.large}`}>
             {t.home.contactButton}

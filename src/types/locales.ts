@@ -13,6 +13,8 @@ export interface Translations {
   };
   navigation: {
     home: string;
+    numun2026: string;
+    register: string;
     about: string;
     team: string;
     sponsors: string;
@@ -160,5 +162,49 @@ export interface Translations {
     instagramTitle: string;
     instagramDescription: string;
     followUs: string;
+  };
+  register: {
+    title: string;
+    individual: {
+      title: string;
+      description: string;
+      button: string;
+    };
+    group: {
+      title: string;
+      description: string;
+      downloadForm: string;
+      emailUs: string;
+    };
+    discount: {
+      title: string;
+      description: string;
+    };
+    process: {
+      title: string;
+      step1: string;
+      step2: string;
+      step3: string;
+      step4: string;
+    };
+  };
+  conference: {
+    title: string;
+    hero: {
+      quote: string;
+      date: string;
+      location: string;
+      earlyBird: string;
+      registerNow: string;
+      downloadHandbook: string;
+      downloadRules: string;
+      emblemAlt: string;
+    };
+    sections: {
+      committees: string;
+      awards: string;
+      merchandise: string;
+      lunchOptions: string;
+    };
   };
 }
