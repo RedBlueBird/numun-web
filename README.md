@@ -11,37 +11,6 @@ Official website for Nagoya University Model United Nations 2026 - Driving growt
 
 This is the official website for NUMUN (Nagoya University Model United Nations), built with modern web technologies to provide an engaging and informative experience for participants, sponsors, and visitors. The website features bilingual support (English/Japanese) and smooth animations throughout.
 
-## Features
-
-- **Bilingual Support**: Full English and Japanese translations with localStorage persistence
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Smooth Animations**: Framer Motion animations including scroll reveals, fade-ins, and counters
-- **Modern Stack**: Built with Next.js 15 App Router and React 19
-- **Type-Safe**: Full TypeScript implementation
-- **Custom Typography**: Cerebri Sans Pro custom font family with multiple weights
-- **Optimized Performance**: Next.js automatic optimization and Turbopack for fast development
-
-## Tech Stack
-
-### Core
-- **Framework**: [Next.js 15.5.6](https://nextjs.org/) with App Router
-- **React**: 19.1.0
-- **TypeScript**: 5
-- **Node.js**: 20+
-
-### Styling
-- **Tailwind CSS**: 4 (PostCSS)
-- **Utility Libraries**: clsx, tailwind-merge
-
-### Animations
-- **Framer Motion**: 12.23.24
-
-### Icons & Fonts
-- **Icons**: react-icons 5.5.0
-- **Fonts**:
-  - Google Fonts (Geist, Geist Mono, Great Vibes)
-  - Custom font (Cerebri Sans Pro)
-
 ## Project Structure
 
 ```
@@ -83,16 +52,6 @@ numun-web/
 ├── package.json
 └── README.md
 ```
-
-## Pages
-
-- **Home** (`/`): Hero section with key information
-- **About** (`/about`): Information about NUMUN
-- **Team** (`/team`): Team member profiles and greetings
-- **Gallery** (`/gallery`): Photo gallery from events
-- **Contact** (`/contact`): Contact form and contact methods
-- **Partnership** (`/partnership`): Information about partnering with NUMUN
-- **Past Sponsors** (`/past-sponsors`): Showcase of previous sponsors
 
 ## Getting Started
 
@@ -142,25 +101,6 @@ npm run build
 npm start
 ```
 
-## Key Components
-
-### Animation Components
-- **ScrollReveal**: Animates elements as they scroll into view
-- **StatsCounter**: Animated number counter for statistics
-
-### Layout Components
-- **Header**: Navigation with language toggle
-- **Footer**: Social links and footer information
-- **ClientLayout**: Client-side layout wrapper with language provider
-
-### UI Components
-- **Button**: Reusable button component
-- **Card**: Card container component
-- **PageTitle**: Consistent page title styling
-- **SectionTitle**: Section heading component
-- **SocialLinks**: Social media link icons
-- **LanguageToggle**: EN/JP language switcher
-
 ## Internationalization
 
 The website supports English and Japanese languages:
@@ -179,57 +119,10 @@ function MyComponent() {
 }
 ```
 
-## Development
-
-### Adding a New Page
-
-1. Create a new folder in `src/app/`
-2. Add a `page.tsx` file
-3. Update navigation in `src/data/navigation.ts`
-4. Add translations to locale files
-
-### Adding Translations
-
-1. Update `src/locales/en.ts` for English
-2. Update `src/locales/jp.ts` for Japanese
-3. Update types in `src/types/locales.ts` if needed
-
-### Adding Team Members
-
-Edit `src/data/team.ts` to add or update team member information.
-
-### Adding Sponsors
-
-Edit `src/data/sponsors.ts` to add or update sponsor information.
-
-## Performance Optimizations
-
-- Next.js automatic code splitting
-- Image optimization with next/image (recommended)
-- Font optimization with next/font
-- Tailwind CSS purges unused styles in production
-- Turbopack for faster development builds
-
-## Browser Support
-
-- Modern browsers (Chrome, Firefox, Safari, Edge)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## Contributing
-
-1. Create a feature branch from `main`
-2. Make your changes
-3. Test thoroughly
-4. Submit a pull request
-
-## License
-
-[Add your license here]
-
 ## Contact
 
 For questions or support, please contact the NUMUN team through the website's contact form.
 
 ---
 
-Built with care by the NUMUN team.
+Built with care by the NUMUN team :)
