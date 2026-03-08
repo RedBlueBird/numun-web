@@ -16,21 +16,28 @@ This is the official website for NUMUN (Nagoya University Model United Nations),
 ```
 numun-web/
 ├── public/
-│   ├── fonts/              # Custom font files (Cerebri Sans Pro)
+│   ├── fonts/              # Custom font files
+│   │   ├── Cerebri-Sans-Pro/
+│   │   ├── ITC-Benguiat-Std/
+│   │   └── symphony-pro/
 │   ├── images/             # Images organized by category
-│   │   ├── gallery/
+│   │   ├── events/         # Committee banners & hero video
 │   │   ├── logos/
 │   │   ├── media/
 │   │   ├── sponsors/
-│   │   └── team/
-│   └── numun_logo.ico      # Favicon
+│   │   ├── team/
+│   │   └── topography_tile_background.svg
+│   └── logo.ico            # Favicon
+├── scripts/                # Utility scripts (image conversion, etc.)
 ├── src/
 │   ├── app/                # Next.js App Router pages
 │   │   ├── about/
 │   │   ├── contact/
 │   │   ├── gallery/
+│   │   ├── numun/          # NUMUN committees page
 │   │   ├── partnership/
 │   │   ├── past-sponsors/
+│   │   ├── register/       # Registration page
 │   │   ├── team/
 │   │   ├── layout.tsx      # Root layout with fonts & metadata
 │   │   ├── globals.css     # Global styles
@@ -38,16 +45,19 @@ numun-web/
 │   ├── components/         # React components
 │   │   ├── animation/      # Animation components (ScrollReveal, StatsCounter)
 │   │   ├── contact/        # Contact form & method cards
+│   │   ├── gallery/        # Gallery event & image cards
 │   │   ├── home/           # Home page sections
-│   │   ├── layout/         # Header, Footer, ClientLayout
+│   │   ├── layout/         # Header, Footer, ClientLayout, Logo
+│   │   ├── social/         # Instagram feed
 │   │   ├── sponsors/       # Sponsor cards
 │   │   ├── team/           # Team profiles & quotes
 │   │   └── ui/             # Reusable UI components
-│   ├── config/             # Configuration files
+│   ├── config/             # Configuration files (styles, animations, fonts)
 │   ├── context/            # React contexts (LanguageContext)
-│   ├── data/               # Static data (team, sponsors, navigation, social links)
+│   ├── data/               # Static data (team, sponsors, gallery, timeline, navigation)
+│   ├── hooks/              # Custom React hooks (useReducedMotion, useScrollAnimation)
 │   ├── lib/                # Utility functions
-│   ├── locales/            # Translation files
+│   ├── locales/            # Translation files (en, jp)
 │   └── types/              # TypeScript type definitions
 ├── package.json
 └── README.md
