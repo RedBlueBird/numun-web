@@ -173,7 +173,7 @@ export const en: Translations = {
     },
     discount: {
       title: 'GROUP DISCOUNT',
-      description: 'Groups of 5 or more delegates qualify for a special discounted registration rate. Please use the group registration form and contact us for pricing details.',
+      description: 'Groups of multiple delegates qualify for a special discounted registration rate. Please use the group registration form and contact us for pricing details.',
     },
     process: {
       title: 'REGISTRATION PROCESS',

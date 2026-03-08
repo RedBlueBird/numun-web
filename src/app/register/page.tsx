@@ -81,14 +81,20 @@ export default function RegisterPage() {
               <h2 className={`text-2xl font-bold text-numun-green mb-4 ${fonts.itcBenguiat}`}>
                 {t.register.group.title}
               </h2>
-              <p className={`${typography.bodyLarge} mb-6`}>{t.register.group.description}</p>
+              <p className={`${typography.bodyLarge} mb-2`}>{t.register.group.description}</p>
+              <a
+                href={`mailto:${t.register.group.emailUs}`}
+                className={`text-numun-green font-semibold underline hover:text-numun-gold${tokens.transition.colors} ${fonts.cerebri}`}
+              >
+                {t.register.group.emailUs}
+              </a>
+              <hr className="border-numun-gold/30 mt-6 mb-6" />
+              <h3 className={`text-xl font-bold text-numun-green mb-3 ${fonts.itcBenguiat}`}>
+                {t.register.discount.title}
+              </h3>
+              <p className={`${typography.bodyLarge} mb-6`}>{t.register.discount.description}</p>
+              <hr className="border-numun-gold/30 mb-6" />
               <div className="flex flex-col gap-3 mb-6">
-                <a
-                  href={`mailto:${t.register.group.emailUs}`}
-                  className={`text-numun-green font-semibold underline hover:text-numun-gold ${tokens.transition.colors} ${fonts.cerebri}`}
-                >
-                  {t.register.group.emailUs}
-                </a>
                 <a
                   href={DRIVE_URL}
                   target="_blank"
@@ -98,11 +104,6 @@ export default function RegisterPage() {
                   {t.register.group.downloadForm}
                 </a>
               </div>
-              <hr className="border-numun-gold/30 mb-6" />
-              <h3 className={`text-xl font-bold text-numun-green mb-3 ${fonts.itcBenguiat}`}>
-                {t.register.discount.title}
-              </h3>
-              <p className={typography.bodyLarge}>{t.register.discount.description}</p>
             </motion.div>
           </motion.div>
         </div>
