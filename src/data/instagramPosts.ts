@@ -17,6 +17,18 @@ export interface InstagramPost {
 
 export const featuredInstagramPosts: InstagramPost[] = [
   {
+    url: 'https://www.instagram.com/p/DVkxHmEGJp_/',
+    description: 'Committee Discussions',
+  },
+  {
+    url: 'https://www.instagram.com/p/DVkv_FNGBAF/',
+    description: 'Awards Ceremony',
+  },
+  {
+    url: 'https://www.instagram.com/p/DVkv9EsmDGE/',
+    description: 'NUMUN Community',
+  },
+  {
     url: 'https://www.instagram.com/p/DQ_y8-FgZRG/',
     description: 'NUMUN Conference Highlights',
   },
@@ -27,17 +39,5 @@ export const featuredInstagramPosts: InstagramPost[] = [
   {
     url: 'https://www.instagram.com/p/DQ_ypMSgZLa/',
     description: 'Opening Ceremony',
-  },
-  {
-    url: 'https://www.instagram.com/reel/DQ-vX7ngYuK/',
-    description: 'Committee Discussions',
-  },
-  {
-    url: 'https://www.instagram.com/reel/DQ1fjLOgUcF/',
-    description: 'Awards Ceremony',
-  },
-  {
-    url: 'https://www.instagram.com/p/DQwTnhQgS15/',
-    description: 'NUMUN Community',
-  },
+  }
 ];

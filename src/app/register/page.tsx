@@ -62,7 +62,8 @@ export default function RegisterPage() {
               <h2 className={`text-2xl font-bold text-numun-green mb-4 ${fonts.itcBenguiat}`}>
                 {t.register.individual.title}
               </h2>
-              <p className={`${typography.bodyLarge} mb-6`}>{t.register.individual.description}</p>
+              {/* <p className={`${typography.bodyLarge} mb-2`}>{t.register.individual.description}</p> */}
+              <p className={`${typography.bodyLarge} mb-6`}>{t.register.individual.earlyBird}</p>
               <a
                 href={FORM_URL}
                 target="_blank"
@@ -94,16 +95,14 @@ export default function RegisterPage() {
               </h3>
               <p className={`${typography.bodyLarge} mb-6`}>{t.register.discount.description}</p>
               <hr className="border-numun-gold/30 mb-6" />
-              <div className="flex flex-col gap-3 mb-6">
-                <a
-                  href={DRIVE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${components.button.base} ${gradients.goldGradientDark} text-white ${fonts.cerebri} self-start`}
-                >
-                  {t.register.group.downloadForm}
-                </a>
-              </div>
+              <a
+                href={DRIVE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${components.button.base} ${gradients.goldGradientDark} text-white ${fonts.cerebri} self-start`}
+              >
+                {t.register.group.downloadForm}
+              </a>
             </motion.div>
           </motion.div>
         </div>

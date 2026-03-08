@@ -162,7 +162,8 @@ export const en: Translations = {
     title: 'REGISTER',
     individual: {
       title: 'INDIVIDUAL REGISTRATION',
-      description: 'Register as an individual delegate using the form below. Early-Bird Registration (¥3,000): includes registration fees, merchandise, and 2-day lunch catering. Valid until March 28th.',
+      description: 'Register as an individual delegate using the form below.',
+      earlyBird: 'Early-Bird Registration (¥2,790): includes registration fees, merchandise, and 2-day lunch catering. Valid until March 28th.',
       button: 'REGISTER NOW',
     },
     group: {
@@ -194,10 +195,10 @@ export const en: Translations = {
       quote: 'Driving Growth, Elevating Impact',
       date: '27-28 June 2026',
       location: 'Nagoya University Higashiyama Campus, Nagoya, Japan',
-      earlyBird: 'Early-Bird Registration (¥3,000): Includes fees, merchandise, and 2-day lunch catering. Valid until March 28th.*',
+      earlyBird: 'Early-Bird Registration (¥2,790): Includes fees, merchandise, and 2-day lunch catering. Valid until March 28th.*',
       registerNow: 'REGISTER NOW',
-      downloadHandbook: 'DOWNLOAD 2026 DELEGATE HANDBOOK',
-      downloadRules: 'DOWNLOAD 2026 RULES OF PROCEDURE',
+      downloadHandbook: 'DOWNLOAD 2026 DELEGATE HANDBOOK (coming soon)',
+      downloadRules: 'DOWNLOAD 2026 RULES OF PROCEDURE (coming soon)',
       emblemAlt: 'NUMUN 2026 Committee Emblems',
     },
     sections: {

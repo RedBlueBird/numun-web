@@ -90,7 +90,7 @@ export default function HeroSection() {
           className={`${layout.flex.column} sm:flex-row ${spacing.gap.lg} ${layout.flex.centerBoth} pb-16`}
           {...getAnimationProps("buttons")}
         >
-          <Button href="/about" variant="primary" icon={<FaSearch />} className={`w-full sm:w-auto ${components.button.large}`}>
+          <Button href="/numun" variant="primary" icon={<FaSearch />} className={`w-full sm:w-auto ${components.button.large}`}>
             {t.home.learnAboutButton}
           </Button>
           <Button href="/register" variant="primary" icon={<FaUserPlus />} className={`w-full sm:w-auto ${components.button.large}`}>

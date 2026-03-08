@@ -162,7 +162,8 @@ export const jp: Translations = {
     title: '登録',
     individual: {
       title: '個人登録',
-      description: '以下のフォームから個人代表者として登録してください。早期登録（¥3,000）：登録費・グッズ・2日間のランチケータリング込み。3月28日まで有効。',
+      description: '以下のフォームから個人代表者として登録してください。',
+      earlyBird: '早期登録（¥2,790）：登録費・グッズ・2日間のランチケータリング込み。3月28日まで有効。',
       button: '今すぐ登録',
     },
     group: {
@@ -194,10 +195,10 @@ export const jp: Translations = {
       quote: '「成長を促進し、影響を高める」',
       date: '2026年6月27-28日',
       location: '名古屋大学東山キャンパス、名古屋、日本',
-      earlyBird: '早期登録（¥3,000）：参加費・グッズ・2日間のランチケータリング込み。3月28日まで有効。*',
+      earlyBird: '早期登録（¥2,790）：参加費・グッズ・2日間のランチケータリング込み。3月28日まで有効。*',
       registerNow: '今すぐ登録',
-      downloadHandbook: '2026年代表者ハンドブックをダウンロード',
-      downloadRules: '2026年議事規則をダウンロード',
+      downloadHandbook: '2026年代表者ハンドブックをダウンロード（近日公開）',
+      downloadRules: '2026年議事規則をダウンロード（近日公開）',
       emblemAlt: 'NUMUN 2026委員会エンブレム',
     },
     sections: {

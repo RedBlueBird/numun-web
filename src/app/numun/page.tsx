@@ -79,7 +79,7 @@ export default function NumunPage() {
 
                 {/* Register Now button */}
                 <div className="mb-4">
-                  <Button href="#" variant="primary">
+                  <Button href="register" variant="primary">
                     {t.conference.hero.registerNow}
                   </Button>
                 </div>
@@ -121,44 +121,44 @@ export default function NumunPage() {
       </section>
 
       {/* COMMITTEES */}
-      <SectionTitle>{t.conference.sections.committees}</SectionTitle>
+      {/* <SectionTitle>{t.conference.sections.committees}</SectionTitle>
       <section className={sections.standardSection}>
         <div className={spacing.container}>
           <ScrollReveal>
             <p className={typography.bodyLarge}>{LOREM}</p>
           </ScrollReveal>
         </div>
-      </section>
+      </section> */}
 
       {/* AWARDS */}
-      <SectionTitle>{t.conference.sections.awards}</SectionTitle>
+      {/* <SectionTitle>{t.conference.sections.awards}</SectionTitle>
       <section className={sections.standardSection}>
         <div className={spacing.container}>
           <ScrollReveal>
             <p className={typography.bodyLarge}>{LOREM}</p>
           </ScrollReveal>
         </div>
-      </section>
+      </section> */}
 
       {/* MERCHANDISE */}
-      <SectionTitle>{t.conference.sections.merchandise}</SectionTitle>
+      {/* <SectionTitle>{t.conference.sections.merchandise}</SectionTitle>
       <section className={sections.standardSection}>
         <div className={spacing.container}>
           <ScrollReveal>
             <p className={typography.bodyLarge}>{LOREM}</p>
           </ScrollReveal>
         </div>
-      </section>
+      </section> */}
 
       {/* LUNCH OPTIONS */}
-      <SectionTitle>{t.conference.sections.lunchOptions}</SectionTitle>
+      {/* <SectionTitle>{t.conference.sections.lunchOptions}</SectionTitle>
       <section className={sections.standardSection}>
         <div className={spacing.container}>
           <ScrollReveal>
             <p className={typography.bodyLarge}>{LOREM}</p>
           </ScrollReveal>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

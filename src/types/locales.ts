@@ -168,6 +168,7 @@ export interface Translations {
     individual: {
       title: string;
       description: string;
+      earlyBird: string;
       button: string;
     };
     group: {
