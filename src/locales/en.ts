@@ -148,6 +148,10 @@ export const en: Translations = {
     title: 'IN MOTION: OUR CURRENT EVENTS',
     description: 'Stay updated with the latest happenings and milestones at NUMUN',
     events: {
+      earlyBirdDelegate: {
+        title: 'Early-Bird Delegate Applications',
+        description: 'Early-Bird Delegate Registration is now open! Register by March 28th to secure the discounted rate of ¥2,790, which includes registration fees, merchandise, and 2-day lunch catering.',
+      },
       staffRecruitment: {
         title: 'NUMUN Staff Recruitment',
         description: 'Join the NUMUN 2026 organizing team! We are seeking passionate students to help make NUMUN 2026 a success. Open positions available across IT & Design, Logistics, Marketing, Academics, and Finance teams. Be part of shaping the future of Model United Nations at Nagoya University.',
@@ -174,7 +178,7 @@ export const en: Translations = {
     },
     discount: {
       title: 'GROUP DISCOUNT',
-      description: 'Groups of multiple delegates qualify for a special discounted registration rate. Please use the group registration form and contact us for pricing details.',
+      description: 'Groups of multiple delegates qualify for a special discounted registration rate. ¥300 off per person for every complete group of 3 participants. Any remaining participants outside a complete group of 3 are charged at the standard rate.',
     },
     process: {
       title: 'REGISTRATION PROCESS',
@@ -206,6 +210,28 @@ export const en: Translations = {
       awards: 'AWARDS',
       merchandise: 'MERCHANDISE',
       lunchOptions: 'LUNCH OPTIONS',
+    },
+    committeeList: {
+      ecosoc: {
+        name: 'ECOSOC',
+        description: 'The United Nations Economic and Social Council coordinates international economic, social, and environmental policy, serving as the central platform for promoting sustainable development across the UN system.',
+      },
+      unep: {
+        name: 'UNEP',
+        description: 'The United Nations Environment Programme is the world\'s leading authority on environmental issues, helping nations address climate change, biodiversity loss, and pollution.',
+      },
+      unhcr: {
+        name: 'UNHCR',
+        description: 'The United Nations High Commissioner for Refugees protects refugees, asylum seekers, internally displaced persons, and stateless people across more than 130 countries worldwide.',
+      },
+      unsc: {
+        name: 'UNSC',
+        description: 'The United Nations Security Council bears primary responsibility for international peace and security, with authority to establish peacekeeping operations, impose sanctions, and authorize the use of force.',
+      },
+      who: {
+        name: 'WHO',
+        description: 'The World Health Organization directs international health efforts, sets global health standards, and leads coordination of health emergencies across the United Nations system.',
+      },
     },
   },
 };

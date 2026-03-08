@@ -16,6 +16,14 @@ export interface TimelineEvent {
 
 export const timelineEvents: TimelineEvent[] = [
   {
+    id: 'early-bird-delegate-2026',
+    date: '2026-03-07',
+    titleKey: 'timeline.events.earlyBirdDelegate.title',
+    descriptionKey: 'timeline.events.earlyBirdDelegate.description',
+    photos: [],
+    status: 'current',
+  },
+  {
     id: 'numun-cafe-2025',
     date: '2025-12-21',
     titleKey: 'timeline.events.numunCafe.title',

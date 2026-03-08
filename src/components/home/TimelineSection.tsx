@@ -119,7 +119,7 @@ export default function TimelineSection() {
                     >
                       <motion.div
                         transition={transitions.smooth}
-                        className={`${components.card.base} bg-white/10 backdrop-blur-sm ${spacing.padding.lg} ${tokens.borderRadius.xl} border border-numun-gold/30`}
+                        className={`${components.card.base} bg-white/10 backdrop-blur-sm ${spacing.padding.md} ${tokens.borderRadius.xl} border border-numun-gold/30`}
                       >
                         {/* Mobile Date Display */}
                         <div className="md:hidden text-numun-gold font-bold text-sm mb-3">

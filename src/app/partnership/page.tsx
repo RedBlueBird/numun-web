@@ -160,20 +160,10 @@ export default function Numun2026Page() {
             </p>
           </ScrollReveal>
 
-          <ScrollReveal variant="scale" delay={0.2}>
-            <div className="max-w-5xl mx-auto bg-gradient-to-br from-numun-beige to-white rounded-3xl p-8 md:p-12">
-              <motion.div
-                className="grid grid-cols-1 md:grid-cols-3 gap-6"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={scrollAnimations.staggerContainer}
-              >
+          <div className="max-w-5xl mx-auto bg-gradient-to-br from-numun-beige to-white rounded-3xl p-8 md:p-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Silver Tier */}
-                <motion.div
-                  className="bg-gray-200 rounded-2xl p-6 shadow-lg"
-                  variants={scrollAnimations.staggerItem}
-                >
+                <div className="bg-gray-200 rounded-2xl p-6 shadow-lg">
                   <h3 className="text-2xl font-bold text-center mb-4 text-numun-green">{t.numun2026.sponsorship.tiers.silver}</h3>
                   <ul className="space-y-3 text-sm">
                     {sponsorshipTiers[0].benefits.map((benefit, index) => (
@@ -183,13 +173,10 @@ export default function Numun2026Page() {
                       </li>
                     ))}
                   </ul>
-                </motion.div>
+                </div>
 
                 {/* Diamond Tier */}
-                <motion.div
-                  className="bg-gradient-to-br from-blue-200 to-blue-300 rounded-2xl p-6 shadow-xl transform md:scale-105"
-                  variants={scrollAnimations.staggerItem}
-                >
+                <div className="bg-gradient-to-br from-blue-200 to-blue-300 rounded-2xl p-6 shadow-xl transform md:scale-105">
                   <h3 className="text-2xl font-bold text-center mb-4 text-numun-green-dark">{t.numun2026.sponsorship.tiers.diamond}</h3>
                   <ul className="space-y-3 text-sm text-numun-green-dark">
                     {sponsorshipTiers[2].benefits.map((benefit, index) => (
@@ -199,13 +186,10 @@ export default function Numun2026Page() {
                       </li>
                     ))}
                   </ul>
-                </motion.div>
+                </div>
 
                 {/* Gold Tier */}
-                <motion.div
-                  className="bg-gradient-to-br from-numun-gold-light to-numun-gold rounded-2xl p-6 shadow-lg"
-                  variants={scrollAnimations.staggerItem}
-                >
+                <div className="bg-gradient-to-br from-numun-gold-light to-numun-gold rounded-2xl p-6 shadow-lg">
                   <h3 className="text-2xl font-bold text-center mb-4 text-numun-green-dark">{t.numun2026.sponsorship.tiers.gold}</h3>
                   <ul className="space-y-3 text-sm text-numun-green-dark">
                     {sponsorshipTiers[1].benefits.map((benefit, index) => (
@@ -215,10 +199,9 @@ export default function Numun2026Page() {
                       </li>
                     ))}
                   </ul>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             </div>
-          </ScrollReveal>
         </div>
       </section>
 

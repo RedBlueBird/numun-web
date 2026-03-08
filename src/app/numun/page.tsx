@@ -5,12 +5,22 @@ import PageTitle from "@/components/ui/PageTitle";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ScrollReveal from "@/components/animation/ScrollReveal";
 import Button from "@/components/ui/Button";
+import SponsorCard from "@/components/sponsors/SponsorCard";
+import { motion } from "framer-motion";
 import { sections, spacing, typography, tokens } from "@/config/styles";
+import { scrollAnimations } from "@/config/animations";
 import { fonts } from "@/config/fonts";
 import { useLanguage } from "@/context/LanguageContext";
 
-const LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 const DRIVE_URL = "https://drive.google.com/drive/folders/1waApdz40vlpR2Ro7UIOCg_q38L68C_XP";
+
+const COMMITTEES = [
+  { key: 'who'    as const, image: '/images/events/committee-who.webp',    url: 'https://www.who.int' },
+  { key: 'ecosoc' as const, image: '/images/events/committee-ecosoc.webp', url: 'https://www.un.org/ecosoc' },
+  { key: 'unsc'   as const, image: '/images/events/committee-unsc.webp',   url: 'https://www.un.org/securitycouncil' },
+  { key: 'unep'   as const, image: '/images/events/committee-unep.webp',   url: 'https://www.unep.org' },
+  { key: 'unhcr'  as const, image: '/images/events/committee-unhcr.webp',  url: 'https://www.unhcr.org' },
+];
 
 export default function NumunPage() {
   const { t } = useLanguage();
@@ -121,14 +131,38 @@ export default function NumunPage() {
       </section>
 
       {/* COMMITTEES */}
-      {/* <SectionTitle>{t.conference.sections.committees}</SectionTitle>
+      <SectionTitle>{t.conference.sections.committees}</SectionTitle>
       <section className={sections.standardSection}>
         <div className={spacing.container}>
-          <ScrollReveal>
-            <p className={typography.bodyLarge}>{LOREM}</p>
-          </ScrollReveal>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={scrollAnimations.staggerContainer}
+          >
+            {COMMITTEES.map((committee) => {
+              const data = t.conference.committeeList[committee.key];
+              return (
+                <motion.div key={committee.key} variants={scrollAnimations.staggerItem} className="h-full">
+                  <SponsorCard
+                    sponsor={{
+                      id: committee.key,
+                      name: data.name,
+                      tier: 'diamond',
+                      logo: committee.image,
+                      description: data.description,
+                      website: committee.url,
+                    }}
+                    tier="diamond"
+                    circularGreenBg
+                  />
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
-      </section> */}
+      </section>
 
       {/* AWARDS */}
       {/* <SectionTitle>{t.conference.sections.awards}</SectionTitle>

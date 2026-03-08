@@ -148,6 +148,10 @@ export interface Translations {
     title: string;
     description: string;
     events: {
+      earlyBirdDelegate: {
+        title: string;
+        description: string;
+      };
       staffRecruitment: {
         title: string;
         description: string;
@@ -206,6 +210,13 @@ export interface Translations {
       awards: string;
       merchandise: string;
       lunchOptions: string;
+    };
+    committeeList: {
+      ecosoc: { name: string; description: string; };
+      unep: { name: string; description: string; };
+      unhcr: { name: string; description: string; };
+      unsc: { name: string; description: string; };
+      who: { name: string; description: string; };
     };
   };
 }

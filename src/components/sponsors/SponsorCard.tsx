@@ -11,9 +11,10 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 interface SponsorCardProps {
   sponsor: Sponsor;
   tier: "diamond" | "gold" | "silver";
+  circularGreenBg?: boolean;
 }
 
-export default function SponsorCard({ sponsor, tier }: SponsorCardProps) {
+export default function SponsorCard({ sponsor, tier, circularGreenBg = false }: SponsorCardProps) {
   const prefersReducedMotion = useReducedMotion();
 
   // Different styling based on tier
@@ -49,10 +50,22 @@ export default function SponsorCard({ sponsor, tier }: SponsorCardProps) {
       whileHover={prefersReducedMotion ? {} : hoverAnimations.cardLiftStrong}
     >
       <motion.div
-        className={styles.logoContainer}
+        className={circularGreenBg ? "flex items-center justify-center mb-6" : styles.logoContainer}
         whileHover={prefersReducedMotion ? {} : hoverAnimations.imageZoomSubtle}
       >
-        {sponsor.logo ? (
+        {circularGreenBg ? (
+          <div className="w-32 h-32 rounded-full bg-numun-green flex items-center justify-center relative overflow-hidden">
+            <Image
+              src={sponsor.logo}
+              alt={`${sponsor.name} logo`}
+              fill
+              className="object-contain p-4"
+              sizes="128px"
+              loading="lazy"
+              quality={85}
+            />
+          </div>
+        ) : sponsor.logo ? (
           <Image
             src={sponsor.logo}
             alt={`${sponsor.name} logo`}
