@@ -24,19 +24,20 @@ export default function HeroSection() {
 
   return (
     <section className={`${utils.relative} ${sections.fullHeight} ${layout.flex.centerBoth} ${sections.heroDark} ${utils.overflow.hidden}`}>
-      {/* Background image */}
+      {/* Background video */}
       <div className={`${utils.absoluteFill} ${utils.zIndex.base}`}>
-        <Image
-          src="/images/home_background.webp"
-          alt="NUMUN Conference Background"
-          fill
-          priority
-          className="object-cover"
+        <video
+          src="/images/events/home-hero-vid.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover scale-[1.07]"
         />
       </div>
 
       {/* Background overlay - creates green tone over photo */}
-      <div className={`${utils.absoluteFill} ${gradients.heroOverlay}`}></div>
+      <div className={`${utils.absoluteFill} ${gradients.heroOverlay} -bottom-2`}></div>
 
       {/* Content */}
       <div className={`${utils.relative} ${utils.zIndex.content} ${spacing.container} ${utils.textCenter} ${layout.flex.column} ${layout.flex.spaceBetween} h-full py-24`}>
