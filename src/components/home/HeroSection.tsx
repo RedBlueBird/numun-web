@@ -80,7 +80,7 @@ export default function HeroSection() {
 
         {/* CTA Message */}
         <motion.p
-          className={`text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold ${typography.italic} mb-12 ${layout.maxWidth.lg} ${fonts.itcBenguiat}`}
+          className={`text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold ${typography.italic} mb-12 ${layout.maxWidth.md} ${fonts.itcBenguiat}`}
           {...getAnimationProps("message")}
         >
           {t.home.recruitingMessage}

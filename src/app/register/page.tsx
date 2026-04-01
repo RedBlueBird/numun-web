@@ -112,7 +112,7 @@ export default function RegisterPage() {
               rel="noopener noreferrer"
               className={`${typography.bodySmall} underline hover:text-numun-green ${tokens.transition.colors} ${fonts.cerebri}`}
             >
-              View Refund Policy
+              *View Refund Policy
             </a>
           </div>
         </div>
