@@ -83,7 +83,7 @@ export default function SponsorCard({ sponsor, tier, circularGreenBg = false, li
       </motion.div>
       <h3 className={styles.title}>{sponsor.name}</h3>
       {badge && (
-        <span className="text-xs font-semibold text-numun-green bg-numun-beige border border-numun-gold rounded-full px-3 py-1 whitespace-nowrap mb-4 inline-block">
+        <span className="text-xs font-semibold text-numun-green bg-numun-beige border border-numun-gold rounded-full px-3 py-1 whitespace-nowrap mb-4 self-center">
           {badge}
         </span>
       )}
