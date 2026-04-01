@@ -214,6 +214,7 @@ export const en: Translations = {
       awards: 'AWARDS',
       merchandise: 'MERCHANDISE',
       lunchOptions: 'LUNCH OPTIONS',
+      scheduleOverview: 'SCHEDULE OVERVIEW',
     },
     committeeList: {
       ecosoc: {

@@ -214,6 +214,7 @@ export const jp: Translations = {
       awards: '表彰',
       merchandise: 'グッズ',
       lunchOptions: 'ランチオプション',
+      scheduleOverview: 'スケジュール概要',
     },
     committeeList: {
       ecosoc: {

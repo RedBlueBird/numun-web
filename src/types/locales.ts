@@ -160,6 +160,10 @@ export interface Translations {
         title: string;
         description: string;
       };
+      unmoderatedCookoff: {
+        title: string;
+        description: string;
+      };
     };
   };
   social: {
@@ -210,6 +214,7 @@ export interface Translations {
       awards: string;
       merchandise: string;
       lunchOptions: string;
+      scheduleOverview: string;
     };
     committeeList: {
       ecosoc: { name: string; description: string; level: string; };
