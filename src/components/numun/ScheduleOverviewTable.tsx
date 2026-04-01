@@ -3,12 +3,9 @@
 import React from "react";
 import { tokens } from "@/config/styles";
 import { fonts } from "@/config/fonts";
+import { ScheduleEntry } from "@/data/scheduleOverview";
 
-export interface ScheduleEntry {
-  time?: string;
-  event: string;
-  location?: string;
-}
+export type { ScheduleEntry };
 
 interface ScheduleOverviewTableProps {
   day: string;

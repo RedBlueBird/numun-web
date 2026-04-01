@@ -6,7 +6,8 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import ScrollReveal from "@/components/animation/ScrollReveal";
 import Button from "@/components/ui/Button";
 import SponsorCard from "@/components/sponsors/SponsorCard";
-import ScheduleOverviewTable, { ScheduleEntry } from "@/components/numun/ScheduleOverviewTable";
+import ScheduleOverviewTable from "@/components/numun/ScheduleOverviewTable";
+import { scheduleOverview } from "@/data/scheduleOverview";
 import { motion } from "framer-motion";
 import { sections, spacing, typography, tokens } from "@/config/styles";
 import { scrollAnimations } from "@/config/animations";
@@ -15,35 +16,6 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const HANDBOOK_URL = "https://drive.google.com/drive/folders/1SNbyz3mSXhwHgjVFb9XmsZcFmayQSBe1";
 const RULES_URL = "https://drive.google.com/drive/folders/1d3ersa21_l898rTA69ei-B2AFWgceDtt";
-
-const DAY1_SCHEDULE: ScheduleEntry[] = [
-  { time: "09:00 – 09:30", event: "Registration",                          location: "ALEP, 1F" },
-  { time: "09:35 – 10:00", event: "Opening Ceremony",                      location: "ALEP, 2F, Main Hall" },
-  { time: "10:00 – 10:15", event: "Move from Main Hall to Committee Rooms" },
-  { time: "10:15 – 11:45", event: "Committee Session 1 (90min)",           location: "ALEP Committee Room" },
-  { time: "11:45 – 12:30", event: "Lunch Time" },
-  { time: "12:30 – 14:00", event: "Committee Session 2 (90min)",           location: "ALEP Committee Room" },
-  { time: "14:00 – 14:15", event: "Break" },
-  { time: "14:15 – 15:45", event: "Committee Session 3 (90min)",           location: "ALEP Committee Room" },
-  { time: "15:45 – 15:55", event: "Short Break" },
-  { time: "15:55 – 17:25", event: "Committee Session 4 (90min)",           location: "ALEP Committee Room" },
-  { time: "17:30 – 18:00", event: "Memory Time" },
-  { time: "18:00 – 19:00", event: "Commute to Social Night Venue" },
-  { time: "19:00 – 22:00", event: "Social Night",                          location: "TBA" },
-];
-
-const DAY2_SCHEDULE: ScheduleEntry[] = [
-  { time: "08:45 – 09:00", event: "Arrival",                               location: "ALEP, 1F" },
-  { time: "09:00 – 10:30", event: "Committee Session 5 (90min)",           location: "ALEP Committee Room" },
-  { time: "10:30 – 10:45", event: "Break" },
-  { time: "10:45 – 12:15", event: "Committee Session 6 (90min)",           location: "ALEP Committee Room" },
-  { time: "12:15 – 13:00", event: "Lunch Time" },
-  { time: "13:00 – 14:30", event: "Committee Session 7 (90min)",           location: "ALEP Committee Room" },
-  { time: "14:30 – 16:00", event: "Certificate Giving",                    location: "ALEP Committee Room" },
-  {                         event: "Memory Time" },
-  {                         event: "Move to Noyori Hall" },
-  { time: "15:00 – 16:30", event: "Awarding & Closing Ceremony",           location: "Noyori Hall" },
-];
 
 const COMMITTEES = [
   { key: 'who'    as const, image: '/images/events/committee-who.webp',    url: 'https://drive.google.com/drive/folders/10t3EAI6B45XX4ZpBbTa9I6Us82Wi3Q7P' },
@@ -54,7 +26,8 @@ const COMMITTEES = [
 ];
 
 export default function NumunPage() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+  const schedule = scheduleOverview[locale];
 
   return (
     <div className="relative">
@@ -202,8 +175,8 @@ export default function NumunPage() {
       <section className={sections.standardSection}>
         <div className={spacing.container}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <ScheduleOverviewTable day="DAY 1" entries={DAY1_SCHEDULE} />
-            <ScheduleOverviewTable day="DAY 2" entries={DAY2_SCHEDULE} />
+            <ScheduleOverviewTable day="DAY 1" entries={schedule.day1} />
+            <ScheduleOverviewTable day="DAY 2" entries={schedule.day2} />
           </div>
         </div>
       </section>
