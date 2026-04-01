@@ -26,6 +26,7 @@ export const en: Translations = {
   footer: {
     description: 'Fostering global awareness, promoting diplomacy, and empowering students through meaningful debate and cultural exchange.',
     quickLinks: 'Quick Links',
+    importantPolicies: 'Important Policies',
     contactUs: 'Contact Us',
     copyright: '© {year} Nagoya University Model United Nations. All rights reserved.',
   },
@@ -196,6 +197,30 @@ export const en: Translations = {
     instagramTitle: 'FOLLOW OUR JOURNEY',
     instagramDescription: 'Stay connected with NUMUN through our latest updates and highlights',
     followUs: 'Follow us @mun.nagoyauniversity',
+  },
+  policy: {
+    title: 'IMPORTANT POLICIES',
+    sections: {
+      refundPolicy: {
+        title: 'Refund Policy',
+        body: 'In the case of needing to withdraw your registration from the NUMUN 2026 conference, the following refund policy will be enforced. Fees may be transferable, but please contact the following email in such cases and wait for further instructions from our team.',
+        refundPolicyLinkText: 'Refund Policy',
+      },
+      aiUsage: {
+        title: 'AI Usage',
+        body: 'The rapid advancement of AI in recent years has made it an integral part of the writing process for many. However, NUMUN 2026 is an academic conference that empowers critical thinking in our delegates. Certain restrictions on its usage must apply. Please review the Rules of Procedure Document for more details on the use of AI and plagiarism during the conference.',
+        rulesLinkText: 'Rules of Procedure',
+      },
+      lateSubmissions: {
+        title: 'Late Submissions',
+        body: 'In order to practice fairness among our delegates, a late-submission policy for the Position Paper will be strictly enforced. Delegates are requested to submit their position papers by the hard deadline of 13 June 2026 (Saturday), 11:59 PM in order to be eligible for the Position Paper award of their respective committees. No exceptions will be made.',
+      },
+      upToDate: {
+        title: 'Up-to-Date Information',
+        body: 'The NUMUN 2026 Organizing Committee strives for the utmost transparency and aims to provide our delegates with the most up-to-date information about our conference. As some pieces of information are yet to be announced, documents such as this Handbook, the Background Guides, and Rules of Procedure will be updated regularly. While NUMUN 2026 will be announcing changes to documents on our official Social Media pages when deemed necessary, we kindly request that our prospective delegates enact the duty of directly checking our repositories and folders routinely for any new versions.',
+        followUp: 'Follow our Instagram, LINE, website and freely message us for inquiries.',
+      },
+    },
   },
   conference: {
     title: 'NUMUN 2026',

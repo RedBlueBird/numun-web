@@ -26,6 +26,7 @@ export const jp: Translations = {
   footer: {
     description: '意義のある議論と文化交流を通じて、グローバルな意識を育み、外交を推進し、学生に力を与えます。',
     quickLinks: 'クイックリンク',
+    importantPolicies: '重要なポリシー',
     contactUs: 'お問い合わせ',
     copyright: '© {year} 名古屋大学模擬国連。全著作権所有。',
   },
@@ -196,6 +197,30 @@ export const jp: Translations = {
     instagramTitle: '私たちの旅をフォロー',
     instagramDescription: 'NUMUNの最新情報とハイライトをご覧ください',
     followUs: '@mun.nagoyauniversityをフォロー',
+  },
+  policy: {
+    title: '重要なポリシー',
+    sections: {
+      refundPolicy: {
+        title: '返金ポリシー',
+        body: 'NUMUN 2026への登録をキャンセルする必要がある場合、返金ポリシーが適用されます。参加費は譲渡可能な場合があります。その際は以下のメールにご連絡いただき、チームからの指示をお待ちください。',
+        refundPolicyLinkText: '返金規則',
+      },
+      aiUsage: {
+        title: 'AI使用',
+        body: '近年のAIの急速な発展により、多くの人にとって文章作成プロセスの一部となっています。しかしNUMUN 2026はデレゲートの批判的思考を育む学術会議であるため、使用に一定の制限が設けられています。会議中のAIおよび盗用に関する詳細は議事規則文書をご確認ください。',
+        rulesLinkText: '議事規則',
+      },
+      lateSubmissions: {
+        title: '遅延提出',
+        body: 'デレゲート間の公平性を保つため、ポジションペーパーの遅延提出ポリシーが厳格に適用されます。各委員会のポジションペーパー賞の受賞資格を得るためには、2026年6月13日（土）23:59までに提出が必要です。例外は一切認められません。',
+      },
+      upToDate: {
+        title: '最新情報について',
+        body: 'NUMUN 2026組織委員会は最大限の透明性を追求し、会議に関する最新情報をデレゲートに提供することを目指しています。未発表の情報があるため、本ハンドブック、バックグラウンドガイド、議事規則などの文書は定期的に更新されます。変更が必要と判断された場合はNUMUN 2026の公式SNSページでお知らせしますが、デレゲートの皆様にはリポジトリやフォルダを定期的に直接確認していただくようお願いします。',
+        followUp: 'Instagram・LINE・ウェブサイトなどから、お問い合わせはお気軽にメッセージください。',
+      },
+    },
   },
   conference: {
     title: 'NUMUN 2026',

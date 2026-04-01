@@ -26,6 +26,7 @@ export interface Translations {
   footer: {
     description: string;
     quickLinks: string;
+    importantPolicies: string;
     contactUs: string;
     copyright: string;
   };
@@ -195,6 +196,30 @@ export interface Translations {
       step2: string;
       step3: string;
       step4: string;
+    };
+  };
+  policy: {
+    title: string;
+    sections: {
+      refundPolicy: {
+        title: string;
+        body: string;
+        refundPolicyLinkText: string;
+      };
+      aiUsage: {
+        title: string;
+        body: string;
+        rulesLinkText: string;
+      };
+      lateSubmissions: {
+        title: string;
+        body: string;
+      };
+      upToDate: {
+        title: string;
+        body: string;
+        followUp: string;
+      };
     };
   };
   conference: {

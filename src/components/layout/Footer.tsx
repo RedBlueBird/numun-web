@@ -25,7 +25,7 @@ export default function Footer() {
   return (
     <footer className={`${sections.heroDark} pt-12 pb-6`}>
       <div className={spacing.container}>
-        <div className={`${layout.grid.threeColumn} ${spacing.gap.xl} mb-8`}>
+        <div className={`${layout.grid.fourColumn} ${spacing.gap.xl} mb-8`}>
           {/* Logo and Description */}
           <div>
             <Logo className="mb-4" />
@@ -47,6 +47,25 @@ export default function Footer() {
                   {getNavLabel(item)}
                 </Link>
               ))}
+            </nav>
+          </div>
+
+          {/* Important Policies */}
+          <div>
+            <Link href="/policy" className={`text-numun-gold font-bold mb-4 block hover:text-numun-gold-light ${tokens.transition.colors}`}>{t.footer.importantPolicies}</Link>
+            <nav className={`${layout.flex.column} ${spacing.gap.xs}`}>
+              <Link href="/policy#refund-policy" className={`text-sm hover:text-numun-gold ${tokens.transition.colors}`}>
+                {t.policy.sections.refundPolicy.title}
+              </Link>
+              <Link href="/policy#ai-usage" className={`text-sm hover:text-numun-gold ${tokens.transition.colors}`}>
+                {t.policy.sections.aiUsage.title}
+              </Link>
+              <Link href="/policy#late-submissions" className={`text-sm hover:text-numun-gold ${tokens.transition.colors}`}>
+                {t.policy.sections.lateSubmissions.title}
+              </Link>
+              <Link href="/policy#up-to-date-information" className={`text-sm hover:text-numun-gold ${tokens.transition.colors}`}>
+                {t.policy.sections.upToDate.title}
+              </Link>
             </nav>
           </div>
 
