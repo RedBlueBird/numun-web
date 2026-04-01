@@ -240,11 +240,12 @@ export const jp: Translations = {
       merchandise: 'グッズ',
       lunchOptions: 'ランチオプション',
       scheduleOverview: 'スケジュール概要',
+      swag: 'スワッグ',
     },
     committeeList: {
       ecosoc: {
         name: 'ECOSOC',
-        description: '自律型兵器システムおよびAI対応軍事プラットフォームに関わる事故に対する国際的な責任体制の構築',
+        description: '自律型兵器システムおよびAI搭載軍事プラットフォームに関わる事故への国際的責任制度の構築',
         level: '英語・中級',
       },
       unep: {
@@ -259,13 +260,26 @@ export const jp: Translations = {
       },
       unsc: {
         name: 'UNSC',
-        description: '南スーダンにおける政治的不安への対応：危機委員会',
+        description: '南スーダンにおける政治的不安定への対処：危機委員会',
         level: '英語・上級',
       },
       who: {
         name: 'WHO',
-        description: '低・中所得国における非感染性疾患および栄養不良による早死の解決',
+        description: '低・中所得国における非感染性疾患および栄養不良による早死への対処',
         level: '英語・初級',
+      },
+    },
+    swag: {
+      description1Part1: '全ての代表者はNUMUN 2026の',
+      description1Bold: '限定版',
+      description1Part2: 'グッズを含むSWAG（Stuff We All Get）パッケージを受け取ります。',
+      description2: '以下の画像は初期モックアップであり、最終製品とはサイズや外観が若干異なる場合があります。最終製品の画像はサプライヤーから受け取り次第更新されます。',
+      items: {
+        notebook: 'ノートブック',
+        lanyard: 'ランヤード',
+        stickerPack: 'ステッカーパック',
+        bookmark: 'ブックマーク',
+        pen: 'ペン',
       },
     },
   },

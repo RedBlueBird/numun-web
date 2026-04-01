@@ -9,13 +9,21 @@ import SponsorCard from "@/components/sponsors/SponsorCard";
 import ScheduleOverviewTable from "@/components/numun/ScheduleOverviewTable";
 import { scheduleOverview } from "@/data/scheduleOverview";
 import { motion } from "framer-motion";
-import { sections, spacing, typography, tokens } from "@/config/styles";
+import { sections, spacing, typography, tokens, layout } from "@/config/styles";
 import { scrollAnimations } from "@/config/animations";
 import { fonts } from "@/config/fonts";
 import { useLanguage } from "@/context/LanguageContext";
 
 const HANDBOOK_URL = "https://drive.google.com/drive/folders/1SNbyz3mSXhwHgjVFb9XmsZcFmayQSBe1";
 const RULES_URL = "https://drive.google.com/drive/folders/1d3ersa21_l898rTA69ei-B2AFWgceDtt";
+
+const SWAG_ITEMS = [
+  { key: 'notebook'    as const, image: '/images/events/swag-notebook.webp' },
+  { key: 'lanyard'     as const, image: '/images/events/swag-lanyard.webp' },
+  { key: 'stickerPack' as const, image: '/images/events/swag-sticker.webp' },
+  { key: 'bookmark'    as const, image: '/images/events/swag-bookmark.webp' },
+  { key: 'pen'         as const, image: '/images/events/swag-pen.webp' },
+];
 
 const COMMITTEES = [
   { key: 'who'    as const, image: '/images/events/committee-who.webp',    url: 'https://drive.google.com/drive/folders/10t3EAI6B45XX4ZpBbTa9I6Us82Wi3Q7P' },
@@ -177,6 +185,49 @@ export default function NumunPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <ScheduleOverviewTable day="DAY 1" entries={schedule.day1} />
             <ScheduleOverviewTable day="DAY 2" entries={schedule.day2} />
+          </div>
+        </div>
+      </section>
+
+      {/* SWAGS */}
+      <SectionTitle>{t.conference.sections.swag}</SectionTitle>
+      <section className={sections.standardSection}>
+        <div className={spacing.container}>
+          <div className={`${layout.maxWidth.lg} mx-auto`}>
+            <ScrollReveal variant="fadeIn">
+              <p className={`${typography.bodyLarge} mb-4`}>
+                {t.conference.swag.description1Part1}
+                <strong>{t.conference.swag.description1Bold}</strong>
+                {t.conference.swag.description1Part2}
+              </p>
+              <p className={`${typography.bodyLarge} mb-12`}>
+                {t.conference.swag.description2}
+              </p>
+            </ScrollReveal>
+            <motion.div
+              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              variants={scrollAnimations.staggerContainer}
+            >
+              {SWAG_ITEMS.map((item) => (
+                <motion.div key={item.key} variants={scrollAnimations.staggerItem} className="flex flex-col items-center gap-3">
+                  <div className={`w-full aspect-square relative ${tokens.borderRadius.lg} overflow-hidden`}>
+                    <Image
+                      src={item.image}
+                      alt={t.conference.swag.items[item.key]}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                    />
+                  </div>
+                  <p className={`text-sm font-bold text-numun-green text-center uppercase ${fonts.cerebri}`}>
+                    {t.conference.swag.items[item.key]}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>

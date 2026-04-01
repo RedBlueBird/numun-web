@@ -27,7 +27,7 @@ export default function Footer() {
       <div className={spacing.container}>
         <div className={`${layout.grid.fourColumn} ${spacing.gap.xl} mb-8`}>
           {/* Logo and Description */}
-          <div>
+          <div className="pl-6">
             <Logo className="mb-4" />
             <p className="text-sm text-gray-300">
               {t.footer.description}
@@ -35,7 +35,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="pl-18">
             <h3 className="text-numun-gold font-bold mb-4">{t.footer.quickLinks}</h3>
             <nav className={`${layout.flex.column} ${spacing.gap.xs}`}>
               {navigationItems.filter(item => item.href).slice(0, 4).map((item) => (

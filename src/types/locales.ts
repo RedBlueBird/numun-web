@@ -240,6 +240,7 @@ export interface Translations {
       merchandise: string;
       lunchOptions: string;
       scheduleOverview: string;
+      swag: string;
     };
     committeeList: {
       ecosoc: { name: string; description: string; level: string; };
@@ -247,6 +248,19 @@ export interface Translations {
       unhcr: { name: string; description: string; level: string; };
       unsc: { name: string; description: string; level: string; };
       who: { name: string; description: string; level: string; };
+    };
+    swag: {
+      description1Part1: string;
+      description1Bold: string;
+      description1Part2: string;
+      description2: string;
+      items: {
+        notebook: string;
+        lanyard: string;
+        stickerPack: string;
+        bookmark: string;
+        pen: string;
+      };
     };
   };
 }

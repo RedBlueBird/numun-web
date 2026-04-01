@@ -240,6 +240,7 @@ export const en: Translations = {
       merchandise: 'MERCHANDISE',
       lunchOptions: 'LUNCH OPTIONS',
       scheduleOverview: 'SCHEDULE OVERVIEW',
+      swag: 'SWAGS',
     },
     committeeList: {
       ecosoc: {
@@ -266,6 +267,19 @@ export const en: Translations = {
         name: 'WHO',
         description: 'Addressing Premature Mortality from Non-Communicable Diseases and Malnutrition in Low- and Middle-Income Countries',
         level: 'English-Beginner',
+      },
+    },
+    swag: {
+      description1Part1: 'All delegates will be receiving a SWAG (Stuff We All Get) package containing the following pieces of ',
+      description1Bold: 'limited-edition',
+      description1Part2: ' merchandise for NUMUN 2026.',
+      description2: 'Note that the following images are initial mockups and that there may be slight discrepancies to size and appearance from the final product. Images of the final product will be updated once received from the suppliers.',
+      items: {
+        notebook: 'NOTEBOOK',
+        lanyard: 'LANYARD',
+        stickerPack: 'STICKER PACK',
+        bookmark: 'BOOKMARK',
+        pen: 'PEN',
       },
     },
   },
