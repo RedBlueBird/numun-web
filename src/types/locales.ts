@@ -212,11 +212,11 @@ export interface Translations {
       lunchOptions: string;
     };
     committeeList: {
-      ecosoc: { name: string; description: string; };
-      unep: { name: string; description: string; };
-      unhcr: { name: string; description: string; };
-      unsc: { name: string; description: string; };
-      who: { name: string; description: string; };
+      ecosoc: { name: string; description: string; level: string; };
+      unep: { name: string; description: string; level: string; };
+      unhcr: { name: string; description: string; level: string; };
+      unsc: { name: string; description: string; level: string; };
+      who: { name: string; description: string; level: string; };
     };
   };
 }

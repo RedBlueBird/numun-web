@@ -12,14 +12,15 @@ import { scrollAnimations } from "@/config/animations";
 import { fonts } from "@/config/fonts";
 import { useLanguage } from "@/context/LanguageContext";
 
-const DRIVE_URL = "https://drive.google.com/drive/folders/1waApdz40vlpR2Ro7UIOCg_q38L68C_XP";
+const HANDBOOK_URL = "https://drive.google.com/drive/folders/1SNbyz3mSXhwHgjVFb9XmsZcFmayQSBe1";
+const RULES_URL = "https://drive.google.com/drive/folders/1d3ersa21_l898rTA69ei-B2AFWgceDtt";
 
 const COMMITTEES = [
-  { key: 'who'    as const, image: '/images/events/committee-who.webp',    url: 'https://www.who.int' },
-  { key: 'ecosoc' as const, image: '/images/events/committee-ecosoc.webp', url: 'https://www.un.org/ecosoc' },
-  { key: 'unsc'   as const, image: '/images/events/committee-unsc.webp',   url: 'https://www.un.org/securitycouncil' },
-  { key: 'unep'   as const, image: '/images/events/committee-unep.webp',   url: 'https://www.unep.org' },
-  { key: 'unhcr'  as const, image: '/images/events/committee-unhcr.webp',  url: 'https://www.unhcr.org' },
+  { key: 'who'    as const, image: '/images/events/committee-who.webp',    url: 'https://drive.google.com/drive/folders/10t3EAI6B45XX4ZpBbTa9I6Us82Wi3Q7P' },
+  { key: 'ecosoc' as const, image: '/images/events/committee-ecosoc.webp', url: 'https://drive.google.com/drive/folders/15p8-4ANjge6h8p_CeSya-B7lp5Jsoeoo' },
+  { key: 'unsc'   as const, image: '/images/events/committee-unsc.webp',   url: 'https://drive.google.com/drive/folders/19WagMIC8xEPFpPkB1HKBC77xWx4FJHZ-' },
+  { key: 'unep'   as const, image: '/images/events/committee-unep.webp',   url: 'https://drive.google.com/drive/folders/1qOvgGIIzfqcaBS_qYliCsmConOWXG1gC?usp=drive_link' },
+  { key: 'unhcr'  as const, image: '/images/events/committee-unhcr.webp',  url: 'https://drive.google.com/drive/folders/19snGDbjRtCTVfpkV1-ppS-K4mwipispi?usp=drive_link' },
 ];
 
 export default function NumunPage() {
@@ -97,7 +98,7 @@ export default function NumunPage() {
                 {/* Download links */}
                 <div className={`flex flex-col ${spacing.gap.xs}`}>
                   <a
-                    href={DRIVE_URL}
+                    href={HANDBOOK_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`text-numun-gold text-sm font-semibold underline hover:text-numun-gold-light ${tokens.transition.colors} ${fonts.cerebri}`}
@@ -105,7 +106,7 @@ export default function NumunPage() {
                     {t.conference.hero.downloadHandbook}
                   </a>
                   <a
-                    href={DRIVE_URL}
+                    href={RULES_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`text-numun-gold text-sm font-semibold underline hover:text-numun-gold-light ${tokens.transition.colors} ${fonts.cerebri}`}
@@ -156,6 +157,8 @@ export default function NumunPage() {
                     }}
                     tier="diamond"
                     circularGreenBg
+                    linkTarget="_blank"
+                    badge={data.level}
                   />
                 </motion.div>
               );

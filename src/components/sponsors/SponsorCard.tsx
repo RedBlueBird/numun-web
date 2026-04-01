@@ -12,9 +12,11 @@ interface SponsorCardProps {
   sponsor: Sponsor;
   tier: "diamond" | "gold" | "silver";
   circularGreenBg?: boolean;
+  linkTarget?: string;
+  badge?: string;
 }
 
-export default function SponsorCard({ sponsor, tier, circularGreenBg = false }: SponsorCardProps) {
+export default function SponsorCard({ sponsor, tier, circularGreenBg = false, linkTarget, badge }: SponsorCardProps) {
   const prefersReducedMotion = useReducedMotion();
 
   // Different styling based on tier
@@ -80,9 +82,14 @@ export default function SponsorCard({ sponsor, tier, circularGreenBg = false }: 
         )}
       </motion.div>
       <h3 className={styles.title}>{sponsor.name}</h3>
+      {badge && (
+        <span className="text-xs font-semibold text-numun-green bg-numun-beige border border-numun-gold rounded-full px-3 py-1 whitespace-nowrap mb-4 inline-block">
+          {badge}
+        </span>
+      )}
       <p className={styles.description}>{sponsor.description}</p>
       <div className="mt-auto">
-        <Button href={sponsor.website || "#"} variant="primary" icon={<FaSearch />} className={styles.buttonSize}>
+        <Button href={sponsor.website || "#"} variant="primary" icon={<FaSearch />} className={styles.buttonSize} target={linkTarget}>
           LEARN MORE
         </Button>
       </div>

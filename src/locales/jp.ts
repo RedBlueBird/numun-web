@@ -33,7 +33,7 @@ export const jp: Translations = {
     comingSoon: '6月27-28日',
     numun2026: '2026',
     quote: '「成長を促進し、影響を高める」',
-    recruitingMessage: '3月28日までに登録して早期割引を受けよう！',
+    recruitingMessage: '代表者登録受付中！',
     learnAboutButton: '2026年会議を見る',
     viewGalleryButton: 'ギャラリーを見る',
     contactButton: 'お問い合わせ',
@@ -157,8 +157,12 @@ export const jp: Translations = {
         description: 'NUMUN 2026運営チームに参加しませんか！NUMUN 2026を成功させるために、情熱ある学生を募集しています。IT・デザイン、ロジスティクス、マーケティング、アカデミック、ファイナンスの各チームでポジションを募集中です。名古屋大学の模擬国連の未来を一緒に築きましょう。',
       },
       numunCafe: {
-        title: 'NUMUN Cafe',
+        title: 'NUMUN Cafe 2025秋',
         description: '初心者歓迎の国連シミュレーション、全学生対象！NUMUN Cafeは、模擬国連が初めての方でも安心して参加できる環境を提供します。グローバルな問題について議論し、外交と交渉の重要なスキルを身につけることができます。模擬国連の経験は不要です。',
+      },
+      unmoderatedCookoff: {
+        title: 'アンモデレーテッド・クックオフ',
+        description: 'NUMUN 2026 × NUFSAが料理・食事・交流の場にご招待します！2025年冬のUN Caféメニューを一緒に再現する、楽しくリラックスした料理セッションです。',
       },
     },
   },
@@ -167,7 +171,7 @@ export const jp: Translations = {
     individual: {
       title: '個人登録',
       description: '以下のフォームから個人代表者として登録してください。',
-      earlyBird: '早期登録（¥2,790）：登録費・グッズ・2日間のランチケータリング込み。3月28日まで有効。',
+      earlyBird: '代表者登録（¥3,290）：参加費・グッズ・2日間のランチケータリング込み。',
       button: '今すぐ登録',
     },
     group: {
@@ -196,13 +200,13 @@ export const jp: Translations = {
   conference: {
     title: 'NUMUN 2026',
     hero: {
-      quote: '「成長を促進し、影響を高める」',
+      quote: '「危機の輪郭を描く」',
       date: '2026年6月27-28日',
       location: '名古屋大学東山キャンパス、名古屋、日本',
-      earlyBird: '早期登録（¥2,790）：参加費・グッズ・2日間のランチケータリング込み。3月28日まで有効。*',
+      earlyBird: '代表者登録（¥3,290）：参加費・グッズ・2日間のランチケータリング込み。*',
       registerNow: '今すぐ登録',
-      downloadHandbook: '2026年代表者ハンドブックをダウンロード（近日公開）',
-      downloadRules: '2026年議事規則をダウンロード（近日公開）',
+      downloadHandbook: '2026年代表者ハンドブックをダウンロード',
+      downloadRules: '2026年議事規則をダウンロード',
       emblemAlt: 'NUMUN 2026委員会エンブレム',
     },
     sections: {
@@ -214,23 +218,28 @@ export const jp: Translations = {
     committeeList: {
       ecosoc: {
         name: 'ECOSOC',
-        description: '国連経済社会理事会は、国連システム全体の経済・社会・環境政策を調整し、持続可能な開発を推進するための中心的なプラットフォームです。',
+        description: '自律型兵器システムおよびAI対応軍事プラットフォームに関わる事故に対する国際的な責任体制の構築',
+        level: '英語・中級',
       },
       unep: {
         name: 'UNEP',
-        description: '国連環境計画は環境問題における世界最高の権威機関であり、各国が気候変動・生物多様性の損失・汚染に取り組めるよう支援しています。',
+        description: '気候変動による災害に対する人道保護、財産保護を目的としたレジリエンス強化',
+        level: '日本語・入門',
       },
       unhcr: {
         name: 'UNHCR',
-        description: '国連難民高等弁務官事務所は、130か国以上で難民・庇護申請者・国内避難民・無国籍者を保護・支援する使命を持つ機関です。',
+        description: 'パキスタン及びイランによるアフガン難民大量送還への対応と難民保護',
+        level: '日本語・一般',
       },
       unsc: {
         name: 'UNSC',
-        description: '国連安全保障理事会は、国際の平和と安全の維持に対する主要な責任を担い、平和維持活動の設立・制裁・武力行使の授権を行う権限を持っています。',
+        description: '南スーダンにおける政治的不安への対応：危機委員会',
+        level: '英語・上級',
       },
       who: {
         name: 'WHO',
-        description: '世界保健機関は、国際保健の方向性を示し、世界的な保健基準を設定し、国連システム全体にわたる保健緊急事態の調整を主導する専門機関です。',
+        description: '低・中所得国における非感染性疾患および栄養不良による早死の解決',
+        level: '英語・初級',
       },
     },
   },

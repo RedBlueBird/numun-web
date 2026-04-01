@@ -105,6 +105,16 @@ export default function RegisterPage() {
               </a>
             </motion.div>
           </motion.div>
+          <div className="mt-2">
+            <a
+              href="https://drive.google.com/file/d/1Gg5-px_jiiK0stJLyfh-QNBfUOmz6wOv/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${typography.bodySmall} underline hover:text-numun-green ${tokens.transition.colors} ${fonts.cerebri}`}
+            >
+              View Refund Policy
+            </a>
+          </div>
         </div>
       </section>
     </div>

@@ -33,7 +33,7 @@ export const en: Translations = {
     comingSoon: '27-28 JUNE',
     numun2026: '2026',
     quote: '"Driving growth, elevating impact"',
-    recruitingMessage: 'Register by March 28 for early-bird savings!',
+    recruitingMessage: 'Delegate registration is now open!',
     learnAboutButton: 'VIEW 2026 CONFERENCE',
     viewGalleryButton: 'VIEW GALLERY',
     contactButton: 'CONTACT US',
@@ -157,8 +157,12 @@ export const en: Translations = {
         description: 'Join the NUMUN 2026 organizing team! We are seeking passionate students to help make NUMUN 2026 a success. Open positions available across IT & Design, Logistics, Marketing, Academics, and Finance teams. Be part of shaping the future of Model United Nations at Nagoya University.',
       },
       numunCafe: {
-        title: 'NUMUN Cafe',
+        title: 'NUMUN Cafe 2025 Fall',
         description: 'A beginner-friendly United Nations simulation open to all students! NUMUN Cafe provides a welcoming environment for newcomers to experience Model UN discussions, debate global issues, and develop essential skills in diplomacy and negotiation. No prior MUN experience required.',
+      },
+      unmoderatedCookoff: {
+        title: 'The Unmoderated Cookoff',
+        description: 'NUMUN 2026 × NUFSA invites you to cook, eat, and connect! Join us as we recreate the 2025 Winter UN Café Menu together in a fun and relaxed cooking session.',
       },
     },
   },
@@ -167,7 +171,7 @@ export const en: Translations = {
     individual: {
       title: 'INDIVIDUAL REGISTRATION',
       description: 'Register as an individual delegate using the form below.',
-      earlyBird: 'Early-Bird Registration (¥2,790): includes registration fees, merchandise, and 2-day lunch catering. Valid until March 28th.',
+      earlyBird: 'Delegate Registration (¥3,290): Includes fees, merchandise, and 2-day lunch catering.',
       button: 'REGISTER NOW',
     },
     group: {
@@ -196,13 +200,13 @@ export const en: Translations = {
   conference: {
     title: 'NUMUN 2026',
     hero: {
-      quote: 'Driving Growth, Elevating Impact',
+      quote: 'Charting the Contours of Crisis',
       date: '27-28 June 2026',
       location: 'Nagoya University Higashiyama Campus, Nagoya, Japan',
-      earlyBird: 'Early-Bird Registration (¥2,790): Includes fees, merchandise, and 2-day lunch catering. Valid until March 28th.*',
+      earlyBird: 'Delegate Registration (¥3,290): Includes fees, merchandise, and 2-day lunch catering.*',
       registerNow: 'REGISTER NOW',
-      downloadHandbook: 'DOWNLOAD 2026 DELEGATE HANDBOOK (coming soon)',
-      downloadRules: 'DOWNLOAD 2026 RULES OF PROCEDURE (coming soon)',
+      downloadHandbook: 'DOWNLOAD 2026 DELEGATE HANDBOOK',
+      downloadRules: 'DOWNLOAD 2026 RULES OF PROCEDURE',
       emblemAlt: 'NUMUN 2026 Committee Emblems',
     },
     sections: {
@@ -214,23 +218,28 @@ export const en: Translations = {
     committeeList: {
       ecosoc: {
         name: 'ECOSOC',
-        description: 'The United Nations Economic and Social Council coordinates international economic, social, and environmental policy, serving as the central platform for promoting sustainable development across the UN system.',
+        description: 'Creating an International Liability Regime for Accidents Involving Autonomous Weapons Systems and AI-Enabled Military Platforms',
+        level: 'English-Intermediate',
       },
       unep: {
         name: 'UNEP',
-        description: 'The United Nations Environment Programme is the world\'s leading authority on environmental issues, helping nations address climate change, biodiversity loss, and pollution.',
+        description: 'Strengthening Resilience for Humanitarian and Property Protection Against Climate Change-Related Disasters',
+        level: 'Japanese-Introductory',
       },
       unhcr: {
         name: 'UNHCR',
-        description: 'The United Nations High Commissioner for Refugees protects refugees, asylum seekers, internally displaced persons, and stateless people across more than 130 countries worldwide.',
+        description: 'Responding to Mass Deportation of Afghan Refugees by Pakistan and Iran and Protecting Refugee Rights',
+        level: 'Japanese-General',
       },
       unsc: {
         name: 'UNSC',
-        description: 'The United Nations Security Council bears primary responsibility for international peace and security, with authority to establish peacekeeping operations, impose sanctions, and authorize the use of force.',
+        description: 'Addressing Political Unrest in South Sudan: Crisis Committee',
+        level: 'English-Advanced',
       },
       who: {
         name: 'WHO',
-        description: 'The World Health Organization directs international health efforts, sets global health standards, and leads coordination of health emergencies across the United Nations system.',
+        description: 'Addressing Premature Mortality from Non-Communicable Diseases and Malnutrition in Low- and Middle-Income Countries',
+        level: 'English-Beginner',
       },
     },
   },

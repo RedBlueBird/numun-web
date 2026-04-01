@@ -14,6 +14,7 @@ interface ButtonProps {
   icon?: ReactNode;
   className?: string;
   onClick?: () => void;
+  target?: string;
 }
 
 export default function Button({
@@ -23,6 +24,7 @@ export default function Button({
   icon,
   className = "",
   onClick,
+  target,
 }: ButtonProps) {
   const prefersReducedMotion = useReducedMotion();
 
@@ -45,7 +47,7 @@ export default function Button({
 
   if (href) {
     return (
-      <MotionComponent href={href} className={combinedClassName} {...motionProps}>
+      <MotionComponent href={href} className={combinedClassName} target={target} {...motionProps}>
         {icon && <span className="w-5 h-5">{icon}</span>}
         {children}
       </MotionComponent>
