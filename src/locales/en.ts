@@ -241,6 +241,7 @@ export const en: Translations = {
       lunchOptions: 'LUNCH OPTIONS',
       scheduleOverview: 'SCHEDULE OVERVIEW',
       swag: 'SWAGS',
+      socialNight: 'EXTRA EVENT: SOCIAL NIGHT',
       visit: 'PLANNING YOUR VISIT',
     },
     committeeList: {
@@ -366,6 +367,16 @@ export const en: Translations = {
         bookmark: 'BOOKMARK',
         pen: 'PEN',
       },
+    },
+    socialNight: {
+      date: '2026 June 27',
+      time: '7:00–10:00 PM',
+      location: 'Location TBA',
+      description: 'Join us for an epic night of dancing, killer performances, and a chance to finally vibe with your fellow delegates off the clock!',
+      feeLabel: 'Fee',
+      free: 'FREE',
+      freeFor: 'for ALL delegates',
+      noRegistration: 'Separate registration not needed!',
     },
   },
 };

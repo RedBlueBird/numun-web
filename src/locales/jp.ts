@@ -241,6 +241,7 @@ export const jp: Translations = {
       lunchOptions: 'ランチオプション',
       scheduleOverview: 'スケジュール概要',
       swag: 'スワッグ',
+      socialNight: 'エクストライベント：ソーシャルナイト',
       visit: 'ご来場の計画',
     },
     committeeList: {
@@ -366,6 +367,16 @@ export const jp: Translations = {
         bookmark: 'ブックマーク',
         pen: 'ペン',
       },
+    },
+    socialNight: {
+      date: '2026年6月27日',
+      time: '午後7:00〜10:00',
+      location: '場所未定',
+      description: 'ダンス、迫力あるパフォーマンス、そして仲間の代表者たちとのひとときをお楽しみください！',
+      feeLabel: '参加費',
+      free: '無料',
+      freeFor: '全代表者対象',
+      noRegistration: '別途登録不要！',
     },
   },
 };

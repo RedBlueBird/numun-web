@@ -354,6 +354,55 @@ export default function NumunPage() {
         </div>
       </section>
 
+      {/* SOCIAL NIGHT */}
+      <SectionTitle>{t.conference.sections.socialNight}</SectionTitle>
+      <section className={sections.standardSection}>
+        <div className={spacing.container}>
+          <ScrollReveal>
+            <div className={`relative max-w-5xl mx-auto ${tokens.borderRadius["3xl"]} overflow-hidden ${tokens.shadow.xl} bg-numun-green min-h-[380px] lg:min-h-0 lg:aspect-[21/9]`}>
+
+              {/* Background image */}
+              <div className="absolute inset-0">
+                <Image
+                  src="/images/events/social-night.webp"
+                  alt={t.conference.sections.socialNight}
+                  fill
+                  className="object-cover scale-[1.1] object-[60%_center]"
+                  sizes="(max-width: 1024px) 100vw, 1024px"
+                />
+              </div>
+
+              {/* Gradient: solid numun-green on left, fades to transparent on right */}
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(56, 86, 68, 0.98) 30%, rgba(56, 86, 68, 0.90) 45%, transparent 100%)' }} />
+
+              {/* Content — left half only */}
+              <div className={`relative z-10 w-full lg:w-1/2 ${spacing.padding.lg} md:${spacing.padding.xl}`}>
+                {/* Date + Time */}
+                <p className={`text-white/70 text-sm mb-1 ${fonts.cerebri}`}>{t.conference.socialNight.date}</p>
+                <h2 className={`text-4xl lg:text-5xl font-bold text-white leading-tight mb-3 ${fonts.itcBenguiat}`}>
+                  {t.conference.socialNight.time}
+                </h2>
+
+                {/* Location */}
+                <p className={`text-white/80 text-sm mb-5 ${fonts.cerebri}`}>{t.conference.socialNight.location}</p>
+
+                {/* Description */}
+                <p className={`text-white/90 text-sm mb-6 leading-relaxed ${fonts.cerebri}`}>
+                  {t.conference.socialNight.description}
+                </p>
+
+                {/* Fee */}
+                <p className={`text-white/70 text-xs uppercase tracking-widest mb-1 ${fonts.cerebri}`}>{t.conference.socialNight.feeLabel}</p>
+                <p className={`text-numun-gold text-2xl font-bold mb-1 ${fonts.itcBenguiat}`}>
+                  {t.conference.socialNight.free} <span className={`text-white text-base font-normal ${fonts.cerebri}`}>{t.conference.socialNight.freeFor}</span>
+                </p>
+                <p className={`text-white/70 text-sm ${fonts.cerebri}`}>{t.conference.socialNight.noRegistration}</p>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* PLANNING YOUR VISIT */}
       <SectionTitle>{t.conference.sections.visit}</SectionTitle>
       <section className={sections.standardSection}>

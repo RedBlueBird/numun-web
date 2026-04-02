@@ -241,6 +241,7 @@ export interface Translations {
       lunchOptions: string;
       scheduleOverview: string;
       swag: string;
+      socialNight: string;
       visit: string;
     };
     committeeList: {
@@ -346,6 +347,16 @@ export interface Translations {
         bookmark: string;
         pen: string;
       };
+    };
+    socialNight: {
+      date: string;
+      time: string;
+      location: string;
+      description: string;
+      feeLabel: string;
+      free: string;
+      freeFor: string;
+      noRegistration: string;
     };
   };
 }
