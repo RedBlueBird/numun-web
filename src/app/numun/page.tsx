@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import PageTitle from "@/components/ui/PageTitle";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -12,6 +13,7 @@ import { motion } from "framer-motion";
 import { sections, spacing, typography, tokens, layout } from "@/config/styles";
 import { scrollAnimations } from "@/config/animations";
 import { fonts } from "@/config/fonts";
+import CollapsibleCard from "@/components/ui/CollapsibleCard";
 import { useLanguage } from "@/context/LanguageContext";
 
 const HANDBOOK_URL = "https://drive.google.com/drive/folders/1SNbyz3mSXhwHgjVFb9XmsZcFmayQSBe1";
@@ -73,6 +75,9 @@ export default function NumunPage() {
       ],
     },
   ];
+
+  const [openCards, setOpenCards] = useState([false, false, false, false, false]);
+  const toggleCard = (i: number) => setOpenCards(prev => prev.map((v, idx) => idx === i ? !v : v));
 
   return (
     <div className="relative">
@@ -344,6 +349,98 @@ export default function NumunPage() {
                   </p>
                 </motion.div>
               ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* PLANNING YOUR VISIT */}
+      <SectionTitle>{t.conference.sections.visit}</SectionTitle>
+      <section className={sections.standardSection}>
+        <div className={spacing.container}>
+          <div className="container mx-auto px-4 max-w-4xl">
+            <motion.div
+              className="space-y-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              variants={scrollAnimations.staggerContainer}
+            >
+              {/* 1. Nearby Food Options */}
+              <CollapsibleCard num={1} title={t.conference.visit.nearbyFood.title} isOpen={openCards[0]} onToggle={() => toggleCard(0)}>
+                <p className={`${typography.bodyLarge} italic mb-4`}>{t.conference.visit.nearbyFood.subtitle}</p>
+                <p className={`${typography.bodyLarge} mb-4`}>{t.conference.visit.nearbyFood.description}</p>
+                <a
+                  href="https://www.google.com/maps/@35.1575099,136.9578787,16z/data=!4m3!11m2!2s0U27ZjnPb0Fd5BOVXMYEcQ!3e3?entry=ttu&g_ep=EgoyMDI2MDMzMC4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${typography.bodyLarge} text-numun-green font-semibold underline hover:text-numun-gold ${tokens.transition.colors}`}
+                >
+                  {t.conference.visit.nearbyFood.mapLink}
+                </a>
+              </CollapsibleCard>
+
+              {/* 2. Nagoya Tourism Spots */}
+              <CollapsibleCard num={2} title={t.conference.visit.tourismSpots.title} isOpen={openCards[1]} onToggle={() => toggleCard(1)}>
+                <p className={`${typography.bodyLarge} italic mb-4`}>{t.conference.visit.tourismSpots.subtitle}</p>
+                <p className={`${typography.bodyLarge} mb-4`}>{t.conference.visit.tourismSpots.description}</p>
+                <a
+                  href="https://www.google.com/maps/@35.1063312,136.7313299,11z/data=!4m3!11m2!2s87_EVMCCT8ytzd6cWxbRZg!3e3?entry=ttu&g_ep=EgoyMDI2MDMzMC4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${typography.bodyLarge} text-numun-green font-semibold underline hover:text-numun-gold ${tokens.transition.colors}`}
+                >
+                  {t.conference.visit.tourismSpots.mapLink}
+                </a>
+              </CollapsibleCard>
+
+              {/* 3. National Emergency Numbers */}
+              <CollapsibleCard num={3} title={t.conference.visit.emergencyNumbers.title} isOpen={openCards[2]} onToggle={() => toggleCard(2)}>
+                <p className={`${typography.bodyLarge} mb-4`}>{t.conference.visit.emergencyNumbers.description}</p>
+                <div className="grid grid-cols-[1fr_auto] gap-x-6 gap-y-1 w-fit">
+                  <p className={typography.bodyLarge}>{t.conference.visit.emergencyNumbers.policeLabel}</p>
+                  <p className={`${typography.bodyLarge} font-bold`}>{t.conference.visit.emergencyNumbers.policeNumber}</p>
+                  <p className={typography.bodyLarge}>{t.conference.visit.emergencyNumbers.fireLabel}</p>
+                  <p className={`${typography.bodyLarge} font-bold`}>{t.conference.visit.emergencyNumbers.fireNumber}</p>
+                  <p className={typography.bodyLarge}>{t.conference.visit.emergencyNumbers.aichiLabel}</p>
+                  <p className={`${typography.bodyLarge} font-bold`}>{t.conference.visit.emergencyNumbers.aichiNumber}</p>
+                </div>
+              </CollapsibleCard>
+
+              {/* 4. Medical Assistance */}
+              <CollapsibleCard num={4} title={t.conference.visit.medicalAssistance.title} isOpen={openCards[3]} onToggle={() => toggleCard(3)}>
+                <p className={`${typography.bodyLarge} mb-4`}>{t.conference.visit.medicalAssistance.description1}</p>
+                <p className={typography.bodyLarge}>
+                  {t.conference.visit.medicalAssistance.description2Part1}
+                  <strong>{t.conference.visit.medicalAssistance.description2Bold1}</strong>
+                  {t.conference.visit.medicalAssistance.description2Part2}
+                  <strong>{t.conference.visit.medicalAssistance.description2Bold2}</strong>
+                  {t.conference.visit.medicalAssistance.description2Part3}
+                  <strong>{t.conference.visit.medicalAssistance.description2Bold3}</strong>
+                  {t.conference.visit.medicalAssistance.description2Part4}
+                  <strong>{t.conference.visit.medicalAssistance.description2Bold4}</strong>
+                  {t.conference.visit.medicalAssistance.description2Part5}
+                </p>
+              </CollapsibleCard>
+
+              {/* 5. Evacuation Procedures */}
+              <CollapsibleCard num={5} title={t.conference.visit.evacuation.title} isOpen={openCards[4]} onToggle={() => toggleCard(4)}>
+                <p className={`${typography.bodyLarge} mb-4`}>{t.conference.visit.evacuation.description}</p>
+                <ul className="space-y-3">
+                  {[
+                    { label: t.conference.visit.evacuation.step1Label, text: t.conference.visit.evacuation.step1Text },
+                    { label: t.conference.visit.evacuation.step2Label, text: t.conference.visit.evacuation.step2Text },
+                    { label: t.conference.visit.evacuation.step3Label, text: t.conference.visit.evacuation.step3Text },
+                    { label: t.conference.visit.evacuation.step4Label, text: t.conference.visit.evacuation.step4Text },
+                  ].map((step, i) => (
+                    <li key={i} className={`${typography.bodyLarge} flex gap-2`}>
+                      <span className="text-numun-gold flex-shrink-0">•</span>
+                      <span><strong>{step.label}</strong> {step.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CollapsibleCard>
+
             </motion.div>
           </div>
         </div>

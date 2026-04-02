@@ -241,6 +241,7 @@ export interface Translations {
       lunchOptions: string;
       scheduleOverview: string;
       swag: string;
+      visit: string;
     };
     committeeList: {
       ecosoc: { name: string; description: string; level: string; };
@@ -282,6 +283,55 @@ export interface Translations {
         quality1: string;
         quality2: string;
         quality3: string;
+      };
+    };
+    visit: {
+      nearbyFood: {
+        title: string;
+        subtitle: string;
+        description: string;
+        mapLink: string;
+      };
+      tourismSpots: {
+        title: string;
+        subtitle: string;
+        description: string;
+        mapLink: string;
+      };
+      emergencyNumbers: {
+        title: string;
+        description: string;
+        policeLabel: string;
+        policeNumber: string;
+        fireLabel: string;
+        fireNumber: string;
+        aichiLabel: string;
+        aichiNumber: string;
+      };
+      medicalAssistance: {
+        title: string;
+        description1: string;
+        description2Part1: string;
+        description2Bold1: string;
+        description2Part2: string;
+        description2Bold2: string;
+        description2Part3: string;
+        description2Bold3: string;
+        description2Part4: string;
+        description2Bold4: string;
+        description2Part5: string;
+      };
+      evacuation: {
+        title: string;
+        description: string;
+        step1Label: string;
+        step1Text: string;
+        step2Label: string;
+        step2Text: string;
+        step3Label: string;
+        step3Text: string;
+        step4Label: string;
+        step4Text: string;
       };
     };
     swag: {
