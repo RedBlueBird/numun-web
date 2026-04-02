@@ -18,6 +18,7 @@ export interface Translations {
     about: string;
     team: string;
     sponsors: string;
+    currentSponsors: string;
     partnerWithUs: string;
     pastSponsors: string;
     gallery: string;
@@ -134,6 +135,15 @@ export interface Translations {
       OpeningCeremony: string;
       FAO: string;
       NetworkingEvent: string;
+    };
+  };
+  currentSponsors: {
+    title: string;
+    description: string;
+    tiers: {
+      diamond: string;
+      gold: string;
+      silver: string;
     };
   };
   pastSponsors: {

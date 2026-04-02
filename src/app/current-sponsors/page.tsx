@@ -5,7 +5,7 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import SponsorCard from "@/components/sponsors/SponsorCard";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { pastSponsors } from "@/data/sponsors";
+import { currentSponsors } from "@/data/sponsors";
 import { scrollAnimations } from "@/config/animations";
 import { useLanguage } from "@/context/LanguageContext";
 import { sections, spacing, gradients, utils } from "@/config/styles";
@@ -20,15 +20,15 @@ const tierConfig: Record<Tier, { container: string; item: string }> = {
   silver:  { container: "flex flex-wrap justify-center gap-8 max-w-4xl mx-auto", item: "w-full md:w-[46%]" },
 };
 
-export default function PastSponsorsPage() {
+export default function CurrentSponsorsPage() {
   const { t } = useLanguage();
 
   const presentTiers = TIER_ORDER.filter((tier) =>
-    pastSponsors.some((s) => s.tier === tier)
+    currentSponsors.some((s) => s.tier === tier)
   );
   const [firstTier, ...remainingTiers] = presentTiers;
 
-  const getTierLabel = (tier: Tier) => t.pastSponsors.tiers[tier];
+  const getTierLabel = (tier: Tier) => t.currentSponsors.tiers[tier];
 
   return (
     <div className="relative">
@@ -53,10 +53,10 @@ export default function PastSponsorsPage() {
             <div className="w-full px-12 sm:px-16 md:px-24 lg:px-32">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 items-center max-w-7xl mx-auto">
                 <div className="lg:col-span-8 text-left">
-                  <PageTitle.Heading>{t.pastSponsors.title}</PageTitle.Heading>
+                  <PageTitle.Heading>{t.currentSponsors.title}</PageTitle.Heading>
                   <div className="mb-0">
                     <PageTitle.Description>
-                      {t.pastSponsors.description}
+                      {t.currentSponsors.description}
                     </PageTitle.Description>
                   </div>
                 </div>
@@ -87,7 +87,7 @@ export default function PastSponsorsPage() {
               viewport={{ once: true, amount: 0.2 }}
               variants={scrollAnimations.staggerContainer}
             >
-              {pastSponsors
+              {currentSponsors
                 .filter((s) => s.tier === firstTier)
                 .map((sponsor) => (
                   <motion.div key={sponsor.id} variants={scrollAnimations.staggerItem} className={`${tierConfig[firstTier].item} h-full`}>
@@ -112,7 +112,7 @@ export default function PastSponsorsPage() {
                 viewport={{ once: true, amount: 0.2 }}
                 variants={scrollAnimations.staggerContainer}
               >
-                {pastSponsors
+                {currentSponsors
                   .filter((s) => s.tier === tier)
                   .map((sponsor) => (
                     <motion.div key={sponsor.id} variants={scrollAnimations.staggerItem} className={`${tierConfig[tier].item} h-full`}>

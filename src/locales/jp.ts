@@ -18,6 +18,7 @@ export const jp: Translations = {
     about: '私たちについて',
     team: 'チーム',
     sponsors: 'スポンサー・パートナー',
+    currentSponsors: '現在のスポンサー',
     partnerWithUs: 'パートナーシップ',
     pastSponsors: '過去のスポンサー',
     gallery: 'ギャラリー',
@@ -134,6 +135,15 @@ export const jp: Translations = {
       OpeningCeremony: '開会式',
       FAO: 'FAO',
       NetworkingEvent: 'ネットワーキングイベント',
+    },
+  },
+  currentSponsors: {
+    title: '現在のスポンサー',
+    description: 'NUMUN 2026の実現に向けて、現在のスポンサーの皆様の多大なご支援に心より感謝申し上げます。若者のリーダーシップ、グローバルな対話、そして学術的卓越性へのご支援が、日本国内外の意欲ある学生リーダーたちに質の高い会議体験を届ける力となっています。',
+    tiers: {
+      diamond: 'ダイヤモンドスポンサー',
+      gold: 'ゴールドスポンサー',
+      silver: 'シルバースポンサー',
     },
   },
   pastSponsors: {

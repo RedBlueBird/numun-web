@@ -1,6 +1,18 @@
 import { Sponsor, SponsorshipTierBenefit } from "@/types";
 
-export const sponsors: Sponsor[] = [
+export const currentSponsors: Sponsor[] = [
+  // Gold Sponsors
+  {
+    id: "nufsa",
+    name: "Nagoya University Foreign Students Association (NUFSA)",
+    tier: "gold",
+    logo: "/images/sponsors/nufsa.webp",
+    description: "An international organization established since 1985, promoting cultural exchange and community building.",
+    website: "https://www.instagram.com/nufsa.nagoya_university",
+  },
+];
+
+export const pastSponsors: Sponsor[] = [
   // Diamond Sponsors
   {
     id: "iafor",

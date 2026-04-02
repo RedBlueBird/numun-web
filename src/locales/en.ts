@@ -18,6 +18,7 @@ export const en: Translations = {
     about: 'ABOUT US',
     team: 'TEAM',
     sponsors: 'SPONSOR & PARTNERS',
+    currentSponsors: 'CURRENT SPONSORS',
     partnerWithUs: 'PARTNER WITH US',
     pastSponsors: 'PAST SPONSORS',
     gallery: 'GALLERY',
@@ -134,6 +135,15 @@ export const en: Translations = {
       OpeningCeremony: 'Opening Ceremony',
       FAO: 'FAO',
       NetworkingEvent: 'Networking Event',
+    },
+  },
+  currentSponsors: {
+    title: 'OUR CURRENT SPONSORS',
+    description: 'We are immensely grateful to our current sponsors whose generous support is making NUMUN 2026 a reality. Their commitment to youth leadership, global dialogue, and academic excellence empowers us to deliver a high-quality conference experience for aspiring student leaders across Japan and beyond.',
+    tiers: {
+      diamond: 'OUR DIAMOND SPONSORS',
+      gold: 'OUR GOLD SPONSORS',
+      silver: 'OUR SILVER SPONSORS',
     },
   },
   pastSponsors: {

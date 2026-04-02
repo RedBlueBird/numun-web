@@ -69,6 +69,7 @@ export default function Header() {
   };
 
   const getDropdownLabel = (label: string) => {
+    if (label === "CURRENT SPONSORS") return t.navigation.currentSponsors;
     if (label === "PARTNER WITH US") return t.navigation.partnerWithUs;
     if (label === "PAST SPONSORS") return t.navigation.pastSponsors;
     return label;

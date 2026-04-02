@@ -8,8 +8,9 @@ export const navigationItems: NavItem[] = [
   {
     label: "SPONSOR & PARTNERS",
     dropdown: [
-      { label: "PARTNER WITH US", href: "/partnership" },
+      { label: "CURRENT SPONSORS", href: "/current-sponsors" },
       { label: "PAST SPONSORS", href: "/past-sponsors" },
+      { label: "PARTNER WITH US", href: "/partnership" },
     ]
   },
   { label: "GALLERY", href: "/gallery" },
