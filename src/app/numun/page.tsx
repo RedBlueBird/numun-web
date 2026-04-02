@@ -14,6 +14,7 @@ import { sections, spacing, typography, tokens, layout } from "@/config/styles";
 import { scrollAnimations } from "@/config/animations";
 import { fonts } from "@/config/fonts";
 import CollapsibleCard from "@/components/ui/CollapsibleCard";
+import TableOfContents from "@/components/numun/TableOfContents";
 import { useLanguage } from "@/context/LanguageContext";
 
 const HANDBOOK_URL = "https://drive.google.com/drive/folders/1SNbyz3mSXhwHgjVFb9XmsZcFmayQSBe1";
@@ -81,6 +82,7 @@ export default function NumunPage() {
 
   return (
     <div className="relative">
+      <TableOfContents />
       {/* Fake header background */}
       <div className={`absolute top-[-100px] left-0 right-0 h-[100px] ${sections.heroDark} z-40`} />
 
@@ -186,7 +188,7 @@ export default function NumunPage() {
 
       {/* COMMITTEES */}
       <SectionTitle>{t.conference.sections.committees}</SectionTitle>
-      <section className={sections.standardSection}>
+      <section id="committees" className={sections.standardSection}>
         <div className={spacing.container}>
           <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto"
@@ -222,7 +224,7 @@ export default function NumunPage() {
 
       {/* SCHEDULE OVERVIEW */}
       <SectionTitle>{t.conference.sections.scheduleOverview}</SectionTitle>
-      <section className={sections.standardSection}>
+      <section id="schedule" className={sections.standardSection}>
         <div className={spacing.container}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <ScheduleOverviewTable day="DAY 1 · June 27" entries={schedule.day1} />
@@ -233,7 +235,7 @@ export default function NumunPage() {
 
       {/* AWARDS */}
       <SectionTitle>{t.conference.sections.awards}</SectionTitle>
-      <section className={sections.standardSection}>
+      <section id="awards" className={sections.standardSection}>
         <div className={spacing.container}>
           <div className="max-w-5xl mx-auto">
 
@@ -313,7 +315,7 @@ export default function NumunPage() {
 
       {/* SWAGS */}
       <SectionTitle>{t.conference.sections.swag}</SectionTitle>
-      <section className={sections.standardSection}>
+      <section id="swags" className={sections.standardSection}>
         <div className={spacing.container}>
           <div className={`${layout.maxWidth.lg} mx-auto`}>
             <ScrollReveal variant="fadeIn">
@@ -356,7 +358,7 @@ export default function NumunPage() {
 
       {/* SOCIAL NIGHT */}
       <SectionTitle>{t.conference.sections.socialNight}</SectionTitle>
-      <section className={sections.standardSection}>
+      <section id="social-night" className={sections.standardSection}>
         <div className={spacing.container}>
           <ScrollReveal>
             <div className={`relative max-w-5xl mx-auto ${tokens.borderRadius["3xl"]} overflow-hidden ${tokens.shadow.xl} bg-numun-green min-h-[380px] lg:min-h-0 lg:aspect-[21/9]`}>
@@ -405,7 +407,7 @@ export default function NumunPage() {
 
       {/* PLANNING YOUR VISIT */}
       <SectionTitle>{t.conference.sections.visit}</SectionTitle>
-      <section className={sections.standardSection}>
+      <section id="visit" className={sections.standardSection}>
         <div className={spacing.container}>
           <div className="container mx-auto px-4 max-w-4xl">
             <motion.div
