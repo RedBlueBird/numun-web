@@ -249,6 +249,41 @@ export interface Translations {
       unsc: { name: string; description: string; level: string; };
       who: { name: string; description: string; level: string; };
     };
+    awards: {
+      descriptionPart1: string;
+      descriptionBold1: string;
+      descriptionPart2: string;
+      descriptionBold2: string;
+      descriptionPart3: string;
+      descriptionBold3: string;
+      descriptionPart4: string;
+      subheading: string;
+      closing: string;
+      medalAlt: string;
+      bestDelegate: {
+        title: string;
+        role: string;
+        subtitle: string;
+        quality1: string;
+        quality2: string;
+        quality3: string;
+        quality4: string;
+      };
+      outstandingDelegate: {
+        title: string;
+        role: string;
+        subtitle: string;
+        quality1: string;
+        quality2: string;
+        quality3: string;
+      };
+      bestPositionPaper: {
+        title: string;
+        quality1: string;
+        quality2: string;
+        quality3: string;
+      };
+    };
     swag: {
       description1Part1: string;
       description1Bold: string;

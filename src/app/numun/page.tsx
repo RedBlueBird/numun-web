@@ -37,6 +37,43 @@ export default function NumunPage() {
   const { t, locale } = useLanguage();
   const schedule = scheduleOverview[locale];
 
+  const awardsList = [
+    {
+      num: 1,
+      title: t.conference.awards.bestDelegate.title,
+      role: t.conference.awards.bestDelegate.role,
+      subtitle: t.conference.awards.bestDelegate.subtitle,
+      qualities: [
+        t.conference.awards.bestDelegate.quality1,
+        t.conference.awards.bestDelegate.quality2,
+        t.conference.awards.bestDelegate.quality3,
+        t.conference.awards.bestDelegate.quality4,
+      ],
+    },
+    {
+      num: 2,
+      title: t.conference.awards.outstandingDelegate.title,
+      role: t.conference.awards.outstandingDelegate.role,
+      subtitle: t.conference.awards.outstandingDelegate.subtitle,
+      qualities: [
+        t.conference.awards.outstandingDelegate.quality1,
+        t.conference.awards.outstandingDelegate.quality2,
+        t.conference.awards.outstandingDelegate.quality3,
+      ],
+    },
+    {
+      num: 3,
+      title: t.conference.awards.bestPositionPaper.title,
+      role: '',
+      subtitle: '',
+      qualities: [
+        t.conference.awards.bestPositionPaper.quality1,
+        t.conference.awards.bestPositionPaper.quality2,
+        t.conference.awards.bestPositionPaper.quality3,
+      ],
+    },
+  ];
+
   return (
     <div className="relative">
       {/* Fake header background */}
@@ -183,8 +220,88 @@ export default function NumunPage() {
       <section className={sections.standardSection}>
         <div className={spacing.container}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <ScheduleOverviewTable day="DAY 1" entries={schedule.day1} />
-            <ScheduleOverviewTable day="DAY 2" entries={schedule.day2} />
+            <ScheduleOverviewTable day="DAY 1 · June 27" entries={schedule.day1} />
+            <ScheduleOverviewTable day="DAY 2 · June 28" entries={schedule.day2} />
+          </div>
+        </div>
+      </section>
+
+      {/* AWARDS */}
+      <SectionTitle>{t.conference.sections.awards}</SectionTitle>
+      <section className={sections.standardSection}>
+        <div className={spacing.container}>
+          <div className="max-w-5xl mx-auto">
+
+            {/* Row 1: description + medal image */}
+            <ScrollReveal variant="fadeIn">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center mb-6">
+                <div className="lg:col-span-2">
+                  <p className={`${typography.bodyLarge} mb-4`}>
+                    {t.conference.awards.descriptionPart1}
+                    <strong>{t.conference.awards.descriptionBold1}</strong>
+                    {t.conference.awards.descriptionPart2}
+                    <strong>{t.conference.awards.descriptionBold2}</strong>
+                    {t.conference.awards.descriptionPart3}
+                    <strong>{t.conference.awards.descriptionBold3}</strong>
+                    {t.conference.awards.descriptionPart4}
+                  </p>
+                  <p className={typography.bodyLarge}>{t.conference.awards.subheading}</p>
+                </div>
+                <div className="flex justify-center">
+                  <div className="relative w-64 h-64">
+                    <Image
+                      src="/images/events/award-medal.webp"
+                      alt={t.conference.awards.medalAlt}
+                      fill
+                      className="object-contain"
+                      sizes="256px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Row 2: award cards */}
+            <motion.div
+              className={`${layout.grid.threeColumn} gap-6 mb-12`}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+              variants={scrollAnimations.staggerContainer}
+            >
+              {awardsList.map((award) => (
+                <motion.div
+                  key={award.num}
+                  variants={scrollAnimations.staggerItem}
+                  className="bg-numun-beige border-2 border-numun-gold/30 rounded-2xl p-6"
+                >
+                  <div className={`flex items-center ${spacing.gap.sm} mb-4`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-sm ${fonts.cerebri}`}>
+                      {award.num}
+                    </span>
+                    <h3 className={`text-lg font-bold text-numun-green ${fonts.itcBenguiat}`}>
+                      {award.title}
+                    </h3>
+                  </div>
+                  {award.role && <p className={`${typography.bodyNormal} mb-2`}>{award.role}</p>}
+                  {award.subtitle && <p className={`${typography.bodyNormal} mb-3`}>{award.subtitle}</p>}
+                  <ul className="space-y-2">
+                    {award.qualities.map((quality, i) => (
+                      <li key={i} className={`${typography.bodySmall} flex gap-2`}>
+                        <span className="text-numun-gold flex-shrink-0">→</span>
+                        <span>{quality}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Closing */}
+            <ScrollReveal variant="fadeIn">
+              <p className={`${typography.bodyLarge} text-center`}>{t.conference.awards.closing}</p>
+            </ScrollReveal>
+
           </div>
         </div>
       </section>
@@ -231,16 +348,6 @@ export default function NumunPage() {
           </div>
         </div>
       </section>
-
-      {/* AWARDS */}
-      {/* <SectionTitle>{t.conference.sections.awards}</SectionTitle>
-      <section className={sections.standardSection}>
-        <div className={spacing.container}>
-          <ScrollReveal>
-            <p className={typography.bodyLarge}>{LOREM}</p>
-          </ScrollReveal>
-        </div>
-      </section> */}
 
       {/* MERCHANDISE */}
       {/* <SectionTitle>{t.conference.sections.merchandise}</SectionTitle>
