@@ -345,6 +345,81 @@ export interface Translations {
         phrases: Array<{ phrase: string; circumstance: string }>;
       };
     };
+    fullRop: {
+      sectionTitle: string;
+      generalRules: {
+        title: string;
+        scope: { title: string; body: string[]; committees: { name: string; topic: string }[] };
+        officers: { title: string; intro: string; table: { committee: string; chair: string; coChairs: string[] }[] };
+        quorum: { title: string; body: string };
+      };
+      conduct: {
+        title: string;
+        languageOfDebate: { title: string; body: string[]; english: string[]; japanese: string[] };
+        credentials: { title: string; body: string };
+        courtesy: { title: string; body: string };
+        chairAuthority: { title: string; body: string };
+        agenda: { title: string; body: string[] };
+        attendance: { title: string; body: string };
+        decorum: { title: string; body: string };
+        officialDocuments: { title: string; body: string };
+        observers: { title: string; body: string };
+        technologyAI: { title: string; body: string[] };
+      };
+      debate: {
+        title: string;
+        speeches: { title: string; body: string };
+        yields: { title: string; body: string };
+        relevance: { title: string; body: string };
+        closureSpeakersList: { title: string; body: string };
+        reopeningSpeakersList: { title: string; body: string };
+        points: { title: string; intro: string; items: { point: string; circumstance: string }[] };
+        motions: { title: string; intro: string; items: { motion: string; circumstance: string }[] };
+        precedence: { title: string; intro: string; items: string[] };
+      };
+      caucuses: {
+        title: string;
+        moderated: { title: string; body: string[] };
+        unmoderated: { title: string; body: string[] };
+        extension: { title: string; body: string };
+      };
+      workingPapersResolutions: {
+        title: string;
+        workingPapers: { title: string; body: string };
+        draftResolutions: { title: string; body: string };
+        amendments: {
+          title: string;
+          body: string;
+          friendly: { label: string; desc: string };
+          unfriendly: { label: string; desc: string };
+          further: string[];
+        };
+        mergingWithdrawal: { title: string; body: string };
+      };
+      voting: {
+        title: string;
+        votingBloc: { title: string; body: string };
+        votingRights: { title: string; body: string };
+        conductDuringVoting: { title: string; body: string };
+        rollCallVotes: { title: string; body: string };
+        motionsDuringBloc: { title: string; body: string };
+        majorityRequirements: { title: string; body: string };
+        abstentionsAndPasses: { title: string; body: string };
+        divisionOfQuestion: { title: string; body: string };
+        reconsideration: { title: string; body: string };
+      };
+      specialRules: {
+        title: string;
+        suspensionOfRules: { title: string; body: string };
+        rightOfReply: { title: string; body: string };
+        appealChair: { title: string; body: string };
+      };
+      closureOfDebate: {
+        title: string;
+        closure: { title: string; body: string };
+        adjournment: { title: string; body: string };
+      };
+    };
   };
   conference: {
     title: string;

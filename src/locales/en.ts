@@ -524,6 +524,323 @@ export const en: Translations = {
         ],
       },
     },
+    fullRop: {
+      sectionTitle: 'COMPLETE RULES OF PROCEDURE',
+      generalRules: {
+        title: 'I. GENERAL RULES',
+        scope: {
+          title: 'Rule 1: Scope',
+          body: [
+            'The Rules of Procedure apply to all committees operating under the UNA-USA Model United Nations framework, unless otherwise specified at the discretion of the Chairs and under the guidance of the Academics Team. The Rules will serve to govern the conduct of debate, voting, and document processing within the committee.',
+            'In the enforcement of the Rules of Procedure, the Chair can interpret and implement these rules as they see fit to ensure proceedings run smoothly and debate is active.',
+            'The topics for each committee within the Nagoya University Model United Nations 2026 are as follows:',
+          ],
+          committees: [
+            { name: 'UNSC', topic: 'Addressing political unrest in South Sudan: Crisis Committee' },
+            { name: 'ECOSOC', topic: 'Creating an International Liability Regime for Accidents Involving Autonomous Weapons Systems and AI-Enabled Military Platforms' },
+            { name: 'WHO', topic: 'Addressing Premature Mortality from Non-Communicable Diseases and Malnutrition in Low- and Middle-Income Countries' },
+            { name: 'UNEP', topic: '気候変動による災害に対する人道保護、財産保護を目的としたレジリエンス強化' },
+            { name: 'UNHCR', topic: 'パキスタン及びイランによるアフガン難民大量送還への対応と難民保護' },
+          ],
+        },
+        officers: {
+          title: 'Rule 2: Officers',
+          intro: 'Each committee will be staffed by a Chair and Co-Chairs. The following officers have been appointed for NUMUN 2026:',
+          table: [
+            { committee: 'UNSC (Advanced)', chair: 'Teguh Ganesha', coChairs: ['Takumi Oishi', 'Dhinuthri Senanayake'] },
+            { committee: 'ECOSOC (Intermediate)', chair: 'Ananya Katyal', coChairs: ['Anh Nguyen', 'Ahmed Mahadi Hasan'] },
+            { committee: 'WHO (Beginner)', chair: 'Naomi Duklan', coChairs: ['Praeploy Thongmuang', 'Mulan Siringoringo'] },
+            { committee: 'UN Human Rights Council', chair: 'Aisha Kako', coChairs: ['Nagisa Mitsui', 'Tomoaki Tsubota'] },
+            { committee: 'UN Environmental Programme', chair: 'Yuki Terashima', coChairs: ['Serina Saito'] },
+          ],
+        },
+        quorum: {
+          title: 'Rule 3: Quorum',
+          body: 'A simple majority of the committee members must be present to constitute a quorum. Without quorum, the committee may not conduct formal business or take votes. The Chair shall verify quorum at the beginning of each session and may do so at any time upon a motion to verify quorum.',
+        },
+      },
+      conduct: {
+        title: 'II. CONDUCT OF DELEGATES',
+        languageOfDebate: {
+          title: 'Rule 4: Language of Debate',
+          body: [
+            'NUMUN 2026 is a bilingual conference. Delegates may deliver speeches, raise points, and submit written documents in either English or Japanese.',
+            'All official committee communications, rulings, and written resolutions will be produced and accepted in both languages.',
+          ],
+          english: [
+            'Speeches may be delivered entirely in English.',
+            'All written documents (working papers, draft resolutions, amendments) may be submitted in English.',
+            'Points and motions may be raised in English.',
+          ],
+          japanese: [
+            'Speeches may be delivered entirely in Japanese.',
+            'All written documents (working papers, draft resolutions, amendments) may be submitted in Japanese.',
+            'Points and motions may be raised in Japanese.',
+          ],
+        },
+        credentials: {
+          title: 'Rule 5: Credentials',
+          body: 'Each delegation shall consist of one or two delegates representing a single member state or observer entity. Credentials must be submitted to the Secretariat prior to the conference. Any delegate who has not submitted credentials may not participate in formal debate or voting.',
+        },
+        courtesy: {
+          title: 'Rule 6: Courtesy',
+          body: 'All delegates are expected to treat one another, the dais, and conference staff with respect and courtesy at all times. Personal attacks, discriminatory language, and disruptive behavior are strictly prohibited. Delegates must remain in character as representatives of their assigned country or organisation.',
+        },
+        chairAuthority: {
+          title: "Rule 7: Chair's Authority",
+          body: "The Chair shall have full authority over the conduct of the committee. The Chair's rulings on procedural matters are final unless successfully appealed by a two-thirds majority of the committee. The Chair may call any delegate to order for violations of these rules or conduct unbecoming of a delegate.",
+        },
+        agenda: {
+          title: 'Rule 8: Agenda',
+          body: [
+            "At the opening of the first session, the committee shall set the agenda by debating and voting on the order in which topics will be discussed.",
+            "Once an agenda item has been adopted, debate shall proceed on that item until closure, tabling, or adjournment.",
+          ],
+        },
+        attendance: {
+          title: 'Rule 9: Attendance',
+          body: 'Delegates are expected to attend all committee sessions. Roll call will be taken at the beginning of each session. Delegates must inform the dais of any planned absences. Excessive absenteeism may affect award consideration.',
+        },
+        decorum: {
+          title: 'Rule 10: Decorum',
+          body: 'Delegates shall maintain decorum at all times. Electronic devices may only be used for conference-related purposes. Side conversations and disruptive behavior during formal sessions are prohibited. Delegates must be dressed in appropriate business attire.',
+        },
+        officialDocuments: {
+          title: 'Rule 11: Official Documents',
+          body: 'All official documents must be submitted to the dais for review and approval before distribution. Documents must be clearly labeled with the committee name, topic, and document type. The dais reserves the right to reject documents that do not comply with these rules.',
+        },
+        observers: {
+          title: 'Rule 12: Observers',
+          body: 'Non-governmental organisations (NGOs) and intergovernmental organisations (IGOs) may participate as observers where applicable. Observers may address the committee only with prior permission from the Chair. Observers do not have the right to vote or sponsor draft resolutions.',
+        },
+        technologyAI: {
+          title: 'Rule 13: Technology and AI',
+          body: [
+            'The use of artificial intelligence tools (including but not limited to large language models and generative AI) for the drafting of working papers, draft resolutions, amendments, or speeches is strictly prohibited.',
+            'Delegates found to have used AI tools in the preparation of official documents will be subject to disciplinary action as determined by the Secretariat.',
+            'Delegates may use technology for research and reference purposes only, provided such use does not disrupt committee proceedings.',
+          ],
+        },
+      },
+      debate: {
+        title: 'III. CONDUCT OF DEBATE',
+        speeches: {
+          title: 'Rule 14: Speeches',
+          body: "All delegates have the right to address the committee during their turn on the General Speakers' List or during a moderated caucus. The Chair shall set the speaking time for all speeches. Delegates must yield their remaining time to the Chair, to another delegate, to questions, or to the floor.",
+        },
+        yields: {
+          title: 'Rule 15: Yields',
+          body: "At the conclusion of a speech on the General Speakers' List, a delegate must yield their remaining time. Possible yields are: to the Chair (unused time is forfeited), to another delegate (named delegate may speak for remaining time), to questions (other delegates may pose questions), or to the floor (open to any delegate). Yields may not be made during moderated caucuses.",
+        },
+        relevance: {
+          title: 'Rule 16: Relevance',
+          body: 'All speeches and debate must remain relevant to the topic under discussion. The Chair may call a delegate to order if a speech deviates from the subject matter. A delegate who continues to speak irrelevantly may be ruled out of order.',
+        },
+        closureSpeakersList: {
+          title: "Rule 17: Closure of the Speakers' List",
+          body: "The Speakers' List may be closed by a motion at any time. Once closed, no new delegates may be added to the list. Existing delegates on the list retain their right to speak. The Speakers' List may be reopened by a subsequent motion.",
+        },
+        reopeningSpeakersList: {
+          title: "Rule 18: Reopening of the Speakers' List",
+          body: "A closed Speakers' List may be reopened upon a successful motion to reopen the Speakers' List. Once reopened, delegates may be added as normal.",
+        },
+        points: {
+          title: 'Rule 19: Points',
+          intro: 'Delegates may raise the following points during committee session:',
+          items: [
+            { point: 'Point of Personal Privilege', circumstance: 'When personal comfort or audibility affects participation. May interrupt speaker when on audibility.' },
+            { point: 'Point of Order', circumstance: 'Raised to correct a procedural error made by the Chair or a delegate. May not interrupt a speaker.' },
+            { point: 'Point of Parliamentary Inquiry', circumstance: 'Ask the Chair about rules, procedure, or motions that are potentially in order. May not interrupt a speaker.' },
+            { point: 'Point of Information', circumstance: 'Only when a speaker yields to questions. Only about policy or content, not personal matters among delegates.' },
+            { point: 'Right of Reply', circumstance: "Requested in writing when a delegate's country or person is insulted during speech. When approved, the delegate may respond after the speaker has finished." },
+          ],
+        },
+        motions: {
+          title: 'Rule 20: Motions',
+          intro: 'Delegates may raise the following motions during committee session. Arranged in default decreasing order of precedence:',
+          items: [
+            { motion: 'Motion to Suspend the Rules', circumstance: 'Temporarily waive procedural rule for special circumstances (e.g., guest speakers, adjusted debate structure).' },
+            { motion: 'Motion to Appeal the Decision of the Chair', circumstance: 'Challenge procedural ruling made by chair.' },
+            { motion: 'Motion to Set the Agenda', circumstance: "Determine topics' order of discussion." },
+            { motion: 'Motion to Adjourn Debate', circumstance: "End the day's committee sessions." },
+            { motion: 'Motion to Recess', circumstance: 'Temporarily suspend meeting for break or informal session.' },
+            { motion: 'Motion for an Unmoderated Caucus', circumstance: 'Suspend formal debate for informal discussion and resolution drafting.' },
+            { motion: 'Motion for a Moderated Caucus', circumstance: "Suspend the General Speakers' List to hold short, timed speeches on a specific topic specified by the proposer." },
+            { motion: 'Motion to Extend the Caucus', circumstance: 'Extend duration of current caucus.' },
+            { motion: 'Motion to Table the Topic', circumstance: 'Suspend debate on current topic to move to next topic on agenda.' },
+            { motion: 'Motion to Resume Debate', circumstance: 'Reopen debate on previously tabled topic.' },
+            { motion: 'Motion to Introduce a Draft Resolution', circumstance: 'Brings APPROVED draft resolution to floor for consideration.' },
+            { motion: 'Motion to Introduce an Amendment', circumstance: 'Introduces amendment to existing draft resolution.' },
+            { motion: 'Motion to Divide the Question', circumstance: 'Request draft resolution to be divided into parts for separate consideration and voting.' },
+            { motion: 'Motion to Move into Voting Procedure on Amendments', circumstance: 'Request that debate on a specific amendment end and that voting begins.' },
+            { motion: 'Motion to Close Debate (Move to Voting Bloc)', circumstance: 'End all discussion on current topic or draft resolution and proceed directly to voting. Prior to voting, two speakers AGAINST it will be heard.' },
+            { motion: 'Motion for a Roll Call Vote', circumstance: 'Voting to proceed by roll call rather than placards.' },
+            { motion: 'Motion to Verify Quorum', circumstance: 'Confirm whether quorum is present.' },
+            { motion: "Motion to Open the Speaker's List", circumstance: "Build General Speakers' List on the agenda item." },
+            { motion: "Motion to Close the Speaker's List", circumstance: "Prevent new delegates from being added to Speakers' List." },
+            { motion: "Motion to Reopen the Speaker's List", circumstance: "Allow additional delegates to be added to Speakers' List after having been closed." },
+            { motion: "Motion to Add a Delegate to the Speakers' List", circumstance: "Request a delegate be placed on Speaker's List." },
+            { motion: 'Motion to Change the Speaking Time', circumstance: "Propose change to duration of speeches on Speakers' List." },
+            { motion: 'Motion to Correct the Record', circumstance: 'Request correction of factual error or misstatement in official record.' },
+            { motion: 'Motion to Suspend Debate for a Guest Speaker or Special Presentation', circumstance: 'Suspend debate for a presentation, guest address, or announcement.' },
+            { motion: 'Motion to Reconsider a Resolution or Vote', circumstance: 'Reopen discussion or voting on previously decided upon resolution or amendment.' },
+            { motion: "Motion to Divide the House (Chair's discretion)", circumstance: 'Request re-vote by roll call if result is exceptionally close or unclear.' },
+            { motion: "Motion for a Round of Applause (Chair's discretion)", circumstance: 'Courtesy to commend delegate, resolution, or guest.' },
+          ],
+        },
+        precedence: {
+          title: 'Rule 21: Precedence',
+          intro: 'The following is the order of precedence for points and motions, from highest to lowest priority:',
+          items: [
+            'Point of Personal Privilege',
+            'Motion to Suspend the Rules',
+            'Motion to Appeal the Decision of the Chair',
+            'Motion to Set the Agenda',
+            'Motion to Adjourn Debate',
+            'Motion to Recess',
+            'Motion for an Unmoderated Caucus',
+            'Motion for a Moderated Caucus',
+            'Motion to Extend the Caucus',
+            'Motion to Table the Topic',
+            'Motion to Resume Debate',
+            'Motion to Introduce a Draft Resolution',
+            'Motion to Introduce an Amendment',
+            'Motion to Divide the Question',
+            'Motion to Move into Voting Procedure on Amendments',
+            'Motion to Close Debate (Move to Voting Bloc)',
+            'Motion for a Roll Call Vote',
+            'Motion to Verify Quorum',
+            "Motion to Open the Speaker's List",
+            "Motion to Close the Speaker's List",
+            "Motion to Reopen the Speaker's List",
+            "Motion to Add a Delegate to the Speakers' List",
+            'Motion to Change the Speaking Time',
+            'Motion to Correct the Record',
+            'Motion to Suspend Debate for a Guest Speaker or Special Presentation',
+            'Motion to Reconsider a Resolution or Vote',
+            "Motion to Divide the House (Chair's discretion)",
+            "Motion for a Round of Applause (Chair's discretion)",
+            'Point of Order',
+            'Point of Parliamentary Inquiry',
+            'Point of Information',
+          ],
+        },
+      },
+      caucuses: {
+        title: 'IV. CAUCUSES',
+        moderated: {
+          title: 'Rule 22: Moderated Caucus',
+          body: [
+            "A moderated caucus is a structured form of debate during which the General Speakers' List is suspended. A delegate may move for a moderated caucus by specifying the total time, speaking time per delegate, and the topic of discussion.",
+            'The motion requires a simple majority to pass. The Chair will then call on delegates in turn to speak on the specified topic.',
+            'Yields are not permitted during moderated caucuses. Unused speaking time is returned to the Chair.',
+          ],
+        },
+        unmoderated: {
+          title: 'Rule 23: Unmoderated Caucus',
+          body: [
+            'An unmoderated caucus is an informal recess during which formal proceedings are suspended. Delegates may move freely, caucus with other delegations, and work on draft resolutions or amendments.',
+            'A motion for an unmoderated caucus requires a simple majority and must specify the total duration.',
+            'The Chair may end an unmoderated caucus early if the time is being used unproductively.',
+          ],
+        },
+        extension: {
+          title: 'Rule 24: Extension of Caucus',
+          body: 'Either type of caucus may be extended by a motion to extend, subject to a simple majority vote. A caucus may only be extended once. The extension time must be specified by the delegate raising the motion.',
+        },
+      },
+      workingPapersResolutions: {
+        title: 'V. WORKING PAPERS, RESOLUTIONS, AND AMENDMENTS',
+        workingPapers: {
+          title: 'Rule 25: Working Papers',
+          body: 'Working papers are informal documents used during the early stages of debate to record ideas, proposals, and areas of agreement. Working papers must be approved by the Chair before distribution. They do not require formal sponsors or signatories and need not follow the format of a draft resolution.',
+        },
+        draftResolutions: {
+          title: 'Rule 26: Draft Resolutions',
+          body: "Draft resolutions are formal documents proposing solutions to the committee's topic. They must follow the standard UN resolution format including a proper heading, preambulatory clauses, and operative clauses. A draft resolution requires a minimum number of sponsors and signatories as determined by the Chair before it may be introduced to the floor.",
+        },
+        amendments: {
+          title: 'Rule 27: Amendments',
+          body: 'Amendments may be proposed to modify the operative clauses of a draft resolution that is on the floor. Amendments must be submitted in writing to the dais.',
+          friendly: { label: 'Friendly Amendment', desc: 'Agreed upon by all sponsors of the draft resolution. Does not require a vote and is automatically incorporated.' },
+          unfriendly: { label: 'Unfriendly Amendment', desc: 'Not agreed upon by all sponsors. Requires a simple majority vote to be incorporated into the draft resolution.' },
+          further: [
+            'An amendment may only modify, add, or delete operative clauses.',
+            'Amendments to amendments are not permitted.',
+            'Once an amendment is voted upon, it cannot be reconsidered unless a motion to reconsider passes.',
+          ],
+        },
+        mergingWithdrawal: {
+          title: 'Rule 28: Merging and Withdrawal',
+          body: 'Two or more draft resolutions may be merged into a single document with the agreement of all sponsors, subject to Chair approval. A draft resolution or amendment may be withdrawn by its sponsors at any time before voting begins, provided no objection is raised by the committee.',
+        },
+      },
+      voting: {
+        title: 'VI. VOTING',
+        votingBloc: {
+          title: 'Rule 29: Voting Bloc',
+          body: 'The voting bloc is a period during which the committee votes on draft resolutions and amendments. Once the voting bloc begins, no speeches, points, or motions (except those listed in Rule 33) may be entertained. All delegates must be present in the room during the voting bloc.',
+        },
+        votingRights: {
+          title: 'Rule 30: Voting Rights',
+          body: 'All member states present in the committee have the right to vote during the voting bloc. Each delegation has one vote. Observer entities do not have voting rights.',
+        },
+        conductDuringVoting: {
+          title: 'Rule 31: Conduct During Voting',
+          body: 'Once the voting bloc has commenced, no delegate may enter or exit the committee room. Electronic devices must be put away. The Chair will call each vote in turn and delegates must cast their vote clearly.',
+        },
+        rollCallVotes: {
+          title: 'Rule 32: Roll-Call Votes',
+          body: "The Chair may order a roll-call vote, or a delegate may motion for one. During a roll-call vote, the Chair calls each member state in alphabetical order, and the delegate responds with 'Yes', 'No', 'Abstain', or 'Pass'. A delegate who passes must respond when called again at the end of the roll call.",
+        },
+        motionsDuringBloc: {
+          title: 'Rule 33: Motions During the Voting Bloc',
+          body: 'During the voting bloc, the only permissible motions are: Motion to Divide the Question, Motion for a Roll Call Vote, Motion to Verify Quorum, Motion to Divide the House, and Motion for a Round of Applause.',
+        },
+        majorityRequirements: {
+          title: 'Rule 34: Majority Requirements',
+          body: 'Most procedural matters require a simple majority (more than half of delegates currently present and voting) to pass. Substantive matters, such as the passage of a draft resolution, require a two-thirds majority of delegates present and voting. Motions to suspend the rules and to appeal the decision of the Chair require a two-thirds majority.',
+        },
+        abstentionsAndPasses: {
+          title: 'Rule 35: Abstentions and Passes',
+          body: "Delegates who are 'Present and Voting' may not abstain. Delegates who are 'Present' may abstain on draft resolutions. Abstentions are not counted as votes for or against. During a roll-call vote, a delegate may pass once; if still undecided when called again, they must vote Yes or No.",
+        },
+        divisionOfQuestion: {
+          title: 'Rule 36: Division of the Question',
+          body: 'A delegate may motion to divide a draft resolution into two or more parts for separate consideration and voting. Each part must be capable of standing alone. The motion requires a simple majority. If the motion passes, the committee votes on each part separately.',
+        },
+        reconsideration: {
+          title: 'Rule 37: Reconsideration',
+          body: 'A delegate may motion to reconsider a resolution or vote that has already been decided. The motion requires a two-thirds majority to pass. If the motion passes, the matter is reopened for debate and a new vote is taken.',
+        },
+      },
+      specialRules: {
+        title: 'VII. SPECIAL RULES',
+        suspensionOfRules: {
+          title: 'Rule 38: Suspension of Rules',
+          body: 'Any rule may be temporarily suspended by a two-thirds majority vote, except for rules pertaining to the rights of delegations. A motion to suspend the rules must specify which rule is to be suspended and the purpose of the suspension.',
+        },
+        rightOfReply: {
+          title: 'Rule 39: Right of Reply',
+          body: "A delegate whose country or person has been directly and personally insulted by another delegate's speech may request a right of reply by submitting a written note to the dais. The Chair will determine whether to grant the right of reply. If granted, the delegate may deliver a brief response after the offending speech has concluded.",
+        },
+        appealChair: {
+          title: "Rule 40: Appeal to the Chair",
+          body: "A delegate may appeal a ruling made by the Chair on a procedural matter by stating 'The delegate appeals the decision of the Chair.' The Chair shall then put the ruling to a vote. A two-thirds majority is required to overturn the Chair's decision. The Chair's ruling stands in case of a tie.",
+        },
+      },
+      closureOfDebate: {
+        title: 'VIII. CLOSURE OF DEBATE',
+        closure: {
+          title: 'Rule 41: Closure of Debate',
+          body: "A delegate may motion to close debate on the current topic. Before the vote on the motion, two delegates who are against the closure may speak. If the motion passes by a simple majority, the committee proceeds immediately to the voting bloc on all pending draft resolutions.",
+        },
+        adjournment: {
+          title: 'Rule 42: Adjournment',
+          body: "A delegate may motion to adjourn debate at the end of a session day. The motion requires a simple majority. If passed, committee proceedings are suspended until the next scheduled session. All pending business is preserved until the committee reconvenes. No business may be conducted outside of formally recognized committee sessions.",
+        },
+      },
+    },
   },
   conference: {
     title: 'NUMUN 2026',

@@ -29,6 +29,14 @@ export default function RopPage() {
     voting: false,
     glossary: false,
     commonPhrases: false,
+    ropI: false,
+    ropII: false,
+    ropIII: false,
+    ropIV: false,
+    ropV: false,
+    ropVI: false,
+    ropVII: false,
+    ropVIII: false,
   });
 
   const toggle = (key: string) => setOpen(prev => ({ ...prev, [key]: !prev[key] }));
@@ -588,6 +596,396 @@ export default function RopPage() {
                     ))}
                   </div>
                 </div>
+              </div>
+            </CollapsibleSection>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── COMPLETE RULES OF PROCEDURE ── */}
+      <SectionTitle>{r.fullRop.sectionTitle}</SectionTitle>
+      <section className={sections.standardSection}>
+        <div className={spacing.container}>
+          <div className="container mx-auto px-4 max-w-4xl space-y-10">
+
+            {/* Section I: General Rules */}
+            <CollapsibleSection title={r.fullRop.generalRules.title} isOpen={open.ropI} onToggle={() => toggle("ropI")}>
+              <div className="mt-4 space-y-6">
+                {/* Rule 1: Scope */}
+                <div>
+                  <div className={`flex items-center gap-3 mb-3`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>1</span>
+                    <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.generalRules.scope.title}</h4>
+                  </div>
+                  {r.fullRop.generalRules.scope.body.map((p, i) => (
+                    <p key={i} className={`${typography.bodyNormal} mb-2`}>{p}</p>
+                  ))}
+                  <div className={`${tokens.borderRadius["2xl"]} overflow-hidden mt-3`}>
+                    <div className="grid gap-1" style={{ gridTemplateColumns: "max-content 1fr" }}>
+                      <div className={`bg-numun-green text-white text-sm font-bold px-4 py-3 ${fonts.cerebri}`}>Committee</div>
+                      <div className={`bg-numun-green text-white text-sm font-bold px-4 py-3 ${fonts.cerebri}`}>Topic</div>
+                      {r.fullRop.generalRules.scope.committees.map((c, i) => (
+                        <React.Fragment key={i}>
+                          <div className={`bg-numun-beige text-numun-green-darkest text-sm font-semibold px-4 py-3 flex items-center ${fonts.cerebri}`}>{c.name}</div>
+                          <div className={`bg-numun-beige text-numun-green-darkest text-sm px-4 py-3 ${fonts.cerebri}`}>{c.topic}</div>
+                        </React.Fragment>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Rule 2: Officers */}
+                <div>
+                  <div className={`flex items-center gap-3 mb-3`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>2</span>
+                    <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.generalRules.officers.title}</h4>
+                  </div>
+                  <p className={`${typography.bodyNormal} mb-3`}>{r.fullRop.generalRules.officers.intro}</p>
+                  <div className={`${tokens.borderRadius["2xl"]} overflow-hidden`}>
+                    <div className="grid gap-1" style={{ gridTemplateColumns: "1fr 2fr" }}>
+                      <div className={`bg-numun-green text-white text-sm font-bold px-4 py-3 ${fonts.cerebri}`}>Committee</div>
+                      <div className={`bg-numun-green text-white text-sm font-bold px-4 py-3 ${fonts.cerebri}`}>Officers</div>
+                      {r.fullRop.generalRules.officers.table.map((row, i) => (
+                        <React.Fragment key={i}>
+                          <div className={`bg-numun-beige text-numun-green-darkest text-sm font-semibold px-4 py-3 flex items-center ${fonts.cerebri}`}>{row.committee}</div>
+                          <div className={`bg-numun-beige text-numun-green-darkest text-sm px-4 py-3 ${fonts.cerebri}`}>
+                            <span className="font-semibold">{row.chair}</span>
+                            {row.coChairs.map((co, j) => (
+                              <span key={j}>, {co}</span>
+                            ))}
+                          </div>
+                        </React.Fragment>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Rule 3: Quorum */}
+                <div>
+                  <div className={`flex items-center gap-3 mb-3`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>3</span>
+                    <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.generalRules.quorum.title}</h4>
+                  </div>
+                  <p className={`${typography.bodyNormal}`}>{r.fullRop.generalRules.quorum.body}</p>
+                </div>
+              </div>
+            </CollapsibleSection>
+
+            {/* Section II: Conduct of Delegates */}
+            <CollapsibleSection title={r.fullRop.conduct.title} isOpen={open.ropII} onToggle={() => toggle("ropII")}>
+              <div className="mt-4 space-y-6">
+                {/* Rule 4: Language of Debate */}
+                <div>
+                  <div className={`flex items-center gap-3 mb-3`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>4</span>
+                    <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.conduct.languageOfDebate.title}</h4>
+                  </div>
+                  {r.fullRop.conduct.languageOfDebate.body.map((p, i) => (
+                    <p key={i} className={`${typography.bodyNormal} mb-2`}>{p}</p>
+                  ))}
+                  <div className="grid grid-cols-2 gap-1 mt-3 overflow-hidden rounded-2xl">
+                    <div className={`bg-numun-green text-white text-sm font-bold px-4 py-3 ${fonts.cerebri}`}>English / 英語</div>
+                    <div className={`bg-numun-beige text-numun-green-darkest text-sm font-bold px-4 py-3 ${fonts.cerebri}`}>Japanese / 日本語</div>
+                    <div className={`bg-numun-green/10 text-numun-green-darkest text-sm px-4 py-3 ${fonts.cerebri}`}>
+                      <ul className="space-y-1">
+                        {r.fullRop.conduct.languageOfDebate.english.map((item, i) => (
+                          <li key={i} className="flex gap-2"><span className="text-numun-gold flex-shrink-0">•</span><span>{item}</span></li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className={`bg-numun-beige text-numun-green-darkest text-sm px-4 py-3 ${fonts.cerebri}`}>
+                      <ul className="space-y-1">
+                        {r.fullRop.conduct.languageOfDebate.japanese.map((item, i) => (
+                          <li key={i} className="flex gap-2"><span className="text-numun-gold flex-shrink-0">•</span><span>{item}</span></li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Rules 5–13 */}
+                {[
+                  { num: 5, rule: r.fullRop.conduct.credentials },
+                  { num: 6, rule: r.fullRop.conduct.courtesy },
+                  { num: 7, rule: r.fullRop.conduct.chairAuthority },
+                  { num: 10, rule: r.fullRop.conduct.decorum },
+                  { num: 11, rule: r.fullRop.conduct.officialDocuments },
+                  { num: 12, rule: r.fullRop.conduct.observers },
+                ].map(({ num, rule }) => (
+                  <div key={num}>
+                    <div className={`flex items-center gap-3 mb-3`}>
+                      <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>{num}</span>
+                      <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{rule.title}</h4>
+                    </div>
+                    <p className={`${typography.bodyNormal}`}>{rule.body}</p>
+                  </div>
+                ))}
+
+                {/* Rule 8: Agenda (array body) */}
+                <div>
+                  <div className={`flex items-center gap-3 mb-3`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>8</span>
+                    <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.conduct.agenda.title}</h4>
+                  </div>
+                  {r.fullRop.conduct.agenda.body.map((p, i) => (
+                    <p key={i} className={`${typography.bodyNormal} mb-2`}>{p}</p>
+                  ))}
+                </div>
+
+                {/* Rule 9: Attendance */}
+                <div>
+                  <div className={`flex items-center gap-3 mb-3`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>9</span>
+                    <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.conduct.attendance.title}</h4>
+                  </div>
+                  <p className={`${typography.bodyNormal}`}>{r.fullRop.conduct.attendance.body}</p>
+                </div>
+
+                {/* Rule 13: Technology and AI (array body) */}
+                <div>
+                  <div className={`flex items-center gap-3 mb-3`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>13</span>
+                    <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.conduct.technologyAI.title}</h4>
+                  </div>
+                  {r.fullRop.conduct.technologyAI.body.map((p, i) => (
+                    <p key={i} className={`${typography.bodyNormal} mb-2`}>{p}</p>
+                  ))}
+                </div>
+              </div>
+            </CollapsibleSection>
+
+            {/* Section III: Conduct of Debate */}
+            <CollapsibleSection title={r.fullRop.debate.title} isOpen={open.ropIII} onToggle={() => toggle("ropIII")}>
+              <div className="mt-4 space-y-6">
+                {/* Rules 14–18: single-body rules */}
+                {[
+                  { num: 14, rule: r.fullRop.debate.speeches },
+                  { num: 15, rule: r.fullRop.debate.yields },
+                  { num: 16, rule: r.fullRop.debate.relevance },
+                  { num: 17, rule: r.fullRop.debate.closureSpeakersList },
+                  { num: 18, rule: r.fullRop.debate.reopeningSpeakersList },
+                ].map(({ num, rule }) => (
+                  <div key={num}>
+                    <div className={`flex items-center gap-3 mb-3`}>
+                      <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>{num}</span>
+                      <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{rule.title}</h4>
+                    </div>
+                    <p className={`${typography.bodyNormal}`}>{rule.body}</p>
+                  </div>
+                ))}
+
+                {/* Rule 19: Points table */}
+                <div>
+                  <div className={`flex items-center gap-3 mb-3`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>19</span>
+                    <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.debate.points.title}</h4>
+                  </div>
+                  <p className={`${typography.bodyNormal} mb-3`}>{r.fullRop.debate.points.intro}</p>
+                  <div className={`${tokens.borderRadius["2xl"]} overflow-hidden`}>
+                    <div className="grid gap-1" style={{ gridTemplateColumns: "1fr 2fr" }}>
+                      <div className={`bg-numun-green text-white text-sm font-bold px-4 py-3 ${fonts.cerebri}`}>Point</div>
+                      <div className={`bg-numun-green text-white text-sm font-bold px-4 py-3 ${fonts.cerebri}`}>Circumstance</div>
+                      {r.fullRop.debate.points.items.map((item, i) => (
+                        <React.Fragment key={i}>
+                          <div className={`bg-numun-beige text-numun-green-darkest text-sm font-semibold px-4 py-3 flex items-center ${fonts.cerebri}`}>{item.point}</div>
+                          <div className={`bg-numun-beige text-numun-green-darkest text-sm px-4 py-3 ${fonts.cerebri}`}>{item.circumstance}</div>
+                        </React.Fragment>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Rule 20: Motions table */}
+                <div>
+                  <div className={`flex items-center gap-3 mb-3`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>20</span>
+                    <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.debate.motions.title}</h4>
+                  </div>
+                  <p className={`${typography.bodyNormal} mb-3`}>{r.fullRop.debate.motions.intro}</p>
+                  <div className={`${tokens.borderRadius["2xl"]} overflow-hidden`}>
+                    <div className="grid gap-1" style={{ gridTemplateColumns: "1fr 2fr" }}>
+                      <div className={`bg-numun-green text-white text-sm font-bold px-4 py-3 ${fonts.cerebri}`}>Motion</div>
+                      <div className={`bg-numun-green text-white text-sm font-bold px-4 py-3 ${fonts.cerebri}`}>Circumstance</div>
+                      {r.fullRop.debate.motions.items.map((item, i) => (
+                        <React.Fragment key={i}>
+                          <div className={`bg-numun-beige text-numun-green-darkest text-sm font-semibold px-4 py-3 flex items-center ${fonts.cerebri}`}>
+                            <span className="text-numun-gold font-bold mr-2">{i + 1}.</span>
+                            {item.motion}
+                          </div>
+                          <div className={`bg-numun-beige text-numun-green-darkest text-sm px-4 py-3 ${fonts.cerebri}`}>{item.circumstance}</div>
+                        </React.Fragment>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Rule 21: Precedence list */}
+                <div>
+                  <div className={`flex items-center gap-3 mb-3`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>21</span>
+                    <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.debate.precedence.title}</h4>
+                  </div>
+                  <p className={`${typography.bodyNormal} mb-3`}>{r.fullRop.debate.precedence.intro}</p>
+                  <ol className="list-none border-2 border-numun-gold/30 rounded-2xl overflow-hidden">
+                    {r.fullRop.debate.precedence.items.map((item, i) => (
+                      <li key={i} className={`flex gap-3 px-4 py-3 ${i % 2 === 0 ? 'bg-numun-beige' : 'bg-white'}`}>
+                        <span className={`flex-shrink-0 font-semibold ${fonts.cerebri}`}>{i + 1}.</span>
+                        <span className={`${typography.bodyNormal}`}>{item}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              </div>
+            </CollapsibleSection>
+
+            {/* Section IV: Caucuses */}
+            <CollapsibleSection title={r.fullRop.caucuses.title} isOpen={open.ropIV} onToggle={() => toggle("ropIV")}>
+              <div className="mt-4 space-y-6">
+                {/* Rule 22: Moderated Caucus */}
+                <div>
+                  <div className={`flex items-center gap-3 mb-3`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>22</span>
+                    <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.caucuses.moderated.title}</h4>
+                  </div>
+                  {r.fullRop.caucuses.moderated.body.map((p, i) => (
+                    <p key={i} className={`${typography.bodyNormal} mb-2`}>{p}</p>
+                  ))}
+                </div>
+                {/* Rule 23: Unmoderated Caucus */}
+                <div>
+                  <div className={`flex items-center gap-3 mb-3`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>23</span>
+                    <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.caucuses.unmoderated.title}</h4>
+                  </div>
+                  {r.fullRop.caucuses.unmoderated.body.map((p, i) => (
+                    <p key={i} className={`${typography.bodyNormal} mb-2`}>{p}</p>
+                  ))}
+                </div>
+                {/* Rule 24: Extension */}
+                <div>
+                  <div className={`flex items-center gap-3 mb-3`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>24</span>
+                    <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.caucuses.extension.title}</h4>
+                  </div>
+                  <p className={`${typography.bodyNormal}`}>{r.fullRop.caucuses.extension.body}</p>
+                </div>
+              </div>
+            </CollapsibleSection>
+
+            {/* Section V: Working Papers, Resolutions, and Amendments */}
+            <CollapsibleSection title={r.fullRop.workingPapersResolutions.title} isOpen={open.ropV} onToggle={() => toggle("ropV")}>
+              <div className="mt-4 space-y-6">
+                {/* Rule 25: Working Papers */}
+                <div>
+                  <div className={`flex items-center gap-3 mb-3`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>25</span>
+                    <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.workingPapersResolutions.workingPapers.title}</h4>
+                  </div>
+                  <p className={`${typography.bodyNormal}`}>{r.fullRop.workingPapersResolutions.workingPapers.body}</p>
+                </div>
+                {/* Rule 26: Draft Resolutions */}
+                <div>
+                  <div className={`flex items-center gap-3 mb-3`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>26</span>
+                    <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.workingPapersResolutions.draftResolutions.title}</h4>
+                  </div>
+                  <p className={`${typography.bodyNormal}`}>{r.fullRop.workingPapersResolutions.draftResolutions.body}</p>
+                </div>
+                {/* Rule 27: Amendments */}
+                <div>
+                  <div className={`flex items-center gap-3 mb-3`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>27</span>
+                    <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.workingPapersResolutions.amendments.title}</h4>
+                  </div>
+                  <p className={`${typography.bodyNormal} mb-3`}>{r.fullRop.workingPapersResolutions.amendments.body}</p>
+                  <div className={`${tokens.borderRadius["2xl"]} overflow-hidden mb-3`}>
+                    <div className="grid gap-1" style={{ gridTemplateColumns: "1fr 1fr" }}>
+                      <div className={`bg-numun-green text-white text-sm font-bold px-4 py-3 ${fonts.cerebri}`}>{r.fullRop.workingPapersResolutions.amendments.friendly.label}</div>
+                      <div className={`bg-numun-green text-white text-sm font-bold px-4 py-3 ${fonts.cerebri}`}>{r.fullRop.workingPapersResolutions.amendments.unfriendly.label}</div>
+                      <div className={`bg-numun-beige text-numun-green-darkest text-sm px-4 py-3 ${fonts.cerebri}`}>{r.fullRop.workingPapersResolutions.amendments.friendly.desc}</div>
+                      <div className={`bg-numun-beige text-numun-green-darkest text-sm px-4 py-3 ${fonts.cerebri}`}>{r.fullRop.workingPapersResolutions.amendments.unfriendly.desc}</div>
+                    </div>
+                  </div>
+                  <ul className="space-y-1">
+                    {r.fullRop.workingPapersResolutions.amendments.further.map((item, i) => (
+                      <li key={i} className={`${typography.bodyNormal} flex gap-2`}>
+                        <span className="text-numun-gold flex-shrink-0">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {/* Rule 28: Merging and Withdrawal */}
+                <div>
+                  <div className={`flex items-center gap-3 mb-3`}>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>28</span>
+                    <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.workingPapersResolutions.mergingWithdrawal.title}</h4>
+                  </div>
+                  <p className={`${typography.bodyNormal}`}>{r.fullRop.workingPapersResolutions.mergingWithdrawal.body}</p>
+                </div>
+              </div>
+            </CollapsibleSection>
+
+            {/* Section VI: Voting */}
+            <CollapsibleSection title={r.fullRop.voting.title} isOpen={open.ropVI} onToggle={() => toggle("ropVI")}>
+              <div className="mt-4 space-y-6">
+                {[
+                  { num: 29, rule: r.fullRop.voting.votingBloc },
+                  { num: 30, rule: r.fullRop.voting.votingRights },
+                  { num: 31, rule: r.fullRop.voting.conductDuringVoting },
+                  { num: 32, rule: r.fullRop.voting.rollCallVotes },
+                  { num: 33, rule: r.fullRop.voting.motionsDuringBloc },
+                  { num: 34, rule: r.fullRop.voting.majorityRequirements },
+                  { num: 35, rule: r.fullRop.voting.abstentionsAndPasses },
+                  { num: 36, rule: r.fullRop.voting.divisionOfQuestion },
+                  { num: 37, rule: r.fullRop.voting.reconsideration },
+                ].map(({ num, rule }) => (
+                  <div key={num}>
+                    <div className={`flex items-center gap-3 mb-3`}>
+                      <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>{num}</span>
+                      <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{rule.title}</h4>
+                    </div>
+                    <p className={`${typography.bodyNormal}`}>{rule.body}</p>
+                  </div>
+                ))}
+              </div>
+            </CollapsibleSection>
+
+            {/* Section VII: Special Rules */}
+            <CollapsibleSection title={r.fullRop.specialRules.title} isOpen={open.ropVII} onToggle={() => toggle("ropVII")}>
+              <div className="mt-4 space-y-6">
+                {[
+                  { num: 38, rule: r.fullRop.specialRules.suspensionOfRules },
+                  { num: 39, rule: r.fullRop.specialRules.rightOfReply },
+                  { num: 40, rule: r.fullRop.specialRules.appealChair },
+                ].map(({ num, rule }) => (
+                  <div key={num}>
+                    <div className={`flex items-center gap-3 mb-3`}>
+                      <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>{num}</span>
+                      <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{rule.title}</h4>
+                    </div>
+                    <p className={`${typography.bodyNormal}`}>{rule.body}</p>
+                  </div>
+                ))}
+              </div>
+            </CollapsibleSection>
+
+            {/* Section VIII: Closure of Debate */}
+            <CollapsibleSection title={r.fullRop.closureOfDebate.title} isOpen={open.ropVIII} onToggle={() => toggle("ropVIII")}>
+              <div className="mt-4 space-y-6">
+                {[
+                  { num: 41, rule: r.fullRop.closureOfDebate.closure },
+                  { num: 42, rule: r.fullRop.closureOfDebate.adjournment },
+                ].map(({ num, rule }) => (
+                  <div key={num}>
+                    <div className={`flex items-center gap-3 mb-3`}>
+                      <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>{num}</span>
+                      <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{rule.title}</h4>
+                    </div>
+                    <p className={`${typography.bodyNormal}`}>{rule.body}</p>
+                  </div>
+                ))}
               </div>
             </CollapsibleSection>
 
