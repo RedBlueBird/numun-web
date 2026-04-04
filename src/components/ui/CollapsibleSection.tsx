@@ -14,13 +14,13 @@ interface CollapsibleSectionProps {
 
 export default function CollapsibleSection({ title, isOpen, onToggle, children }: CollapsibleSectionProps) {
   return (
-    <div>
-      <button onClick={onToggle} className="w-full flex items-center justify-between cursor-pointer">
+    <div onClick={onToggle} className="cursor-pointer">
+      <div className="w-full flex items-center justify-between">
         <h3 className={`text-2xl font-bold text-numun-green ${fonts.itcBenguiat}`}>
           {title}
         </h3>
         <FaChevronDown className={`text-numun-green flex-shrink-0 ml-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
-      </button>
+      </div>
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
