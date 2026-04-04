@@ -253,7 +253,7 @@ export interface Translations {
         quorumSubtitle: string;
         majority: { label: string; desc: string };
         simpleMajority: { label: string; desc: string };
-        twothirdsMajority: { label: string; desc: string };
+        twothirdsMajority: { label: string; desc: string; conditions?: string[] };
       };
       raisingPoints: {
         title: string;
@@ -308,6 +308,13 @@ export interface Translations {
         title: string;
         intro: string;
         phrases: string[];
+      };
+      phraseGuide?: {
+        title: string;
+        categories: Array<{
+          categoryLabel: string;
+          phrases: Array<{ phrase: string; hint: string }>;
+        }>;
       };
       amendments: {
         title: string;

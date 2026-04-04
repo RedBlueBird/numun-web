@@ -24,6 +24,7 @@ export default function RopPage() {
     writingDraftResolutions: false,
     preambulatoryPhrases: false,
     operativePhrases: false,
+    phraseGuide: false,
     amendments: false,
     voting: false,
     glossary: false,
@@ -124,7 +125,11 @@ export default function RopPage() {
                       {r.cheatsheet.rollCall.twothirdsMajority.label}
                     </div>
                     <div className={`bg-numun-beige text-numun-green-darkest text-sm px-4 py-3 ${fonts.cerebri}`}>
-                      {r.cheatsheet.rollCall.twothirdsMajority.desc}
+                      {r.cheatsheet.rollCall.twothirdsMajority.conditions
+                        ? r.cheatsheet.rollCall.twothirdsMajority.conditions.map((c, i) => (
+                            <p key={i} className={i > 0 ? 'mt-1' : ''}>{c}</p>
+                          ))
+                        : r.cheatsheet.rollCall.twothirdsMajority.desc}
                     </div>
                   </div>
                 </div>
@@ -381,39 +386,66 @@ export default function RopPage() {
               </div>
             </CollapsibleSection>
 
-            {/* Sample Preambulatory Phrases */}
-            <CollapsibleSection title={r.cheatsheet.preambulatoryPhrases.title} isOpen={open.preambulatoryPhrases} onToggle={() => toggle("preambulatoryPhrases")}>
-              <div className="mt-4">
-                <p className={`${typography.bodyNormal} mb-6`}>{r.cheatsheet.preambulatoryPhrases.intro}</p>
-                <div className="flex flex-wrap gap-2">
-                  {r.cheatsheet.preambulatoryPhrases.phrases.map((phrase, i) => (
-                    <span
-                      key={i}
-                      className={`bg-numun-beige text-numun-green font-semibold italic px-3 py-1.5 rounded-lg text-sm ${fonts.cerebri}`}
-                    >
-                      {phrase}
-                    </span>
+            {/* Sample Preambulatory / Operative Phrases — flat lists (EN) or categorised guide (JP) */}
+            {r.cheatsheet.phraseGuide ? (
+              <CollapsibleSection title={r.cheatsheet.phraseGuide.title} isOpen={open.phraseGuide} onToggle={() => toggle("phraseGuide")}>
+                <div className="mt-4 space-y-6">
+                  {r.cheatsheet.phraseGuide.categories.map((cat, ci) => (
+                    <div key={ci}>
+                      <p className={`text-sm font-bold text-numun-green mb-3 ${fonts.cerebri}`}>{cat.categoryLabel}</p>
+                      <div className={`${tokens.borderRadius["2xl"]} overflow-hidden`}>
+                        <div className="grid gap-1" style={{ gridTemplateColumns: "max-content 1fr" }}>
+                          {cat.phrases.map((p, pi) => (
+                            <React.Fragment key={pi}>
+                              <div className={`bg-numun-green text-white text-sm italic font-semibold px-4 py-2 flex items-center ${fonts.cerebri}`}>
+                                {p.phrase}
+                              </div>
+                              <div className={`bg-numun-beige text-numun-green-darkest text-sm px-4 py-2 ${fonts.cerebri}`}>
+                                {p.hint}
+                              </div>
+                            </React.Fragment>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   ))}
                 </div>
-              </div>
-            </CollapsibleSection>
+              </CollapsibleSection>
+            ) : (
+              <>
+                <CollapsibleSection title={r.cheatsheet.preambulatoryPhrases.title} isOpen={open.preambulatoryPhrases} onToggle={() => toggle("preambulatoryPhrases")}>
+                  <div className="mt-4">
+                    <p className={`${typography.bodyNormal} mb-6`}>{r.cheatsheet.preambulatoryPhrases.intro}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {r.cheatsheet.preambulatoryPhrases.phrases.map((phrase, i) => (
+                        <span
+                          key={i}
+                          className={`bg-numun-beige text-numun-green font-semibold italic px-3 py-1.5 rounded-lg text-sm ${fonts.cerebri}`}
+                        >
+                          {phrase}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </CollapsibleSection>
 
-            {/* Sample Operative Phrases */}
-            <CollapsibleSection title={r.cheatsheet.operativePhrases.title} isOpen={open.operativePhrases} onToggle={() => toggle("operativePhrases")}>
-              <div className="mt-4">
-                <p className={`${typography.bodyNormal} mb-6`}>{r.cheatsheet.operativePhrases.intro}</p>
-                <div className="flex flex-wrap gap-2">
-                  {r.cheatsheet.operativePhrases.phrases.map((phrase, i) => (
-                    <span
-                      key={i}
-                      className={`bg-numun-beige text-numun-green font-semibold underline px-3 py-1.5 rounded-lg text-sm ${fonts.cerebri}`}
-                    >
-                      {phrase}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </CollapsibleSection>
+                <CollapsibleSection title={r.cheatsheet.operativePhrases.title} isOpen={open.operativePhrases} onToggle={() => toggle("operativePhrases")}>
+                  <div className="mt-4">
+                    <p className={`${typography.bodyNormal} mb-6`}>{r.cheatsheet.operativePhrases.intro}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {r.cheatsheet.operativePhrases.phrases.map((phrase, i) => (
+                        <span
+                          key={i}
+                          className={`bg-numun-beige text-numun-green font-semibold underline px-3 py-1.5 rounded-lg text-sm ${fonts.cerebri}`}
+                        >
+                          {phrase}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </CollapsibleSection>
+              </>
+            )}
 
             {/* Amendments */}
             <CollapsibleSection title={r.cheatsheet.amendments.title} isOpen={open.amendments} onToggle={() => toggle("amendments")}>
