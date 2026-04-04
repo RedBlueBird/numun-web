@@ -238,6 +238,7 @@ export const en: Translations = {
   },
   rop: {
     title: 'RULES OF PROCEDURE',
+    description: 'The Rules of Procedure outline the formal guidelines that govern debate and decision-making in NUMUN committee sessions. Familiarize yourself with these rules to participate confidently and effectively in your committee.',
     houseRules: {
       sectionTitle: 'HOUSE RULES',
       intro: 'Please keep in mind the following when the committee session is ongoing for maximum conducivity to debate.',
@@ -270,19 +271,19 @@ export const en: Translations = {
     cheatsheet: {
       sectionTitle: 'DELEGATE CHEATSHEET',
       rollCall: {
-        title: 'ROLL CALL',
+        title: 'I. ROLL CALL',
         subtitle: 'Conducted at the start of every committee',
         instruction: "Answer with either of the following. Ensure adherence to your assigned country's stance.",
         presentVoting: { label: 'Present & Voting', desc: 'Present and does not have the right to abstain during substantive voting procedures' },
         present: { label: 'Present', desc: 'Present in the committee and has the right to abstain during substantive voting procedures' },
-        quorumTitle: 'QUORUM',
+        quorumTitle: 'II. QUORUM',
         quorumSubtitle: 'Regarding attendance of delegates',
         majority: { label: 'Majority', desc: 'Half of all delegates present during first roll call of the day' },
         simpleMajority: { label: 'Simple Majority', desc: 'Half of all delegates who are currently present' },
         twothirdsMajority: { label: '⅔ Majority', desc: 'Need to be currently present for voting to take place' },
       },
       raisingPoints: {
-        title: 'RAISING POINTS',
+        title: 'III. RAISING POINTS',
         intro: 'Proposal for actions that affect mainly the proposer. Refer to the ROP document for more details.',
         phrase: '"The delegate of ___ would like to raise a point of ___."',
         points: [
@@ -294,7 +295,7 @@ export const en: Translations = {
         ],
       },
       raisingMotions: {
-        title: 'RAISING MOTIONS',
+        title: 'IV. RAISING MOTIONS',
         intro: 'Proposal for actions that affect the entire committee. Arranged in default decreasing order of precedence (priority). Refer to the ROP document for more details.',
         phrase: '"The delegate of ___ would like to raise a motion to/for ___."',
         motions: [
@@ -328,7 +329,7 @@ export const en: Translations = {
         ],
       },
       makingSpeeches: {
-        title: 'MAKING SPEECHES',
+        title: 'V. MAKING SPEECHES',
         addressingTitle: 'Addressing the House',
         addressPhrases: [
           '"Honorable/learned/respected delegates..."',
@@ -350,7 +351,7 @@ export const en: Translations = {
         ],
       },
       writingWorkingPapers: {
-        title: 'WRITING WORKING PAPERS',
+        title: 'VI. WRITING WORKING PAPERS',
         purposeTitle: 'Purpose',
         purposes: [
           'The brainstorming phase of the draft resolution.',
@@ -363,7 +364,7 @@ export const en: Translations = {
         submissionDesc: 'Typically only need Chair approval to be copied and distributed (or screen-shared) for discussion.',
       },
       writingDraftResolutions: {
-        title: 'WRITING DRAFT RESOLUTIONS',
+        title: 'VII. WRITING DRAFT RESOLUTIONS',
         purposeTitle: 'Purpose',
         purposes: [
           'Formal document detailing solutions to issues on agenda.',
@@ -395,7 +396,7 @@ export const en: Translations = {
         ],
       },
       preambulatoryPhrases: {
-        title: 'SAMPLE PREAMBULATORY PHRASES',
+        title: 'VIII.a SAMPLE PREAMBULATORY PHRASES',
         intro: 'When writing the draft resolution, preambulatory phrases are used to establish the context and background of the issue, citing past UN actions, relevant treaties, or the general reasons why the committee is taking action. Preambulatory clauses begin with verbs in the present participle form (ending in "-ing") or an adjective. These phrases are usually italicised for emphasis.',
         phrases: [
           'Affirming', 'Alarmed by', 'Approving', 'Aware of', 'Bearing in mind',
@@ -413,7 +414,7 @@ export const en: Translations = {
         ],
       },
       operativePhrases: {
-        title: 'SAMPLE OPERATIVE PHRASES',
+        title: 'VIII.b SAMPLE OPERATIVE PHRASES',
         intro: 'Operative clauses form the core of the resolution. They are used to outline the specific actions, policies, and solutions the committee recommends to solve the issue. These clauses are numbered, end with a semicolon (except for the final clause, which ends in a period), and begin with an action verb in the third-person singular present tense. These starting verbs are usually underlined for emphasis.',
         phrases: [
           'Accepts', 'Affirms', 'Approves', 'Authorizes', 'Calls',
@@ -427,7 +428,7 @@ export const en: Translations = {
         ],
       },
       amendments: {
-        title: 'AMENDMENTS',
+        title: 'IX. AMENDMENTS',
         purposeTitle: 'Purpose',
         purposes: [
           'Making changes to the flaws of the draft resolution that has already been approved and has been motioned to be introduced to the floor.',
@@ -462,7 +463,7 @@ export const en: Translations = {
         ],
       },
       voting: {
-        title: 'VOTING ON THE RESOLUTION',
+        title: 'X. VOTING ON THE RESOLUTION',
         items: [
           {
             text: 'A resolution will pass if the number "for" exceeds the number "against," regardless of the number of abstentions.',
@@ -476,7 +477,7 @@ export const en: Translations = {
         ],
       },
       glossary: {
-        title: 'GLOSSARY',
+        title: 'XI. GLOSSARY',
         terms: [
           { word: 'Abstain', definition: 'Voting for substantial matters to show a neutral stance.' },
           { word: 'Adjourn', definition: 'Suspend a conference to another time indefinitely.' },
@@ -507,7 +508,7 @@ export const en: Translations = {
         ],
       },
       commonPhrases: {
-        title: 'COMMONLY-USED PHRASES',
+        title: 'XII. COMMONLY-USED PHRASES',
         phrases: [
           { phrase: '"Motion to move to the previous question."', circumstance: 'Express desire to directly go into voting procedures.' },
           { phrase: '"May the chair ask the speaker to please repeat/rephrase his/her question."', circumstance: 'Express desire for speaker to ask question one more time.' },
@@ -536,22 +537,22 @@ export const en: Translations = {
             'The topics for each committee within the Nagoya University Model United Nations 2026 are as follows:',
           ],
           committees: [
-            { name: 'UNSC', topic: 'Addressing political unrest in South Sudan: Crisis Committee' },
-            { name: 'ECOSOC', topic: 'Creating an International Liability Regime for Accidents Involving Autonomous Weapons Systems and AI-Enabled Military Platforms' },
-            { name: 'WHO', topic: 'Addressing Premature Mortality from Non-Communicable Diseases and Malnutrition in Low- and Middle-Income Countries' },
-            { name: 'UNEP', topic: '気候変動による災害に対する人道保護、財産保護を目的としたレジリエンス強化' },
-            { name: 'UNHCR', topic: 'パキスタン及びイランによるアフガン難民大量送還への対応と難民保護' },
+            { name: 'United Nations Security Council', topic: 'Addressing political unrest in South Sudan: Crisis Committee' },
+            { name: 'Economic and Social Council', topic: 'Creating an International Liability Regime for Accidents Involving Autonomous Weapons Systems and AI-Enabled Military Platforms' },
+            { name: 'World Health Organization', topic: 'Addressing Premature Mortality from Non-Communicable Diseases and Malnutrition in Low- and Middle-Income Countries' },
+            { name: 'United Nations Human Rights Council', topic: 'パキスタン及びイランによるアフガン難民大量送還への対応と難民保護' },
+            { name: 'United Nations Environment Programme', topic: '気候変動による災害に対する人道保護、財産保護を目的としたレジリエンス強化' },
           ],
         },
         officers: {
           title: 'Rule 2: Officers',
           intro: 'Each committee will be staffed by a Chair and Co-Chairs. The following officers have been appointed for NUMUN 2026:',
           table: [
-            { committee: 'UNSC (Advanced)', chair: 'Teguh Ganesha', coChairs: ['Takumi Oishi', 'Dhinuthri Senanayake'] },
-            { committee: 'ECOSOC (Intermediate)', chair: 'Ananya Katyal', coChairs: ['Anh Nguyen', 'Ahmed Mahadi Hasan'] },
-            { committee: 'WHO (Beginner)', chair: 'Naomi Duklan', coChairs: ['Praeploy Thongmuang', 'Mulan Siringoringo'] },
-            { committee: 'UN Human Rights Council', chair: 'Aisha Kako', coChairs: ['Nagisa Mitsui', 'Tomoaki Tsubota'] },
-            { committee: 'UN Environmental Programme', chair: 'Yuki Terashima', coChairs: ['Serina Saito'] },
+            { committee: 'United Nations Security Council (Advanced)', chair: 'Teguh Ganesha', coChairs: ['Takumi Oishi', 'Dhinuthri Senanayake'] },
+            { committee: 'United Nations Economic and Social Council (Intermediate)', chair: 'Ananya Katyal', coChairs: ['Anh Nguyen', 'Ahmed Mahadi Hasan'] },
+            { committee: 'World Health Organization (Beginner)', chair: 'Naomi Duklan', coChairs: ['Praeploy Thongmuang', 'Mulan Siringoringo'] },
+            { committee: 'United Nations Human Rights Council', chair: 'Aisha Kako', coChairs: ['Nagisa Mitsui', 'Tomoaki Tsubota'] },
+            { committee: 'United Nations Environment Programme', chair: 'Yuki Terashima', coChairs: ['Serina Saito'] },
           ],
         },
         quorum: {
@@ -783,7 +784,7 @@ export const en: Translations = {
         },
         votingRights: {
           title: 'Rule 30: Voting Rights',
-          body: 'All member states present in the committee have the right to vote during the voting bloc. Each delegation has one vote. Observer entities do not have voting rights.',
+          body: "All member states present in the committee have the right to vote during the voting bloc. Each delegation has one vote. Delegates who declared 'Present and Voting' may not abstain and must vote 'Yes' or 'No'. Observer entities do not have voting rights on substantive matters.",
         },
         conductDuringVoting: {
           title: 'Rule 31: Conduct During Voting',

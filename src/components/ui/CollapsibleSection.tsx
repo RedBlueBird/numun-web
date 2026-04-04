@@ -14,7 +14,7 @@ interface CollapsibleSectionProps {
 
 export default function CollapsibleSection({ title, isOpen, onToggle, children }: CollapsibleSectionProps) {
   return (
-    <div onClick={onToggle} className="cursor-pointer">
+    <div onClick={onToggle} className="cursor-pointer rounded-xl px-4 py-2 -mx-4 my-2 transition-shadow duration-200 hover:shadow-md">
       <div className="w-full flex items-center justify-between">
         <h3 className={`text-2xl font-bold text-numun-green ${fonts.itcBenguiat}`}>
           {title}
