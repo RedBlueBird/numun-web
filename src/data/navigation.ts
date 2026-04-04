@@ -9,8 +9,6 @@ export const navigationItems: NavItem[] = [
       { label: "RULES OF PROCEDURE", href: "/rop" },
     ]
   },
-  { label: "ABOUT US", href: "/about" },
-  { label: "TEAM", href: "/team" },
   {
     label: "SPONSOR & PARTNERS",
     dropdown: [
@@ -20,5 +18,12 @@ export const navigationItems: NavItem[] = [
     ]
   },
   { label: "GALLERY", href: "/gallery" },
+  {
+    label: "ABOUT US",
+    dropdown: [
+      { label: "ABOUT NUMUN", href: "/about" },
+      { label: "OUR TEAM", href: "/team" },
+    ]
+  },
   { label: "CONTACT US", href: "/contact" },
 ];

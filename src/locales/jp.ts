@@ -18,6 +18,8 @@ export const jp: Translations = {
     rulesOfProcedure: '議事規則',
     register: '登録',
     about: '私たちについて',
+    aboutNumun: 'NUMUNについて',
+    ourTeam: '私たちのチーム',
     team: 'チーム',
     sponsors: 'スポンサー・パートナー',
     currentSponsors: '現在のスポンサー',

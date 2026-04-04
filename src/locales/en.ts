@@ -18,6 +18,8 @@ export const en: Translations = {
     rulesOfProcedure: 'RULES OF PROCEDURE',
     register: 'REGISTER',
     about: 'ABOUT US',
+    aboutNumun: 'ABOUT NUMUN',
+    ourTeam: 'OUR TEAM',
     team: 'TEAM',
     sponsors: 'SPONSOR & PARTNERS',
     currentSponsors: 'CURRENT SPONSORS',

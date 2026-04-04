@@ -74,6 +74,8 @@ export default function Header() {
     if (label === "PAST SPONSORS") return t.navigation.pastSponsors;
     if (label === "OVERVIEW") return t.navigation.overview;
     if (label === "RULES OF PROCEDURE") return t.navigation.rulesOfProcedure;
+    if (label === "ABOUT NUMUN") return t.navigation.aboutNumun;
+    if (label === "OUR TEAM") return t.navigation.ourTeam;
     return label;
   };
 
@@ -136,14 +138,15 @@ export default function Header() {
                     onMouseEnter={() => setOpenDropdown(index)}
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
-                    <button
+                    <Link
+                      href={item.dropdown[0].href}
                       className={`text-sm font-medium hover:text-numun-gold ${tokens.transition.colors} ${fonts.cerebri} uppercase flex items-center gap-1 ${
                         isDropdownActive ? "text-numun-gold-light" : "text-white"
                       }`}
                     >
                       {getNavLabel(item)}
                       <FaChevronDown className="text-xs" />
-                    </button>
+                    </Link>
                     <AnimatePresence>
                       {openDropdown === index && (
                         <motion.div
@@ -205,15 +208,22 @@ export default function Header() {
                 if (item.dropdown) {
                   return (
                     <div key={index}>
-                      <button
-                        onClick={() => setMobileOpenDropdown(mobileOpenDropdown === index ? null : index)}
-                        className={`text-sm font-medium hover:text-numun-gold ${tokens.transition.colors} ${fonts.cerebri} py-2 flex items-center justify-between w-full ${
-                          isDropdownActive ? "text-numun-gold" : "text-white"
-                        }`}
-                      >
-                        {getNavLabel(item)}
-                        <FaChevronDown className={`text-xs ${tokens.transition.all} ${mobileOpenDropdown === index ? 'rotate-180' : ''}`} />
-                      </button>
+                      <div className={`flex items-center justify-between w-full py-2 ${isDropdownActive ? "text-numun-gold" : "text-white"}`}>
+                        <Link
+                          href={item.dropdown[0].href}
+                          className={`text-sm font-medium hover:text-numun-gold ${tokens.transition.colors} ${fonts.cerebri}`}
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {getNavLabel(item)}
+                        </Link>
+                        <button
+                          onClick={() => setMobileOpenDropdown(mobileOpenDropdown === index ? null : index)}
+                          className={`text-sm hover:text-numun-gold ${tokens.transition.colors} p-1`}
+                          aria-label="Toggle dropdown"
+                        >
+                          <FaChevronDown className={`text-xs ${tokens.transition.all} ${mobileOpenDropdown === index ? 'rotate-180' : ''}`} />
+                        </button>
+                      </div>
                       <AnimatePresence>
                         {mobileOpenDropdown === index && (
                           <motion.div

@@ -18,6 +18,8 @@ export interface Translations {
     rulesOfProcedure: string;
     register: string;
     about: string;
+    aboutNumun: string;
+    ourTeam: string;
     team: string;
     sponsors: string;
     currentSponsors: string;
