@@ -240,6 +240,7 @@ export interface Translations {
   };
   rop: {
     title: string;
+    description: string;
     houseRules: {
       sectionTitle: string;
       intro: string;
