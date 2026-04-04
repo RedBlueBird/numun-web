@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import { getTimelineEvents } from '@/data/timeline';
 import ImageCarousel from '@/components/ui/ImageCarousel';
+import { FaChevronDown } from 'react-icons/fa';
 import {
   sections,
   spacing,
@@ -26,7 +27,11 @@ export default function TimelineSection() {
   const { t } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
   const timelineEvents = getTimelineEvents();
-  const [hoveredEventId, setHoveredEventId] = useState<string | null>(null);
+  const [expandedEventId, setExpandedEventId] = useState<string | null>(null);
+
+  const toggleEvent = (id: string) => {
+    setExpandedEventId(prev => (prev === id ? null : id));
+  };
 
   // Format date to readable format
   const formatDate = (dateString: string) => {
@@ -90,8 +95,6 @@ export default function TimelineSection() {
                   key={event.id}
                   variants={scrollAnimations.staggerItem}
                   className="relative"
-                  onHoverStart={() => setHoveredEventId(event.id)}
-                  onHoverEnd={() => setHoveredEventId(null)}
                 >
                   <div
                     className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${
@@ -119,28 +122,34 @@ export default function TimelineSection() {
                     >
                       <motion.div
                         transition={transitions.smooth}
-                        className={`${components.card.base} bg-white/10 backdrop-blur-sm ${spacing.padding.md} ${tokens.borderRadius.xl} border border-numun-gold/30`}
+                        onClick={() => toggleEvent(event.id)}
+                        className={`${components.card.base} bg-white/10 backdrop-blur-sm ${spacing.padding.md} ${tokens.borderRadius.xl} border border-numun-gold/30 cursor-pointer`}
                       >
                         {/* Mobile Date Display */}
                         <div className="md:hidden text-numun-gold font-bold text-sm mb-3">
                           {formatDate(event.date)}
                         </div>
 
-                        {/* Event Title */}
-                        <h3 className="text-2xl font-bold text-white mb-3">
-                          {title}
-                        </h3>
+                        {/* Event Title + Chevron */}
+                        <div className="flex items-center justify-between mb-3">
+                          <h3 className="text-2xl font-bold text-white">
+                            {title}
+                          </h3>
+                          <FaChevronDown
+                            className={`text-numun-gold flex-shrink-0 ml-4 transition-transform duration-300 ${expandedEventId === event.id ? 'rotate-180' : ''}`}
+                          />
+                        </div>
 
                         {/* Event Description */}
                         {shouldReduceMotion ? (
-                          hoveredEventId === event.id && (
+                          expandedEventId === event.id && (
                             <p className="text-gray-300 leading-relaxed mb-6">
                               {description}
                             </p>
                           )
                         ) : (
                           <AnimatePresence>
-                            {hoveredEventId === event.id && (
+                            {expandedEventId === event.id && (
                               <motion.div
                                 key="description"
                                 variants={expandAnimations.descriptionReveal}
