@@ -14,6 +14,8 @@ export interface Translations {
   navigation: {
     home: string;
     numun2026: string;
+    overview: string;
+    rulesOfProcedure: string;
     register: string;
     about: string;
     team: string;
@@ -229,6 +231,109 @@ export interface Translations {
         title: string;
         body: string;
         followUp: string;
+      };
+    };
+  };
+  rop: {
+    title: string;
+    houseRules: {
+      sectionTitle: string;
+      intro: string;
+      rules: Array<{ text: string; subs?: string[] }>;
+    };
+    cheatsheet: {
+      sectionTitle: string;
+      rollCall: {
+        title: string;
+        subtitle: string;
+        instruction: string;
+        presentVoting: { label: string; desc: string };
+        present: { label: string; desc: string };
+        quorumTitle: string;
+        quorumSubtitle: string;
+        majority: { label: string; desc: string };
+        simpleMajority: { label: string; desc: string };
+        twothirdsMajority: { label: string; desc: string };
+      };
+      raisingPoints: {
+        title: string;
+        intro: string;
+        phrase: string;
+        points: Array<{ label: string; circumstance: string }>;
+      };
+      raisingMotions: {
+        title: string;
+        intro: string;
+        phrase: string;
+        motions: Array<{ label: string; circumstance: string }>;
+      };
+      makingSpeeches: {
+        title: string;
+        addressingTitle: string;
+        addressPhrases: string[];
+        yieldingTitle: string;
+        yieldingNote: string;
+        yields: Array<{ text: string; note?: string }>;
+        whenTitle: string;
+        speechTypes: Array<{ title: string; desc: string }>;
+      };
+      writingWorkingPapers: {
+        title: string;
+        purposeTitle: string;
+        purposes: string[];
+        structureTitle: string;
+        structureNote: string;
+        structureItems: string[];
+        submissionTitle: string;
+        submissionDesc: string;
+      };
+      writingDraftResolutions: {
+        title: string;
+        purposeTitle: string;
+        purposes: string[];
+        structureTitle: string;
+        structureNotes: string[];
+        heading: { label: string; items: string[]; signatoryNote: string };
+        preamb: { label: string; items: string[] };
+        operative: { label: string; item: string };
+        amendmentsTitle: string;
+        amendments: string[];
+      };
+      preambulatoryPhrases: {
+        title: string;
+        intro: string;
+        phrases: string[];
+      };
+      operativePhrases: {
+        title: string;
+        intro: string;
+        phrases: string[];
+      };
+      amendments: {
+        title: string;
+        purposeTitle: string;
+        purposes: string[];
+        typeTitle: string;
+        types: Array<{
+          label: string;
+          forClause?: string;
+          desc?: string;
+          phrase?: string;
+          note?: string;
+          steps?: string[];
+        }>;
+      };
+      voting: {
+        title: string;
+        items: Array<{ text: string; subs?: string[] }>;
+      };
+      glossary: {
+        title: string;
+        terms: Array<{ word: string; definition: string }>;
+      };
+      commonPhrases: {
+        title: string;
+        phrases: Array<{ phrase: string; circumstance: string }>;
       };
     };
   };

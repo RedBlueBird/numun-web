@@ -72,6 +72,8 @@ export default function Header() {
     if (label === "CURRENT SPONSORS") return t.navigation.currentSponsors;
     if (label === "PARTNER WITH US") return t.navigation.partnerWithUs;
     if (label === "PAST SPONSORS") return t.navigation.pastSponsors;
+    if (label === "OVERVIEW") return t.navigation.overview;
+    if (label === "RULES OF PROCEDURE") return t.navigation.rulesOfProcedure;
     return label;
   };
 
