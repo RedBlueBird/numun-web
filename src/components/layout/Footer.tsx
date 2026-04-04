@@ -38,7 +38,19 @@ export default function Footer() {
           <div className="pl-18">
             <h3 className="text-numun-gold font-bold mb-4">{t.footer.quickLinks}</h3>
             <nav className={`${layout.flex.column} ${spacing.gap.xs}`}>
-              {navigationItems.filter(item => item.href).slice(0, 4).map((item) => (
+              {navigationItems.filter(item => item.href).slice(0, 1).map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href!}
+                  className={`text-sm hover:text-numun-gold ${tokens.transition.colors}`}
+                >
+                  {getNavLabel(item)}
+                </Link>
+              ))}
+              <Link href="/numun" className={`text-sm hover:text-numun-gold ${tokens.transition.colors}`}>
+                {t.navigation.numun2026}
+              </Link>
+              {navigationItems.filter(item => item.href).slice(1, 4).map((item) => (
                 <Link
                   key={item.href}
                   href={item.href!}

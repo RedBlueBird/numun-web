@@ -1,6 +1,15 @@
 import { Sponsor, SponsorshipTierBenefit } from "@/types";
 
 export const currentSponsors: Sponsor[] = [
+    // Partners
+  {
+    id: "morimura-houmeikai",
+    name: "Morimura Houmeikai Foundation",
+    tier: "partner",
+    logo: "/images/sponsors/morimura-houmeikai.webp",
+    description: "Established in 1901, supporting education, welfare, and cultural promotion.",
+    website: "https://morimura-houmeikai.jp/",
+  },
   // Gold Sponsors
   {
     id: "nufsa",

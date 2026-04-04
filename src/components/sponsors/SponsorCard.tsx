@@ -10,7 +10,7 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 interface SponsorCardProps {
   sponsor: Sponsor;
-  tier: "diamond" | "gold" | "silver";
+  tier: "diamond" | "gold" | "silver" | "partner";
   circularGreenBg?: boolean;
   linkTarget?: string;
   badge?: string;
@@ -41,6 +41,13 @@ export default function SponsorCard({ sponsor, tier, circularGreenBg = false, li
       title: "text-xl font-bold text-numun-green mb-4",
       description: "text-numun-green text-sm mb-6 font-semibold leading-relaxed",
       buttonSize: "text-sm",
+    },
+    partner: {
+      card: "bg-white rounded-lg p-6 hover:shadow-lg transition-shadow text-center",
+      logoContainer: "w-full h-36 mx-auto mb-6 bg-white flex items-center justify-center relative overflow-hidden p-4",
+      title: "text-base font-bold text-numun-green mb-3",
+      description: "text-numun-green text-xs mb-4 font-semibold leading-relaxed",
+      buttonSize: "text-xs",
     },
   };
 

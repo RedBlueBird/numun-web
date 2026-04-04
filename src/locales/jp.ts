@@ -148,6 +148,7 @@ export const jp: Translations = {
       diamond: 'ダイヤモンドスポンサー',
       gold: 'ゴールドスポンサー',
       silver: 'シルバースポンサー',
+      partner: 'パートナー',
     },
   },
   pastSponsors: {
@@ -157,6 +158,7 @@ export const jp: Translations = {
       diamond: 'ダイヤモンドスポンサー',
       gold: 'ゴールドスポンサー',
       silver: 'シルバースポンサー',
+      partner: 'パートナー',
     },
   },
   timeline: {

@@ -148,6 +148,7 @@ export const en: Translations = {
       diamond: 'OUR DIAMOND SPONSORS',
       gold: 'OUR GOLD SPONSORS',
       silver: 'OUR SILVER SPONSORS',
+      partner: 'OUR PARTNERS',
     },
   },
   pastSponsors: {
@@ -157,6 +158,7 @@ export const en: Translations = {
       diamond: 'OUR DIAMOND SPONSORS',
       gold: 'OUR GOLD SPONSORS',
       silver: 'OUR SILVER SPONSORS',
+      partner: 'OUR PARTNERS',
     },
   },
   timeline: {
