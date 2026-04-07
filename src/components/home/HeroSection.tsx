@@ -3,6 +3,7 @@
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { sections, spacing, layout, typography, gradients, utils, components } from "@/config/styles";
 import { fonts } from "@/config/fonts";
 import { heroAnimations } from "@/config/animations";
@@ -13,6 +14,15 @@ import { useLanguage } from "@/context/LanguageContext";
 export default function HeroSection() {
   const { t } = useLanguage();
   const prefersReducedMotion = useReducedMotion();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.play().catch(() => {
+      // Autoplay was blocked — nothing to do, video stays paused
+    });
+  }, []);
 
   // If user prefers reduced motion, show everything immediately
   const getAnimationProps = (animationKey: keyof typeof heroAnimations) => {
@@ -27,6 +37,7 @@ export default function HeroSection() {
       {/* Background video */}
       <div className={`${utils.absoluteFill} ${utils.zIndex.base}`}>
         <video
+          ref={videoRef}
           src="/images/events/home-hero-vid.mp4"
           autoPlay
           loop
