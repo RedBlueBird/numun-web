@@ -181,6 +181,10 @@ export interface Translations {
         title: string;
         description: string;
       };
+      springIntoMunWorkshop: {
+        title: string;
+        description: string;
+      };
     };
   };
   social: {
@@ -378,13 +382,20 @@ export interface Translations {
         reopeningSpeakersList: { title: string; body: string };
         points: { title: string; intro: string; items: { point: string; circumstance: string }[] };
         motions: { title: string; intro: string; items: { motion: string; circumstance: string }[] };
-        precedence: { title: string; intro: string; items: string[] };
+        precedence: {
+          title: string;
+          intro: string;
+          items: string[];
+          tableItems?: Array<{ name: string; voteRequired: string; canInterrupt: string }>;
+          tableHeaders?: { priority: string; voteRequired: string; canInterrupt: string };
+        };
       };
       caucuses: {
         title: string;
         moderated: { title: string; body: string[] };
         unmoderated: { title: string; body: string[] };
         extension: { title: string; body: string };
+        caucusTermination?: { title: string; body: string };
       };
       workingPapersResolutions: {
         title: string;

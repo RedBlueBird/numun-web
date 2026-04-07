@@ -15,6 +15,7 @@ import TableOfContents from "@/components/rop/TableOfContents";
 export default function RopPage() {
   const { t } = useLanguage();
   const r = t.rop;
+  const ruleOffset = r.fullRop.caucuses.caucusTermination ? 1 : 0;
 
   const [open, setOpen] = useState<Record<string, boolean>>({
     rollCall: false,
@@ -322,21 +323,41 @@ export default function RopPage() {
                   </div>
                 </div>
 
-                {/* Rule 21: Precedence list */}
+                {/* Rule 21: Precedence */}
                 <div>
                   <div className={`flex items-center gap-3 mb-3`}>
                     <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>21</span>
                     <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.debate.precedence.title}</h4>
                   </div>
                   <p className={`${typography.bodyNormal} mb-3`}>{r.fullRop.debate.precedence.intro}</p>
-                  <ol className="list-none border-2 border-numun-gold/30 rounded-2xl overflow-hidden">
-                    {r.fullRop.debate.precedence.items.map((item, i) => (
-                      <li key={i} className={`flex gap-3 px-4 py-3 ${i % 2 === 0 ? 'bg-numun-beige' : 'bg-white'}`}>
-                        <span className={`flex-shrink-0 font-semibold ${fonts.cerebri}`}>{i + 1}.</span>
-                        <span className={`${typography.bodyNormal}`}>{item}</span>
-                      </li>
-                    ))}
-                  </ol>
+                  {r.fullRop.debate.precedence.tableItems && r.fullRop.debate.precedence.tableHeaders ? (
+                    <div className={`${tokens.borderRadius["2xl"]} overflow-hidden`}>
+                      <div className="grid gap-1" style={{ gridTemplateColumns: "2fr 1fr 1fr" }}>
+                        <div className={`bg-numun-green text-white text-sm font-bold px-4 py-3 ${fonts.cerebri}`}>{r.fullRop.debate.precedence.tableHeaders.priority}</div>
+                        <div className={`bg-numun-green text-white text-sm font-bold px-4 py-3 ${fonts.cerebri}`}>{r.fullRop.debate.precedence.tableHeaders.voteRequired}</div>
+                        <div className={`bg-numun-green text-white text-sm font-bold px-4 py-3 ${fonts.cerebri}`}>{r.fullRop.debate.precedence.tableHeaders.canInterrupt}</div>
+                        {r.fullRop.debate.precedence.tableItems.map((item, i) => (
+                          <React.Fragment key={i}>
+                            <div className={`bg-numun-beige text-numun-green-darkest text-sm font-semibold px-4 py-3 flex items-center ${fonts.cerebri}`}>
+                              <span className="text-numun-gold font-bold mr-2">{i + 1}.</span>
+                              {item.name}
+                            </div>
+                            <div className={`bg-numun-beige text-numun-green-darkest text-sm px-4 py-3 flex items-center ${fonts.cerebri}`}>{item.voteRequired}</div>
+                            <div className={`bg-numun-beige text-numun-green-darkest text-sm px-4 py-3 flex items-center ${fonts.cerebri}`}>{item.canInterrupt}</div>
+                          </React.Fragment>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <ol className="list-none border-2 border-numun-gold/30 rounded-2xl overflow-hidden">
+                      {r.fullRop.debate.precedence.items.map((item, i) => (
+                        <li key={i} className={`flex gap-3 px-4 py-3 ${i % 2 === 0 ? 'bg-numun-beige' : 'bg-white'}`}>
+                          <span className={`flex-shrink-0 font-semibold ${fonts.cerebri}`}>{i + 1}.</span>
+                          <span className={`${typography.bodyNormal}`}>{item}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  )}
                 </div>
               </div>
             </CollapsibleSection>
@@ -372,6 +393,16 @@ export default function RopPage() {
                   </div>
                   <p className={`${typography.bodyNormal}`}>{r.fullRop.caucuses.extension.body}</p>
                 </div>
+                {/* Rule 25: Caucus Termination (JP only) */}
+                {r.fullRop.caucuses.caucusTermination && (
+                  <div>
+                    <div className={`flex items-center gap-3 mb-3`}>
+                      <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>25</span>
+                      <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.caucuses.caucusTermination.title}</h4>
+                    </div>
+                    <p className={`${typography.bodyNormal}`}>{r.fullRop.caucuses.caucusTermination.body}</p>
+                  </div>
+                )}
               </div>
             </CollapsibleSection>
 
@@ -381,7 +412,7 @@ export default function RopPage() {
                 {/* Rule 25: Working Papers */}
                 <div>
                   <div className={`flex items-center gap-3 mb-3`}>
-                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>25</span>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>{25 + ruleOffset}</span>
                     <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.workingPapersResolutions.workingPapers.title}</h4>
                   </div>
                   <p className={`${typography.bodyNormal}`}>{r.fullRop.workingPapersResolutions.workingPapers.body}</p>
@@ -389,7 +420,7 @@ export default function RopPage() {
                 {/* Rule 26: Draft Resolutions */}
                 <div>
                   <div className={`flex items-center gap-3 mb-3`}>
-                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>26</span>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>{26 + ruleOffset}</span>
                     <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.workingPapersResolutions.draftResolutions.title}</h4>
                   </div>
                   <p className={`${typography.bodyNormal}`}>{r.fullRop.workingPapersResolutions.draftResolutions.body}</p>
@@ -397,7 +428,7 @@ export default function RopPage() {
                 {/* Rule 27: Amendments */}
                 <div>
                   <div className={`flex items-center gap-3 mb-3`}>
-                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>27</span>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>{27 + ruleOffset}</span>
                     <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.workingPapersResolutions.amendments.title}</h4>
                   </div>
                   <p className={`${typography.bodyNormal} mb-3`}>{r.fullRop.workingPapersResolutions.amendments.body}</p>
@@ -421,7 +452,7 @@ export default function RopPage() {
                 {/* Rule 28: Merging and Withdrawal */}
                 <div>
                   <div className={`flex items-center gap-3 mb-3`}>
-                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>28</span>
+                    <span className={`flex-shrink-0 w-8 h-8 rounded-full bg-numun-green text-white flex items-center justify-center font-bold text-xs ${fonts.cerebri}`}>{28 + ruleOffset}</span>
                     <h4 className={`font-bold text-numun-green ${fonts.itcBenguiat}`}>{r.fullRop.workingPapersResolutions.mergingWithdrawal.title}</h4>
                   </div>
                   <p className={`${typography.bodyNormal}`}>{r.fullRop.workingPapersResolutions.mergingWithdrawal.body}</p>
@@ -433,15 +464,15 @@ export default function RopPage() {
             <CollapsibleSection title={r.fullRop.voting.title} isOpen={open.ropVI} onToggle={() => toggle("ropVI")}>
               <div className="mt-4 space-y-6">
                 {[
-                  { num: 29, rule: r.fullRop.voting.votingBloc },
-                  { num: 30, rule: r.fullRop.voting.votingRights },
-                  { num: 31, rule: r.fullRop.voting.conductDuringVoting },
-                  { num: 32, rule: r.fullRop.voting.rollCallVotes },
-                  { num: 33, rule: r.fullRop.voting.motionsDuringBloc },
-                  { num: 34, rule: r.fullRop.voting.majorityRequirements },
-                  { num: 35, rule: r.fullRop.voting.abstentionsAndPasses },
-                  { num: 36, rule: r.fullRop.voting.divisionOfQuestion },
-                  { num: 37, rule: r.fullRop.voting.reconsideration },
+                  { num: 29 + ruleOffset, rule: r.fullRop.voting.votingBloc },
+                  { num: 30 + ruleOffset, rule: r.fullRop.voting.votingRights },
+                  { num: 31 + ruleOffset, rule: r.fullRop.voting.conductDuringVoting },
+                  { num: 32 + ruleOffset, rule: r.fullRop.voting.rollCallVotes },
+                  { num: 33 + ruleOffset, rule: r.fullRop.voting.motionsDuringBloc },
+                  { num: 34 + ruleOffset, rule: r.fullRop.voting.majorityRequirements },
+                  { num: 35 + ruleOffset, rule: r.fullRop.voting.abstentionsAndPasses },
+                  { num: 36 + ruleOffset, rule: r.fullRop.voting.divisionOfQuestion },
+                  { num: 37 + ruleOffset, rule: r.fullRop.voting.reconsideration },
                 ].map(({ num, rule }) => (
                   <div key={num}>
                     <div className={`flex items-center gap-3 mb-3`}>
@@ -458,9 +489,9 @@ export default function RopPage() {
             <CollapsibleSection title={r.fullRop.specialRules.title} isOpen={open.ropVII} onToggle={() => toggle("ropVII")}>
               <div className="mt-4 space-y-6">
                 {[
-                  { num: 38, rule: r.fullRop.specialRules.suspensionOfRules },
-                  { num: 39, rule: r.fullRop.specialRules.rightOfReply },
-                  { num: 40, rule: r.fullRop.specialRules.appealChair },
+                  { num: 38 + ruleOffset, rule: r.fullRop.specialRules.suspensionOfRules },
+                  { num: 39 + ruleOffset, rule: r.fullRop.specialRules.rightOfReply },
+                  { num: 40 + ruleOffset, rule: r.fullRop.specialRules.appealChair },
                 ].map(({ num, rule }) => (
                   <div key={num}>
                     <div className={`flex items-center gap-3 mb-3`}>
@@ -477,8 +508,8 @@ export default function RopPage() {
             <CollapsibleSection title={r.fullRop.closureOfDebate.title} isOpen={open.ropVIII} onToggle={() => toggle("ropVIII")}>
               <div className="mt-4 space-y-6">
                 {[
-                  { num: 41, rule: r.fullRop.closureOfDebate.closure },
-                  { num: 42, rule: r.fullRop.closureOfDebate.adjournment },
+                  { num: 41 + ruleOffset, rule: r.fullRop.closureOfDebate.closure },
+                  { num: 42 + ruleOffset, rule: r.fullRop.closureOfDebate.adjournment },
                 ].map(({ num, rule }) => (
                   <div key={num}>
                     <div className={`flex items-center gap-3 mb-3`}>
