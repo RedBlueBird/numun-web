@@ -181,6 +181,10 @@ export const jp: Translations = {
         title: 'アンモデレーテッド・クックオフ',
         description: 'NUMUN 2026 × NUFSAが料理・食事・交流の場にご招待します！2025年冬のUN Caféメニューを一緒に再現する、楽しくリラックスした料理セッションです。',
       },
+      springIntoMunWorkshop: {
+        title: 'Spring Into MUN: バイリンガルワークショップ',
+        description: '4月24日（金）16:00〜19:00、ILASのC31・C32室にてバイリンガルワークショップを開催します。\n\n英語と日本語のセッションが同時進行で別室にて実施されます：\n\n· 英語セッション（NUMUN主催）：NUMUN 2026とUNA-USA議事規則の使い方、ポジションペーパーの書き方、スピーチの仕方を学びます。\n· 日本語セッション（JMUN名古屋チャプター主催）：JMUNの議事規則シミュレーション — なお、実際の会議ではすべての委員会においてJMUN議事規則ではなくUNA-USA議事規則が使用されます。',
+      },
     },
   },
   register: {

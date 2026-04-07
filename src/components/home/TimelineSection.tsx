@@ -143,9 +143,11 @@ export default function TimelineSection() {
                         {/* Event Description */}
                         {shouldReduceMotion ? (
                           expandedEventId === event.id && (
-                            <p className="text-gray-300 leading-relaxed mb-6">
-                              {description}
-                            </p>
+                            <div className="text-gray-300 leading-relaxed mb-6 space-y-1">
+                              {description.split('\n').map((line, i) =>
+                                line === '' ? <div key={i} className="h-2" /> : <p key={i}>{line}</p>
+                              )}
+                            </div>
                           )
                         ) : (
                           <AnimatePresence>
@@ -159,9 +161,11 @@ export default function TimelineSection() {
                                 style={{ overflow: 'hidden' }}
                                 className="mb-6"
                               >
-                                <p className="text-gray-300 leading-relaxed">
-                                  {description}
-                                </p>
+                                <div className="text-gray-300 leading-relaxed space-y-1">
+                                  {description.split('\n').map((line, i) =>
+                                    line === '' ? <div key={i} className="h-2" /> : <p key={i}>{line}</p>
+                                  )}
+                                </div>
                               </motion.div>
                             )}
                           </AnimatePresence>

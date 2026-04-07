@@ -181,6 +181,10 @@ export const en: Translations = {
         title: 'The Unmoderated Cookoff',
         description: 'NUMUN 2026 × NUFSA invites you to cook, eat, and connect! Join us as we recreate the 2025 Winter UN Café Menu together in a fun and relaxed cooking session.',
       },
+      springIntoMunWorkshop: {
+        title: 'Spring Into MUN: Bilingual Workshop',
+        description: 'A bilingual workshop on April 24 (Fri), 16:00–19:00 at ILAS Rooms C31 & C32.\n\nEnglish and Japanese sessions run simultaneously in separate rooms:\n\n· English (c/o NUMUN): Navigate NUMUN 2026 and the UNA-USA Rules of Procedure, write position papers, and give speeches.\n· Japanese (c/o JMUN Nagoya Chapter): JMUN Rules of Procedure simulation — note that the actual conference uses the UNA-USA ROP, not JMUN ROP, for all committees.',
+      },
     },
   },
   register: {

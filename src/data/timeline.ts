@@ -24,6 +24,14 @@ export const timelineEvents: TimelineEvent[] = [
     status: 'finished',
   },
   {
+    id: 'spring-into-mun-workshop-2026',
+    date: '2026-04-24',
+    titleKey: 'timeline.events.springIntoMunWorkshop.title',
+    descriptionKey: 'timeline.events.springIntoMunWorkshop.description',
+    photos: [],
+    status: 'upcoming',
+  },
+  {
     id: 'unmoderated-cookoff-2026',
     date: '2026-03-31',
     titleKey: 'timeline.events.unmoderatedCookoff.title',
