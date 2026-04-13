@@ -6,7 +6,7 @@ import PageTitle from "@/components/ui/PageTitle";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ScrollReveal from "@/components/animation/ScrollReveal";
 import Button from "@/components/ui/Button";
-import SponsorCard from "@/components/sponsors/SponsorCard";
+import DisplayCard from "@/components/ui/DisplayCard";
 import ScheduleOverviewTable from "@/components/numun/ScheduleOverviewTable";
 import { scheduleOverview } from "@/data/scheduleOverview";
 import { motion } from "framer-motion";
@@ -16,9 +16,11 @@ import { fonts } from "@/config/fonts";
 import CollapsibleCard from "@/components/ui/CollapsibleCard";
 import TableOfContents from "@/components/numun/TableOfContents";
 import { useLanguage } from "@/context/LanguageContext";
+import { HiCursorClick } from "react-icons/hi";
 
 const HANDBOOK_URL = "https://drive.google.com/drive/folders/1SNbyz3mSXhwHgjVFb9XmsZcFmayQSBe1";
 const RULES_URL = "https://drive.google.com/drive/folders/1d3ersa21_l898rTA69ei-B2AFWgceDtt";
+const BACKGROUND_URL = "https://drive.google.com/drive/folders/1eP3qyUaOX27eYJsYXKlKip3oYeo5jSWZ";
 
 const SEATS_TOTAL = 50;
 const SEATS_OCCUPIED = 27;
@@ -171,6 +173,14 @@ export default function NumunPage() {
                   >
                     {t.conference.hero.downloadRules}
                   </a>
+                  <a
+                    href={BACKGROUND_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-numun-gold text-sm font-semibold underline hover:text-numun-gold-light ${tokens.transition.colors} ${fonts.cerebri}`}
+                  >
+                    {t.conference.hero.downloadBackground}
+                  </a>
                 </div>
               </div>
 
@@ -178,7 +188,7 @@ export default function NumunPage() {
           </ScrollReveal>
 
           {/* Delegate Registration Progress Bar */}
-          <div className="max-w-5xl mx-auto mt-4">
+          {false && <div className="max-w-5xl mx-auto mt-4">
             <ScrollReveal variant="slideUp">
               <div className={`bg-numun-beige ${tokens.borderRadius["2xl"]} ${tokens.shadow.md} ${spacing.padding.md}`}>
                 {/* Header row: label + count */}
@@ -212,7 +222,7 @@ export default function NumunPage() {
                 </div>
               </div>
             </ScrollReveal>
-          </div>
+          </div>}
 
           <div className="max-w-5xl mx-auto mt-2">
             <a
@@ -242,7 +252,7 @@ export default function NumunPage() {
               const data = t.conference.committeeList[committee.key];
               return (
                 <motion.div key={committee.key} variants={scrollAnimations.staggerItem} className="h-full">
-                  <SponsorCard
+                  <DisplayCard
                     sponsor={{
                       id: committee.key,
                       name: data.name,
@@ -255,6 +265,7 @@ export default function NumunPage() {
                     circularGreenBg
                     linkTarget="_blank"
                     badge={data.level}
+                    buttonIcon={<HiCursorClick />}
                   />
                 </motion.div>
               );

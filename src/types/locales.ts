@@ -445,6 +445,7 @@ export interface Translations {
       registerNow: string;
       downloadHandbook: string;
       downloadRules: string;
+      downloadBackground: string;
       emblemAlt: string;
       seatsProgress: {
         label: string;

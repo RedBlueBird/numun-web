@@ -859,6 +859,7 @@ export const en: Translations = {
       registerNow: 'REGISTER NOW',
       downloadHandbook: 'DOWNLOAD 2026 DELEGATE HANDBOOK',
       downloadRules: 'DOWNLOAD 2026 RULES OF PROCEDURE',
+      downloadBackground: 'DOWNLOAD 2026 BACKGROUND GUIDES',
       emblemAlt: 'NUMUN 2026 Committee Emblems',
       seatsProgress: {
         label: 'Delegate Registration',

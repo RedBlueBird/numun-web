@@ -8,15 +8,16 @@ import { FaSearch } from "react-icons/fa";
 import { hoverAnimations } from "@/config/animations";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
-interface SponsorCardProps {
+interface DisplayCardProps {
   sponsor: Sponsor;
   tier: "diamond" | "gold" | "silver" | "partner";
   circularGreenBg?: boolean;
   linkTarget?: string;
   badge?: string;
+  buttonIcon?: React.ReactNode;
 }
 
-export default function SponsorCard({ sponsor, tier, circularGreenBg = false, linkTarget, badge }: SponsorCardProps) {
+export default function DisplayCard({ sponsor, tier, circularGreenBg = false, linkTarget, badge, buttonIcon = <FaSearch /> }: DisplayCardProps) {
   const prefersReducedMotion = useReducedMotion();
 
   // Different styling based on tier
@@ -96,7 +97,7 @@ export default function SponsorCard({ sponsor, tier, circularGreenBg = false, li
       )}
       <p className={styles.description}>{sponsor.description}</p>
       <div className="mt-auto">
-        <Button href={sponsor.website || "#"} variant="primary" icon={<FaSearch />} className={styles.buttonSize} target={linkTarget}>
+        <Button href={sponsor.website || "#"} variant="primary" icon={buttonIcon} className={styles.buttonSize} target={linkTarget}>
           LEARN MORE
         </Button>
       </div>

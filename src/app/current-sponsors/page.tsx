@@ -2,7 +2,7 @@
 
 import PageTitle from "@/components/ui/PageTitle";
 import SectionTitle from "@/components/ui/SectionTitle";
-import SponsorCard from "@/components/sponsors/SponsorCard";
+import DisplayCard from "@/components/ui/DisplayCard";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { currentSponsors } from "@/data/sponsors";
@@ -92,7 +92,7 @@ export default function CurrentSponsorsPage() {
                 .filter((s) => s.tier === firstTier)
                 .map((sponsor) => (
                   <motion.div key={sponsor.id} variants={scrollAnimations.staggerItem} className={`${tierConfig[firstTier].item} h-full`}>
-                    <SponsorCard sponsor={sponsor} tier={firstTier} linkTarget="_blank" />
+                    <DisplayCard sponsor={sponsor} tier={firstTier} linkTarget="_blank" />
                   </motion.div>
                 ))}
             </motion.div>
@@ -117,7 +117,7 @@ export default function CurrentSponsorsPage() {
                   .filter((s) => s.tier === tier)
                   .map((sponsor) => (
                     <motion.div key={sponsor.id} variants={scrollAnimations.staggerItem} className={`${tierConfig[tier].item} h-full`}>
-                      <SponsorCard sponsor={sponsor} tier={tier} linkTarget="_blank" />
+                      <DisplayCard sponsor={sponsor} tier={tier} linkTarget="_blank" />
                     </motion.div>
                   ))}
               </motion.div>
