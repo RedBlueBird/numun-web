@@ -446,6 +446,11 @@ export interface Translations {
       downloadHandbook: string;
       downloadRules: string;
       emblemAlt: string;
+      seatsProgress: {
+        label: string;
+        registered: string;
+        total: string;
+      };
     };
     sections: {
       committees: string;

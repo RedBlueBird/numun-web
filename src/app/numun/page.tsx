@@ -20,6 +20,9 @@ import { useLanguage } from "@/context/LanguageContext";
 const HANDBOOK_URL = "https://drive.google.com/drive/folders/1SNbyz3mSXhwHgjVFb9XmsZcFmayQSBe1";
 const RULES_URL = "https://drive.google.com/drive/folders/1d3ersa21_l898rTA69ei-B2AFWgceDtt";
 
+const SEATS_TOTAL = 50;
+const SEATS_OCCUPIED = 27;
+
 const SWAG_ITEMS = [
   { key: 'notebook'    as const, image: '/images/events/swag-notebook.webp' },
   { key: 'lanyard'     as const, image: '/images/events/swag-lanyard.webp' },
@@ -173,6 +176,44 @@ export default function NumunPage() {
 
             </div>
           </ScrollReveal>
+
+          {/* Delegate Registration Progress Bar */}
+          <div className="max-w-5xl mx-auto mt-4">
+            <ScrollReveal variant="slideUp">
+              <div className={`bg-numun-beige ${tokens.borderRadius["2xl"]} ${tokens.shadow.md} ${spacing.padding.md}`}>
+                {/* Header row: label + count */}
+                <div className={`${layout.flex.spaceBetween} mb-3`}>
+                  <p className={`text-sm font-semibold text-numun-green uppercase tracking-widest ${fonts.cerebri}`}>
+                    {t.conference.hero.seatsProgress.label}
+                  </p>
+                  <p className={`text-sm font-bold text-numun-green ${fonts.cerebri}`}>
+                    <span className="text-numun-gold text-lg font-bold">{SEATS_OCCUPIED}</span>
+                    {' / '}{SEATS_TOTAL} {t.conference.hero.seatsProgress.total}
+                  </p>
+                </div>
+                {/* Progress bar track */}
+                <div className={`w-full h-3 bg-white/70 ${tokens.borderRadius.full} overflow-hidden border border-numun-green/20`}>
+                  <motion.div
+                    className={`h-full ${tokens.borderRadius.full} bg-numun-green`}
+                    initial={{ width: "0%" }}
+                    whileInView={{ width: `${(SEATS_OCCUPIED / SEATS_TOTAL) * 100}%` }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+                  />
+                </div>
+                {/* Footer row: registered / remaining labels */}
+                <div className={`${layout.flex.spaceBetween} mt-2`}>
+                  <p className={`${typography.caption} text-numun-green/70 ${fonts.cerebri}`}>
+                    {SEATS_OCCUPIED} {t.conference.hero.seatsProgress.registered}
+                  </p>
+                  <p className={`${typography.caption} text-numun-green/70 ${fonts.cerebri}`}>
+                    {SEATS_TOTAL - SEATS_OCCUPIED} {t.conference.hero.seatsProgress.total}
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+
           <div className="max-w-5xl mx-auto mt-2">
             <a
               href="https://drive.google.com/file/d/1Gg5-px_jiiK0stJLyfh-QNBfUOmz6wOv/view?usp=sharing"

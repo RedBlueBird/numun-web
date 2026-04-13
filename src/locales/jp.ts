@@ -925,6 +925,11 @@ export const jp: Translations = {
       downloadHandbook: '2026年代表者ハンドブックをダウンロード',
       downloadRules: '2026年議事規則をダウンロード',
       emblemAlt: 'NUMUN 2026委員会エンブレム',
+      seatsProgress: {
+        label: 'デリゲート登録状況',
+        registered: '登録済み',
+        total: '総定員',
+      },
     },
     sections: {
       committees: '委員会',
