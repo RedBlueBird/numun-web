@@ -12,6 +12,8 @@ import { useLanguage } from "@/context/LanguageContext";
 import CollapsibleSection from "@/components/ui/CollapsibleSection";
 import TableOfContents from "@/components/rop/TableOfContents";
 
+const RULES_URL = "https://drive.google.com/drive/folders/1d3ersa21_l898rTA69ei-B2AFWgceDtt";
+
 export default function RopPage() {
   const { t } = useLanguage();
   const r = t.rop;
@@ -63,6 +65,15 @@ export default function RopPage() {
                   <PageTitle.Heading>{r.title}</PageTitle.Heading>
                   <div className="mb-0">
                     <PageTitle.Description>{r.description}</PageTitle.Description>
+                    <PageTitle.Description className="mt-4">{r.downloadNote}</PageTitle.Description>
+                    <a
+                      href={RULES_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`text-numun-gold text-sm font-semibold underline hover:text-numun-gold-light ${tokens.transition.colors} ${fonts.cerebri}`}
+                    >
+                      {r.downloadRules}
+                    </a>
                   </div>
                 </div>
               </div>

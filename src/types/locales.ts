@@ -245,6 +245,8 @@ export interface Translations {
   rop: {
     title: string;
     description: string;
+    downloadNote: string;
+    downloadRules: string;
     houseRules: {
       sectionTitle: string;
       intro: string;

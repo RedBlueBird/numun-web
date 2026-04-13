@@ -245,6 +245,8 @@ export const jp: Translations = {
   rop: {
     title: '議事規則',
     description: '議事規則は、NUMUNの委員会セッションにおける議論と意思決定を規定する正式なガイドラインです。委員会に自信を持って効果的に参加するために、事前にこれらのルールを確認してください。',
+    downloadNote: '議事規則のPDFおよび印刷物はこちらからご参照いただけます。',
+    downloadRules: '2026年議事規則をダウンロード',
     houseRules: {
       sectionTitle: 'NUMUNルール',
       intro: '委員会セッション中は、円滑な討議のために以下の事項を守ってください。',

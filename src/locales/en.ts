@@ -245,6 +245,8 @@ export const en: Translations = {
   rop: {
     title: 'RULES OF PROCEDURE',
     description: 'The Rules of Procedure outline the formal guidelines that govern debate and decision-making in NUMUN committee sessions. Familiarize yourself with these rules to participate confidently and effectively in your committee.',
+    downloadNote: 'PDF and printed copies of the Rules of Procedure are available for your reference.',
+    downloadRules: 'DOWNLOAD 2026 RULES OF PROCEDURE',
     houseRules: {
       sectionTitle: 'HOUSE RULES',
       intro: 'Please keep in mind the following when the committee session is ongoing for maximum conducivity to debate.',
