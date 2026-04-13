@@ -864,7 +864,7 @@ export const en: Translations = {
       seatsProgress: {
         label: 'Delegate Registration',
         registered: 'Registered',
-        total: 'Total Seats',
+        total: 'Total Seats Left',
       },
     },
     sections: {

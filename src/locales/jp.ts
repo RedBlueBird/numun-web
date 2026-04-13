@@ -929,7 +929,7 @@ export const jp: Translations = {
       seatsProgress: {
         label: 'デリゲート登録状況',
         registered: '登録済み',
-        total: '総定員',
+        total: '残り定員数',
       },
     },
     sections: {

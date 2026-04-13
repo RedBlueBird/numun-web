@@ -197,7 +197,7 @@ export default function NumunPage() {
                     {t.conference.hero.seatsProgress.label}
                   </p>
                   <p className={`text-sm font-bold text-numun-green ${fonts.cerebri}`}>
-                    <span className="text-numun-gold text-lg font-bold">{SEATS_OCCUPIED}</span>
+                    <span className="text-numun-gold text-lg font-bold">{SEATS_TOTAL - SEATS_OCCUPIED}</span>
                     {' / '}{SEATS_TOTAL} {t.conference.hero.seatsProgress.total}
                   </p>
                 </div>
@@ -211,13 +211,10 @@ export default function NumunPage() {
                     transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
                   />
                 </div>
-                {/* Footer row: registered / remaining labels */}
-                <div className={`${layout.flex.spaceBetween} mt-2`}>
+                {/* Footer row: registered */}
+                <div className="mt-2">
                   <p className={`${typography.caption} text-numun-green/70 ${fonts.cerebri}`}>
                     {SEATS_OCCUPIED} {t.conference.hero.seatsProgress.registered}
-                  </p>
-                  <p className={`${typography.caption} text-numun-green/70 ${fonts.cerebri}`}>
-                    {SEATS_TOTAL - SEATS_OCCUPIED} {t.conference.hero.seatsProgress.total}
                   </p>
                 </div>
               </div>
