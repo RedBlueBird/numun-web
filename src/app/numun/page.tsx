@@ -22,8 +22,8 @@ const HANDBOOK_URL = "https://drive.google.com/drive/folders/1SNbyz3mSXhwHgjVFb9
 const RULES_URL = "https://drive.google.com/drive/folders/1d3ersa21_l898rTA69ei-B2AFWgceDtt";
 const BACKGROUND_URL = "https://drive.google.com/drive/folders/1eP3qyUaOX27eYJsYXKlKip3oYeo5jSWZ";
 
-const SEATS_TOTAL = 50;
-const SEATS_OCCUPIED = 27;
+const SEATS_TOTAL = 150;
+const SEATS_OCCUPIED = 33;
 
 const SWAG_ITEMS = [
   { key: 'notebook'    as const, image: '/images/events/swag-notebook.webp' },
@@ -188,7 +188,7 @@ export default function NumunPage() {
           </ScrollReveal>
 
           {/* Delegate Registration Progress Bar */}
-          {false && <div className="max-w-5xl mx-auto mt-4">
+          <div className="max-w-5xl mx-auto mt-4">
             <ScrollReveal variant="slideUp">
               <div className={`bg-numun-beige ${tokens.borderRadius["2xl"]} ${tokens.shadow.md} ${spacing.padding.md}`}>
                 {/* Header row: label + count */}
@@ -222,7 +222,7 @@ export default function NumunPage() {
                 </div>
               </div>
             </ScrollReveal>
-          </div>}
+          </div>
 
           <div className="max-w-5xl mx-auto mt-2">
             <a
