@@ -263,6 +263,7 @@ export default function NumunPage() {
                     linkTarget="_blank"
                     badge={data.level}
                     buttonIcon={<HiCursorClick />}
+                    buttonText="BACKGROUND GUIDE"
                   />
                 </motion.div>
               );
