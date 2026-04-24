@@ -17,15 +17,15 @@ export interface InstagramPost {
 
 export const featuredInstagramPosts: InstagramPost[] = [
   {
-    url: 'https://www.instagram.com/p/DVkxHmEGJp_/',
+    url: 'https://www.instagram.com/p/DXUEP9NisBv/',
     description: 'Committee Discussions',
   },
   {
-    url: 'https://www.instagram.com/p/DVkv_FNGBAF/',
+    url: 'https://www.instagram.com/p/DXJtFalipUC/',
     description: 'Awards Ceremony',
   },
   {
-    url: 'https://www.instagram.com/p/DVkv9EsmDGE/',
+    url: 'https://www.instagram.com/p/DXMVdHYisNH/',
     description: 'NUMUN Community',
   },
   {
