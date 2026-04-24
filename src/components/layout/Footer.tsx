@@ -25,19 +25,19 @@ export default function Footer() {
   return (
     <footer className={`${sections.heroDark} pt-12 pb-6`}>
       <div className={spacing.container}>
-        <div className={`${layout.grid.fourColumn} ${spacing.gap.xl} mb-8`}>
+        <div className={`flex flex-col items-center text-center ${spacing.gap.xl} mb-8 md:grid md:grid-cols-4 md:text-left md:items-start`}>
           {/* Logo and Description */}
-          <div className="pl-6">
+          <div className={`${layout.flex.columnCenter} md:items-start md:pl-6`}>
             <Logo className="mb-4" />
-            <p className="text-sm text-gray-300">
+            <p className="text-sm text-gray-300 px-8 md:px-2">
               {t.footer.description}
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="pl-18">
+          <div className="md:pl-18">
             <h3 className="text-numun-gold font-bold mb-4">{t.footer.quickLinks}</h3>
-            <nav className={`${layout.flex.column} ${spacing.gap.xs}`}>
+            <nav className={`flex flex-col items-center ${spacing.gap.xs} md:items-start`}>
               {navigationItems.filter(item => item.href).slice(0, 1).map((item) => (
                 <Link
                   key={item.href}
@@ -65,7 +65,7 @@ export default function Footer() {
           {/* Important Policies */}
           <div>
             <Link href="/policy" className={`text-numun-gold font-bold mb-4 block hover:text-numun-gold-light ${tokens.transition.colors}`}>{t.footer.importantPolicies}</Link>
-            <nav className={`${layout.flex.column} ${spacing.gap.xs}`}>
+            <nav className={`flex flex-col items-center ${spacing.gap.xs} md:items-start`}>
               <Link href="/policy#refund-policy" className={`text-sm hover:text-numun-gold ${tokens.transition.colors}`}>
                 {t.policy.sections.refundPolicy.title}
               </Link>
@@ -84,7 +84,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-numun-gold font-bold mb-4">{t.footer.contactUs}</h3>
-            <div className={`${layout.flex.column} ${spacing.gap.sm}`}>
+            <div className={`flex flex-col items-center ${spacing.gap.sm} md:items-start`}>
               <a
                 href={`mailto:${contactEmail}`}
                 className={`text-sm hover:text-numun-gold ${tokens.transition.colors}`}

@@ -70,19 +70,19 @@ export default function HeroSection() {
         {/* Brand text */}
         <div className="mb-8 -mt-10 relative">
           <motion.h1
-            className={`${typography.heroTitle} text-numun-gold -mb-12 relative z-0 ${fonts.itcBenguiat}`}
+            className={`${typography.heroTitle} text-numun-gold -mb-10 md:-mb-14 relative z-0 ${fonts.itcBenguiat}`}
             {...getAnimationProps("title1")}
           >
             {t.common.numun}
           </motion.h1>
           <motion.h1
-            className={`${typography.heroTitle} text-numun-gold-darkest font-bold -mb-6 relative z-0 ${fonts.itcBenguiat}`}
+            className={`${typography.heroTitle} text-numun-gold-darkest font-bold -mb-2 md:-mb-6 relative z-0 ${fonts.itcBenguiat}`}
             {...getAnimationProps("title2")}
           >
             {t.home.numun2026}
           </motion.h1>
           <motion.p
-            className={`text-white text-7xl sm:text-4xl font-light relative z-10 ${typography.italic} ${fonts.itcBenguiat}`}
+            className={`text-white md:text-6xl text-4xl font-light relative z-10 ${typography.italic} ${fonts.itcBenguiat}`}
             {...getAnimationProps("comingSoon")}
           >
             {t.home.comingSoon}
