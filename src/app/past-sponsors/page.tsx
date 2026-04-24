@@ -15,11 +15,11 @@ const TIER_ORDER = ["supporter", "diamond", "gold", "silver", "partner"] as cons
 type Tier = typeof TIER_ORDER[number];
 
 const tierConfig: Record<Tier, { container: string; item: string }> = {
-  diamond:   { container: "flex flex-wrap justify-center gap-8 max-w-5xl mx-auto", item: "w-full md:w-[46%]" },
-  gold:      { container: "flex flex-wrap justify-center gap-6 max-w-6xl mx-auto", item: "w-full md:w-[30%]" },
-  silver:    { container: "flex flex-wrap justify-center gap-8 max-w-4xl mx-auto", item: "w-full md:w-[46%]" },
-  partner:   { container: "flex flex-wrap justify-center gap-6 max-w-4xl mx-auto", item: "w-full md:w-[30%]" },
-  supporter: { container: "flex flex-wrap justify-center gap-6 max-w-4xl mx-auto", item: "w-full md:w-[30%]" },
+  diamond:   { container: "grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto", item: "flex flex-col" },
+  gold:      { container: "grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto", item: "flex flex-col" },
+  silver:    { container: "grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto", item: "flex flex-col" },
+  partner:   { container: "grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto", item: "flex flex-col" },
+  supporter: { container: "grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto", item: "flex flex-col" },
 };
 
 export default function PastSponsorsPage() {
@@ -92,7 +92,7 @@ export default function PastSponsorsPage() {
               {pastSponsors
                 .filter((s) => s.tier === firstTier)
                 .map((sponsor) => (
-                  <motion.div key={sponsor.id} variants={scrollAnimations.staggerItem} className={`${tierConfig[firstTier].item} h-full`}>
+                  <motion.div key={sponsor.id} variants={scrollAnimations.staggerItem} className={tierConfig[firstTier].item}>
                     <DisplayCard sponsor={sponsor} tier={firstTier} linkTarget="_blank" />
                   </motion.div>
                 ))}
@@ -117,7 +117,7 @@ export default function PastSponsorsPage() {
                 {pastSponsors
                   .filter((s) => s.tier === tier)
                   .map((sponsor) => (
-                    <motion.div key={sponsor.id} variants={scrollAnimations.staggerItem} className={`${tierConfig[tier].item} h-full`}>
+                    <motion.div key={sponsor.id} variants={scrollAnimations.staggerItem} className={tierConfig[tier].item}>
                       <DisplayCard sponsor={sponsor} tier={tier} linkTarget="_blank" />
                     </motion.div>
                   ))}
