@@ -11,7 +11,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { sections, spacing, gradients, utils } from "@/config/styles";
 import { fonts } from "@/config/fonts";
 
-const TIER_ORDER = ["diamond", "gold", "silver", "partner", "supporter"] as const;
+const TIER_ORDER = ["supporter", "diamond", "gold", "silver", "partner"] as const;
 type Tier = typeof TIER_ORDER[number];
 
 const tierConfig: Record<Tier, { container: string; item: string }> = {

@@ -1,7 +1,23 @@
 import { Sponsor, SponsorshipTierBenefit } from "@/types";
 
 export const currentSponsors: Sponsor[] = [
-    // Partners
+    // Supporters
+  {
+    id: "dentsu",
+    name: "Dentsu",
+    tier: "supporter",
+    logo: "/images/sponsors/dentsu.webp",
+    description: "One of the world's largest advertising and integrated communications groups.",
+    website: "https://www.dentsu.com/",
+  },
+  {
+    id: "nual",
+    name: "Nagoya University Alumni Association",
+    tier: "supporter",
+    logo: "/images/sponsors/nual.webp",
+    description: "Strengthening ties between alumni, students, and society through collaboration and knowledge sharing.",
+    website: "https://www.nual.nagoya-u.ac.jp/english/index.html",
+  },
   {
     id: "morimura-houmeikai",
     name: "Morimura Houmeikai Foundation",
