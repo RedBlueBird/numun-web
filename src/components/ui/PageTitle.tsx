@@ -65,7 +65,7 @@ function PageTitle({ children, className = "" }: PageTitleProps) {
 
       <div className={`${utils.relative} ${utils.zIndex.content} ${spacing.container} ${fonts.itcBenguiat}`}>
         <motion.h1
-          className={`${typography.pageTitle} ${className} ml-20`}
+          className={`${typography.pageTitle} ${className} ml-0 sm:ml-20`}
           initial={prefersReducedMotion ? false : "hidden"}
           animate="visible"
           variants={scrollAnimations.slideUp}

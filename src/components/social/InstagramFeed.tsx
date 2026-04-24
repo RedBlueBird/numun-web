@@ -35,8 +35,8 @@ export default function InstagramFeed() {
 
   return (
     <>
-      <section className={`${sections.contentBeige} ${spacing.section.large}`}>
-        <div className="container mx-auto px-8 sm:px-12 lg:px-16">
+      <section className={`${sections.contentBeige} ${spacing.section.large} overflow-x-hidden`}>
+        <div className="container mx-auto px-4 sm:px-12 lg:px-16">
           {/* Section Header */}
           <div className="text-center mb-12">
             <h2 className={`${typography.sectionTitle} mb-4`}>
