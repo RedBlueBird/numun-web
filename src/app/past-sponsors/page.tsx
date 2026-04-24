@@ -11,14 +11,15 @@ import { useLanguage } from "@/context/LanguageContext";
 import { sections, spacing, gradients, utils } from "@/config/styles";
 import { fonts } from "@/config/fonts";
 
-const TIER_ORDER = ["diamond", "gold", "silver", "partner"] as const;
+const TIER_ORDER = ["diamond", "gold", "silver", "partner", "supporter"] as const;
 type Tier = typeof TIER_ORDER[number];
 
 const tierConfig: Record<Tier, { container: string; item: string }> = {
-  diamond: { container: "flex flex-wrap justify-center gap-8 max-w-5xl mx-auto", item: "w-full md:w-[46%]" },
-  gold:    { container: "flex flex-wrap justify-center gap-6 max-w-6xl mx-auto", item: "w-full md:w-[30%]" },
-  silver:  { container: "flex flex-wrap justify-center gap-8 max-w-4xl mx-auto", item: "w-full md:w-[46%]" },
-  partner: { container: "flex flex-wrap justify-center gap-6 max-w-4xl mx-auto", item: "w-full md:w-[30%]" },
+  diamond:   { container: "flex flex-wrap justify-center gap-8 max-w-5xl mx-auto", item: "w-full md:w-[46%]" },
+  gold:      { container: "flex flex-wrap justify-center gap-6 max-w-6xl mx-auto", item: "w-full md:w-[30%]" },
+  silver:    { container: "flex flex-wrap justify-center gap-8 max-w-4xl mx-auto", item: "w-full md:w-[46%]" },
+  partner:   { container: "flex flex-wrap justify-center gap-6 max-w-4xl mx-auto", item: "w-full md:w-[30%]" },
+  supporter: { container: "flex flex-wrap justify-center gap-6 max-w-4xl mx-auto", item: "w-full md:w-[30%]" },
 };
 
 export default function PastSponsorsPage() {

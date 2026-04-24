@@ -7,7 +7,7 @@ import { sections, components, gradients, tokens, typography } from "@/config/st
 import { fonts } from "@/config/fonts";
 import { useLanguage } from "@/context/LanguageContext";
 
-const FORM_URL = "https://forms.gle/29QvdsevFMzV7iYY8";
+const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc9bRjF3cNWpOSMPPs-TAmEr2nZNl6XX9e-qQNn4B2IFhw8GQ/viewform";
 const DRIVE_URL = "https://drive.google.com/drive/folders/1waApdz40vlpR2Ro7UIOCg_q38L68C_XP";
 
 export default function RegisterPage() {

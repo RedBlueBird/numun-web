@@ -5,7 +5,7 @@ export const currentSponsors: Sponsor[] = [
   {
     id: "morimura-houmeikai",
     name: "Morimura Houmeikai Foundation",
-    tier: "partner",
+    tier: "supporter",
     logo: "/images/sponsors/morimura-houmeikai.webp",
     description: "Established in 1901, supporting education, welfare, and cultural promotion.",
     website: "https://morimura-houmeikai.jp/",

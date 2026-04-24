@@ -23,7 +23,7 @@ const RULES_URL = "https://drive.google.com/drive/folders/1d3ersa21_l898rTA69ei-
 const BACKGROUND_URL = "https://drive.google.com/drive/folders/1eP3qyUaOX27eYJsYXKlKip3oYeo5jSWZ";
 
 const SEATS_TOTAL = 150;
-const SEATS_OCCUPIED = 33;
+const SEATS_OCCUPIED = 77;
 
 const SWAG_ITEMS = [
   { key: 'notebook'    as const, image: '/images/events/swag-notebook.webp' },

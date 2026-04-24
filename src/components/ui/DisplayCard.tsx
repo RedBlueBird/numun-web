@@ -10,7 +10,7 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 interface DisplayCardProps {
   sponsor: Sponsor;
-  tier: "diamond" | "gold" | "silver" | "partner";
+  tier: "diamond" | "gold" | "silver" | "partner" | "supporter";
   circularGreenBg?: boolean;
   linkTarget?: string;
   badge?: string;
@@ -45,6 +45,13 @@ export default function DisplayCard({ sponsor, tier, circularGreenBg = false, li
       buttonSize: "text-sm",
     },
     partner: {
+      card: "bg-white rounded-lg p-6 hover:shadow-lg transition-shadow text-center",
+      logoContainer: "w-full h-36 mx-auto mb-6 bg-white flex items-center justify-center relative overflow-hidden p-4",
+      title: "text-base font-bold text-numun-green mb-3",
+      description: "text-numun-green text-xs mb-4 font-semibold leading-relaxed",
+      buttonSize: "text-xs",
+    },
+    supporter: {
       card: "bg-white rounded-lg p-6 hover:shadow-lg transition-shadow text-center",
       logoContainer: "w-full h-36 mx-auto mb-6 bg-white flex items-center justify-center relative overflow-hidden p-4",
       title: "text-base font-bold text-numun-green mb-3",

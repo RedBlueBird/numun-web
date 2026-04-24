@@ -149,6 +149,7 @@ export interface Translations {
       gold: string;
       silver: string;
       partner: string;
+      supporter: string;
     };
   };
   pastSponsors: {
@@ -159,6 +160,7 @@ export interface Translations {
       gold: string;
       silver: string;
       partner: string;
+      supporter: string;
     };
   };
   timeline: {
