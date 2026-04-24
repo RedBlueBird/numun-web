@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
 import { currentSponsors } from '@/data/sponsors';
@@ -25,7 +24,7 @@ export default function SupportersSection() {
           className={`${typography.sectionTitle} ${fonts.itcBenguiat} text-center mb-10`}
           initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewportOptions.once}
+          viewport={viewportOptions}
           transition={transitions.smooth}
         >
           {t.home.supporters.title}
@@ -35,7 +34,7 @@ export default function SupportersSection() {
           className={`${layout.grid.threeColumn} gap-6 ${layout.maxWidth.lg}`}
           initial="hidden"
           whileInView="visible"
-          viewport={viewportOptions.once}
+          viewport={viewportOptions}
           variants={prefersReducedMotion ? {} : scrollAnimations.staggerContainer}
         >
           {supporters.map((sponsor) => (
@@ -69,7 +68,7 @@ export default function SupportersSection() {
           className="flex justify-center mt-10"
           initial={prefersReducedMotion ? false : { opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={viewportOptions.once}
+          viewport={viewportOptions}
           transition={{ ...transitions.smooth, delay: 0.3 }}
         >
           <Button href="/current-sponsors" variant="secondary" icon={<FaArrowRight />}>
