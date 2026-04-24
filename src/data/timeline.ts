@@ -29,7 +29,7 @@ export const timelineEvents: TimelineEvent[] = [
     titleKey: 'timeline.events.springIntoMunWorkshop.title',
     descriptionKey: 'timeline.events.springIntoMunWorkshop.description',
     photos: [],
-    status: 'upcoming',
+    status: 'finished',
   },
   {
     id: 'unmoderated-cookoff-2026',

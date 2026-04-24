@@ -43,6 +43,10 @@ export const jp: Translations = {
     learnAboutButton: '2026年会議を見る',
     viewGalleryButton: 'ギャラリーを見る',
     contactButton: 'お問い合わせ',
+    supporters: {
+      title: '私たちのサポーター',
+      viewAll: 'スポンサー一覧を見る',
+    },
   },
   about: {
     title: '私たちについて',

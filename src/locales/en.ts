@@ -43,6 +43,10 @@ export const en: Translations = {
     learnAboutButton: 'VIEW 2026 CONFERENCE',
     viewGalleryButton: 'VIEW GALLERY',
     contactButton: 'CONTACT US',
+    supporters: {
+      title: 'OUR SUPPORTERS',
+      viewAll: 'VIEW ALL SPONSORS',
+    },
   },
   about: {
     title: 'ABOUT US',

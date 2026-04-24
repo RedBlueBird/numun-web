@@ -15,11 +15,11 @@ const TIER_ORDER = ["supporter", "diamond", "gold", "silver", "partner"] as cons
 type Tier = typeof TIER_ORDER[number];
 
 const tierConfig: Record<Tier, { container: string; item: string }> = {
-  diamond:   { container: "grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto", item: "flex flex-col" },
-  gold:      { container: "grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto", item: "flex flex-col" },
-  silver:    { container: "grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto", item: "flex flex-col" },
-  partner:   { container: "grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto", item: "flex flex-col" },
-  supporter: { container: "grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto", item: "flex flex-col" },
+  diamond:   { container: "flex flex-wrap justify-center gap-8 max-w-5xl mx-auto", item: "w-full md:w-[46%] flex flex-col" },
+  gold:      { container: "flex flex-wrap justify-center gap-6 max-w-6xl mx-auto", item: "w-full md:w-[30%] flex flex-col" },
+  silver:    { container: "flex flex-wrap justify-center gap-8 max-w-4xl mx-auto", item: "w-full md:w-[46%] flex flex-col" },
+  partner:   { container: "flex flex-wrap justify-center gap-6 max-w-4xl mx-auto", item: "w-full md:w-[30%] flex flex-col" },
+  supporter: { container: "flex flex-wrap justify-center gap-6 max-w-4xl mx-auto", item: "w-full md:w-[30%] flex flex-col" },
 };
 
 export default function CurrentSponsorsPage() {

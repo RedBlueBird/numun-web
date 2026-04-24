@@ -43,6 +43,10 @@ export interface Translations {
     learnAboutButton: string;
     viewGalleryButton: string;
     contactButton: string;
+    supporters: {
+      title: string;
+      viewAll: string;
+    };
   };
   about: {
     title: string;
