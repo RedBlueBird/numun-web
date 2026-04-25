@@ -34,8 +34,20 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+    if (mobileMenuOpen) {
+      setShowTopRow(true);
+    }
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+
+      // While the mobile menu is open, keep Row 1 pinned
+      if (mobileMenuOpen) {
+        setLastScrollY(currentScrollY);
+        return;
+      }
 
       // Show top row when at the very top of the page
       if (currentScrollY < 10) {
@@ -55,7 +67,7 @@ export default function Header() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, mobileMenuOpen]);
 
   const getNavLabel = (item: typeof navigationItems[0]) => {
     if (item.label === "HOME") return t.navigation.home;
