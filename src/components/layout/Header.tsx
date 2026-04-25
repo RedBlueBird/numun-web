@@ -220,22 +220,15 @@ export default function Header() {
                 if (item.dropdown) {
                   return (
                     <div key={index}>
-                      <div className={`flex items-center justify-between w-full py-2 ${isDropdownActive ? "text-numun-gold" : "text-white"}`}>
-                        <Link
-                          href={item.dropdown[0].href}
-                          className={`text-sm font-medium hover:text-numun-gold ${tokens.transition.colors} ${fonts.cerebri}`}
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {getNavLabel(item)}
-                        </Link>
-                        <button
-                          onClick={() => setMobileOpenDropdown(mobileOpenDropdown === index ? null : index)}
-                          className={`text-sm hover:text-numun-gold ${tokens.transition.colors} p-1`}
-                          aria-label="Toggle dropdown"
-                        >
-                          <FaChevronDown className={`text-xs ${tokens.transition.all} ${mobileOpenDropdown === index ? 'rotate-180' : ''}`} />
-                        </button>
-                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setMobileOpenDropdown(mobileOpenDropdown === index ? null : index)}
+                        aria-expanded={mobileOpenDropdown === index}
+                        className={`flex items-center justify-between w-full py-2 text-sm font-medium hover:text-numun-gold ${tokens.transition.colors} ${fonts.cerebri} text-left ${isDropdownActive ? "text-numun-gold" : "text-white"}`}
+                      >
+                        <span>{getNavLabel(item)}</span>
+                        <FaChevronDown className={`text-xs ${tokens.transition.all} ${mobileOpenDropdown === index ? 'rotate-180' : ''}`} />
+                      </button>
                       <AnimatePresence>
                         {mobileOpenDropdown === index && (
                           <motion.div

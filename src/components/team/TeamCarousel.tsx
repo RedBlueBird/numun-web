@@ -60,29 +60,55 @@ export default function TeamCarousel({ teams }: TeamCarouselProps) {
 
   return (
     <div className={`${layout.maxWidth.xl} relative w-full`}>
-      {/* Carousel Container */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentIndex}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={transitions.smooth}
-          className={`${layout.flex.column} ${spacing.gap.md}`}
-        >
-          {/* Team Image */}
-          <div className={`relative w-full aspect-video ${tokens.borderRadius.lg} overflow-hidden bg-gray-200`}>
-            <Image
-              src={teams[currentIndex].photo}
-              alt={teams[currentIndex].name}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 1200px"
-            />
-          </div>
+      <div className={`${layout.flex.column} ${spacing.gap.md}`}>
+        {/* Team Image — positioning context for nav buttons */}
+        <div className={`relative w-full aspect-video ${tokens.borderRadius.lg} overflow-hidden bg-gray-200`}>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={transitions.smooth}
+              className="absolute inset-0"
+            >
+              <Image
+                src={teams[currentIndex].photo}
+                alt={teams[currentIndex].name}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 1200px"
+              />
+            </motion.div>
+          </AnimatePresence>
 
-          {/* Team Info */}
-          <div className="text-center text-white px-4">
+          {/* Navigation Arrows — anchored to photo's vertical center */}
+          <button
+            onClick={goToPrevious}
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-colors z-10"
+            aria-label="Previous team"
+          >
+            <FiChevronLeft size={24} />
+          </button>
+          <button
+            onClick={goToNext}
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-colors z-10"
+            aria-label="Next team"
+          >
+            <FiChevronRight size={24} />
+          </button>
+        </div>
+
+        {/* Team Info */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={transitions.smooth}
+            className="text-center text-white px-4"
+          >
             <h3 className="text-2xl sm:text-3xl font-bold mb-2">{teams[currentIndex].name}</h3>
             <p className="text-numun-gold text-sm sm:text-base font-semibold mb-2">
               {teams[currentIndex].affiliation}
@@ -95,25 +121,9 @@ export default function TeamCarousel({ teams }: TeamCarouselProps) {
                 {teams[currentIndex].description}
               </p>
             )}
-          </div>
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Navigation Arrows */}
-      <button
-        onClick={goToPrevious}
-        className="absolute left-2 top-1/4 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-colors z-10"
-        aria-label="Previous team"
-      >
-        <FiChevronLeft size={24} />
-      </button>
-      <button
-        onClick={goToNext}
-        className="absolute right-2 top-1/4 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-colors z-10"
-        aria-label="Next team"
-      >
-        <FiChevronRight size={24} />
-      </button>
+          </motion.div>
+        </AnimatePresence>
+      </div>
 
       {/* Dot Indicators */}
       <div className="flex justify-center gap-2 mt-6">

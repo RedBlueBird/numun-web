@@ -31,8 +31,22 @@ export default function TeamPage() {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              {/* Title */}
+              <ScrollReveal
+                variant="slideLeft"
+                delay={0.2}
+                className="md:col-start-2 md:row-start-1"
+              >
+                <h2 className="text-4xl font-bold text-numun-green">
+                  {t.team.roles.secretaryGeneral}
+                </h2>
+              </ScrollReveal>
+
               {/* Profile Card */}
-              <ScrollReveal variant="slideRight">
+              <ScrollReveal
+                variant="slideRight"
+                className="md:col-start-1 md:row-start-1 md:row-span-2"
+              >
                 <TeamProfileCard
                   name={secretaryGeneral.name}
                   affiliation={secretaryGeneral.affiliation}
@@ -42,17 +56,16 @@ export default function TeamPage() {
                 />
               </ScrollReveal>
 
-              {/* Title and Quote */}
-              <ScrollReveal variant="slideLeft" delay={0.2}>
-                <div>
-                  <h2 className="text-4xl font-bold text-numun-green mb-6">
-                    {t.team.roles.secretaryGeneral}
-                  </h2>
-                  <TeamGreetingQuote
-                    greeting={secretaryGeneral.greeting}
-                    size="small"
-                  />
-                </div>
+              {/* Quote */}
+              <ScrollReveal
+                variant="slideLeft"
+                delay={0.2}
+                className="md:col-start-2 md:row-start-2"
+              >
+                <TeamGreetingQuote
+                  greeting={secretaryGeneral.greeting}
+                  size="small"
+                />
               </ScrollReveal>
             </div>
           </div>
@@ -74,24 +87,30 @@ export default function TeamPage() {
             viewport={{ once: true, amount: 0.2 }}
             variants={scrollAnimations.staggerContainer}
           >
-            {/* Profile Cards Row */}
-            {deputySecretaries.map((member) => (
-              <motion.div key={`${member.id}-profile`} variants={scrollAnimations.staggerItem}>
-                <TeamProfileCard
-                  name={member.name}
-                  affiliation={member.affiliation}
-                  photo={member.photo}
-                  size="small"
-                />
-              </motion.div>
-            ))}
-
-            {/* Greeting Quotes Row */}
-            {deputySecretaries.map((member) => (
-              <motion.div key={`${member.id}-quote`} variants={scrollAnimations.staggerItem}>
-                <TeamGreetingQuote greeting={member.greeting} size="small" />
-              </motion.div>
-            ))}
+            {deputySecretaries.flatMap((member, i) => {
+              const colClass = i === 0 ? "md:col-start-1" : "md:col-start-2";
+              return [
+                <motion.div
+                  key={`${member.id}-profile`}
+                  variants={scrollAnimations.staggerItem}
+                  className={`${colClass} md:row-start-1`}
+                >
+                  <TeamProfileCard
+                    name={member.name}
+                    affiliation={member.affiliation}
+                    photo={member.photo}
+                    size="small"
+                  />
+                </motion.div>,
+                <motion.div
+                  key={`${member.id}-quote`}
+                  variants={scrollAnimations.staggerItem}
+                  className={`${colClass} md:row-start-2`}
+                >
+                  <TeamGreetingQuote greeting={member.greeting} size="small" />
+                </motion.div>,
+              ];
+            })}
           </motion.div>
         </div>
       </section>

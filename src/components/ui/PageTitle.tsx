@@ -63,15 +63,17 @@ function PageTitle({ children, className = "" }: PageTitleProps) {
       {/* Green overlay */}
       <div className={`${utils.absoluteFill} ${gradients.heroOverlay}`}></div>
 
-      <div className={`${utils.relative} ${utils.zIndex.content} ${spacing.container} ${fonts.itcBenguiat}`}>
-        <motion.h1
-          className={`${typography.pageTitle} ${className} ml-0 sm:ml-20`}
-          initial={prefersReducedMotion ? false : "hidden"}
-          animate="visible"
-          variants={scrollAnimations.slideUp}
-        >
-          {children}
-        </motion.h1>
+      <div className={`${utils.relative} ${utils.zIndex.content} w-full px-12 sm:px-16 md:px-24 lg:px-32 ${fonts.itcBenguiat}`}>
+        <div className="max-w-7xl mx-auto">
+          <motion.h1
+            className={`${typography.pageTitle} ${className}`}
+            initial={prefersReducedMotion ? false : "hidden"}
+            animate="visible"
+            variants={scrollAnimations.slideUp}
+          >
+            {children}
+          </motion.h1>
+        </div>
       </div>
     </div>
   );
