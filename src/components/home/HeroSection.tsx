@@ -19,9 +19,22 @@ export default function HeroSection() {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    video.play().catch(() => {
-      // Autoplay was blocked — nothing to do, video stays paused
-    });
+
+    const tryPlay = () => {
+      video.play().catch(() => {});
+    };
+    const onVisibility = () => {
+      if (document.visibilityState === "visible") tryPlay();
+    };
+
+    tryPlay();
+    video.addEventListener("pause", tryPlay);
+    document.addEventListener("visibilitychange", onVisibility);
+
+    return () => {
+      video.removeEventListener("pause", tryPlay);
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
   }, []);
 
   // If user prefers reduced motion, show everything immediately
