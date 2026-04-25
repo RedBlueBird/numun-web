@@ -13,7 +13,7 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
   return (
     <LanguageProvider>
       <Header />
-      <main className="min-h-screen overflow-x-hidden">
+      <main className="min-h-screen">
         {children}
       </main>
       <Footer />
