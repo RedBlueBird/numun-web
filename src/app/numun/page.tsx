@@ -211,10 +211,13 @@ export default function NumunPage() {
                     transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
                   />
                 </div>
-                {/* Footer row: registered */}
-                <div className="mt-2">
+                {/* Footer row: registered + last updated */}
+                <div className={`${layout.flex.spaceBetween} mt-2`}>
                   <p className={`${typography.caption} text-numun-green/70 ${fonts.cerebri}`}>
                     {SEATS_OCCUPIED} {t.conference.hero.seatsProgress.registered}
+                  </p>
+                  <p className={`${typography.caption} text-numun-green/70 ${fonts.cerebri}`}>
+                    {t.conference.hero.seatsProgress.lastUpdated}
                   </p>
                 </div>
               </div>

@@ -459,6 +459,7 @@ export interface Translations {
         label: string;
         registered: string;
         total: string;
+        lastUpdated: string;
       };
     };
     sections: {

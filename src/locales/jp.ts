@@ -938,6 +938,7 @@ export const jp: Translations = {
         label: 'デリゲート登録状況',
         registered: '登録済み',
         total: '残り定員数',
+        lastUpdated: '最終更新：4月23日',
       },
     },
     sections: {
