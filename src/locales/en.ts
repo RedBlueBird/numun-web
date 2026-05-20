@@ -873,7 +873,7 @@ export const en: Translations = {
         label: 'Delegate Registration',
         registered: 'Registered',
         total: 'Total Seats Left',
-        lastUpdated: 'Last updated: April 23rd',
+        lastUpdated: 'Last updated: May 18th',
       },
     },
     sections: {
