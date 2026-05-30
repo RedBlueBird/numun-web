@@ -1077,7 +1077,7 @@ export const jp: Translations = {
     },
     socialNight: {
       date: '2026年6月27日',
-      time: '午後7:00〜10:00',
+      time: '午後5:30〜8:00',
       location: '南部食堂 1F 「Mei-dining」',
       description: 'ダンス、迫力あるパフォーマンス、そして仲間の代表者たちとのひとときをお楽しみください！',
       feeLabel: '参加費',

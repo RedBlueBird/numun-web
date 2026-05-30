@@ -188,10 +188,9 @@ export default function NumunPage() {
           </ScrollReveal>
 
           {/* Delegate Registration Progress Bar */}
-          <div className="max-w-5xl mx-auto mt-4">
+          {/* <div className="max-w-5xl mx-auto mt-4">
             <ScrollReveal variant="slideUp">
               <div className={`bg-numun-beige ${tokens.borderRadius["2xl"]} ${tokens.shadow.md} ${spacing.padding.md}`}>
-                {/* Header row: label + count */}
                 <div className={`${layout.flex.spaceBetween} mb-3`}>
                   <p className={`text-sm font-semibold text-numun-green uppercase tracking-widest ${fonts.cerebri}`}>
                     {t.conference.hero.seatsProgress.label}
@@ -201,7 +200,6 @@ export default function NumunPage() {
                     {' / '}{SEATS_TOTAL} {t.conference.hero.seatsProgress.total}
                   </p>
                 </div>
-                {/* Progress bar track */}
                 <div className={`w-full h-3 bg-white/70 ${tokens.borderRadius.full} overflow-hidden border border-numun-green/20`}>
                   <motion.div
                     className={`h-full ${tokens.borderRadius.full} bg-numun-green`}
@@ -211,7 +209,6 @@ export default function NumunPage() {
                     transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
                   />
                 </div>
-                {/* Footer row: registered + last updated */}
                 <div className={`${layout.flex.spaceBetween} mt-2`}>
                   <p className={`${typography.caption} text-numun-green/70 ${fonts.cerebri}`}>
                     {SEATS_OCCUPIED} {t.conference.hero.seatsProgress.registered}
@@ -222,7 +219,7 @@ export default function NumunPage() {
                 </div>
               </div>
             </ScrollReveal>
-          </div>
+          </div> */}
 
           <div className="max-w-5xl mx-auto mt-2">
             <a

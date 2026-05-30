@@ -1012,7 +1012,7 @@ export const en: Translations = {
     },
     socialNight: {
       date: '2026 June 27',
-      time: '7:00–10:00 PM',
+      time: '5:30–8:00 PM',
       location: 'Mei-dining',
       description: 'Join us for an epic night of dancing, killer performances, and a chance to finally vibe with your fellow delegates off the clock!',
       feeLabel: 'Fee',
