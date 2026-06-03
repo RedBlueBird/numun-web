@@ -8,7 +8,7 @@ import ScrollReveal from "@/components/animation/ScrollReveal";
 import Button from "@/components/ui/Button";
 import DisplayCard from "@/components/ui/DisplayCard";
 import ScheduleOverviewTable from "@/components/numun/ScheduleOverviewTable";
-import { scheduleOverview } from "@/data/scheduleOverview";
+import { scheduleOverview, partyAgenda } from "@/data/scheduleOverview";
 import { motion } from "framer-motion";
 import { sections, spacing, typography, tokens, layout } from "@/config/styles";
 import { scrollAnimations } from "@/config/animations";
@@ -16,7 +16,8 @@ import { fonts } from "@/config/fonts";
 import CollapsibleCard from "@/components/ui/CollapsibleCard";
 import TableOfContents from "@/components/numun/TableOfContents";
 import { useLanguage } from "@/context/LanguageContext";
-import { HiCursorClick } from "react-icons/hi";
+import { HiCursorClick, HiOutlineDocumentText } from "react-icons/hi";
+import { FaInstagram } from "react-icons/fa";
 
 const HANDBOOK_URL = "https://drive.google.com/drive/folders/1SNbyz3mSXhwHgjVFb9XmsZcFmayQSBe1";
 const RULES_URL = "https://drive.google.com/drive/folders/1d3ersa21_l898rTA69ei-B2AFWgceDtt";
@@ -34,16 +35,22 @@ const SWAG_ITEMS = [
 ];
 
 const COMMITTEES = [
-  { key: 'who'    as const, image: '/images/events/committee-who.webp',    url: 'https://drive.google.com/drive/folders/10t3EAI6B45XX4ZpBbTa9I6Us82Wi3Q7P' },
-  { key: 'ecosoc' as const, image: '/images/events/committee-ecosoc.webp', url: 'https://drive.google.com/drive/folders/15p8-4ANjge6h8p_CeSya-B7lp5Jsoeoo' },
-  { key: 'unsc'   as const, image: '/images/events/committee-unsc.webp',   url: 'https://drive.google.com/drive/folders/19WagMIC8xEPFpPkB1HKBC77xWx4FJHZ-' },
-  { key: 'unep'   as const, image: '/images/events/committee-unep.webp',   url: 'https://drive.google.com/drive/folders/1qOvgGIIzfqcaBS_qYliCsmConOWXG1gC?usp=drive_link' },
-  { key: 'unhcr'  as const, image: '/images/events/committee-unhcr.webp',  url: 'https://drive.google.com/drive/folders/19snGDbjRtCTVfpkV1-ppS-K4mwipispi?usp=drive_link' },
+  { key: 'who'    as const, image: '/images/events/committee-who.webp',    url: 'https://drive.google.com/drive/folders/10t3EAI6B45XX4ZpBbTa9I6Us82Wi3Q7P', submitUrl: 'https://forms.gle/mFmjcu7asWxcnYo28' },
+  { key: 'ecosoc' as const, image: '/images/events/committee-ecosoc.webp', url: 'https://drive.google.com/drive/folders/15p8-4ANjge6h8p_CeSya-B7lp5Jsoeoo', submitUrl: 'https://forms.gle/FWS3CxUbxMRhXSRV9' },
+  { key: 'unsc'   as const, image: '/images/events/committee-unsc.webp',   url: 'https://drive.google.com/drive/folders/19WagMIC8xEPFpPkB1HKBC77xWx4FJHZ-', submitUrl: 'https://forms.gle/z1ZJy6taCWWNsFz26' },
+  { key: 'unep'   as const, image: '/images/events/committee-unep.webp',   url: 'https://drive.google.com/drive/folders/1qOvgGIIzfqcaBS_qYliCsmConOWXG1gC?usp=drive_link', submitUrl: 'https://forms.gle/T6x7zR7cCoXwKiFQ9' },
+  { key: 'unhcr'  as const, image: '/images/events/committee-unhcr.webp',  url: 'https://drive.google.com/drive/folders/19snGDbjRtCTVfpkV1-ppS-K4mwipispi?usp=drive_link', submitUrl: 'https://forms.gle/w63vnoc2VnfNyBqq7' },
+];
+
+const SOCIAL_NIGHT_PERFORMERS = [
+  { name: 'N3ON Dance',   url: 'https://www.instagram.com/n3on_dance/' },
+  { name: 'Nanzan Prime', url: 'https://www.instagram.com/nanzanprime/' },
 ];
 
 export default function NumunPage() {
   const { t, locale } = useLanguage();
   const schedule = scheduleOverview[locale];
+  const partyAgendaEntries = partyAgenda[locale];
 
   const awardsList = [
     {
@@ -263,7 +270,10 @@ export default function NumunPage() {
                     linkTarget="_blank"
                     badge={data.level}
                     buttonIcon={<HiCursorClick />}
-                    buttonText="BACKGROUND GUIDE"
+                    buttonText={t.conference.committeeButtons.backgroundGuide}
+                    secondaryButtonHref={committee.submitUrl}
+                    secondaryButtonIcon={<HiOutlineDocumentText />}
+                    secondaryButtonText={t.conference.committeeButtons.submitPaper}
                   />
                 </motion.div>
               );
@@ -450,6 +460,35 @@ export default function NumunPage() {
                 </p>
                 <p className={`text-white/70 text-sm ${fonts.cerebri}`}>{t.conference.socialNight.noRegistration}</p>
               </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Performer socials */}
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto mt-10 text-center">
+              <p className={`text-numun-green text-xs uppercase tracking-widest mb-4 ${fonts.cerebri}`}>
+                {t.conference.socialNight.performersTitle}
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                {SOCIAL_NIGHT_PERFORMERS.map((performer) => (
+                  <Button
+                    key={performer.name}
+                    href={performer.url}
+                    variant="primary"
+                    icon={<FaInstagram />}
+                    target="_blank"
+                  >
+                    {performer.name}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Prospective party agenda */}
+          <ScrollReveal>
+            <div className="max-w-3xl mx-auto mt-10">
+              <ScheduleOverviewTable day={t.conference.socialNight.partyAgendaTitle} entries={partyAgendaEntries} />
             </div>
           </ScrollReveal>
         </div>

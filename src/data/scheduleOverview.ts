@@ -69,3 +69,24 @@ export const scheduleOverview: Record<Locale, DaySchedule> = {
   en: scheduleEn,
   jp: scheduleJp,
 };
+
+const partyAgendaEn: ScheduleEntry[] = [
+  { time: "17:30 – 18:00", event: "Memory Time + Move to Mei Dining" },
+  { time: "18:00 – 18:20", event: "Party Opening" },
+  { time: "18:20 – 18:40", event: "Nanzan Prime Dance Performance" },
+  { time: "18:40 – 18:55", event: "N3ON Dance Performance (CYCLONE 2026)" },
+  { time: "18:55 – 20:00", event: "Free Time" },
+];
+
+const partyAgendaJp: ScheduleEntry[] = [
+  { time: "17:30 – 18:00", event: "記念撮影・Mei Dining へ移動" },
+  { time: "18:00 – 18:20", event: "パーティー開会" },
+  { time: "18:20 – 18:40", event: "南山プライム ダンスパフォーマンス" },
+  { time: "18:40 – 18:55", event: "N3ON ダンスパフォーマンス（CYCLONE 2026）" },
+  { time: "18:55 – 20:00", event: "フリータイム" },
+];
+
+export const partyAgenda: Record<Locale, ScheduleEntry[]> = {
+  en: partyAgendaEn,
+  jp: partyAgendaJp,
+};

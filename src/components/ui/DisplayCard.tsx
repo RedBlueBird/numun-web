@@ -16,9 +16,12 @@ interface DisplayCardProps {
   badge?: string;
   buttonIcon?: React.ReactNode;
   buttonText?: string;
+  secondaryButtonHref?: string;
+  secondaryButtonIcon?: React.ReactNode;
+  secondaryButtonText?: string;
 }
 
-export default function DisplayCard({ sponsor, tier, circularGreenBg = false, linkTarget, badge, buttonIcon = <FaSearch />, buttonText = "LEARN MORE" }: DisplayCardProps) {
+export default function DisplayCard({ sponsor, tier, circularGreenBg = false, linkTarget, badge, buttonIcon = <FaSearch />, buttonText = "LEARN MORE", secondaryButtonHref, secondaryButtonIcon, secondaryButtonText }: DisplayCardProps) {
   const prefersReducedMotion = useReducedMotion();
 
   // Different styling based on tier
@@ -104,10 +107,15 @@ export default function DisplayCard({ sponsor, tier, circularGreenBg = false, li
         </span>
       )}
       <p className={styles.description}>{sponsor.description}</p>
-      <div className="mt-auto">
+      <div className="mt-auto flex flex-col items-center gap-3">
         <Button href={sponsor.website || "#"} variant="primary" icon={buttonIcon} className={styles.buttonSize} target={linkTarget}>
           {buttonText}
         </Button>
+        {secondaryButtonHref && secondaryButtonText && (
+          <Button href={secondaryButtonHref} variant="primary" icon={secondaryButtonIcon} className={styles.buttonSize} target={linkTarget}>
+            {secondaryButtonText}
+          </Button>
+        )}
       </div>
     </motion.div>
   );

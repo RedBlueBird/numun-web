@@ -951,6 +951,10 @@ export const jp: Translations = {
       socialNight: 'エクストライベント：ソーシャルナイト',
       visit: 'ご来場の計画',
     },
+    committeeButtons: {
+      backgroundGuide: 'バックグラウンドガイド',
+      submitPaper: 'ペーパー提出',
+    },
     committeeList: {
       ecosoc: {
         name: 'ECOSOC',
@@ -1084,6 +1088,8 @@ export const jp: Translations = {
       free: '無料',
       freeFor: '全代表者対象',
       noRegistration: '別途登録不要！',
+      performersTitle: 'スペシャルパフォーマンス出演',
+      partyAgendaTitle: 'パーティー予定スケジュール',
     },
   },
 };

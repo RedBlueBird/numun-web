@@ -472,6 +472,10 @@ export interface Translations {
       socialNight: string;
       visit: string;
     };
+    committeeButtons: {
+      backgroundGuide: string;
+      submitPaper: string;
+    };
     committeeList: {
       ecosoc: { name: string; description: string; level: string; };
       unep: { name: string; description: string; level: string; };
@@ -585,6 +589,8 @@ export interface Translations {
       free: string;
       freeFor: string;
       noRegistration: string;
+      performersTitle: string;
+      partyAgendaTitle: string;
     };
   };
 }

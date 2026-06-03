@@ -886,6 +886,10 @@ export const en: Translations = {
       socialNight: 'EXTRA EVENT: SOCIAL NIGHT',
       visit: 'PLANNING YOUR VISIT',
     },
+    committeeButtons: {
+      backgroundGuide: 'BACKGROUND GUIDE',
+      submitPaper: 'SUBMIT PAPER',
+    },
     committeeList: {
       ecosoc: {
         name: 'ECOSOC',
@@ -1019,6 +1023,8 @@ export const en: Translations = {
       free: 'FREE',
       freeFor: 'for ALL delegates',
       noRegistration: 'Separate registration not needed!',
+      performersTitle: 'WITH SPECIAL PERFORMANCES BY',
+      partyAgendaTitle: 'PROSPECTIVE PARTY AGENDA',
     },
   },
 };
